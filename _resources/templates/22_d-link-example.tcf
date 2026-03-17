@@ -1,0 +1,23 @@
+<!-- com.omniupdate.properties --><title>d-Link Example</title><!-- /com.omniupdate.properties -->
+
+<variable-list>
+<variable name="filename" prompt="Filename:" alt="Provide a filename for this new page. Use only letters, numbers, hyphens and underscores, no extension.">d-link-1</variable>
+<variable name="title" prompt="Page Title/Heading:" alt="Give your new page a title. (Avoid 'Home')">d-link Page</variable>
+<variable name="author" prompt="Author:" alt="The author for this page."></variable>
+<variable name="description" rows="2" prompt="Description:" alt="Describe your new page in about 40 words."></variable>	
+<variable name="keywords" rows="2" prompt="Keywords:"  alt="Keywords for this page"  output="xml"></variable>
+
+</variable-list>
+
+<template-list>
+<template prompt-prefix="New Page"  
+    filename="{filename}" 
+    display-group="no" 
+    display-destination="no" 
+    display-filename="no" 
+    display-overwrite="no" 
+    preferred-redirect="no" 
+    publish="no" 
+    extension="pcf">22_d-link-example.tmpl</template>
+</template-list>
+

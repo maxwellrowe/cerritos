@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/include-menu.xsl" title="Include Menu" extension="inc"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<!-- Best practice is to have a couple common empty nodes in case a page needs to have page-unique code.
+These are only editable in source and therefore admins. -->
+
+<!-- Meta page properites. Defines the meta elements that are placed in the head of the HTML document. -->
+<ouc:properties label="metadata">
+
+</ouc:properties>
+	<ouc:properties label="config">
+
+
+	</ouc:properties>
+<!-- Editable region. An ouc:div defines an editable region so a user can edit content within the WYSIWYG editor. Every ouc: div must have a unique label. 
+The ouc: editor defines the CSS styling in the WYSIWYG editor for this editable region.
+More information here: http :    //support.omniupdate.com/oucampus9/development/templating/page-tagging/tagging-reference.html#editable -->
+
+<ouc:div label="includemenu" group="Everyone" button-text="Edit Content"><ouc:editor toolbar="Main" csspath="/_resources/css/editor.css" width="1020" wysiwyg-class="includemenu"/>
+<div class="tabH4_Main">Campus Guide</div>
+<ul id="Accordion" class="pageletLinks">
+<li><a href="{{d:9127980}}">Public Affairs</a></li>
+<li><a href="/campus-guide/default.htm">Campus&nbsp;Maps</a></li>
+<li><span><a href="#">Calendars</a></span>
+<ul>
+<li><a href="*** Broken Link ***">Calendar of Events</a></li>
+<li><a href="/campus-guide/dailyfalcon.htm">Daily Falcon</a></li>
+</ul>
+</li>
+<li><span><a href="#">Directories &amp; Search</a></span>
+<ul>
+<li><a href="/campus-guide/abc-index.htm">A-Z Index</a></li>
+<li><a href="{{d:9127896}}">Employee Directory</a></li>
+<li><a href="/campus-guide/search.htm">Search Our Web</a></li>
+</ul>
+</li>
+</ul>
+	</ouc:div>
+</document>

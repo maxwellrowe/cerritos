@@ -1,0 +1,284 @@
+/* Global */
+.directory-wrapper {
+	padding-top: 20px;
+}
+/* Loader */
+#directory[hidden] {
+  display: none !important;
+}
+
+#directory-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: #555;
+}
+
+#directory-loader .spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#directory-loader[hidden] {
+	display: none !important;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Directory Filtering */
+.directory-filtering-start .form-group input {
+	background-color: rgba(225, 225, 233, 0.5);
+	color: #444655;
+	font-weight: normal;
+	border-radius: 4px;
+	padding: 12px;
+	border: none;
+	font-size: 16px;
+	height: auto;
+	box-shadow: none;
+}
+/* Directory/ Dept Dropdown */
+.directory-dept-dropdown label {
+	display: block;
+}
+.directory-dept-dropdown button.directory-dept-button {
+	background-color: rgba(225, 225, 233, 0.5);
+	color: #444655;
+	font-weight: normal;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px;
+	border-radius: 4px;
+	width: 100%;
+	transition: all .2s ease-in-out;
+	font-size: 16px;
+}
+.directory-dept-dropdown button.directory-dept-button:after {
+	content:'\f107';
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900; 
+	content: "\f107";
+}
+.directory-dept-dropdown button.directory-dept-button:hover {
+	background-color: rgba(225, 225, 233, 0.9);
+}
+.directory-dept-dropdown {
+	position: relative;
+}
+.directory-dept-dropdown #dept-dropdown-menu {
+	position: absolute;
+    background: #fff;
+    max-height: 250px;
+    overflow: scroll;
+    border-radius: 4px;
+    margin-top: 2px;
+    padding: 16px;
+    border: 1px solid #f1f1f1;
+	box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+	z-index: 99;
+	width: -webkit-fill-available;
+}
+.directory-dept-dropdown #dept-dropdown-menu .dept-filter-wrap {
+	margin-bottom: 12px;
+}
+.directory-dept-dropdown #dept-dropdown-menu label {
+	font-weight: normal;
+	margin-bottom: 8px;
+	display: flex;
+    gap: 8px;
+    align-items: start;
+    justify-content: start;
+}
+/* Sticky A–Z index */
+.directory-index {
+	position: fixed;
+	bottom: 18px;
+	left: 18px;
+	right: 18px;
+}
+.directory-index .directory-index-inner {
+	z-index: 100;
+	background: #fff;
+	padding: 12px;
+	margin: 0 auto;
+	width: fit-content;
+	box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+	border-radius: 8px;
+	border: 1px solid #f1f1f1;
+	text-align: center;
+}
+.directory-letter {
+	scroll-margin-top: 3rem; /* roughly equals the .directory-index height */
+}
+.directory-index a {
+	text-decoration: none;
+	padding: 0 .25rem;
+	line-height: 1.5;
+	display: inline-block;
+}
+
+.directory-index a:hover,
+.directory-index a:focus {
+	text-decoration: underline;
+	outline: none;
+}
+.directory-index a.disabled {
+	pointer-events: none;
+	opacity: .35;
+}
+/* Directory Letters */
+h2.directory-letter {
+	margin-bottom: 0 !important;
+	font-size: 20px !important;
+	border-bottom: none !important;
+	padding-bottom: 0 !important;
+	width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Directory Item */
+.directory-item {
+	border-bottom: 1px solid #D9D9D9;
+	padding: 20px 0;
+}
+.directory-item .directory-item-name h3 {
+	text-transform: none !important;
+	color: #000 !important;
+	font-size: 20px !important;
+	margin: 0;
+	padding: 0;
+}
+.directory-item .directory-item-name .directory-item-title {
+	font-size: 14px;
+	margin: 8px 0 12px 0;
+}
+.directory-item .directory-item-department,
+.directory-item .directory-item-phone {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 8px;
+}
+.directory-item .directory-item-department .fa,
+.directory-item .directory-item-phone .fa {
+	color: #27A8E1;
+}
+.directory-item .directory-item-end {
+	margin-top: 8px;
+	display: flex;
+	gap: 8px;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
+}
+.directory-item .directory-item-email {
+	display: flex;
+	justify-content: start;
+	gap: 8px;
+	position: relative;
+}
+.directory-item .directory-item-email .copy-feedback {
+	position: absolute;
+    left: auto;
+    font-size: 12px;
+    right: 0;
+    bottom: 100%;
+    background: #fff;
+    padding: 3px;
+    border-radius: 4px;
+}
+.directory-item .directory-item-email a {
+	color: #fff;
+	background-color: #002F67;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none !important;
+	padding: 10px 14px;
+	transition: all .2s ease-in-out;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	justify-content: center;
+}
+.directory-item .directory-item-email a:after {
+	display: none;
+}
+.directory-item .directory-item-email a .fa {
+	transition: all .2s ease-in-out;
+}
+.directory-item .directory-item-email a:hover {
+	background-color: #000;
+	font-weight: 600 !important;
+}
+.directory-item .directory-item-email a:hover .fa {
+	transform: translate(2px, -2px);
+}
+
+@media screen and (min-width: 992px) {
+	.directory-filtering {
+		display: flex;
+		gap: 5%;
+		align-items: start;
+		justify-content: space-between;
+	}
+	.directory-filtering .directory-filtering-start,
+	.directory-filtering .directory-filtering-end {
+		width: 47.5%;
+	}
+	.directory-filtering .directory-filtering-start .form-group {
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: 10px;
+	}
+	.directory-filtering .directory-filtering-start .form-group label,
+	.directory-filtering .directory-filtering-start .form-group input,
+	.directory-filtering .directory-filtering-end .directory-dept-dropdown label {
+		margin: 0;
+	}
+	.directory-filtering .directory-filtering-end .directory-dept-dropdown {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		gap: 10px;
+	}
+	.directory-filtering .directory-filtering-end .directory-dept-dropdown > div {
+		width: 100%;
+	}
+	
+	.directory-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+		gap: 20px;
+	}
+	.directory-item .directory-item-end {
+		align-items: end;
+		gap: 12px;
+	}
+}

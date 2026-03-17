@@ -1,0 +1,1 @@
+$('#NewsDiv').load('/_resources/php/wnl/calendar-home-news-display-3.php?feed=<xsl:value-of select=$news-feed-url />&amp;num_items=3');

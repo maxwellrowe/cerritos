@@ -1,0 +1,86 @@
+/**********************************************
+* 			   School Color Theme       	  *
+**********************************************/
+.default h1,
+.default h2,
+.default h3,
+.default h4,
+.default h5,
+.default h6
+.default a,
+.default h1 a,
+.default h2 a,
+.default h3 a,
+.default h4 a,
+.default h5 a,
+.default h6 a,
+.default .theme-color-highlight{
+	color: #6091ba !important;
+}
+
+.default .ou-help{
+	background: #6091ba !important;
+}
+
+.green h1,
+.green h2,
+.green h3,
+.green h4,
+.green h5,
+.green h6
+.green a,
+.green h1 a,
+.green h2 a,
+.green h3 a,
+.green h4 a,
+.green h5 a,
+.green h6 a,
+.green .theme-color-highlight{
+	color: #055C05 !important;
+}
+
+.green .ou-help{
+	background: #055C05 !important;
+}
+
+.red h1,
+.red h2,
+.red h3,
+.red h4,
+.red h5,
+.red h6
+.red a,
+.red h1 a,
+.red h2 a,
+.red h3 a,
+.red h4 a,
+.red h5 a,
+.red h6 a,
+.red .theme-color-highlight{
+	color: #A72222 !important;
+}
+
+.red .ou-help{
+	background: #A72222 !important;
+}
+
+.grey h1,
+.grey h2,
+.grey h3,
+.grey h4,
+.grey h5,
+.grey h6
+.grey a,
+.grey h1 a,
+.grey h2 a,
+.grey h3 a,
+.grey h4 a,
+.grey h5 a,
+.grey h6 a,
+.grey .theme-color-highlight{
+	color: #444444 !important;
+}
+
+.grey .ou-help{
+	background: #444444 !important;
+}

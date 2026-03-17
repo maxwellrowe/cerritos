@@ -1,0 +1,10 @@
+<title>Alias Redirect</title>
+
+<variable-list>
+	<variable name="target" prompt="Target File" type="filechooser" path="/" alt="Select the file you want the alias to point to. NOTE: be sure to select file from prodution server."></variable>
+	<variable name="dirname" prompt="Short Name" alt="A single word to represent your shortened url. (example: forms)."></variable>
+</variable-list>
+
+<template-list>
+	<template prompt-prefix="Existing Redirect File" publish="yes" redirect="no" display-group="no" group="everyone" force-destination="yes" destination="/go/{dirname}" display-filename="no" filename="default" extension="aspx" title="Web">24_cc-redirect.tmpl</template>
+</template-list>

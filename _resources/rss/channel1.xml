@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Cerritos College RAVE Alerts</title>
+    <link>https://www.cerritos.edu/police/bulletins/safety-alerts/2019/bomb-threat-9-3-19.htm</link>
+    <description>Cerritos College RAVE Alerts</description>
+    <category>Alerts</category>
+    <dc:subject>Alerts</dc:subject>
+    <image>
+      <title>Cerritos College RAVE Alerts</title>
+      <url>https://www.cerritos.edu/police/bulletins/safety-alerts/2019/bomb-threat-9-3-19.htm</url>
+      <link>https://www.cerritos.edu/police/bulletins/safety-alerts/2019/bomb-threat-9-3-19.htm</link>
+    </image>
+    <item>
+      <title>UPDATE: No remaining threat to College. Campus will reopen Wednesday, September 4</title>
+      <link url="https://www.cerritos.edu/police/bulletins/safety-alerts/2019/bomb-threat-9-3-19.htm" />
+      <description>all clear</description>
+      <enclosure url="" />
+      <pubDate>Tue, 03 Sep 2019 11:53:00 GMT</pubDate>
+      <guid />
+      <dc:date>2019-09-03T05:45:00Z</dc:date>
+    </item>
+  </channel>
+</rss>
+

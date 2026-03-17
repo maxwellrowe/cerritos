@@ -1,0 +1,1 @@
+$("#EventsDiv").load('/_resources/php/wnl/calendar-home-events-display-omni-dev-only.php?feed=<xsl:value-of select=$formatted-feed-url />&amp;num_items=3');

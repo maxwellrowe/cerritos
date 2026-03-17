@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tcf>
+	<title>Subsite</title>
+	
+	<variable-list>
+		<variable section="Folder Information" name="dirname" prompt="Directory Name" alt="Enter the directory name. No special characters or spaces."></variable>
+		<!-- general page setup -->
+<variable section="Default Page Information" name="title" prompt="Page Title/Heading:" alt="Also displayed in the breadcrumbs for the folder (avoid 'Home').">Section Name</variable>
+<variable name="filename" prompt="Filename:" alt="Provide a filename for this new page. No extension.">default</variable>
+<variable name="author" prompt="Author:" alt="The author for this page."></variable>
+<variable name="description" rows="2" prompt="Description:" alt="Describe your new page in about 40 words."></variable>	
+<variable name="keywords" rows="2" prompt="Keywords:"  alt="Keywords for this page"  output="xml"></variable>
+
+	</variable-list>
+	
+	<template-list>
+		<template destination="{directory/}{dirname}" force-destination="yes" publish="yes" filename="_props" extension="pcf" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">70_properties.tmpl</template>
+		
+		<template destination="{directory/}{dirname}/_includes/assets" force-destination="yes" publish="no" filename="default" extension="css" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">12_subsite-default-css.tmpl</template>
+		<template destination="{directory/}{dirname}/_includes/assets" force-destination="yes" publish="no" filename="deptnav" extension="pcf" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">10_deptnav.tmpl</template>
+		<template destination="{directory/}{dirname}/_includes/assets" force-destination="yes" publish="no" filename="deptinfo" extension="pcf" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">11_deptinfo.tmpl</template>
+		<template destination="{directory/}{dirname}/_includes/assets" force-destination="yes" publish="no" filename="gallery" extension="xml" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">12_subsite-gallery-xml.tmpl</template>
+		<template destination="{directory/}{dirname}/_includes/images" force-destination="yes" publish="no" filename="placeholder" extension="gif" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">12_subsite-placeholder-gif.tmpl</template>
+		<template destination="{directory/}{dirname}/_includes/docs" force-destination="yes" publish="no" filename="placeholder" extension="txt" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">12_subsite-placeholder-txt.tmpl</template>
+		
+		<template destination="{directory/}{dirname}/" force-destination="yes" publish="no" filename="d-link" extension="pcf" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">21_d-link.tmpl</template>
+		<template destination="{directory/}{dirname}/" force-destination="yes" publish="no" filename="d-link-example" extension="pcf" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">12_d-link-example.tmpl</template>
+		
+		<!-- Removed 10/2025
+		<template destination="{directory/}{dirname}/" force-destination="yes" publish="no" filename="dept-inside" extension="pcf" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">12_dept-inside.tmpl</template>
+		<template destination="{directory/}{dirname}/" force-destination="yes" publish="no" filename="photo-gallery" extension="pcf" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">12_photogallery.tmpl</template>
+		<template destination="{directory/}{dirname}/" force-destination="yes" publish="no" filename="contact" extension="pcf" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">12_contact-form.tmpl</template>
+		-->
+		<template 
+			prompt-prefix="New Subsite" 
+			filename="{filename}" 
+			display-filename="no"
+			display-group="no"
+			display-overwrite="yes"
+			extension="pcf" 
+			destination="{directory/}{dirname}" 
+			force-destination="yes" 
+			preferred-redirect="no">02_dept-home.tmpl</template>
+	</template-list>
+</tcf>

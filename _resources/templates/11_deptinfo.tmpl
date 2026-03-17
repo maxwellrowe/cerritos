@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/include-menu.xsl" title="Include Menu" extension="inc"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<!-- Best practice is to have a couple common empty nodes in case a page needs to have page-unique code.
+These are only editable in source and therefore admins. -->
+
+<!-- Meta page properites. Defines the meta elements that are placed in the head of the HTML document. -->
+<ouc:properties label="metadata">
+
+</ouc:properties>
+	<ouc:properties label="config">
+
+
+	</ouc:properties>
+<!-- Editable region. An ouc:div defines an editable region so a user can edit content within the WYSIWYG editor. Every ouc: div must have a unique label. 
+The ouc: editor defines the CSS styling in the WYSIWYG editor for this editable region.
+More information here: http :    //support.omniupdate.com/oucampus9/development/templating/page-tagging/tagging-reference.html#editable -->
+
+<ouc:div label="includemenu" group="Everyone" button-text="Edit Content"><ouc:editor toolbar="Main" csspath="/_resources/css/editor.css" width="1020" wysiwyg-class="includemenu"/>
+<hr />
+	<div>
+        <h3><span class="fa fa-phone-square fa-lg">&nbsp;</span>Contact Us</h3>
+        <p><a href="tel:15628602451">(562) 860-2451 ext 2231</a></p>
+        <p><a href="#">Review Appointment Policy and Hours</a></p>
+    </div>
+<hr />
+    <div>
+        <h3><span class="fa fa-map-marker fa-lg">&nbsp;</span>Location</h3>
+        <p>Administration Bldg (off of Alondra Blvd.)</p>
+        <p><a href="/map">[map]</a></p>
+    </div>
+<hr />
+	 <div>
+        <h3><span class="fa fa-link fa-lg">&nbsp;</span>Related Links</h3>
+		 <p><a href="test.pdf">PDF Link Here</a></p>
+        <p><a href="#" rel="external">External Link Here</a></p>
+    </div>
+	</ouc:div>
+</document>

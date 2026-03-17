@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tcf>
+	<title>New Email Footer</title>
+	
+	<variable-list>
+		<!-- A safer way to create a file, forces PCF file extension -->
+		<variable name="pcf-filename" prompt="Filename" alt="Enter a filename using only lowercase letters, underscores, or dashes">untitled</variable>
+	</variable-list>
+	
+	<template-list>
+		<template 
+			prompt-prefix="Page"
+			filename="{pcf-filename}"
+			display-filename="no"
+			extension="pcf">footer.tmpl</template>
+	</template-list>
+
+</tcf>

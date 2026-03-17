@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?pcf-stylesheet path="/_resources/email/xsl/footer.xsl" title="Footer Properties" extension="inc"?>
+
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd">
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<ouc:properties label="config">
+		<parameter section="Footer Content" name="footer-logo" path="/_resources/images/email/logos" type="filechooser" group="Everyone" prompt="Footer Logo" alt="Choose a footer logo.">/_resources/images/email/logos/footer-logo.jpg</parameter>
+		<parameter name="logo-link" type="text" group="Everyone" prompt="Logo Link" alt="Enter the link for your footer logo.">http://www.gallenauniveristy.com</parameter>
+		<parameter name="copyright" type="text" group="Everyone" prompt="Copyright Text" alt="Enter your copyright text.">Copyright © 2017</parameter>
+		<parameter name="terms" type="text" group="Everyone" prompt="Terms of Use Link" alt="Enter the link to your terms of use.">http://www.gallenauniversity.com</parameter>
+		<parameter name="privacy" type="text" group="Everyone" prompt="Privacy Policy Link" alt="Enter the link to your privacy policy.">http://www.gallenauniversity.com</parameter>
+		<parameter name="unsubscribe" type="radio" group="Administrators Only" prompt="Unsubscribe Link" alt="Choose to show or hide the custom unsubscribe link.">
+			<option value="show" selected="true">Show</option>
+			<option value="hide" selected="false">Hide</option>
+		</parameter>
+		<parameter section="Social Media" name="social-text" type="text" group="Everyone" prompt="Social Media Text" alt="Enter the  text above the social media icons."></parameter>
+	</ouc:properties>
+	<ouc:properties label="social-media">
+		<parameter name="facebook-link" type="text" group="Everyone" prompt="Facebook Link" alt="Enter your Facebook link, leave blank and no icon will appear.">https://www.facebook.com/pages/Gallena-University/43156474752</parameter>
+		<parameter name="twitter-link" type="text" group="Everyone" prompt="Twitter Link" alt="Enter your Twitter link, leave blank and no icon will appear.">https://twitter.com/gallena_univ</parameter>
+		<parameter name="linkedin-link" type="text" group="Everyone" prompt="LinkedIn Link" alt="Enter your LinkedIn link, leave blank and no icon will appear."></parameter>
+		<parameter name="youtube-link" type="text" group="Everyone" prompt="YouTube Link" alt="Enter your YouTube link, leave blank and no icon will appear."></parameter>
+		<parameter name="rss-link" type="text" group="Everyone" prompt="RSS Link" alt="Enter your RSS feed, leave blank and no icon will appear.">http://gallenauniversity.com/news/feeds.html</parameter>
+		<parameter name="google-plus-link" type="text" group="Everyone" prompt="Google+ Link" alt="Enter your Google+ link, leave blank and no icon will appear."></parameter>
+		<parameter name="flickr-link" type="text" group="Everyone" prompt="Flickr Link" alt="Enter your Flickr link, leave blank and no icon will appear.">http://gallenauniversity.com/flickr_gallery.html</parameter>
+		<parameter name="pinterest-link" type="text" group="Everyone" prompt="Pinterest Link" alt="Enter your Pinterest link, leave blank and no icon will appear."></parameter>
+		<parameter name="instagram-link" type="text" group="Everyone" prompt="Instagram Link" alt="Enter your Instagram link, leave blank and no icon will appear."></parameter>
+	</ouc:properties>
+</document>

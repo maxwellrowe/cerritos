@@ -1,0 +1,110 @@
+.google-recaptcha-statement{
+	color: #000000;
+	margin-top: .5rem;
+}
+
+.form-success{
+	font-size: 1.063rem;
+	background-color: #E9EFFF;
+    padding: 1.4rem;
+	font-family: "Open Sans", sans-serif;
+	
+}
+
+/*
+    This file is meant to serve as a starter for the CMS Forms Module,
+    Please exercise caution in what you style and how you style it.
+    As the CMS Forms Module receives updates, you may need to re-download this file to style additional features.
+    You may need to use !important in some places to make sure your styles override the CMS Forms Module defaults
+*/
+
+/* global items */
+[data-el="mc-form-wrapper"] {
+    /* the entire form */
+}
+
+[data-el="mc-form-wrapper"] [data-el="element-wrapper"] [data-el="element-label"] {
+    /* form labels */
+	font-size: 1.063rem;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+}
+
+[data-el="mc-form-wrapper"] [data-el="element-wrapper"] [data-el="element-helper-wrapper"] {
+    /* element helper text */
+}
+
+/* short text */
+[data-el="mc-form-wrapper"] [data-el="element-wrapper"] [data-el="text-input"] {
+    /* short text */
+}
+
+/* long text */
+[data-el="mc-form-wrapper"] [data-el="element-wrapper"] [data-el="textarea"] {
+    /* long text */
+	height: 150px;
+}
+
+/* email */
+[data-el="mc-form-wrapper"] [data-el="element-wrapper"] [data-el="text-input"][type="email"] {
+    /* email */
+}
+
+/* checkboxes and radios */
+[data-el="mc-form-wrapper"] [data-el="options-group-wrapper"] [data-el="options-group-legend"] {
+    /* legends for radio, checkboxes */
+	font-size: 1.063rem;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+}
+
+
+/* checkboxes */
+[data-el="mc-form-wrapper"] [data-el="options-group-wrapper"] [data-el="checkbox-group-wrapper"] {
+    /* checkboxes wrapper */
+}
+[data-el="mc-form-wrapper"] [data-el="options-group-wrapper"] [data-el="checkbox-input"] {
+    /* individual checkboxes */
+}
+[data-el="mc-form-wrapper"] [data-el="options-group-wrapper"] [data-el="checkbox-label"] {
+    /* individual checkboxes label */
+}
+
+
+/* radios */
+[data-el="mc-form-wrapper"] [data-el="options-group-wrapper"] [data-el="radio-group-wrapper"] {
+    /* radio wrapper */
+}
+[data-el="mc-form-wrapper"] [data-el="options-group-wrapper"] [data-el="radio-input"] {
+    /* individual radio */
+}
+[data-el="mc-form-wrapper"] [data-el="options-group-wrapper"] [data-el="radio-label"] {
+    /* individual radio labels */
+}
+
+/* dropdown */
+[data-el="mc-form-wrapper"] [data-el="element-wrapper"] [data-el="select-input"] {
+    /* dropdown */
+}
+
+
+/* toggle */
+[data-el="mc-form-wrapper"] [data-el="element-wrapper"] [data-el="toggle-wrapper"] {
+    /* toggle wrapper */
+}
+[data-el="mc-form-wrapper"] [data-el="element-wrapper"] [data-el="toggle-wrapper"] [data-el="toggle-input"] {
+    /* toggle */
+}
+[data-el="mc-form-wrapper"] [data-el="element-wrapper"] [data-el="toggle-wrapper"] [data-el="toggle-label"] {
+    /* toggle label */
+}
+
+/* free text */
+[data-el="mc-form-wrapper"] [data-el="element-wrapper"] [data-el="html-section"] {
+    /* free text */
+}
+
+/* date, time, date/time */
+[data-el="mc-form-wrapper"] [data-el="element-wrapper"] .react-datepicker-wrapper {
+    /* input field */
+}

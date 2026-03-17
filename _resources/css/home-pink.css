@@ -1,0 +1,157 @@
+/* emergency notice */
+/*#emergencyNotice 
+{
+float:left;
+    padding:0em;
+     font-style: normal;
+     font-size:1.25em;
+     font-weight:normal;
+     color:#000;
+     text-align:center;
+width:100%;
+	margin:0 ;
+    }*/
+.close-icon {margin:1em 1em 0 0;cursor:pointer;}
+.RedAlert {background-color:#ffa4a4;}
+.YellowWarning {background-color:#FFEAA1;}
+.BlueInfo {background-color:#ADE0F9;}
+.WhiteInfo {background-color:#fff;}
+
+.top-bar{
+	background-color: #F9D7E5;
+}
+
+.navbar .audience > li > a, .navbar .quick-nav > li.a-z-index > a, .navbar .quick-nav > li.quick-links > a{
+	color: #BC1055;
+}
+
+.navbar .audience > li > a:hover, .navbar .audience > li > a:focus{
+	color: #000000;
+}
+
+.navbar-right.quick-nav li.a-z-index a:hover, .navbar-right.quick-nav li.a-z-index a:focus, .navbar .quick-nav > li.quick-links > a:hover {
+    color: #000000;
+}
+
+#button-apply{
+	background: #BC1055;
+}
+
+#button-apply:hover{
+	background: #000000;
+}
+
+.navbar .quick-nav > li > a.apply-now{
+	color: #FFFFFF;
+}
+
+.navbar .quick-nav .give a{
+	color: #BC1055;
+}
+
+.navbar-default .navbar-nav > .give > a:focus, .navbar-default .navbar-nav > .give > a:hover {
+    color: #000000;
+}
+
+.navbar .main-nav > li > a{
+	color: #BC1055;
+}
+
+.navbar .main-nav > li > a:hover, .navbar .main-nav > li > a:focus {
+	background: #BC1055;
+}
+
+#contentDiv h3{
+	color: #BC1055;
+}
+
+#contentDiv .image {
+    border-top: 12px solid #BC1055;
+}
+
+a{
+    color: #BC1055;
+}
+
+a:hover{
+    color: #000000;
+}
+
+#contentDiv p{
+    color: #000000;
+}
+
+a.button, .click-throughs a.button, .click-throughs div.button, #maincontent a.button, .heading .popular li a.button {
+    background: #BC1055;
+    color: #FFFFFF;
+}
+
+a.button:hover, .click-throughs a.button:hover, .click-throughs div.button:hover, #maincontent a.button:hover, .heading .popular li a.button:hover, a.button:focus, .click-throughs a.button:focus, .click-throughs div.button:focus, #maincontent a.button:focus, .heading .popular li a.button:focus {
+    color: #FFF;
+    background: #000000;
+
+}
+
+/*.events-wrapper{
+	background-color: #F9D7E5;
+}*/
+
+.student-type-wrapper{
+	background-color: #F9D7E5;
+}
+
+#contentDiv .student-testimonials img.blue, #contentDiv .student-testimonials img.pink, #contentDiv .student-testimonials img.green{
+	border: 5px solid #BC1055;
+}
+
+.student-testimonials.owl-theme .owl-dots .owl-dot.active span, .student-testimonials.owl-theme .owl-dots .owl-dot:hover span {
+    background: #BC1055;
+}
+
+.student-testimonials.owl-theme .owl-dots .owl-dot span{
+	    border: solid 2px #000000;
+}
+
+.student-testimonials .quote:before, .student-testimonials .quote, .student-testimonials .quote:after, .student-testimonials .name, .student-testimonials .title{
+	color: #BC1055;
+}
+
+#footer-wrap, #lastUpdate{
+	background-color: #F9D7E5;
+	color: #BC1055;
+}
+
+#footer, #footer .info a, #footer a, #lastUpdate a{
+	color: #BC1055;
+}
+
+#lastUpdate .container:before{
+	border-top: 1px solid #BC1055;
+}
+
+a:hover[rel="external"]::after {
+    content: url(/_resources/images/common/new-win-BC1055-16px-pink.png);
+ }
+
+a[class="inverse"]::after {
+    content: url(/_resources/images/common/new-win-BC1055-16px-pink.png);
+}
+
+@media (max-width: 767px){
+	
+	#photoDivNew .slide-content {    	
+		background-color: #bc1055;	
+	}
+	
+	.mobile-quicklinks li a, #headerDiv .navbar-toggle{
+		color: #bc1055;
+	}
+	
+	.navbar-default .navbar-toggle .icon-bar{
+	background: #bc1055;
+	}
+	
+	.siteNavigation{
+		background-color: #bc1055;
+	}
+}

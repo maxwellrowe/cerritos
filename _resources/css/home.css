@@ -1,0 +1,19 @@
+/* emergency notice */
+/*#emergencyNotice 
+{
+float:left;
+    padding:0em;
+     font-style: normal;
+     font-size:1.25em;
+     font-weight:normal;
+     color:#000;
+     text-align:center;
+width:100%;
+	margin:0 ;
+    }*/
+.close-icon {margin:2em 1em 0 0;cursor:pointer;}
+.RedAlert {background-color:#ffa4a4;}
+.YellowWarning {background-color:#FFEAA1;}
+.BlueInfo {background-color:#ADE0F9;}
+.WhiteInfo {background-color:#fff;}
+.GreenInfo {background-color:#5fb08f;}

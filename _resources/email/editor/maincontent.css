@@ -1,0 +1,195 @@
+hr {
+	color: grey;
+	background-color: grey;
+	border: 2px dashed black;
+	padding: 3px;
+}
+
+/* CSS that controls the way the snippets behave in the WYSIWYG*/
+.ou-help {
+	font-size: 13px !important;
+	font-style: italic;
+	text-align:center;
+	background: #444444;
+	color:#ffffff;
+	font-weight:none;
+	cursor: default;
+	user-select: none;
+	-o-user-select:none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-ms-user-select: none;
+}
+.ou-help-image {
+	font-size: 13px !important;
+	font-style: italic;
+	text-align:center;
+	font-weight:none;
+	background-image: url('*** Broken Link ***');
+	height:300px;
+	cursor: default;
+	user-select: none;
+	-o-user-select:none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-ms-user-select: none;
+}
+
+th{ background:#eee; text-align:center; }
+
+.ou-help p{ color:#FFFFFF; }
+.fifty { width:50%; }
+.thirty-three { width:33%; }
+.twenty-five { width:25%; }
+
+.rss-title, .rss-author, .rss-item-month, .rss-item-month-name, .rss-item-day, .rss-item-day-name, .rss-item-year, .rss-body, .rss-image, .rss-item-link {
+	background-color:#FFFF00;
+}
+
+
+
+
+
+.ou-justedit-region {
+	background-color: #FFFFFF !important;
+	color: #000000 !important;
+	padding: 15px;
+	width: 98%;
+}
+/* Fix issue with bootstrap buttons in WYSIWYG */
+.ou-justedit-region .btn{
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;	
+}
+
+table[class^=ou-]{ width: 100%; cursor: default; margin: 32px 0 !important; }
+
+table[class^="ou-"] img { max-width: 100%; max-height: 100%; width: auto; height: auto; }
+
+table[class^="ou-"], .mce-item-table, .mce-item-table td, .mce-item-table th, .mce-item-table caption {
+	border-collapse: collapse;
+    border-spacing: 0px;
+	border: 1px solid #b1b1b1;
+	box-sizing: border-box;
+}
+
+[class^=ou-] thead tr th, [class^=ou-] tbody tr th, [class^=ou-] caption, [class^=ou-] thead tr td { font-weight: 800; }
+
+[class^=ou-] thead tr th, [class^=ou-] tbody tr th, [class^=ou-] caption, [class^=ou-] thead tr td, [class^=ou-] tbody tr td{
+	color: #000;
+	font-size: 14px;
+	padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+	padding-right: 5px;
+	vertical-align: top;
+}
+
+[class^="ou-"] thead tr th, [class^="ou-"] tbody tr th ,[class^="ou-"] caption {
+    background: none repeat scroll 0 0 #f0f0f0;
+	color: #333;
+	font-weight: 600;
+    font-size: 14px;
+}
+
+[class^=ou-] caption {
+	font-size: 18px;
+	text-align: center;
+	background-image: linear-gradient(to bottom,#f9f9f9,#d3d3d3);
+	margin: 0px;
+    border-bottom: 0;
+}
+
+
+
+table > thead > tr[class="width"] > th, 
+table > thead > tr[class="color"] > th, 
+table > thead > tr[class="options"] > th { 
+	background-color: #ffffff;
+	font-weight: initial;
+	font-size: 14px;
+}
+
+
+/********************************
+ * START Table Input Hint Styling
+ ********************************/
+
+/* Generic table "tool-tip/alert" info styling */
+table[class^="ou-"] th:before,
+table[class^="ou-"] td:before,
+table[class^="ou-"] caption:before,
+table[class^="ou-"]:before {
+	display: block;
+	padding: 5px 15px;
+	margin-bottom: 10px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+/********************************
+ * END Table Input Hint Styling
+ ********************************/
+
+/* helper text */
+table.ou-one-column-full-width > tbody > tr[class="heading"] > td:nth-child(1):before { content: 'Enter heading text for the region.'; }
+table.ou-one-column-full-width > tbody > tr[class="content"] > td:nth-child(1):before { content: 'Enter the content for the region.'; }
+
+table.ou-two-column-50-50 > tbody > tr[class="content"] > td[class="fifty"]:nth-child(1):before { content: 'Enter the content for the left column.'; }
+table.ou-two-column-50-50 > tbody > tr[class="content"] > td[class="fifty"]:nth-child(2):before { content: 'Enter the content for the right column.'; }
+
+table.ou-two-column-flex > thead > tr[class="width"] > th:nth-child(1):before { content: 'Enter the width of the left column.'; }
+table.ou-two-column-flex > thead > tr[class="width"] > th:nth-child(2):before { content: 'Enter the width of the right column.'; }
+table.ou-two-column-flex > tbody > tr[class="heading"] > td:nth-child(1):before { content: 'Enter heading text for the region.'; }
+table.ou-two-column-flex > tbody > tr[class="content"] > td:nth-child(1):before { content: 'Enter the content for the left column.'; }
+table.ou-two-column-flex > tbody > tr[class="content"] > td:nth-child(2):before { content: 'Enter the content for the right column.'; }
+
+table.ou-panel > thead > tr[class="color"] > th:nth-child(1):before { content: 'Enter the color option for the panel.'; }
+table.ou-panel > tbody > tr[class="content"] > td:nth-child(1):before { content: 'Enter the content for the panel.'; }
+
+table.ou-panel-two-column-flex > thead > tr[class="options"] > th:nth-child(1):before { content: 'Enter the width of the left column.'; }
+table.ou-panel-two-column-flex > thead > tr[class="options"] > th:nth-child(2):before { content: 'Enter the width of the right column.'; }
+table.ou-panel-two-column-flex > thead > tr[class="options"] > th:nth-child(3):before { content: 'Enter the color option for the panel.'; }
+table.ou-panel-two-column-flex > tbody > tr[class="heading"] > td:nth-child(1):before { content: 'Enter heading text for the region.'; }
+table.ou-panel-two-column-flex > tbody > tr[class="heading"] > td:nth-child(1):before { content: 'Enter the content for the region.'; }
+
+table.ou-button-centered > thead > tr[class="options"] > th:nth-child(1):before { content: 'Enter one: tiny, small, medium, large.'; }
+table.ou-button-centered > thead > tr[class="options"] > th:nth-child(2):before { content: 'Enter one: theme, blue, green, grey, red.'; }
+table.ou-button-centered > thead > tr[class="options"] > th:nth-child(3):before { content: 'Enter one: radius, round, none.'; }
+table.ou-button-centered > tbody > tr[class="content"] > td:nth-child(1):before { content: 'Enter the button content.'; }
+
+table.ou-button-left > thead > tr[class="options"] > th:nth-child(1):before { content: 'Enter one: tiny, small, medium, large.'; }
+table.ou-button-left > thead > tr[class="options"] > th:nth-child(2):before { content: 'Enter one: theme, blue, green, grey, red.'; }
+table.ou-button-left > thead > tr[class="options"] > th:nth-child(3):before { content: 'Enter one: radius, round, none.'; }
+table.ou-button-left > tbody > tr[class="content"] > td:nth-child(1):before { content: 'Enter the button content.'; }
+
+table.ou-button-full-width > thead > tr[class="options"] > th:nth-child(1):before { content: 'Enter one: tiny, small, medium, large.'; }
+table.ou-button-full-width > thead > tr[class="options"] > th:nth-child(2):before { content: 'Enter one: theme, blue, green, grey, red.'; }
+table.ou-button-full-width > thead > tr[class="options"] > th:nth-child(3):before { content: 'Enter one: radius, round, none.'; }
+table.ou-button-full-width > tbody > tr[class="content"] > td:nth-child(1):before { content: 'Enter the button content.'; }
+
+table.ou-block-grid-two-up > tbody > tr[class="heading"] > td:nth-child(1):before { content: 'Enter heading text for the region.'; }
+table.ou-block-grid-two-up > tbody > tr[class="content"] > td:nth-child(1):before { content: 'Enter the content for the left column.'; }
+table.ou-block-grid-two-up > tbody > tr[class="content"] > td:nth-child(2):before { content: 'Enter the content for the right column.'; }
+
+table.ou-block-grid-three-up > tbody > tr[class="heading"] > td:nth-child(1):before { content: 'Enter heading text for the region.'; }
+table.ou-block-grid-three-up > tbody > tr[class="content"] > td:nth-child(1):before { content: 'Enter the content for the left column.'; }
+table.ou-block-grid-three-up > tbody > tr[class="content"] > td:nth-child(2):before { content: 'Enter the content for the center column.'; }
+table.ou-block-grid-three-up > tbody > tr[class="content"] > td:nth-child(3):before { content: 'Enter the content for the right column.'; }
+
+table.ou-block-grid-four-up > tbody > tr[class="heading"] > td:nth-child(1):before { content: 'Enter heading text for the region.'; }
+table.ou-block-grid-four-up > tbody > tr[class="content"] > td:nth-child(1):before { content: 'Enter the content for the left column.'; }
+table.ou-block-grid-four-up > tbody > tr[class="content"] > td:nth-child(2):before { content: 'Enter the content for the center-left column.'; }
+table.ou-block-grid-four-up > tbody > tr[class="content"] > td:nth-child(3):before { content: 'Enter the content for the center-right column.'; }
+table.ou-block-grid-four-up > tbody > tr[class="content"] > td:nth-child(4):before { content: 'Enter the content for the right column.'; }
+
+table.ou-short-event-repeater > tbody > tr[class="rss"] > td:nth-child(1):before { content: 'Enter a valid Omni CMS RSS feed URL. Events will not display in the CMS, and will be added via Email Campaign Manager.'; }

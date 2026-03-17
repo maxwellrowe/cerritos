@@ -1,0 +1,113 @@
+/* Custom Slick Slider 4/8/2024 */
+.custom-slick .slick, .custom-slick-2 .slick {
+		background-color: #E1E1E8
+	}
+	
+.custom-slick .slick .slick-caption, .custom-slick-2 .slick-caption{
+	background: none !important;
+	padding: 1rem 0 !important;
+	position: relative !important;
+	/*line-height: 0;*/
+	text-align: center;
+	min-height: 4rem;
+}	
+
+.custom-slick .tpc-small-top-slick, .custom-slick-2 .tpc-small-top-slick{
+	font-size: 1.25rem;
+	font-weight: 700;
+	line-height: 1.75;
+	color: #002e66;
+   	text-transform: uppercase;	
+}
+	
+.custom-slick .tpc-small-bottom-slick, .custom-slick-2 .tpc-small-bottom-slick{
+	font-size: 1rem;
+	line-height: 2.25;
+    color: #002e66;
+    text-transform: uppercase;
+}
+	
+.custom-slick .buttons, .custom-slick-2 .buttons{
+    display: block;
+    position: absolute;
+    margin-top: -2.5em; 
+	margin-bottom: 1rem;
+    left: auto;
+    right: 20px;
+    height: auto;
+}
+
+.mainHeadingText{
+	font-size: 1.5714rem;
+	color: #002e66;
+	font-weight: 700;
+	line-height: 1.5;
+	margin: 10px 0;
+}
+			
+.subHeadingText{
+	line-height: 1.4;
+	/*margin-bottom: 1.4rem;*/
+}
+
+.buttons{
+	display: block;
+	position: absolute;
+	margin-top: -2.5em; 
+	margin-bottom: 1rem;
+	left: auto;
+	right: 20px;
+	height: auto;
+}
+
+button {
+    background: #002E66;
+    color: #FFFFFF;
+    border: none;
+    position: relative;
+    padding: 2px 8px 2px;
+    min-width: 100px;
+	font-weight: bold;
+ }
+
+button:hover {
+	background: #FFBE00;
+	color: #002E66;
+	font-weight: bold;
+}
+
+.custom-slick .spacer, .custom-slick-2 .spacer{
+	min-height: 3rem;
+}
+	
+	@media (max-width: 992px) {
+	
+		.custom-slick .slick .slick-caption, .custom-slick-2 .slick .slick-caption{
+			position: relative !important;
+		}
+	
+		#maincontent a.button{
+			display: block;
+			text-align: center;
+			/*margin-top: 1rem;*/
+		}
+	
+		.finaid-insta {
+			width: 100%;
+			margin-top: 0;
+		}
+	
+		.custom-slick .buttons, .custom-slick-2 .buttons{
+			margin-top: 0.5em;
+		}
+		
+		.buttons{
+			margin-top: 0.5em;
+		}
+	
+	}
+	
+	
+	
+
+/* End Custom Slick Slider Styles */

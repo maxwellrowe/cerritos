@@ -1,0 +1,21 @@
+<%@ Page Language="VB" %>
+<!DOCTYPE html>
+<script runat="server">
+    Sub Page_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+        Try
+            HttpContext.Current.Response.Clear()
+            HttpContext.Current.Response.Status = "301 Moved Permanently"
+            HttpContext.Current.Response.AddHeader("Location", "<!--%echo var="target" -->")
+            HttpContext.Current.ApplicationInstance.CompleteRequest()
+        Catch ex As Exception
+            Response.Write(ex.Message)
+        End Try
+    End Sub
+</script>
+<html lang="en-us">
+<head>
+    <title></title>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="abc-index.xsl"?>
+<abcindex>
+	<link>
+   	<linktext>Falcon's Finest Milestone Pin Program</linktext>
+    <url>/transfer-center/Falcons-Finest.htm</url>
+   </link>		
+	<link>
+   	<linktext>Justice Scholars Program</linktext>
+    <url>/student-services/justice-scholars.htm</url>
+   </link>
+	<link>
+   	<linktext>Open Educational Resources (OER) &amp; Zero Textbook Cost (ZTC)</linktext>
+    <url>/OER/default.htm</url>
+   </link>	
+	<link>
+   	<linktext>California Native Plant Sanctuary</linktext>
+    <url>/cnps/default.htm</url>
+   </link>	
+	<link>
+   	<linktext>Car Show (70th Celebration)</linktext>
+    <url>/70/car-show.htm</url>
+   </link>	<link>
+   	<linktext>Impactful Teaching Toolkit</linktext>
+    <url>/impactful-teaching-toolkit/default.htm</url>
+   </link>
+	<link>
+   	<linktext>Artificial Intelligence Taskforce</linktext>
+    <url>/ait/default.htm</url>
+   </link>
+	<link>
+   	<linktext>Cal LAW Pathway</linktext>
+    <url>/cal-law/default.htm</url>
+   </link>
+	<link>
+   	<linktext>Apprenticeship Programs</linktext>
+    <url>/apprenticeship-programs/default.htm</url>
+   </link>
+	<link>
+   	<linktext>Japanese</linktext>
+    <url>/fl/default.htm</url>
+   </link>
+	<link>
+   	<linktext>Korean</linktext>
+    <url>/fl/default.htm</url>
+   </link>
+	<link>
+   	<linktext>Chinese</linktext>
+    <url>/fl/default.htm</url>
+   </link>
+	<link>
+   	<linktext>American Sign Language (ASL)</linktext>
+    <url>/fl/default.htm</url>
+   </link>
+	<link>
+   	<linktext>FacilitiesLink</linktext>
+    <url>https://cerritos.metabim.com/Default.htm</url>
+   </link>
+   <link>
+   	<linktext>Students First Framework</linktext>
+    <url>/about/students-first-framework/default.htm</url>
+   </link>
+   <link>
+   	<linktext>UndocuFalcon Scholars Program</linktext>
+    <url>/student-services/student-equity-cmte/ab540/default.htm</url>
+  </link>
+	<link>
+   	<linktext>Performing Arts Center (PAC)</linktext>
+    <url>/pac/default.htm</url>
+  </link>
+	<link>
+   	<linktext>MESA – Mathematics, Engineering, Science, Achievement</linktext>
+    <url>/mesa/default.htm</url>
+  </link>
+	<link>
+   	<linktext>AED/Narcan Map</linktext>
+    <url>/campus-guide/default.htm#aednarcan</url>
+  </link>
+	<link>
+   	<linktext>All Gender Restroom Map</linktext>
+    <url>/agrr</url>
+  </link>
+	<link>
+   	<linktext>LGBTQ+ Program</linktext>
+    <url>/LGBTQ/default.htm</url>
+  </link>
+	<link>
+   	<linktext>PAACE</linktext>
+    <url>/paace/default.htm</url>
+  </link>
+	<link>
+   	<linktext>Fall Classes at Cerritos College</linktext>
+    <url>/fall/default.htm</url>
+  </link>
+	<link>
+   	<linktext>Summer Classes at Cerritos College</linktext>
+    <url>/summer/default.htm</url>
+  </link>
+	<link>
+   	<linktext>Spring Classes at Cerritos College</linktext>
+    <url>/spring/default.htm</url>
+  </link>
+  <link>
+   	<linktext>Programs and Services Directory</linktext>
+    <url>/campus-guide/program-directory/default.htm</url>
+  </link>
+	<link>
+   	<linktext>Caring Campus</linktext>
+    <url>/caring-campus/default.htm</url>
+  </link>
+	<link>
+   	<linktext>Black Excellence Collaboration (BEC)</linktext>
+    <url>/bec/</url>
+  </link>
+	<link>
+   	<linktext>Dual Enrollment</linktext>
+    <url>/epp/Dual_Enrollment.htm</url>
+  </link>
+	<link>
+   	<linktext>Crisis Assessment, Intervention, and Response (CAIR) Team</linktext>
+    <url>/cair/</url>
+  </link>
+	<link>
+   	<linktext>COVID-19 Updates</linktext>
+    <url>/covid-19/</url>
+  </link>
+	<link>
+   	<linktext>Drawing &amp; Painting</linktext>
+    <url>/drawing-and-painting/</url>
+  </link>
+	<link>
+   	<linktext>Printmaking</linktext>
+    <url>/printmaking/</url>
+  </link>
+	<link>
+   	<linktext>Ceramics and Two- &amp; Three-Dimensional Design</linktext>
+    <url>/ceramics/</url>
+  </link>
+	<link>
+   	<linktext>BE-STELLAR</linktext>
+    <url>/bestellar/</url>
+  </link>
+	<link>
+   	<linktext>Employee Self Service (ESS)</linktext>
+    <url>/ess/</url>
+  </link>
+<link>
+   	<linktext>Visual &amp; Cultural Studies</linktext>
+    <url>/vcs/</url>
+  </link>
+	 <link>
+   	<linktext>Art History</linktext>
+    <url>/arthistory/</url>
+  </link>
+	  <link>
+   	<linktext>Learning &amp; Career Pathways</linktext>
+    <url>/learningcareerpathways/</url>
+  </link>
+	<link>
+   	<linktext>Falcon Leadership Institute</linktext>
+    <url>/fli/</url>
+  </link>
+	<link>
+   	<linktext>Kinesiology</linktext>
+    <url>/kinesiology/</url>
+  </link>
+	<link>
+   	<linktext>Falcon Day</linktext>
+    <url>/falcon-day/</url>
+  </link>
+	<link>
+   	<linktext>Service Excellence Commitment</linktext>
+    <url>/president/Service_Excellence_Commitment.htm</url>
+  </link>
+	<link>
+   	<linktext>FalconSync</linktext>
+    <url>https://cerritos.campuslabs.com/engage/</url>
+  </link>
+	<link>
+   	<linktext>Economics</linktext>
+    <url>/economics/</url>
+  </link>
+	<link>
+   	<linktext>Cerritos College Online</linktext>
+    <url>/online/</url>
+  </link>
+	<link>
+   	<linktext>Black/Africana Studies</linktext>
+    <url>/black-africana-studies/</url>
+  </link>
+	<link>
+   	<linktext>Village at Cerritos College</linktext>
+    <url>/thevillage/</url>
+  </link>
+	<link>
+   	<linktext>The Village at Cerritos College</linktext>
+    <url>/thevillage/</url>
+  </link>
+	<link>
+   	<linktext>BoardDocs</linktext>
+    <url>https://go.boarddocs.com/ca/cerritos/Board.nsf/Public</url>
+  </link>
+	<link>
+   	<linktext>Student Accessibility Services (formerly Disabled Student Programs and Services)</linktext>
+    <url>/dsps/</url>
+  </link>
+	<link>
+   	<linktext>Campus Victim's Advocate</linktext>
+    <url>/shs/campus-victim-advocate.htm</url>
+  </link>
+	<link>
+   	<linktext>Chicano Studies</linktext>
+    <url>/chicano-studies/</url>
+  </link>
+	<link>
+   	<linktext>Study Abroad Program</linktext>
+    <url>/studyabroad/</url>
+  </link>
+	<link>
+   	<linktext>La Mirada Adult School</linktext>
+    <url>/lamirada/</url>
+  </link>
+	<link>
+   	<linktext>Falcon's Nest</linktext>
+    <url>/falcons-nest/</url>
+  </link>
+	<link>
+   	<linktext>Falcon Basic Needs</linktext>
+    <url>/basic-needs/</url>
+  </link>
+	<link>
+   	<linktext>Dance</linktext>
+    <url>/dance/</url>
+  </link>
+	<link>
+   	<linktext>ACCME</linktext>
+    <url>/accme/</url>
+  </link>
+	<link>
+   	<linktext>Faculty Hiring Prioritization (FHP) Committee</linktext>
+    <url>/fhp/</url>
+  </link>
+	<link>
+   	<linktext>Title IX</linktext>
+    <url>/title-ix/</url>
+  </link>
+	<link>
+   	<linktext>Umoja</linktext>
+    <url>/umoja/</url>
+  </link>
+	<link>
+   	<linktext>Journalism &amp; Media Studies</linktext>
+    <url>/jams/</url>
+  </link>
+	<link>
+   	<linktext>Omni CMS Login</linktext>
+    <url>/cms/</url>
+  </link>
+	<link>
+   	<linktext>Employee Directory</linktext>
+    <url>/employees/default.htm</url>
+  </link>	
+	<link>
+   	<linktext>Staff &amp; Faculty Web Pages</linktext>
+    <url>/employees/default.htm</url>
+  </link>	
+  <link>
+   	<linktext>Housing and Food Insecurities</linktext>
+    <url>/food-housing/</url>
+  </link>
+	<link>
+   	<linktext>Food and Housing Insecurities</linktext>
+    <url>/food-housing/</url>
+  </link>
+	<link>
+   	<linktext>Guided Pathways</linktext>
+    <url>/guided-pathways/</url>
+  </link>	
+  <link>
+   	<linktext>Cerritos Complete</linktext>
+    <url>/cerritos-complete</url>
+  </link>	
+	<link>
+   	<linktext>Schedule of Open &amp; Waitlist Classes </linktext>
+    <url>https://secure.cerritos.edu/schedule/classes.cgi?class=all&amp;type=o,w</url>
+  </link>
+<link>
+   	<linktext>Educational Master Plan</linktext>
+    <url>/emp</url>
+  </link>	
+<link>
+   	<linktext>Open &amp; Waitlist Classes </linktext>
+    <url>https://secure.cerritos.edu/schedule/classes.cgi?class=all&amp;type=o,w</url>
+  </link>
+ <link>
+   	<linktext>Cerritos College Open &amp; Waitlist  Classes </linktext>
+    <url>https://secure.cerritos.edu/schedule/classes.cgi?class=all&amp;type=o,w</url>
+  </link>
+  <link>
+    <linktext>Dreamers</linktext>
+    <url>/dream/</url>
+  </link>
+  <link>
+    <linktext>Canvas</linktext>
+    <url>/canvas/</url>
+  </link>
+  <link>
+    <linktext>Welcome Center</linktext>
+    <url>/welcome-center</url>
+  </link>
+  <link>
+    <linktext>AB540 for Students</linktext>
+    <url>/ab540</url>
+  </link>
+  <link>
+    <linktext>About Cerritos College</linktext>
+    <url>/guide</url>
+  </link>
+  <link>
+    <linktext>Academic Affairs</linktext>
+    <url>/academic-affairs/</url>
+  </link>
+  <link>
+    <linktext>Academic Calendar</linktext>
+    <url>/campus-guide/academic-calendar.htm</url>
+  </link>
+  <link>
+    <linktext>Academic Deans &amp; Chairs</linktext>
+    <url>/dept-chairs</url>
+  </link>
+  <link>
+    <linktext>Academic Departments</linktext>
+    <url>/academic-affairs/academic-departments-and-chairs.htm</url>
+  </link>
+  <link>
+    <linktext>Academic Excellence</linktext>
+    <url>/academic-excellence</url>
+  </link>
+  <link>
+    <linktext>Academic Excellence Committee</linktext>
+    <url>/academic-excellence-cmte</url>
+  </link>
+  <link>
+    <linktext>Academic Honesty/Dishonesty Policy</linktext>
+    <url>/academic-honesty</url>
+  </link>
+  <link>
+    <linktext>Accounting</linktext>
+    <url>/accounting</url>
+  </link>
+  <link>
+    <linktext>Accreditation</linktext>
+    <url>/accreditation</url>
+  </link>
+  <link>
+    <linktext>Administration of Justice</linktext>
+    <url>/aj</url>
+  </link>
+  <link>
+    <linktext>Admissions and Records</linktext>
+    <url>/admissions</url>
+  </link>
+  <link>
+    <linktext>Adult Education and Diversity Programs (AED)</linktext>
+    <url>/aed</url>
+  </link>
+  <link>
+    <linktext>Advanced Transportation &amp; Logistics Center</linktext>
+    <url>/atte</url>
+  </link>
+  <link>
+    <linktext>ASK – Academic Support Keys</linktext>
+    <url>/ask</url>
+  </link>  
+  <link>
+    <linktext>Anatomy and Physiology</linktext>
+    <url>/ap</url>
+  </link>
+  <link>
+    <linktext>Anthropology</linktext>
+    <url>/hss</url>
+  </link>
+  <link>
+    <linktext>Architecture</linktext>
+    <url>/arch</url>
+  </link>
+  <link>
+    <linktext>Art and Design</linktext>
+    <url>/art</url>
+  </link>
+  <link>
+    <linktext>Art Gallery</linktext>
+    <url>/art-gallery/</url>
+  </link>
+  <link>
+    <linktext>Placement</linktext>
+    <url>/assessment-center/</url>
+  </link>
+  <link>
+    <linktext>Assistive Technology</linktext>
+    <url>/assistive-tech/</url>
+  </link>
+  <link>
+    <linktext>Associated Students of Cerritos College (ASCC)</linktext>
+    <url>/activities/</url>
+  </link>
+  <link>
+    <linktext>Astronomy</linktext>
+    <url>/physics/</url>
+  </link>
+  <link>
+    <linktext>Athletics</linktext>
+    <url>http://cerritosfalcons.com</url>
+  </link>
+  <link>
+    <linktext>Automotive Collision Repair</linktext>
+    <url>/autobody/</url>
+  </link>
+  <link>
+    <linktext>Automotive Mechanical Repair</linktext>
+    <url>/advtranstechctr/automr/</url>
+  </link>
+  <link>
+    <linktext>Biology</linktext>
+    <url>/bio</url>
+  </link>
+  <link>
+    <linktext>Board of Trustees</linktext>
+    <url>/board/</url>
+  </link>
+  <link>
+    <linktext>Board Policies</linktext>
+    <url>/board-policies/</url>
+  </link>
+  <link>
+    <linktext>Bond (G.O. Bond)</linktext>
+    <url>/bond/</url>
+  </link>
+  <link>
+    <linktext>Bookstore, Cerritos College</linktext>
+    <url>https://www.bkstr.com/cerritosstore/home/en</url>
+  </link>
+  <link>
+    <linktext>Botany</linktext>
+    <url>/sem/</url>
+  </link>
+  <link>
+    <linktext>Budget</linktext>
+    <url>/budget/</url>
+  </link>
+  <link>
+    <linktext>Business Administration</linktext>
+    <url>/ba/</url>
+  </link>
+  <link>
+    <linktext>Business Communications Office Technology</linktext>
+    <url>/bcot/</url>
+  </link>
+  <link>
+    <linktext>Business Education</linktext>
+    <url>/be/</url>
+  </link>
+  <link>
+    <linktext>Finance/Accounting</linktext>
+    <url>/bf/</url>
+  </link>
+  <link>
+    <linktext>Legal</linktext>
+    <url>/bl/</url>
+  </link>
+  <link>
+    <linktext>Real Estate</linktext>
+    <url>/real-estate/</url>
+  </link>
+  <link>
+    <linktext>Business Services</linktext>
+    <url>/business-services/</url>
+  </link>
+  <link>
+    <linktext>CAIR Referral Form</linktext>
+    <url>/judicial-affairs/</url>
+	<popup>y</popup>
+  </link>
+  <link>
+    <linktext>California Community Colleges</linktext>
+    <url>/ccc/</url>
+  </link>
+  <link>
+    <linktext>CalWORKs</linktext>
+    <url>/calworks/</url>
+  </link>
+  <link>
+    <linktext>Cerritos College Calendar</linktext>
+    <url>/calendar/</url>
+  </link>
+  <link>
+    <linktext>Campus Connection</linktext>
+    <url>/connection/</url>
+  </link>
+  <link>
+    <linktext>Campus Guide and Events</linktext>
+    <url>/campus-guide/</url>
+  </link>
+  <link>
+    <linktext>Campus View</linktext>
+    <url>/campusview/</url>
+  </link>
+  <link>
+    <linktext>Career Services</linktext>
+    <url>/career-services/</url>
+  </link>
+  <link>
+    <linktext>Career Technical Education (CTE)/Perkins</linktext>
+    <url>/cte/</url>
+  </link>
+  <link>
+    <linktext>Catalog</linktext>
+    <url>/catalog/</url>
+    <Keywords>catalog, general catalog, class catalog</Keywords>
+  </link>
+  <link>
+    <linktext>Center for Advanced Transportation Technology</linktext>
+    <url>/advtranstechctr/</url>
+    <Keywords>Attc automotive motorcycle cars mechanics gm ford chrysler automobile collision repair refinishing fuel electric vehicles consortium Autobody automotive programs automotives </Keywords>
+  </link>
+  <link>
+    <linktext>Center for Applied Competitive Technologies (CACT)</linktext>
+    <url>/cact/</url>
+  </link>
+  <link>
+    <linktext>Center for Teaching Excellence (CTX)</linktext>
+    <url>/ctx/</url>
+  </link>
+  <link>
+    <linktext>Emergency Information</linktext>
+    <url>/police/</url>
+    <Keywords>Emergency Information, Earthquake, Terrorism, Fire, Natural Disaster, Hazardous Material, Bomb Threat, Explosion, Medical, Violent, Criminal Behavior, Utility Failure, Plans, Preparedness, Plans</Keywords>
+  </link>
+  <link>
+    <linktext>Cerritos College Faculty Federation (CCFF)</linktext>
+    <url>/ccff/</url>
+    <Keywords>Cerritos College Faculty Federation, CCFF, Union, Faculty, Faculty Union</Keywords>
+  </link>
+  <link>
+    <linktext>Cerritos College Hall of Fame</linktext>
+    <url>/hof/</url>
+  </link>
+  <link>
+    <linktext>Cerritos College Retiree Association</linktext>
+    <url>/ccrfa/</url>
+    <Keywords>CCRFA Retirement</Keywords>
+  </link>
+  <link>
+    <linktext>Chairs Council</linktext>
+    <url>/chairs-council/</url>
+  </link>
+  <link>
+    <linktext>Chemistry</linktext>
+    <url>/chemistry/</url>
+    <Keywords>sem</Keywords>
+  </link>
+  <link>
+    <linktext>Child Development</linktext>
+    <url>/child-development/</url>
+    <Keywords>
+      child development Child Development Center Early Childhood
+      Family Childcare Infant Toddler Instructional Aide Parent Education School Age Special Education
+    </Keywords>
+  </link>
+  <link>
+    <linktext>Child Development Center</linktext>
+    <url>/cdc/</url>
+    <Keywords>cdc Child Care Day care preschool pre-school pre school day-care daycare child-care childcare CHILD CARE CENTER</Keywords>
+  </link>
+  <link>
+    <linktext>College Coordinating Committee</linktext>
+    <url>/coordinating-committee/</url>
+  </link>
+  <link>
+    <linktext>Commencement</linktext>
+    <url>/commencement/</url>
+    <Keywords>Commencement</Keywords>
+  </link>
+  <link>
+    <linktext>Community Education</linktext>
+    <url>/ce/</url>
+    <Keywords>first aid dance Children Summer School Reading Courses summer camp registration child education driver training rider course motorcycle license MOTORCYLCE RIDING COURSE PRESAT PRE-SAT cerritos college summer youth programs summer classes for kids</Keywords>
+  </link>
+  <link>
+    <linktext>Computer Information Sciences</linktext>
+    <url>/cis</url>
+    <Keywords>sql SEM MCSE class excel word powerpoint ms office programming vb perl c c++ java html javascript computer training networking technicians operators bcis business computer cpsci computer science a+ novell programming logic computer programming cisco CIS a+ certification a+ certificate CIT PROGRAM COMPUTER INFORMATION SYSTEMS</Keywords>
+  </link>
+  <link>
+    <linktext>Contemporary World Cultures</linktext>
+    <url>/cwc/</url>
+    <Keywords>contemporary world cultures, world cultures</Keywords>
+  </link>
+  <link>
+    <linktext>Content Management System (CMS)</linktext>
+    <url>http://www.cerritos.edu/cms</url>
+    <Keywords>cm system</Keywords>
+  </link>
+  <link>
+    <linktext>Cosmetology</linktext>
+    <url>/cosmetology/</url>
+    <Keywords>cosmotology</Keywords>
+  </link>
+  <link>
+    <linktext>Counseling</linktext>
+    <url>/counseling/</url>
+    <Keywords>SOCIAL WORKER academic probation Summer 2000 Summer2000 class schedules tutoring degree requirements prequisites counselors shedule AA graduation requirements A.A. A.A a.a. graduation requirements associates in arts degree Accuplacer Assessment Test assesment exam assessment exam assessment testing schedule assessment test calender assessment test calendar associate degree requirements advisement cerritos orientation college orentation</Keywords>
+  </link>
+  <link>
+    <linktext>Counseling Intranet</linktext>
+    <url>/counseling-intranet/</url>
+    <Keywords>SOCIAL WORKER academic probation Summer 2000 Summer2000 class schedules tutoring degree requirements prequisites counselors shedule AA graduation requirements A.A. A.A</Keywords>
+  </link>
+  <link>
+    <linktext>CSEA Chapter 161</linktext>
+    <url>/csea/</url>
+    <Keywords>california school employees association union </Keywords>
+  </link>
+  <link>
+    <linktext>Culinary Arts</linktext>
+    <url>/culinary/</url>
+    <Keywords>ca caterer food services culinary menu foods</Keywords>
+  </link>
+  <link>
+    <linktext>Curriculum Committee</linktext>
+    <url>/curriculum/</url>
+
+  </link>
+  <link>
+    <linktext>Daily Falcon</linktext>
+    <url>/dailyfalcon/</url>
+
+  </link>
+  <link>
+    <linktext>Deans, Listing of</linktext>
+    <url>/deans/</url>
+    <Keywords>Administrative Deans Executive Deans Instructional Deans Administrative Dean Executive Dean Instructional Dean Interim Dean Interim Deans Cerritos College Deans listing of division deans listing of departmental deans listing of deans academic departments academic chairs</Keywords>
+  </link>
+  <link>
+    <linktext>Declare a Major</linktext>
+    <url>/major/</url>
+
+  </link>
+  <link>
+    <linktext>Dental Assisting</linktext>
+    <url>/dental-assisting/</url>
+
+  </link>
+  <link>
+    <linktext>Dental Hygiene</linktext>
+    <url>/dentalhygiene</url>
+    <Keywords>dental assistant dental hygiene</Keywords>
+  </link>
+  <link>
+    <linktext>Directions to the Campus</linktext>
+    <url>/directions/</url>
+  </link>
+  <link>
+    <linktext>Disabled Student Programs &amp; Services (now Student Accessibility Services)</linktext>
+    <url>/dsps/</url>
+    <Keywords>sign language HANDICAPPED special education special ed hearing impared visually impared registration learning disabled students center</Keywords>
+  </link>
+  <link>
+    <linktext>Distance Education Program</linktext>
+    <url>/online/</url>
+    <Keywords>online classes on-line classes online courses on-line courses virtual classes virtual courses tol telecourses tvcourses tvclasses television classes EDT edTech educational technology Edtech Ed Tech edt de distance education distance learning online education online learning online courses online classes ecourses e-courses on line office hours on line class on line classes on line course on line courses omline</Keywords>
+  </link>
+  <link>
+    <linktext>District Organizational Chart</linktext>
+    <url>/hr/</url>
+    <Keywords>district organizational chart organization chart district</Keywords>
+  </link>
+  <link>
+    <linktext>Diversity</linktext>
+    <url>/diversity/</url>
+
+  </link>
+  <link>
+    <linktext>Diversity and Equal Employment Opportunity Advisor</linktext>
+    <url>/eeoac/</url>
+    <Keywords>EEOAC, Equal Employment Opportunity Advisory Committee</Keywords>
+  </link>
+  <link>
+    <linktext>Earth Science</linktext>
+    <url>/earth-science/</url>
+  </link>
+  <link>
+    <linktext>Economic Development</linktext>
+    <url>/oed/</url>
+    <Keywords>OED</Keywords>
+  </link>
+  <link>
+    <linktext>Educational Partnerships and Programs (EPP)</linktext>
+    <url>/epp/</url>
+
+  </link>
+  <link>
+    <linktext>Educational Technology Program (EDT)</linktext>
+    <url>/edt/</url>
+    <Keywords>Edtech Ed Tech edt de distance education distance learning online education online learning online courses online classes ecourses e-courses</Keywords>
+  </link>
+  <link>
+    <linktext>Emergency Operations Plan</linktext>
+    <url>/police/</url>
+    <Keywords>
+      emergency preparedness plan terrorist plan terrorism plan emergency drills Disaster Organizational Chart Disaster Aid Response Team Evacuation Team Evacuation plan Emergency Instructions First Aid Kits Operational Plan Disaster Crews Evacuations Utility Response Team Bomb Threats Explosives Hostage Barricaded Suspects Hostages HAZARDOUS MATERIALS Triage Kit
+
+    </Keywords>
+  </link>
+  <link>
+    <linktext>Emergency Text Alert</linktext>
+    <url>/police/ccalerts.htm</url>
+
+  </link>
+  <link>
+    <linktext>Employee Development Committee</linktext>
+    <url>/edc/</url>
+  </link>
+  <link>
+    <linktext>Energy</linktext>
+    <url>/sem/</url>
+  </link>
+  <link>
+    <linktext>Engineering</linktext>
+    <url>/physics/</url>
+  </link>
+  <link>
+    <linktext>Engineering Design Technology (ENGT)</linktext>
+    <url>/engt/</url>
+    <Keywords>
+      auto cad AUTOCAD
+    </Keywords>
+  </link>
+  <link>
+    <linktext>English</linktext>
+    <url>/english/</url>
+    <Keywords>freshman composition</Keywords>
+  </link>
+  <link>
+    <linktext>English as a Second Language</linktext>
+    <url>/esl/</url>
+    <Keywords>esl</Keywords>
+  </link>
+  <link>
+    <linktext>Enrollment Management Committee</linktext>
+    <url>/emc/</url>
+
+  </link>
+  <link>
+    <linktext>Entertainment Technology</linktext>
+    <url>/entertainment-technology/</url>
+    <Keywords>Entertainment Technology</Keywords>
+  </link>
+  <link>
+    <linktext>Extended Opportunity Program &amp; Services (EOPS)</linktext>
+    <url>/eops/</url>
+    <Keywords>EOPS child care veteran v a v. a.</Keywords>
+  </link>
+  <link>
+    <linktext>Facilities Department</linktext>
+    <url>/facilities/</url>
+  </link>
+  <link>
+    <linktext>Facilities Master Plan</linktext>
+    <url>/master-plan/</url>
+
+  </link>
+  <link>
+    <linktext>Facilities Planning Committee</linktext>
+    <url>/facilities-planning-committee/</url>
+
+  </link>
+  <link>
+    <linktext>Facts at a Glance</linktext>
+    <url>/facts/</url>
+
+  </link>
+  <link>
+    <linktext>Faculty &amp; Staff Web Pages</linktext>
+    <url>/employees/default.htm</url>
+    <Keywords>staff web pages Staff Directory staff email finder</Keywords>
+  </link>
+  <link>
+    <linktext>Faculty Senate</linktext>
+    <url>/faculty-senate/</url>
+  </link>
+  <link>
+    <linktext>Faculty Union (CCFF)</linktext>
+    <url>/ccff/</url>
+    <Keywords>Cerritos College Faculty Federation, CCFF, Union, Faculty, Faculty Union</Keywords>
+  </link>
+  <link>
+    <linktext>Faculty User Information</linktext>
+    <url>/it/</url>
+  </link>
+  <link>
+    <linktext>Falcon Leadership Academy</linktext>
+    <url>/fla/</url>
+
+  </link>
+  <link>
+    <linktext>Falcon News</linktext>
+    <url>/falconnews/</url>
+
+  </link>
+  <link>
+    <linktext>FAQs / Tech Support</linktext>
+    <url>/faq/</url>
+    <Keywords>help frequently asked questions faq technical support technical help computer support computer technical support computer tech support</Keywords>
+  </link>
+  <link>
+    <linktext>Film</linktext>
+    <url>/film/</url>
+    <Keywords>film motion picture movies director producer media</Keywords>
+  </link>
+  <link>
+    <linktext>Financial Aid</linktext>
+    <url>/finaid/</url>
+    <Keywords>financial office scholarships applications scholarship applications</Keywords>
+  </link>
+  <link>
+    <linktext>Fine Arts and Communications Division</linktext>
+    <url>/fac/</url>
+    <Keywords>arts and crafts guitar music theatre arts theater photography art and design radio television film art history journalism graphic design graphics</Keywords>
+  </link>
+  <link>
+    <linktext>First-Year Experience</linktext>
+    <url>/fye/</url>
+    <Keywords>title-iii title-3 title3 titleiii learning community courses lcp fye first-year experience first year experience</Keywords>
+  </link>
+  <link>
+    <linktext>Fiscal Services</linktext>
+    <url>/fiscal-services/</url>
+    <Keywords>Book Keeping business services</Keywords>
+  </link>
+  <link>
+    <linktext>Foreign Languages Department</linktext>
+    <url>/fl/</url>
+    <Keywords>fl</Keywords>
+  </link>
+  <link>
+    <linktext>Forms &amp; Documents Download</linktext>
+    <url>https://ouc-secure.cerritos.edu/forms-and-documents/</url>
+    <Keywords>logos logo cerritos college logo cerritos logo disaster plan area control points conference request </Keywords>
+  </link>
+  <link>
+    <linktext>Foster and Kinship Care Education</linktext>
+    <url>/fkce/</url>
+    <Keywords>fkce Foster &amp; Kinship Foster Care Children Foster Child</Keywords>
+  </link>
+  <link>
+    <linktext>Foundation at Cerritos College</linktext>
+    <url>http://cerritoscf.org/</url>
+    <Keywords>CCF account number CERRITOS COLLEGE FOUNDATION</Keywords>
+  </link>
+  <link>
+    <linktext>Foundation Scholarships</linktext>
+    <url>http://cerritoscf.org/</url>
+    <Keywords>ccf </Keywords>
+  </link>
+  <link>
+    <linktext>French</linktext>
+    <url>/fl/</url>
+  </link>
+  <link>
+    <linktext>G. O. Bond</linktext>
+    <url>/bond/</url>
+    <Keywords>general obligation bond go bond g o bond g.o.bond gobond</Keywords>
+  </link>
+  <link>
+    <linktext>General Catalog</linktext>
+    <url>/catalog/</url>
+    <Keywords>class catalog cerritos college catalog class schedule course catalog general catalog campus information associate degree requirements</Keywords>
+  </link>
+  <link>
+    <linktext>Geography</linktext>
+    <url>/sem/</url>
+  </link>
+  <link>
+    <linktext>Geology</linktext>
+    <url>/sem/</url>
+    <Keywords>earth soils rocks minerals beach landform</Keywords>
+  </link>
+  <link>
+    <linktext>German</linktext>
+    <url>/fl/default.htm</url>
+  </link>
+  <link>
+    <linktext>Habits of Mind</linktext>
+    <url>/ifalcon/</url>
+    <Keywords>Habits of Mind, HOM, iFalcon</Keywords>
+  </link>
+  <link>
+    <linktext>Hall of Fame</linktext>
+    <url>/hof/</url>
+
+  </link>
+  <link>
+    <linktext>Health</linktext>
+    <url>/health/</url>
+
+  </link>
+  <link>
+    <linktext>Health Occupations Division</linktext>
+    <url>/ho/</url>
+    <Keywords>nursing first aid medical transcribing medical transcription dental hygiene Massage Therapist healthcare administration licensed vocational nursing pharmacy technician MEDICAL TERMINOLOGY ultrasounds child development alcoholism dental hygene program massage therapist emergency medical technician physical therapist physical therapy assistant course for dental assistants tooth development toothbrush</Keywords>
+  </link>
+  <link>
+    <linktext>Health Services, Student</linktext>
+    <url>/shs/</url>
+    <Keywords>student health services, health services, health care, student health</Keywords>
+  </link>
+  <link>
+    <linktext>Health, Physical Education, and Athletics Division</linktext>
+    <url>/hpeda/</url>
+    <Keywords>first aid a batter test soccer sports track meet History of Dance Track &amp; Field wrestling sports teams basketball team training hper athletics sport color guards cheer water aerobics athletics football roster Physical fitness baseball weight lifting polo soccer tennis volleyball track and field hper alcoholism intravenous sex education sex ed sexed human sexuality medications biotechnology biotech health education</Keywords>
+  </link>
+  <link>
+    <linktext>Hiring Standards Committee</linktext>
+    <url>/hiringstandards/</url>
+
+  </link>
+  <link>
+    <linktext>History</linktext>
+    <url>/history</url>
+  </link>
+  <link>
+    <linktext>Honors Program / Scholars' Honors Program</linktext>
+    <url>/shp/</url>
+    <Keywords>scholars honor scholarships shp scholar's</Keywords>
+  </link>
+  <link>
+    <linktext>HSI STEM</linktext>
+    <url>/stem/</url>
+    <Keywords>HSI STEM</Keywords>
+  </link>
+  <link>
+    <linktext>Human Resources/Employment</linktext>
+    <url>/hr/</url>
+    <Keywords>job vacancies job opportunity jobs employment hr human resources CARRER career Faculty Position typing test job availability compensation</Keywords>
+  </link>
+  <link>
+    <linktext>Humanities/Social Sciences Division</linktext>
+    <url>/hss/</url>
+    <Keywords>government social science behavioral science motion</Keywords>
+  </link>
+  <link>
+    <linktext>IFalcon</linktext>
+    <url>/ifalcon/</url>
+    <Keywords>ifalcon, hom, habits of mind</Keywords>
+  </link>
+  <link>
+    <linktext>Important Dates</linktext>
+    <url>/important-dates/</url>
+  </link>
+  <link>
+    <linktext>Industrial Arts</linktext>
+    <url>/tech/</url>
+  </link>
+  <link>
+    <linktext>Information Technology</linktext>
+    <url>/it/</url>
+    <Keywords>email expired password Computer Services complaint</Keywords>
+  </link>
+  <link>
+    <linktext>Information Technology Standards Committee</linktext>
+    <url>/it-standards-cmte/</url>
+  </link>
+  <link>
+    <linktext>Institutional Effectiveness, Research and Planning, and Grants</linktext>
+    <url>/ierpg/</url>
+  </link>
+  <link>
+    <linktext>Instructional Program Review Committee</linktext>
+    <url>/progrev/</url>
+
+  </link>
+  <link>
+    <linktext>International Student Services, Office of</linktext>
+    <url>/isc/</url>
+    <Keywords>TOEFL NAFSA foreign student F1 VISA ISA study abroad ISC International students international students program international students center international student program</Keywords>
+  </link>
+  <link>
+    <linktext>Internet Resources</linktext>
+    <url>/it/</url>
+  </link>
+  <link>
+    <linktext>Student Employment</linktext>
+    <url>/student-employment/</url>
+    <Keywords>job vacancies job opportunity jobs employment hr human resources</Keywords>
+  </link>
+  <link>
+    <linktext>K-12 Road to College</linktext>
+    <url>/K12/</url>
+  </link>
+  <link>
+    <linktext>Language Center</linktext>
+    <url>/lc/</url>
+    <Keywords>lc Language Center lab</Keywords>
+  </link>
+  <link>
+    <linktext>Learning Communities</linktext>
+    <url>/lc/</url>
+  </link>
+  <link>
+    <linktext>Liberal Arts Division</linktext>
+    <url>/la/</url>
+  </link>
+  <link>
+    <linktext>Library</linktext>
+    <url>/library/</url>
+  </link>
+  <link>
+    <linktext>LINC - Current &amp; Former Foster Youth Services</linktext>
+    <url>/finaid/linc</url>
+  </link>
+  <link>
+    <linktext>Listing of Certificate, Degree &amp; Transfer Programs</linktext>
+    <url>/programs/</url>
+  </link>
+  <link>
+    <linktext>Machine Mold Making for Plastics</linktext>
+    <url>/tech/</url>
+  </link>
+  <link>
+    <linktext>Machine Tool Technology</linktext>
+    <url>/mtt/</url>
+  </link>
+  <link>
+    <linktext>Major</linktext>
+    <url>/major/</url>
+  </link>
+  <link>
+    <linktext>Campus Map</linktext>
+    <url>/guide/#map</url>
+  </link>
+  <link>
+    <linktext>Marquee</linktext>
+    <url>/marquee</url>
+  </link>
+  <link>
+    <linktext>Math Department</linktext>
+    <url>/math/</url>
+  </link>
+  <link>
+    <linktext>Math Learning Center</linktext>
+    <url>/mathcenter/</url>
+  </link>
+  <link>
+    <linktext>Matriculation Committee</linktext>
+    <url>/matriculation-cmte/</url>
+  </link>
+  <link>
+    <linktext>Media Services</linktext>
+    <url>/ms/</url>
+  </link>
+  <link>
+    <linktext>Medical Assisting</linktext>
+    <url>/medical-assisting/</url>
+  </link>
+  <link>
+    <linktext>Mental Health Worker Program</linktext>
+    <url>/mentalhealth/</url>
+  </link>
+  <link>
+    <linktext>Microbiology</linktext>
+    <url>/sem/</url>
+  </link>
+  <link>
+    <linktext>Mission Statement</linktext>
+    <url>/mission-statement</url>
+  </link>
+  <link>
+    <linktext>Music</linktext>
+    <url>/music/</url>
+  </link>
+  <link>
+    <linktext>My Story (Secured)</linktext>
+    <url>/mystory/</url>
+  </link>
+  <link>
+    <linktext>MyCerritos</linktext>
+    <url>/mycerritos/</url>
+  </link>
+  <link>
+    <linktext>Networking Technicians/Operators</linktext>
+    <url>/cis/</url>
+  </link>
+  <link>
+    <linktext>News Releases</linktext>
+    <url>/releases/</url>
+  </link>
+  <link>
+    <linktext>Nursing</linktext>
+    <url>http://www.cerritos.edu/nursing/</url>
+  </link>
+  <link>
+    <linktext>Office of International Student Services</linktext>
+    <url>/isc/</url>
+  </link>
+  <link>
+    <linktext>Office of Student Conduct &amp; Grievances</linktext>
+    <url>/grievance/</url>
+  </link>
+  <link>
+    <linktext>Older Wiser Learner (OWL)</linktext>
+    <url>/owl/</url>
+  </link>
+  <link>
+    <linktext>Ornamental Horticulture</linktext>
+    <url>/sem/</url>
+  </link>
+  <link>
+    <linktext>Outstanding Classified and Confidential Employee Selection Committee</linktext>
+    <url>/occ/</url>
+  </link>
+  <link>
+    <linktext>Outstanding Faculty Nominations</linktext>
+    <url>/nomination/</url>
+  </link>
+  <link>
+    <linktext>Paralegal Department / Business Education</linktext>
+    <url>/bl/</url>
+  </link>
+  <link>
+    <linktext>Parking Regulations</linktext>
+    <url>/parking/</url>
+  </link>
+  <link>
+    <linktext>Payroll</linktext>
+    <url>/payroll/</url>
+  </link>
+  <link>
+    <linktext>Perkins (CTE)</linktext>
+    <url>/cte/</url>
+  </link>
+  <link>
+    <linktext>Pharmacy Technology</linktext>
+    <url>/pharmacytechnology/</url>
+  </link>
+  <link>
+    <linktext>Philosophy</linktext>
+    <url>/philosophy/</url>
+  </link>
+  <link>
+    <linktext>Phone book, Campus</linktext>
+    <url>/forms/</url>
+  </link>
+  <link>
+    <linktext>Photography</linktext>
+    <url>/photography/</url>
+  </link>
+  <link>
+    <linktext>Physical Science</linktext>
+    <url>/sem</url>
+  </link>
+  <link>
+    <linktext>Physical Therapist Assistant</linktext>
+    <url>/ho/</url>
+  </link>
+  <link>
+    <linktext>Physics</linktext>
+    <url>/physics/</url>
+  </link>
+  <link>
+    <linktext>Planning and Budget Committee</linktext>
+    <url>/pb/</url>
+  </link>
+  <link>
+    <linktext>Plastics/Composites Manufacturing Technology</linktext>
+    <url>/plastics/</url>
+  </link>
+  <link>
+    <linktext>Police Department</linktext>
+    <url>/police/</url>
+  </link>
+  <link>
+    <linktext>Political Science</linktext>
+    <url>/polisci</url>
+  </link>
+  <link>
+    <linktext>President's Office</linktext>
+    <url>/ceo/</url>
+  </link>
+  <link>
+    <linktext>Professional Relations Committee</linktext>
+    <url>/professional-relations/</url>
+  </link>
+  <link>
+    <linktext>Program Review</linktext>
+    <url>/progrev/ </url>
+  </link>
+  <link>
+    <linktext>Programs of Study</linktext>
+    <url>/programs</url>
+  </link>
+  <link>
+    <linktext>Project HOPE (Health Opportunities and Pipeline to</linktext>
+    <url>/hope/</url>
+  </link>
+  <link>
+    <linktext>Psychology</linktext>
+    <url>/psychology/</url>
+  </link>
+  <link>
+    <linktext>Public Relations &amp; Communications</linktext>
+    <url>/pr/</url>
+  </link>
+  <link>
+    <linktext>Publications Department</linktext>
+    <url>/publications/</url>
+  </link>
+  <link>
+    <linktext>Publicity Report</linktext>
+    <url>/publicity-report/</url>
+  </link>
+  <link>
+    <linktext>Puente</linktext>
+    <url>/puente/</url>
+  </link>
+  <link>
+    <linktext>Procurement &amp; Contract Services (Purchasing)</linktext>
+    <url>/procurement/</url>
+  </link>
+  <link>
+    <linktext>Re-Entry Center</linktext>
+    <url>/reentry/</url>
+  </link>
+  <link>
+    <linktext>Reading Department</linktext>
+    <url>/reading/</url>
+  </link>
+  <link>
+    <linktext>Research &amp; Planning (Institutional Effectiveness)</linktext>
+    <url>/ierp/</url>
+  </link>
+  <link>
+    <linktext>Rideshare Program</linktext>
+    <url>/rideshare/</url>
+  </link>
+  <link>
+    <linktext>Risk Management</linktext>
+    <url>/risk-management</url>
+  </link>
+  <link>
+    <linktext>Rosters+</linktext>
+    <url>/rosters-plus/</url>
+  </link>
+  <link>
+    <linktext>Sabbatical Leave Committee</linktext>
+    <url>/slc/</url>
+  </link>
+  <link>
+    <linktext>Safe Zone</linktext>
+    <url>/safezone/</url>
+  </link>
+  <link>
+    <linktext>Safety Committee</linktext>
+    <url>/safety-cmte/</url>
+  </link>
+  <link>
+    <linktext>Schedule of Classes</linktext>
+    <url>/catalog/</url>
+  </link>
+  <link>
+    <linktext>Scholars' Honors Program (SHP)</linktext>
+    <url>/shp/</url>
+  </link>
+  <link>
+    <linktext>School Relations</linktext>
+    <url>/sr/</url>
+  </link>
+  <link>
+    <linktext>Science, Engineering and Mathematics Division</linktext>
+    <url>/sem/</url>
+  </link>
+  <link>
+    <linktext>Shared Governance</linktext>
+    <url>/shared-governance/</url>
+  </link>
+  <link>
+    <linktext>Sign Language</linktext>
+    <url>/la/</url>
+  </link>
+  <link>
+    <linktext>Site Contents</linktext>
+    <url>/campus-guide/abc-index.htm</url>
+  </link>
+  <link>
+    <linktext>Sociology</linktext>
+    <url>/hss/</url>
+  </link>
+  <link>
+    <linktext>Spanish</linktext>
+    <url>/fl/default.htm</url>
+  </link>
+	<link>
+    <linktext>Communication Studies (Formerly Speech)</linktext>
+    <url>/communication-studies/</url>
+  </link>
+  <link>
+    <linktext>Speech (Formerly)</linktext>
+    <url>/communication-studies/</url>
+  </link>
+  <link>
+    <linktext>Speech-Language Pathology Assistant (SLPA)</linktext>
+    <url>/slpa</url>
+  </link>
+  <link>
+    <linktext>Sports Scores &amp; Schedule</linktext>
+    <url>http://www.cerritosfalcons.com/</url>
+  </link>
+  <link>
+    <linktext>STEM Grant</linktext>
+    <url>/stem/</url>
+  </link>
+  <link>
+    <linktext>Student Affairs</linktext>
+    <url>/activities/</url>
+  </link>
+  <link>
+    <linktext>Student Clubs and Organizations</linktext>
+    <url>/clubs/</url>
+  </link>
+  <link>
+    <linktext>Student Equity Committee</linktext>
+    <url>/sec/</url>
+  </link>
+  <link>
+    <linktext>Student Guide - MyCerritos (PDF)</linktext>
+    <url>http://www.cerritos.edu/student-guide-pdf</url>
+  </link>
+  <link>
+    <linktext>Student Health Services</linktext>
+    <url>/shs/</url>
+  </link>
+  <link>
+    <linktext>Student Learning Outcomes (SLO) Committee</linktext>
+    <url>/slo</url>
+  </link>
+  <link>
+    <linktext>Student Life Committee</linktext>
+    <url>/activities/StudentLifeCommittee/</url>
+  </link>
+  <link>
+    <linktext>Student Services</linktext>
+    <url>/student-services/</url>
+  </link>
+  <link>
+    <linktext>Success Center</linktext>
+    <url>/sc/</url>
+  </link>
+  <link>
+    <linktext>Talon Marks Online Newspaper</linktext>
+    <url>/talonmarks/</url>
+  </link>
+  <link>
+    <linktext>Teacher TRAC</linktext>
+    <url>/teachertrac/</url>
+  </link>
+  <link>
+    <linktext>Teaching Assistant Program (TAP)</linktext>
+    <url>/tap</url>
+  </link>
+  <link>
+    <linktext>Technical Mathematics</linktext>
+    <url>/tech/</url>
+  </link>
+  <link>
+    <linktext>Digital Learning Committee</linktext>
+    <url>/tbl/</url>
+  </link>
+  <link>
+    <linktext>Technology Division</linktext>
+    <url>/tech/</url>
+  </link>
+  <link>
+    <linktext>Teleconference Center</linktext>
+    <url>/telecon-center/</url>
+  </link>
+  <link>
+    <linktext>Theatre &amp; Film</linktext>
+    <url>/theatre/</url>
+  </link>
+  <link>
+    <linktext>Three Dimensional Design</linktext>
+    <url>/art/</url>
+  </link>
+  <link>
+    <linktext>Transcripts</linktext>
+    <url>/transcripts/</url>
+  </link>
+  <link>
+    <linktext>Transfer Center</linktext>
+    <url>/transfer/</url>
+  </link>
+  <link>
+    <linktext>Troops to College</linktext>
+    <url>/troops/</url>
+  </link>
+  <link>
+    <linktext>Tutoring</linktext>
+    <url>/tutor/</url>
+  </link>
+  <link>
+    <linktext>Union, Faculty (CCFF)</linktext>
+    <url>/ccff/</url>
+  </link>
+  <link>
+    <linktext>Universal Access</linktext>
+    <url>/universal-access/</url>
+  </link>
+  <link>
+    <linktext>Veterans Affairs</linktext>
+    <url>/va/</url>
+  </link>
+  <link>
+    <linktext>Web Administration</linktext>
+    <url>/webadministrator/</url>
+  </link>
+  <link>
+    <linktext>Web Standards Committee</linktext>
+    <url>/wsc/</url>
+  </link>
+  <link>
+    <linktext>Welding</linktext>
+    <url>/welding/</url>
+  </link>
+  <link>
+    <linktext>Women's History Month</linktext>
+    <url>/whm/</url>
+  </link>
+  <link>
+    <linktext>Women’s and Gender Studies</linktext>
+    <url>/cws/</url>
+  </link>
+  <link>
+    <linktext>Woodworking Manufacturing Technology</linktext>
+    <url>/wood/</url>
+  </link>
+  <link>
+    <linktext>World Cultures (Contemporary)</linktext>
+    <url>/cwc/</url>
+  </link>
+  <link>
+    <linktext>Zoology</linktext>
+    <url>/sem/</url>
+  </link>
+</abcindex>
+

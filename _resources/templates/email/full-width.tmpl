@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/email/xsl/full-width.xsl" title="Full-Width Page" extension="php"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd">
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+
+    <headcode></headcode> <!-- before closing head tag -->
+    <bodycode></bodycode> <!-- after opening body tag -->
+    <footcode></footcode> <!-- before closing body tag -->
+
+    <ouc:properties label="config">
+        <parameter section="Color Theme" name="color-theme" type="select" group="Everyone" prompt="Color Theme" alt="Choose one of the default color themes.">
+            <option value="default" selected="true">School Colors</option>
+            <option value="red" selected="false">Red</option>
+            <option value="green" selected="false">Green</option>
+            <option value="grey" selected="false">Grey</option>
+            <option value="theme-1" selected="false">Theme 1</option>
+            <option value="theme-2" selected="false">Theme 2</option>
+            <option value="theme-3" selected="false">Theme 3</option>
+            <option value="theme-4" selected="false">Theme 4</option>
+        </parameter>
+
+        <parameter section="Header Content" name="browser-link" type="radio" group="Everyone" prompt="Browser Link Text" alt="Choose to show or hide the browser link text that displays above the header.">
+            <option value="show" selected="false">Show</option>
+            <option value="hide" selected="true">Hide</option>
+        </parameter>
+
+        <parameter name="header-logo" type="filechooser" path="/_resources/images/email/logos" group="Everyone" prompt="Header Logo" alt="Choose a header logo.">/_resources/email/images/logos/default-header.jpg</parameter>
+
+        <parameter name="show-date" type="radio" group="Everyone" prompt="Display Date Stamp" alt="Choose to show or hide the date stamp.">
+            <option value="show" selected="true">Show</option>
+            <option value="hide" selected="false">Hide</option>
+        </parameter>
+        <parameter name="date" type="text" group="Everyone" prompt="Date Stamp" alt="Insert a date stamp."></parameter>
+
+        <parameter section="Footer Content" name="footer" type="filechooser" path="/_resources/includes/email" group="Everyone" prompt="Footer" alt="Choose a footer.">/_resources/email/includes/footer.inc</parameter>
+
+        <parameter name="disclaimer" type="radio" group="Everyone" prompt="Disclaimer Text" alt="Choose to show or hide the disclaimer text that displays below the footer.">
+            <option value="show" selected="false">Show</option>
+            <option value="hide" selected="true">Hide</option>
+        </parameter>
+        <parameter name="disclaimer-type" type="radio" group="Everyone" prompt="Disclaimer Type" alt="Choose the section or page disclaimer.">
+            <option value="global" selected="true">Global Disclaimer</option>
+            <option value="page" selected="false">Page Disclaimer</option>
+        </parameter>
+
+    </ouc:properties>
+
+    <ouc:properties label="metadata">
+        <title><!--%echo var="title" --></title>
+        <meta name="Description" content="" />
+    </ouc:properties>
+
+    <ouc:div label="main-content" group="Everyone" button-text="Email Content">
+        <ouc:editor csspath="/_resources/email/editor/maincontent.css" cssmenu="/_resources/email/editor/styles.txt" wysiwyg-class="main-content" width="1000" />
+    </ouc:div>
+
+    <ouc:div label="disclaimer" group="Everyone" button-text="Disclaimer Content">
+        <ouc:editor csspath="/_resources/email/editor/maincontent.css" cssmenu="/_resources/email/editor/styles.txt" wysiwyg-class="disclaimer" width="1000" />
+        <p class="center"><em>Disclaimer content goes here.</em></p>
+    </ouc:div>
+
+</document>

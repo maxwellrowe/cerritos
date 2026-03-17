@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/photogallery.xsl" title="Photo Gallery" extension="htm"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<!-- Best practice is to have a couple common empty nodes in case a page needs to have page-unique code.
+These are only editable in source and therefore admins. -->
+<headcode></headcode> <!-- Output just before closing head tag. -->
+<bodycode></bodycode> <!-- Output just after opening body tag. -->
+<footcode></footcode> <!-- Output just before closing body tag. -->
+<!-- Meta page properites. Defines the meta elements that are placed in the head of the HTML document. -->
+<ouc:properties label="metadata">
+<title>Photo Gallery</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="robots" content="follow, all" />
+</ouc:properties>
+<ouc:properties label="config">
+<parameter name="BrcPageTitle" type="text" group="Everyone" prompt="Breadcrumbs Title" alt="(Optional) What is the page title for breadcrumbs if different from the title above?"></parameter>
+<parameter name="GalleryFile" prompt="Gallery XML File" type="filechooser" group="Everyone" path="/" alt="Select the gallery XML file for your photos."><!--%echo var="GalleryFile" encoding="none" --></parameter>
+<parameter name="LeftNav" type="filechooser" group="Everyone" prompt="Left Navigation" alt="Which left navigation file (*.inc) does this page use?">/campus-guide/_includes/assets/deptnav.inc</parameter>
+<parameter name="DeptInfo" type="filechooser" group="Everyone" prompt="Dept Info Include" alt="Which dept info file (*.inc) does this page use?">/campus-guide/_includes/assets/deptinfo.inc</parameter>
+<parameter name="WebCss" type="filechooser" group="Administrators" prompt="CSS File" alt="(Admin) Which style sheet (*.css file) does this page use?"></parameter>
+<parameter name="TrackingInclude" type="filechooser" group="Administrators" prompt="Tracking Code Include" alt="(Admin) Which special tracking code include file (*.inc) for Facebook, Twitter, etc. if any does this page use?"></parameter>
+</ouc:properties>
+
+<!-- Editable region. An ouc:div defines an editable region so a user can edit content within the WYSIWYG editor. Every ouc: div must have a unique label. 
+The ouc: editor defines the CSS styling in the WYSIWYG editor for this editable region.
+More information here: http :    //support.omniupdate.com/oucampus9/development/templating/page-tagging/tagging-reference.html#editable -->
+
+<ouc:div label="maincontent" group="Everyone" button-text="Main Content"><ouc:editor toolbar="Main" csspath="/_resources/css/editor.css" width="1020" wysiwyg-class="maincontent"/></ouc:div>
+
+</document>

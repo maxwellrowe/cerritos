@@ -1,0 +1,33 @@
+<!-- com.omniupdate.properties --><title>New Page</title><!-- /com.omniupdate.properties -->
+
+<variable-list>
+<variable name="filename" prompt="Filename:" alt="Provide a filename for this new page. Use only letters, numbers, hyphens and underscores, no extension."></variable>
+<variable name="title" prompt="Page Title/Heading:" alt="Give your new page a title. (Avoid 'Home')"></variable>
+<variable name="author" prompt="Author:" alt="The author for this page."></variable>
+<variable name="description" rows="2" prompt="Description:" alt="Describe your new page in about 40 words."></variable>	
+<variable name="keywords" rows="2" prompt="Keywords:"  alt="Keywords for this page"  output="xml"></variable>
+
+	
+<!--Original Setup
+<variable name="LeftNav" prompt="Left Menu File" type="filechooser" path="/" alt="Select the left navigation file (*.inc) for this page.">/campus-guide/_includes/assets/deptnav.inc</variable>
+<variable name="DeptInfo" type="filechooser" group="Everyone" prompt="Dept Info File" alt="Select the dept info file (*.inc) for this page.">/campus-guide/_includes/assets/deptinfo.inc</variable>
+-->	
+<!-- New left navigation setup added by Samuel Chavez 10/12/2018 -->
+	<variable name="LeftNav" prompt="Left Menu File" type="filechooser" path="{Left_Navigation}/subdir" alt="Leave blank unless you would like to select a different left navigation file (*.inc) for this page." lockout="yes" filter="inc">{Left_Navigation}</variable>
+	
+<variable name="DeptInfo" type="filechooser" path="{Left_Information}/subdir" group="Everyone" prompt="Dept Info File" alt="Leave blank unless you would like to select a different dept info file (*.inc) for this page." lockout="yes" filter="inc">{Left_Information}</variable>
+<!-- End new setup -->
+</variable-list>
+
+<template-list>
+<template prompt-prefix="Dept Inside"   
+    filename="{filename}" 
+    display-group="no" 
+    display-destination="no" 
+    display-filename="no" 
+    display-overwrite="no" 
+    preferred-redirect="no" 
+    publish="no" 
+    extension="pcf">01_dept-inside.tmpl</template>
+</template-list>
+

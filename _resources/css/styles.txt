@@ -1,0 +1,3 @@
+.associate	A
+.certificate	C
+.triangle-right	➤

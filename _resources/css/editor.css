@@ -1,0 +1,296 @@
+/* editor accessibility comment */
+.ua-comment {display:none;}
+
+/* link icons */
+a[rel="external"]::after {
+    content: url(/_resources/images/common/new-win-13549E-16px.svg);
+    display: inline-block;
+    padding-left: 4px;
+ }
+a:hover[rel="external"]::after {
+    content: url(/_resources/images/common/new-win-eee-16px.svg);
+    display: inline-block;
+    padding-left: 4px;
+ }
+a[class="inverse"]::after {
+    content: url(/_resources/images/common/new-win-eee-16px.svg);
+    display: inline-block;
+    padding-left: 4px;
+ }
+
+a[href$=".pdf"]::after {
+    content: url(/_resources/images/common/pdficon_16x.gif);
+    display: inline-block;
+    padding-left: 4px;
+}
+a[href$="_pdf"]::after {
+    content: url(/_resources/images/common/pdficon_16x.gif);
+    display: inline-block;
+    padding-left: 4px;
+}
+a[href$=".ppt"]::after {
+    content: url(/_resources/images/common/MSPowerPoint_logo.png);
+    display: inline-block;
+    padding-left: 4px;
+}
+a[href$=".pptx"]::after {
+    content: url(/_resources/images/common/MSPowerPoint_logo.png);
+    display: inline-block;
+    padding-left: 4px;
+}
+a[href$=".xls"]::after {
+    content: url(/_resources/images/common/MSExcel_logo.png);
+    display: inline-block;
+    padding-left: 4px;
+}
+a[href$=".xlsx"]::after {
+    content: url(/_resources/images/common/MSExcel_logo.png);
+    display: inline-block;
+    padding-left: 4px;
+}
+a[href$=".doc"]::after {
+    content: url(/_resources/images/common/16px-word_icon.png);
+    display: inline-block;
+    padding-left: 4px;
+}
+a[href$=".docx"]::after {
+    content: url(/_resources/images/common/16px-word_icon.png);
+    display: inline-block;
+    padding-left: 4px;
+}
+a[href^="mailto:"]::after {
+    content: url(/_resources/images/common/email-icon.svg);
+    display: inline-block;
+    padding-left: 4px;
+}
+/* cerritos legacy */
+.tabH4_Main, .tabH4 { }
+.pageletLinks{}
+.left {float:left;}
+.right {float:right;}
+.middle {vertical-align:middle;}
+.bottom {vertical-align: bottom;}
+.photo {max-width:100%;border:.1em solid #ccc;height:auto;}
+.clear {clear:both;}
+.center {text-align:center;}
+.justify {text-align:justify;}
+.pointer {cursor:pointer;}
+.strikethrough {text-decoration:line-through;}
+.underline {text-decoration:underline;}
+.italic {font-style:italic;}
+.bold {font-weight:bold;}
+.close-icon {position:relative;top:-20px;margin:0 1em 0 0;cursor:pointer;border:0;}
+.RedAlert {background-color:#ffa4a4;}
+.YellowWarning {background-color:#FFEAA1;}
+.BlueInfo {background-color:#ADE0F9;}
+.WhiteInfo {background-color:#fff;}
+
+.associate{
+	background-color: #28A8E0;
+	padding: .3em .5em;
+	color: #ffffff;
+	font-size: 1.2em;
+	font-weight: bold;
+	/*border-radius: 25px;*/
+	text-transform: capitalize;
+	margin-right: .5em;
+}
+
+.certificate{
+	background-color: #37aa49;
+	padding: .3em .5em;
+	color: #ffffff;
+	font-size: 1.2em;
+	font-weight: bold;
+	/*border-radius: 25px;*/
+	text-transform: capitalize;
+	margin-right: .5em;
+}
+
+.triangle-right {
+      color: #ffbf00;
+    }
+
+
+/*!
+ * WYSIWYG STYLING: SNIPPETS
+ * OmniUpdate, Inc.
+*/
+
+/* table transformation styling */
+table[class^="ou-"] {
+	background: rgba(225, 225, 235, 0.05);
+	width: 100%;
+	border: 2px solid #bbb;
+	border-bottom: 4px solid #bbb;
+	margin: 15px 0;
+}
+
+table[class^="ou-"] > caption {
+	background: none repeat scroll 0 0 rgba(11, 72, 107, 0.85);
+	color: #FFFFFF;
+	font-size: 120%;
+	font-weight: bold;
+	padding: 5px;
+	cursor: not-allowed;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	border: 2px solid #bbb;
+}
+
+table[class^="ou-"] > thead > tr > th,
+table[class^="ou-"] > tbody > tr > th {
+	background: none repeat scroll 0 0 rgba(185, 185, 195, 0.5);
+	color: #666;
+	cursor: not-allowed;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	border: 1px dashed #bbb;
+}
+
+table[class^="ou-"] > thead > tr > td,
+table[class^="ou-"] > tbody > tr > td {
+	padding: 5px 5px;
+	color: #424242;
+	vertical-align: top;
+	border: 1px dashed #bbb;
+}
+
+/* if needed to fit image in it's row when it is too large */
+table[class^="ou-"] img,
+table[class^="ou-"].mceItemTable img {
+	max-width: 100%;
+}
+
+table[class^="ou-"] td.ou-prompt {
+	border: 1px solid #ddd !important;
+}
+
+table[class^="ou-"] td.ou-value {
+	border: 1px solid #bbb !important;
+}
+
+/* Table Forms */
+table[class^="ou-"].form > tbody > tr > th:first-child {
+	width:20%;
+}
+table[class^="ou-"].form > tbody > tr > td {
+	border: 1px solid #bbb !important;
+	color: #424242;
+}
+table[class^="ou-"].form > tbody > tr:nth-of-type(even) {background-color: #EEE;}
+
+/* Vertical Form (for skinny regions) */
+table[class^="ou-"].form-vertical > tbody > tr > td:first-child,
+table[class^="ou-"].form-vertical > tbody > tr > th:first-child {padding-left:2px;}
+table[class^="ou-"].form-vertical > tbody > tr:nth-of-type(4n+3),
+table[class^="ou-"].form-vertical > tbody > tr:nth-of-type(4n+4) {background-color: #EEE;}
+
+/* Accordion */
+table.ou-accordion > thead > tr > td,
+table.ou-accordion > tbody > tr > td {width:85%;}
+table.ou-accordion > tbody > tr:nth-of-type(even) {background-color: #EEE;}
+table.ou-accordion > tbody > tr:nth-of-type(odd) {border-top: 2px solid black;}
+table.ou-accordion > tbody > tr:nth-of-type(odd) > th::before {content: 'Expand Title';}
+table.ou-accordion > tbody > tr:nth-of-type(even) > th::before {content: 'Content Area';}
+
+/* Tabs */
+table.ou-tabs > thead > tr > td,
+table.ou-tabs > tbody > tr > td {width:85% !important;}
+table.ou-tabs > tbody > tr:nth-of-type(even) {background-color: #EEE;}
+table.ou-tabs > tbody > tr:nth-of-type(odd) {border-top: 2px solid black;}
+table.ou-tabs > tbody > tr:nth-of-type(odd) > th::before {content: 'Tab Title';}
+table.ou-tabs > tbody > tr:nth-of-type(even) > th::before {content: 'Tab Content';}
+
+/* Columns (supports up to 3) */
+table.ou-columns > tbody > tr > td:nth-of-type(1) {width: auto !important;}
+table.ou-columns > tbody > tr > td:nth-of-type(n+2) {width: 33.33% !important;}
+table.ou-columns > tbody > tr > td:nth-of-type(2n):last-child {width: 50% !important;}
+
+/* Image Gallery (Table) */
+table.ou-image-gallery tbody tr:nth-of-type(3n)
+	{border-bottom-style:"solid"; border-bottom-width:thick; border-bottom-color:black;}
+table.ou-image-gallery tbody tr:nth-of-type(3n+1) th::before {content: 'Image';}
+table.ou-image-gallery tbody tr:nth-of-type(3n+2) th::before {content: 'Text Caption';}
+table.ou-image-gallery tbody tr:nth-of-type(3n) th::before {content: 'Link';}
+
+/* Image Gallery (Callouts) */
+table.ou-callout-gallery tbody tr:nth-of-type(4n)
+	{border-bottom-style:"solid"; border-bottom-width:thick; border-bottom-color:black;}
+table.ou-callout-gallery tbody tr:nth-of-type(4n+1) th::before {content: 'Image';}
+table.ou-callout-gallery tbody tr:nth-of-type(4n+2) th::before {content: 'Title';}
+table.ou-callout-gallery tbody tr:nth-of-type(4n+3) th::before {content: 'Text Caption';}
+table.ou-callout-gallery tbody tr:nth-of-type(4n) th::before {content: 'Link';}
+
+/* Image Block */
+table.ou-image > tbody > tr > td,
+table.ou-image > tbody > tr > th {width:auto !important;}
+table.ou-image.align-right {margin-left:10px;}
+table.ou-image.align-left {margin-right:10px;}
+
+/* Action Buttons */
+table.ou-action-buttons > tbody > tr:first-child > td::before {content: 'Please enter the button text for the action button above.';}
+table.ou-action-buttons tbody tr:nth-child(2) td::before {content: 'Please create a list of links for the action button above.';}
+table.ou-action-buttons caption::before {content: 'Insert button text and a list of links for each action button using the table cells below.';}
+
+table[class^='ou-'] > thead > tr > th::before,
+table[class^='ou-'] > thead > tr > td::before,
+table[class^='ou-'] > tbody > tr > th::before,
+table[class^='ou-'] > tbody > tr > td::before,
+table[class^='ou-'] > caption::before {
+	display: block;
+	padding:5px 15px;
+	margin-bottom:10px;
+	text-align:center;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+/* Miscellaneous Styles */
+figure.image figcaption {border: 1px dashed black;}
+
+p.spacer {
+	margin: 5px 0 20px;
+	color: red;
+}
+
+p.spacer::before {
+	content:"Click here to insert another snippet.";
+}
+
+.ou-help {
+	font-size: 16px !important;
+	text-align:center!important;
+	background: #013C66;
+	color:white;
+	font-weight:none;
+	cursor: not-allowed;
+	user-select: none;
+	-o-user-select:none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-ms-user-select: none;
+}
+
+.ou-help p {
+    color:#FFFFFF;
+	margin-bottom:0px;
+	margin-top:0.5em;
+}
+
+/* Reset editor button size to original. */
+
+button {
+    min-width: unset;
+}
+
+/* End editor button size reset */

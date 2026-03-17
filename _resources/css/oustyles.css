@@ -1,0 +1,5 @@
+/* emergency notice */
+.thumbnail img {
+  max-height: 68px;
+  margin-top: 0 !important;
+}

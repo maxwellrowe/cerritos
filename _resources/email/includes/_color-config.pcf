@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?pcf-stylesheet path="/_resources/email/xsl/color-themes/theme-1-config.xsl" title="Configuration" publish="no" extension="inc"?>
+<?pcf-stylesheet path="/_resources/email/xsl/color-themes/theme-1-config.xsl" title="Theme 1 Configuration" alternate="no" extension="-theme-1.css"?>
+<?pcf-stylesheet path="/_resources/email/xsl/color-themes/theme-2-config.xsl" title="Theme 2 Configuration" alternate="no" extension="-theme-2.css"?>
+<?pcf-stylesheet path="/_resources/email/xsl/color-themes/theme-3-config.xsl" title="Theme 3 Configuration" alternate="no" extension="-theme-3.css"?>
+<?pcf-stylesheet path="/_resources/email/xsl/color-themes/theme-4-config.xsl" title="Theme 4 Configuration" alternate="no" extension="-theme-4.css"?>
+
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	
+	<parameter name="pagetype">config</parameter>
+	
+	<ouc:properties label="color">
+		<config-colors>
+			<parameter section="Theme 1 Main Colors" name="color-1" prompt="Main Color" alt="The main color of your theme. This will be the color of your headings, panels, links, etc.">#686868</parameter>
+			<parameter name="color-1-dark" prompt="Main Color Dark Shade" alt="A darker shade to your main color. This will be the color of your links and buttons when you mouse over them.">#919191</parameter>
+		</config-colors>
+		<config-general>
+			<parameter section="Theme 1 Component Colors" name="color-1-header-color" prompt="Header Color" alt="The background color of your header.">#d8d8d8</parameter>
+			<parameter name="color-1-footer-background" prompt="Footer Background" alt="The background color of your footer.">#444444</parameter>
+			<parameter name="color-1-footer-text" prompt="Footer Text" alt="The color of text in your footer, keep in mind the background color.">#FFFFFF</parameter>
+			<parameter name="color-1-footer-link" prompt="Footer Link" alt="The color of links in your footer, keep in mind the background color.">#FFFFFF</parameter>
+			<parameter name="color-1-footer-link-hover" prompt="Footer Link Hover" alt="The color of links in your footer when they are hovered over, keep in mind the background color.">#FFFFFF</parameter>
+			<parameter name="color-1-disclaimer-background" prompt="Disclaimer Background" alt="The color of the disclaimer background.">#f2f2f2</parameter>
+		</config-general>
+	</ouc:properties>
+	
+	<ouc:properties label="color">
+		<config-colors>
+			<parameter section="Theme 2 Main Colors" name="color-2" prompt="Main Color" alt="Define a HEX color code. Ex.#FFFFFF">#A72222</parameter>
+			<parameter name="color-2-dark" prompt="Main Color Dark Shade" alt="Define a HEX color code. Ex.#FFFFFF">#951e1e</parameter>
+		</config-colors>
+		<config-general>
+			<parameter section="Theme 2 Component Colors" name="color-2-header-color" prompt="Header Color" alt="Define a HEX color code. Ex.#FFFFFF">#d8d8d8</parameter>
+			<parameter name="color-2-footer-background" prompt="Footer Background" alt="Define a HEX color code. Ex.#FFFFFF">#444444</parameter>
+			<parameter name="color-2-footer-text" prompt="Footer Text" alt="Define a HEX color code. Ex.#FFFFFF">#FFFFFF</parameter>
+			<parameter name="color-2-footer-link" prompt="Footer Link" alt="Define a HEX color code. Ex.#FFFFFF">#FFFFFF</parameter>
+			<parameter name="color-2-footer-link-hover" prompt="Footer Link Hover" alt="Define a HEX color code. Ex.#FFFFFF">#FFFFFF</parameter>
+			<parameter name="color-2-disclaimer-background" prompt="Disclaimer Background" alt="Define a HEX color code. Ex.#FFFFFF">#f2f2f2</parameter>
+		</config-general>
+	</ouc:properties>
+	
+	<ouc:properties label="color">
+		<config-colors>
+			<parameter section="Theme 3 Main Colors" name="color-3" prompt="Main Color" alt="Define a HEX color code. Ex.#FFFFFF">#055C05</parameter>
+			<parameter name="color-3-color-dark" prompt="Main Color Dark Shade" alt="Define a HEX color code. Ex.#FFFFFF">#034903</parameter>
+		</config-colors>
+		<config-general>
+			<parameter section="Theme 3 Component Colors" name="color-3-header-color" prompt="Header Color" alt="Define a HEX color code. Ex.#FFFFFF">#d8d8d8</parameter>
+			<parameter name="color-3-footer-background" prompt="Footer Background" alt="Define a HEX color code. Ex.#FFFFFF">#444444</parameter>
+			<parameter name="color-3-footer-text" prompt="Footer Text" alt="Define a HEX color code. Ex.#FFFFFF">#FFFFFF</parameter>
+			<parameter name="color-3-footer-link" prompt="Footer Link" alt="Define a HEX color code. Ex.#FFFFFF">#FFFFFF</parameter>
+			<parameter name="color-3-footer-link-hover" prompt="Footer Link Hover" alt="Define a HEX color code. Ex.#FFFFFF">#FFFFFF</parameter>
+			<parameter name="color-3-disclaimer-background" prompt="Disclaimer Background" alt="Define a HEX color code. Ex.#FFFFFF">#f2f2f2</parameter>
+		</config-general>
+	</ouc:properties>
+	
+	<ouc:properties label="color">
+		<config-colors>
+			<parameter section="Theme 4 Main Colors" name="color-4" prompt="Main Color" alt="Define a HEX color code. Ex.#FFFFFF">#AAAAAA</parameter>
+			<parameter name="color-4-dark" prompt="Main Color Dark Shade" alt="Define a HEX color code. Ex.#FFFFFF">#888888</parameter>
+		</config-colors>
+		<config-general>
+			<parameter section="Theme 4 Component Colors" name="color-4-header-color" prompt="Header Color" alt="Define a HEX color code. Ex.#FFFFFF">#d8d8d8</parameter>
+			<parameter name="color-4-footer-background" prompt="Footer Background" alt="Define a HEX color code. Ex.#FFFFFF">#444444</parameter>
+			<parameter name="color-4-footer-text" prompt="Footer Text" alt="Define a HEX color code. Ex.#FFFFFF">#FFFFFF</parameter>
+			<parameter name="color-4-footer-link" prompt="Footer Link" alt="Define a HEX color code. Ex.#FFFFFF">#FFFFFF</parameter>
+			<parameter name="color-4-footer-link-hover" prompt="Footer Link Hover" alt="Define a HEX color code. Ex.#FFFFFF">#FFFFFF</parameter>
+			<parameter name="color-4-disclaimer-background" prompt="Disclaimer Background" alt="Define a HEX color code. Ex.#FFFFFF">#f2f2f2</parameter>
+		</config-general>
+	</ouc:properties>
+</document>

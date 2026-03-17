@@ -1,0 +1,1857 @@
+/*
+5/25/17
+Changed value of the color attributes on line 10 and line 330 from #002E66 to #305589
+Changed the value of the background (or background-color) attributes on line 280, line 437, line 744, line 905 and line 918 to rgba(0,46,102,.85)
+Changed the value of the background (or background-color) attributes on line 516 and line 858 to rgba(255, 255, 255, 0.85)
+Douglas Bland
+*/
+
+html {
+    font-size: 14px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a {
+	color: #305589;
+}
+
+a:focus {
+	border:1px #cccccc solid;
+	outline: none;
+}
+
+body .body-wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+blockquote {
+	border:none;
+	float: right;
+	width: 340px;
+	text-align:right;
+	margin-right:0;
+}
+
+blockquote p {
+	background-color:#ccedf9;
+	padding: 15px;
+	line-height:2;
+	}
+
+img {
+    border: 1px solid #ccc;
+}
+
+#searchDiv {
+	margin-bottom: 2rem;
+	font-family: "Open sans";
+}
+
+#searchDiv .gsc-control-cse div {
+	height: 100%;
+}
+
+#searchDiv .gsc-search-button input {
+	-webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.gsc-thumbnail-inside {
+	font-weight: bold;
+}
+
+.gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+	padding-left:0px !important;
+}
+
+.gs-webResult .gs-snippet, .gs-imageResult .gs-snippet, .gs-fileFormatType {
+	font-size:0.857rem;
+}
+
+h1 {
+    font-size: 0;
+    line-height: 0;
+    margin: 0px;
+}
+
+.accessibility {
+    position:absolute;
+    top:-9999px;
+    left:-9999px;
+    cursor:text;
+}
+
+ #emergencyNotice {
+    padding:0em;
+    font-style: normal;
+    font-size:1.25em;
+    font-weight:normal;
+    color:#000;
+    text-align:center;
+    width:100%;
+    margin:0;
+	box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);
+}
+
+#emergencyNotice p {
+	margin: 0;
+	padding-bottom: 20px
+}
+
+#emergencyNotice .close-icon {
+    margin:1em 1em 0 0;
+}
+
+#emergencyNotice .right {
+    float: right;
+}
+
+#emergencyNotice .fa {
+    font-size: 40px;
+    padding: 10px;
+}
+
+#emergencyNotice .RedAlert {
+    background-color:#ffa4a4;
+}
+
+#emergencyNotice .YellowWarning {
+    background-color:#FFEAA1;
+}
+
+#emergencyNotice .BlueInfo {
+    background-color:#ADE0F9;
+}
+
+#emergencyNotice .WhiteInfo {
+    background-color:#fff;
+}
+
+body.home-page .accessibility li#skip-secnav, body.landing-page .accessibility li#skip-secnav {
+    display: none;
+}
+
+.navbar {
+    height: 90px;
+    margin: 0;
+    background: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 4px solid #d6d6d6;
+    position: relative;
+    border-radius: 0;
+}
+
+.navbar .navbar-header {
+    padding: 0 30px 0 48px;
+}
+
+.navbar .logo {
+    padding: 0;
+}
+
+.navbar .logo img {
+    z-index: 9;
+    position: relative;
+    border: none;
+}
+
+.navbar .collapse .nav {
+    margin: 36px 0 0;
+}
+
+.navbar .main-nav > li {
+    margin: 0 0.714rem;
+    z-index: 999;
+}
+
+.navbar .main-nav > li > a {
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+    color: #002c66;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.navbar .quick-nav > li > a {
+    padding: 15px 15px 0.714rem;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.071rem;
+    line-height: 16px;
+    color: #002E66;
+}
+
+.navbar .main-nav > li > a:hover, .navbar .main-nav > li > a:focus {
+	background: #002C66;
+	color: #FFFFFF;	
+}
+
+.navbar .quick-nav > li > a.apply-now {
+    background: #ffbe00;
+    font-weight: 700;
+    left:15px;
+    top:11px;
+    padding: 7px 18px;
+    transition: all 500ms;
+}
+
+.navbar .quick-nav > li > a.apply-now:hover, .navbar .quick-nav > li > a.apply-now:focus {
+    color: #FFF;
+    background: #002E66;
+}
+
+.navbar .collapse .quick-nav {
+    margin: 45px 0 0;
+}
+
+.navbar .quick-nav > li.quick-links > a {
+    font-size: 0.857rem;
+    line-height: 13px;
+    padding: 17px 15px 0.714rem;
+    color: #565656;
+    font-weight: 700;
+}
+
+.navbar .quick-nav > li.quick-links.open > a {
+    background: transparent;
+    color: #565656;
+}
+
+.navbar .quick-nav > li.quick-links .dropdown-menu {
+    padding: 0;
+    border: 1px solid #CCCCCC;
+	border-radius:0;
+}
+
+.navbar .quick-nav > li.quick-links .dropdown-menu > li > a {
+    color: #002c66;
+    padding: 8px 0.714rem 8px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.navbar .quick-nav > li.quick-links > a:hover, .navbar .quick-nav > li.quick-links > a:focus, .navbar .quick-nav > li.quick-links > a i:hover, .navbar .quick-nav > li.quick-links .dropdown-menu > li > a:hover, .navbar .quick-nav > li.quick-links .dropdown-menu > li > a:focus {
+	background: #002C66;
+	color: #FFFFFF;
+} 
+
+.navbar .quick-nav > li.quick-links .dropdown-menu > li > a i.fa {
+    width: 22px;
+}
+
+.navbar .quick-nav > li.quick-links .dropdown-menu > li:last-child > a {
+    padding: 8px 0.714rem 8px;
+}
+
+.navbar .audience {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #002e66;
+    border: none;
+}
+
+.navbar .audience > li > a {
+    font-size: 1.013rem;
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    padding: 0.714rem 22px;
+    font-weight: 700;
+    line-height: 0.714rem;
+}
+
+ .navbar .audience > li > a:hover, .navbar .audience > li > a:focus {
+    color: #ffbe00;
+}
+
+#photoDivNew .slides li {
+    position: relative;
+}
+
+#photoDivNew .slide-content {
+    font-family: "Roboto Condensed", sans-serif;
+    position: absolute;
+    padding: 1.071rem 1.571rem;
+	background-color:rgba(0, 46, 102, .85);
+    left: 1.571rem;
+    bottom: 1.571rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    border: 1px solid #002E66;
+}
+
+#photoDivNew .slide-content div.sc-small-top {
+    font-size: 2rem;
+	margin: 0;
+	line-height: .5;
+}
+
+#photoDivNew .slide-content div.sc-small-bottom {
+    font-size: 2rem;
+	margin: 0 0 20px;
+}
+
+#photoDivNew .slide-content div.sc-large-top {
+    font-size: 3.571rem;
+	margin: 0;
+	line-height:1;
+  }
+
+#photoDivNew .slide-content div.sc-large-bottom {
+    font-size: 3.571rem;
+	margin: 0 0 15px;
+}
+
+#photoDivNew .slide-content h4.h4_b {
+    font-size: 3.571rem;
+}
+
+#photoDivNew .slide-content h3.h3_b {
+	font-size: 2rem;
+}
+
+#dlink {
+	position:absolute;
+	z-index:100;
+	bottom:24px;
+	right:7rem;
+}
+
+.columns .block ul li > a {
+    font-weight: 700;
+    font-size: 1.423rem;
+    color: #305589;    
+}
+
+#maincontent a, .columns .block ul li > a, #deptinfo a {
+    text-decoration: underline;
+    transition: all 500ms;
+}
+
+#maincontent a:hover, .columns .block ul li > a:hover, #deptinfo a:hover, #maincontent a:focus, .columns .block ul li > a:focus, #deptinfo a:focus {
+    color: #FFF;
+    background: #002E66;
+    text-decoration: none;
+}
+
+div#content {
+	padding: 0 1rem;
+}
+
+a.button, .click-throughs a.button, .click-throughs div.button, #maincontent a.button, .heading .popular li a.button {
+    background: #ffbe00;
+    color: #444;
+    padding: 9px 13px;
+    font-weight: 700;
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+a.button:hover, .click-throughs a.button:hover, .click-throughs div.button:hover, #maincontent a.button:hover, .heading .popular li a.button:hover, a.button:focus, .click-throughs a.button:focus, .click-throughs div.button:focus, #maincontent a.button:focus, .heading .popular li a.button:focus {
+    color: #FFF;
+    background: #002E66;
+    text-decoration: none;
+}
+
+.click-throughs a.button, .click-throughs div.button {
+    margin:0 1rem;
+}
+
+#photoDivNew .slide-content a.button {
+    font-size: 1.071rem;
+}
+
+#contentDiv {
+    max-width: 71.429rem;
+    margin: 0 auto 3.214rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+#contentDiv a.button {
+    padding: 0.714rem 1.286rem;
+    font-size: 1rem;
+    margin: 1.071rem 0 0;
+}
+
+#contentDiv h3 {
+    font-family: "Roboto Condensed", sans-serif;
+    color: #002e66;
+    font-size: 3.571rem;
+    margin: 0 5px;
+    text-transform: uppercase;
+}
+
+#contentDiv h4 {
+    font-size: 1.214rem;
+    color: #002e66;
+    font-weight: 700;
+}
+
+#contentDiv p {
+    font-size: 0.857rem;
+    color: #002E66;
+    font-weight: 400;
+}
+
+#contentDiv .image {
+    border-top: 12px solid #002E66;
+}
+
+#contentDiv img {
+    max-width: 100%;
+    border: 1px solid #ccc;
+	height:auto;
+}
+
+#EventsDiv,
+#NewsDiv {
+    margin: 3.214rem 0 1.071rem;
+    clear: both;
+}
+
+#BottomFeature {
+    background: url(/_resources/images/home/cerritos-home-fastfact.jpg) no-repeat;
+    position: relative;
+    height: 48.214rem;
+    width: 92.857rem;
+    margin: 0 auto 3.214rem;
+    border: 1px solid #ccc;
+    max-width: 100%;
+}
+
+#BottomFeature h2 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 3.357rem;
+    font-weight: 400;
+    padding: 1.786rem 2.286rem;
+    background-color: rgba(0, 46, 102, .85);
+    color: #fff;
+    display: inline-block;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+}
+
+#BottomFeature .circle {
+    background-color: rgba(0, 163, 217, 0.8);
+    width: 18.929rem;
+    height: 18.929rem;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    top: 7.714rem;
+    right: 250px;
+    position: absolute;
+    z-index: 50;
+}
+
+#BottomFeature .circle:nth-child(2n) {
+    background-color: rgba(230, 95, 92, 0.8);
+    top: 170px;
+    right: 25px;
+    z-index: 25;
+}
+
+#BottomFeature .circle:nth-child(3n) {
+    background-color: rgba(220, 157, 54, 0.8);
+    top: 330px;
+    right: 300px;
+    z-index: 100;
+}
+
+#BottomFeature .circle:nth-child(4n) {
+    background-color: rgba(95, 176, 143, 0.8);
+    top: 395px;
+    right: 85px;
+    z-index: 0;
+}
+
+#BottomFeature .circle h4 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 100px;
+    margin: 40px 0 0;
+    font-weight: 700;
+}
+
+#BottomFeature .circle p {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 155px;
+    margin: 0 auto;
+}
+
+#BottomFeature > a.button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.landing-page #BottomFeature {
+    background: url(/_resources/images/landing/cerritos-landing-PanelAd.jpg) no-repeat;
+    height: 45.071rem;
+	position: relative;
+	margin: 0 auto 3.214rem;
+    border: 1px solid #ccc;
+    max-width: 100%;
+}
+
+.landing-page #BottomFeature .feature-content {
+    font-family: "Roboto Condensed", sans-serif;
+    position: relative;
+    padding: 1.071rem 1.571rem;
+    background: rgba(255, 255, 255, .85);
+    left: 1.571rem;
+    bottom: 1.571rem;
+    color: #002e66;
+    text-transform: uppercase;
+    font-weight: 400;
+    /* box-shadow: 0 0 15px #999;*/
+    border: 1px solid #ccc;
+    max-width: 36rem;
+}
+
+.landing-page #BottomFeature .feature-content .fc-small-top {
+    font-size: 2rem;
+    margin: 0 0 10px;
+	line-height: .5;
+}
+
+.landing-page #BottomFeature .feature-content .fc-small-bottom {
+    font-size: 2rem;
+    margin: 0 0 20px;
+}
+
+.landing-page #BottomFeature .feature-content .fc-large-top {
+    font-size: 3.571rem;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.landing-page #BottomFeature .feature-content .fc-large-bottom {
+    font-size: 3.571rem;
+    margin: 0 0 1rem;
+    letter-spacing: -1px;
+	line-height: .9;
+}
+
+table.table-rs {
+    width:100%;
+}
+
+table.table-rs th {
+    font-weight:bold;
+}
+
+table.table-rs th, table.table-rs td {
+	padding: 6px;
+	border: 1px solid #ccc;
+}
+
+#social-wrap {
+    background: #444;
+    border-bottom: 4px solid #fff;
+}
+
+.department #social-wrap {
+	margin-top: 40px;
+}
+
+#social {
+    padding: 1.571rem 0;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+#social h3 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 3.646rem;
+    color: #fff;
+    text-align: right;
+    margin: 0 1rem 0 0;
+    text-transform: uppercase;
+    letter-spacing: -0.107rem;
+}
+
+#social .social-buttons {
+    display: inline-flex;
+    vertical-align: top;
+}
+
+#social .social-buttons a, #social .social-buttons div {
+    color: #002e66;
+    background: #fff;
+    font-size: 2rem;
+    width: 3.429rem;
+    height: 3.429rem;
+    display: inline-block;
+    text-align: center;
+    margin-right: 3.429rem;
+    border-radius: 3px;
+    transition: all 500ms;
+}
+
+#social .social-buttons a:hover, #social .social-buttons a:focus {
+    color: #fff;
+    background: #002E66;
+}
+
+#social .social-buttons a i {
+    line-height: 3.429rem;
+}
+
+#social .click-throughs {
+    padding: 1.5rem .5rem 0;
+    display: inline-flex;
+}
+
+#social #st-1 {
+    position: relative;
+    top: -3px;
+}
+
+#social #st-1 .st-btn[data-network='sharethis'] {
+    background: #fff;
+    transition: all 500ms;
+}
+
+#social #st-1 .st-btn:hover, #social #st-3 .st-btn:hover {
+    top:0px;
+    opacity: 10;
+    color: #FFF !important;
+    background: #002E66 !important;
+}
+
+#social #st-1 .st-btn > span {
+    color: #002E66;
+}
+
+#social #st-1 .st-btn > svg {
+    fill: #002E66 !important;
+    height: 30px;
+    width: 30px;
+    transition: all 500ms;
+}
+
+#social #st-1 .st-btn > svg:hover {
+    fill:#FFF !important;
+}
+
+#social #st-3 .st-btn[data-network='sharethis'] {
+    background: #FFBE00;
+    transition: all 500ms;
+}
+
+#social #st-3 .st-btn > svg {
+    fill: #444 !important;
+    transition: all 500ms;
+}
+
+#social #st-3 .st-btn > svg:hover {
+    fill: #FFF !important;
+}
+
+#social #st-3 .st-btn > span {
+    color: #444;
+    font-weight: 700;
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 500ms;
+}
+
+#social #st-3 .st-btn > span:hover {
+    color: #fff;
+}
+
+#footer-wrap {
+    background: #002e66;
+}
+
+#footer {
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    padding: 2.286rem 7.643rem;
+    font-size: 1.071rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+#footer a {
+    font-weight: 700;
+    color: #fff;
+    display: block;
+    padding-bottom: 0.607rem;
+}
+
+#footer .info a {
+    display: inline;
+}
+
+#footer h5 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#footer p {
+    margin-bottom: 20px;
+}
+
+#footer .external-links {
+    margin: 0;
+}
+
+#footer .external-links a {
+    font-weight: normal;
+    line-height: .95;
+}
+
+/* landing page */
+.heading {
+    position: relative;
+}
+
+#about-header {
+    background: url(/_resources/images/landing/cerritos-landing-top.jpg) no-repeat;
+	background-size: 100%;
+    width: 92.85714rem;
+    height: 35.92857rem;
+    margin-bottom: 40px;
+    border: 1px solid #ccc;
+    max-width: 100%;
+    position: relative;
+}
+
+#about-header h2 {
+    position: absolute;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 4rem;
+    font-weight: 400;
+    padding: 1.42857rem;
+    bottom: 0;
+    left: 0;
+	background-color:rgba(0, 46, 102, .85);
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.heading .popular {
+    position: absolute;
+    bottom: 1.78571rem;
+    right: 1.78571rem;
+    background: #fff;
+    padding: 1.78571rem;
+	border:1px solid #CCCCCC;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #002e66;
+    list-style: none;
+}
+
+.heading .popular li:not(:last-child) {
+    margin-bottom: 0.71429rem;
+}
+
+.heading .popular li h4 {
+    padding: 0 1.07143rem;
+    margin: 0;
+    text-align: center;
+    font-weight: 700;
+}
+
+.heading .popular li a {
+    color: #333;
+    padding: 0.7rem 1.07143rem;
+    background: #ffbe00;
+    display: inline-block;
+    width: 100%;
+}
+
+.heading .popular li a i {
+    min-width: 1.3rem;
+}
+
+.heading .popular li a .fa {
+	font-size:1.1rem;
+}
+
+p.lead-in {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.42857rem;
+    margin-bottom: 1.78571rem;
+}
+
+.columns > .col-md-4:first-child {
+    padding-left: 0;
+    padding-right: 0.714rem;
+}
+
+.columns > .col-md-4 {
+    padding-left: 0.714rem;
+    padding-right: 0.714rem;
+}
+
+.columns > .col-md-4:last-child {
+    padding-right: 0;
+    padding-left: 0.714rem;
+}
+
+.columns .block h3 {
+    background: #002E66;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding: 1.429rem 1.714rem;
+}
+
+.columns .block h3 i {
+    float: left;
+    padding-right: 1.429rem;
+}
+
+.columns .block h3 .fa {
+	font-size: 30px;
+}
+
+.columns .block h3 span {
+    overflow: hidden;
+    display: block;
+}
+
+.columns .block ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.columns .block ul li > p {
+    font-size: 1.143rem;
+    margin-left: 1rem;
+    text-indent: -1rem;
+}
+
+/* department pages */
+.department #top-panel {
+    background: url(/_resources/images/dept/cerritos-depthome-top.jpg) no-repeat;
+	background-size: 100%;
+    width: 1300px;
+    height: 40rem;
+    position: relative;
+    max-width: 100%;
+}
+
+.department #top-panel .top-panel-content {
+    font-family: "Roboto Condensed", sans-serif;
+    position: absolute;
+    padding: 1.071rem 1.571rem;
+	background-color:rgba(255, 255, 255, .85);
+    right: 1.571rem;
+    bottom: 1.571rem;
+    color: #002e66;
+    text-transform: uppercase;
+    font-weight: 400;
+    border: 1px solid #ccc;
+    max-width: 31.429rem;
+}
+
+.department #top-panel .top-panel-content .tpc-small-top {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+	line-height: 1;
+}
+
+.department #top-panel .top-panel-content .tpc-small-bottom {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 15px;
+	line-height: 1;
+}
+
+.department #top-panel .top-panel-content .tpc-large-top {
+    font-size: 2.771rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+.department #top-panel .top-panel-content .tpc-large-bottom {
+    font-size: 2.771rem;
+    font-weight: 700;
+    margin: 0 0 15px;
+    line-height: 1;
+}
+
+.department #sidebar {
+    padding-left: 0;
+}
+
+.department #sidebar .tabH4_Main {
+    font-family: "Roboto Condensed", sans-serif;
+    color: #fff;
+	background-color:rgba(0, 46, 102, .85);
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    padding: 2rem 1.286rem;
+    margin: -7.857rem 0 0;
+    font-weight: normal;
+	line-height:1;
+}
+
+.department #sidebar .nopanel .tabH4_Main {
+    font-family: "Roboto Condensed", sans-serif;
+    color: #fff;
+    background-color: rgba(0, 46, 102, 1.0);
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    padding: 2rem 1.286rem;
+    margin: -7.857rem 0 0;
+    font-weight: normal;
+	line-height:1;
+}
+
+.department.inside #sidebar .tabH4_Main {
+    margin: 0;
+    padding: 4.5rem 1.286rem 2rem;
+}
+
+.department #sidebar #deptinfo {
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.department #sidebar #deptinfo div {
+    margin: .5rem 0 1.929rem 0;
+}
+
+.department #sidebar #deptinfo hr {
+    border-width:2px;
+	border-color: #D6D6D6;
+	margin-bottom:0px;
+}
+
+.department #sidebar h3 {
+    color: #002E66;
+    text-transform: uppercase;
+    font-size: 1.429rem;
+    margin: 0 0 5px;
+    font-weight: 700;
+}
+
+.department #sidebar p {
+    margin: 0;
+}
+
+.department #sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.department #sidebar ul li {
+    padding: 0;
+    background: #444;
+}
+
+.department #sidebar ul li a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1px solid #fff;
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+}
+/* --------- pageletlinks dept leftnav ----------- */
+
+.department #sidebar #menuLeft ul.pageletLinks li a:hover, .department #sidebar #menuLeft ul.pageletLinks li a:focus {
+    background-color: #222222;
+    text-decoration: none;
+}
+
+.department #sidebar #menuLeft ul.pageletLinks li.selected {
+    background: #305589;
+}
+
+.department #sidebar #menuLeft ul#Accordion.pageletLinks li span a:after  {
+	font: normal normal normal 12px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: "\f067";
+    float: right;
+	padding-top:4px;
+}
+.department #sidebar #menuLeft ul#Accordion.pageletLinks li span a.open:after  {
+	font: normal normal normal 12px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: "\f068";
+    float: right;
+	padding-top:4px;
+}
+.department #sidebar #menuLeft ul#Accordion.pageletLinks li span a.closed:after  {
+	font: normal normal normal 12px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: "\f067";
+    float: right;
+	padding-top:4px;
+}
+.department #sidebar #menuLeft ul.pageletLinks li ul li a {
+    padding-left: 45px;
+    font-size: .95rem;
+}
+
+.department #sidebar #menuLeft ul#Accordion.pageletLinks li a.selected {
+		color: #ffffff;
+		background-color:#305589;
+		display:block;
+	
+	}
+	
+.department #contentcontainer {
+    clear: both;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.143rem;
+	padding-top:1rem;
+}
+
+.department #contentcontainer h2 {
+    font-size: 2.429rem;
+    color: #002e66;
+    font-family: "Open Sans", sans-serif;
+    border-bottom: 1px solid #666;
+    padding-bottom: 1.429rem;
+    margin-bottom: 1.786rem;
+}
+
+.department #contentcontainer h3 {
+    text-transform: uppercase;
+    color: #002e66;
+    font-size: 1.714rem;
+    font-weight: 700;
+}
+
+.department #contentcontainer h4 {
+    font-size: 1.5714rem;
+	color: #002e66;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.department #contentcontainer h5 {
+    font-size: 1.429rem;
+	color: #002E66;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.department #contentcontainer h6 {
+    font-size: 1.286rem;
+	color: #002E66;
+	font-weight: 700;
+    line-height: 1.5;
+}
+
+.department #contentcontainer table {
+    margin-bottom: 0.714rem;
+}
+
+.department #contentcontainer table td {
+    padding-right: 1rem;
+}
+
+.department #contentcontainer img {
+    float: right;
+    margin-left: 1rem;
+}
+
+.department #contentcontainer img.featured-image {
+    float: none;
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.department #contentvideo {
+    margin-top: 2rem;
+}
+
+.department #contentvideo > img {
+    clear: both;
+    margin: 1rem 0;
+    max-width: 100%;
+}
+
+/* general styles */
+.col-md-4,
+.col-sm-4 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.flexslider {
+    z-index: 2;
+    position: relative;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 0;
+}
+
+.flex-pauseplay a {
+	bottom: 15px;
+	color:#002E66;
+	background: #fff;
+	left: auto;
+	right: 25px;
+	width: auto;
+	height: auto;
+	font-family: "Roboto Condensed", sans-serif;
+	padding: 9px 13px;
+	font-weight:700;
+	text-transform:uppercase;
+	text-decoration:none;
+	transition:all 500ms;
+}
+
+.flex-pauseplay a:hover {
+	color:#FFFFFF;
+	background-color:#002E66;
+}
+
+.flex-pauseplay a:before {
+	margin-right: 10px;
+}
+
+.flexslider .slides img{
+    border: none;
+}
+
+.flexslider .slides img.slide-small {
+	display:none;
+}
+
+.flexslider .slides {
+    border-radius: 0;
+}
+
+.flex-control-nav {
+    right: 3.5rem;
+    width: inherit;
+}
+
+.flex-direction-nav a {
+    height:50px;
+}
+
+.flexslider:hover .flex-direction-nav .flex-prev {
+	left: 5%;
+}
+
+.flexslider:hover .flex-direction-nav .flex-next {
+	right: 5%;
+}
+
+i.fa-exclamation-triangle {
+    color: #c70d10;
+}
+
+#google_translate_element a {
+    display: inline;
+    color: #333;
+}
+/* ---------- breadcrumbs ---------- */
+
+#BreadcrumbList {
+    font-size: .85rem;
+}
+
+#BreadcrumbList ol {
+    float: right;
+    list-style: none;
+    padding: 0.8rem 0;
+    margin: 0;
+}
+
+#BreadcrumbList li {
+    display: inline-block;
+}
+
+#BreadcrumbList li a {
+    padding: 0 10px;
+    color: #444;
+    text-decoration: underline;
+}
+
+#BreadcrumbList li:not(:last-child):after {
+    content: '>';
+}
+
+#BreadcrumbList li .title {
+    margin-left:10px;
+}
+
+.mobile {
+    display: none;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 10rem;
+    display: block;
+	transition:all 2s;
+}
+
+.back-to-top img {
+    border: none;
+	width: 4rem;
+	height: 4rem;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+/*-------------CALENDAR STYLING ---------*/
+
+#CalendarDiv ul.calendar-list li {
+	margin-left:0;
+}
+
+ #CalendarDiv h3 {
+     margin:15px 0; 
+ }
+
+ #CalendarDiv h4 {
+     margin-top: 0px; 
+ } 
+
+#calFilter label {
+	margin-right:2rem;
+}
+
+.calendar-title-date {
+	font-style:italic;
+	font-weight:700;
+}
+
+.calendar-item-title {
+	font-size:1.5rem;
+	font-weight:700;
+}
+
+.calendar-item-date {
+	font-weight:700;
+}
+
+#calFilter label input {
+	margin-right: 5px;
+}
+
+#CalendarDiv hr, .calendar-hr  {
+	border-bottom:1px solid #666;
+	margin: 15px 0; }
+
+.calendar-list {list-style:none;}
+
+.calendar-title-date {
+	font-style:italic;
+	font-weight:700;
+}
+
+.calendar-item-date {
+	font-weight:700;
+}
+
+.calendar-item-contact, .calendar-item-link, .calendar-item-address  {
+	margin-left:2rem;
+	font-size:1rem;
+}
+
+/*-------------DAILY FALCON STYLING ---------*/
+
+ #CalendarDiv h3 {
+     margin:15px 0; 
+ }
+
+#DailyFalconDiv h4 { 
+    margin-top: 0px;
+}
+
+.falcon-date {
+	font-style:italic;
+	font-weight:700;
+}
+
+#DailyFalconDiv .date {
+	font-weight: 700;
+}
+
+#DailyFalconDiv .link, #DailyFalconDiv .contact {
+	margin-left: 2rem;
+}
+
+#DailyFalconDiv hr, .calendar-hr  {border-bottom:1px solid #666;margin: 15px 0;}
+
+#DailyFalconDiv ul {list-style:none;}
+
+#DailyFalconDiv .link, #DailyFalconDiv .contact {
+	margin-left: 2rem;
+	font-size:1rem;
+}
+
+/*-------------DEPARTMENT NAMES STYLING ---------*/
+
+.department-statement {
+	float:right;
+	width:30%;
+	margin-left: 20px
+}
+
+.department-names-left {
+	float:left;
+	width:33%;
+}
+
+.department-names-right {
+	float:right;
+	width:33%;
+}
+
+.department-names-right ul, .department-names-left ul {
+	padding: 0 1rem;
+}
+
+.department-names-right ul li, .department-names-left ul li {
+	list-style:none;
+	margin: 10px 0;
+}
+
+.department-names-right ul li:hover, .department-names-left ul li:hover {
+	background: #002eCC;
+}
+
+#maincontent .department-names-right ul li a.button, .department-names-left ul li a.button {
+	display: block;
+}
+
+/*-----------------BEGINNING of RESPONSIVE STYLES---------------------*/
+
+@media (min-width: 768px) {
+    .navbar-right .dropdown-menu {
+        left: 0;
+        right: auto;
+    }
+	
+}
+
+@media (max-width: 1330px) {
+	.department #sidebar {
+		padding:0 1rem;
+	}
+}
+
+@media (max-width: 1210px) {
+    .nav>li>a {
+        padding: 10px 0;
+    }
+	
+	.navbar .quick-nav > li.quick-links > a {
+		    padding: 17px 10px 0.714rem;
+	}
+	
+	.navbar .quick-nav > li > a.apply-now {
+		padding: 7px 7px;
+	}
+}
+
+@media (max-width: 1150px) {
+    .department #sidebar .tabH4_Main {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    #social .social-buttons section a {
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+
+    .department #top-panel {
+		height:45rem;
+	}
+	
+	.department #top-panel .top-panel-content {
+        bottom: 9rem;
+    }
+	
+	.department #contentcontainer {
+		padding-top: 0;
+	}
+
+    #contentDiv .col-md-4 {
+        text-align: center;
+    }
+
+    #contentDiv h3 {
+        padding: 0 1rem;
+        font-size: 3rem;
+    }
+
+    #contentDiv img {
+        width: 100%;
+    }
+	
+	#EventsDiv, #NewsDiv {
+		width:60%;
+		margin: 50px auto;
+	}
+	
+	.main-nav {
+		display:none;
+	}
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .mobile-nav li {
+        text-align: center;
+		border-bottom: 1px solid #002E66;
+    }
+
+    .navbar .navbar-nav.audience {
+        display: none;
+    }
+
+    #photoDivNew .slide-content h3 {
+        font-size: 2rem;
+    }
+	
+	#photoDivNew .slide-content h4 {
+        font-size: 1.5rem;
+    }
+	#photoDivNew .slide-content h3.h3_b {
+        font-size: 1.5rem;
+    }
+	
+	#photoDivNew .slide-content h4.h4_b {
+        font-size: 2rem;
+    }
+
+    #contentDiv h4 {
+        margin-bottom: 0;
+        font-weight: 700;
+    }
+
+    #contentDiv h4,
+    #contentDiv p {
+        text-align: left;
+        padding-left: 1rem;
+    }
+
+    .quick-nav {
+        display: none;
+    }
+
+    .navbar {
+        height: auto;
+    }
+
+    .navbar .collapse .nav {
+        margin: 0;
+    }
+
+    .main-nav {
+        float: right;
+    }
+
+    .navbar .main-nav > li {
+        text-align: center;
+    }
+
+    .navbar-default .navbar-collapse {
+        background: #fff;
+    }
+	
+	 #headerDiv .navbar-default .navbar-toggle:focus, #headerDiv .navbar-default .navbar-toggle:hover {
+		 background-color:#FFF;
+	 }
+	.navbar-default .navbar-collapse {
+		border-top:0px;
+		border:1px solid #002E66;
+	}
+	
+	.navbar-default .navbar-nav>li>a {
+		color:#565656;
+	}
+
+    #headerDiv .navbar-toggle {
+        border-top: 0;
+		border-left: 0;
+		border-right: 0;
+		border-bottom:none;
+        color: #002e66;
+        margin-bottom: 0;
+        margin-right: 0;
+        clear: both;
+		border-radius:0;
+    }
+	
+    .navbar .logo {
+        height: 0;
+    }
+
+    .navbar-toggle > div {
+        display: inline-block;
+    }
+
+    .navbar-toggle > .text {
+        font-size: 1.3rem;
+        text-transform: uppercase;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+        background: #002e66;
+    }
+
+    .navbar .logo img {
+        max-width: 120px;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .mobile-quicklinks {
+        float: right;
+        margin: 0 0 0 85px;
+    }
+
+    .mobile-quicklinks li {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0 0.5rem;
+    }
+
+    .mobile-quicklinks li:not(:first-child) {
+        font-size: 1.5rem;
+    }
+
+    .mobile-quicklinks li a {
+        color: #002e66;
+    }
+	
+	.mobile-quicklinks .open>.dropdown-menu {
+		left:-200px;
+	}
+	
+	.mobile-quicklinks .navbar-form {
+		border-top:none;
+		border-bottom:none;
+		padding: 0 15px;
+	}
+
+    #BottomFeature, .landing-page #BottomFeature {
+        height: auto;
+        background-size: contain;
+        padding-bottom: 4rem;
+    }
+	
+	.landing-page #BottomFeature {
+		background-size: cover;
+		padding-bottom: 14rem;
+	}
+	
+	.landing-page #BottomFeature .feature-content {
+		bottom:0;
+		top:15rem;
+		left: 0;
+	}
+
+    #BottomFeature h2 {
+        font-size: 2rem;
+        padding: 1rem 2rem;
+    }
+
+    #BottomFeature .circles {
+        margin-top: 8rem;
+    }
+
+    #BottomFeature .circle {
+        position: static;
+        margin: 0 auto;
+    }
+
+    #BottomFeature .circle h4 {
+        padding-top: 2.5rem;
+		margin: -30px 0 0;
+    }
+
+    #social h3 {
+        text-align: center;
+    }
+
+    #social .social-buttons {
+        display: block;
+    }
+
+    #social .social-buttons section {
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+	
+	#social #st-1 {
+		margin-left:1.2rem;
+	}
+
+    .navbar .main-nav > li > a {
+        font-size: 0.8rem;
+    }
+
+    #about-header {
+        width: 100%;
+        margin: 0;
+		height: 23rem;
+    }
+
+    .heading .popular {
+        bottom: auto;
+        right: auto;
+        top: 1rem;
+        left: 1rem;
+        position: static;
+    }
+
+    p.lead-in {
+        padding: 1rem;
+    }
+
+    .columns > .col-md-4:first-child {
+        padding-left: 0.714rem;
+        padding-right: 0.714rem;
+    }
+
+    .department #contentvideo > img {
+        max-width: 100%;
+    }
+
+    .department #contentcontainer img {
+	}
+	
+	.pull-right {
+		position:relative;
+		right:2rem;
+	}
+	
+	.department-statement {
+		width:100%;
+	}
+
+	.department-names-left {
+		width:50%;
+	}
+
+	.department-names-right {
+		width:50%;
+	}
+
+}
+
+@media (max-width: 768px) {
+	
+	#CalendarDiv ul.calendar-list li {
+	margin-left:-40px;
+}
+	
+	.calendar-item-contact, .calendar-item-link, .calendar-item-address  {
+	margin-left:0;
+}
+	
+	#DailyFalconDiv .link, #DailyFalconDiv .contact {
+	margin-left:0;
+}
+	
+	#DailyFalconDiv ul li {margin-left:-40px;}
+	
+    .main-nav {
+        float: none;
+    }
+
+    .navbar .main-nav > li > a {
+        font-size: 1rem;
+    }
+
+    .mobile-quicklinks {
+        margin: 0;
+    }
+	.back-to-top {
+        right: 3rem;
+    }
+	.back-to-top img {
+        width: 50px;
+		height: 50px;
+    }
+	#photoDivNew .slide-content {
+		position:relative;
+	}
+	
+	.flexslider .slides img.slide-large {
+		display:none;
+	}
+	
+	.flexslider .slides img.slide-small {
+		display:block;
+	}
+	
+	ul.flex-direction-nav {
+		position:relative;
+		bottom:200px;
+	}
+	.pull-right {
+		position:relative;
+		right:2rem;
+	}
+	
+	#about-header {
+    	background: url(/_resources/images/landing/cerritos-landing-top_700.jpg) no-repeat;
+		background-size: contain;		
+	}
+	
+	.department #top-panel {
+    	background: url(/_resources/images/dept/cerritos-depthome-top_700.jpg) no-repeat;
+		background-size: contain;
+	}
+	
+	.department #contentcontainer img {
+		float:none;
+	}
+	
+	.landing-page #BottomFeature {
+    	background: url(/_resources/images/landing/cerritos-landing-PanelAd_700.jpg) no-repeat;
+		background-size: contain;
+	}
+	
+	#BottomFeature {
+    	background: url(/_resources/images/home/cerritos-home-fastfact_700.jpg) no-repeat;
+		background-size: contain;
+	}
+	
+	table.table-rs {
+		width: 80%;
+	}
+	
+	table.table-rs, table.table-rs thead, table.table-rs tbody, table.table-rs th, table.table-rs tr, table.table-rs td  {
+		display: block;
+	}
+	
+	#footer {
+		text-align:center;
+	}
+}
+
+@media (max-width: 515px) {
+	.landing-page #BottomFeature .feature-content .fc-small-top {
+		line-height: 1.0;
+	}	
+	
+}
+
+@media (max-width: 480px) {
+	
+	#EventsDiv, #NewsDiv {
+		width:80%;
+		margin: 50px auto;
+	}
+	
+	#about-header {
+        height: 13rem;
+    }
+	
+	#about-header h2 {
+        font-size: 2.1rem;
+	}
+		
+	#BottomFeature .feature-content a.button {
+		font-size: 12px;
+	}
+	
+	#footer {
+		padding: 20px 0;
+		width:90%;
+		text-align:center;
+	}
+}
+
+/*-----------------------Print Styles------------------------------*/
+
+@media print {
+   #social-wrap, #top-panel, #sidebar #menuLeft, #BreadcrumbList, #footer .col-md-8, .back-to-top {
+	   display:none;
+   } 
+	
+	#headerDiv . navbar-header .navbar-brand.logo {
+		display: block !important;
+	}
+}
+

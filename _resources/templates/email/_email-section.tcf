@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tcf>
+    <title>New Email Section</title>
+    
+    <variable-list>
+        <variable section="Folder Information" name="dirname" prompt="Directory Name" alt="Enter the directory name that will be visible in OU Campus and in the URL. No special characters or spaces."></variable>
+        <variable section="General Page Setup" name="title" type="text" prompt="Page Title" alt="Required Field. Enter the page title. This will also be displayed by search engines as well as the web browser window.">Page Title</variable>
+        <!-- A safer way to create a file, forces PCF file extension -->
+        <variable name="pcf-filename" prompt="Filename" alt="Enter a filename using only lowercase letters, underscores, or dashes">index</variable>
+    </variable-list>
+    
+    <!-- Use this to specify a template group for the new section. -->
+    <directory-list> 
+        <parent name="current_folder" path="."> 
+            <directory name="new_folder" template-group="Email">{dirname}</directory> 
+        </parent> 
+    </directory-list>
+    
+    <template-list>
+        <template 
+            prompt-prefix="Page" 
+            filename="{pcf-filename}" 
+            display-filename="no" 
+            extension="pcf" 
+            destination="{directory/}{dirname}" 
+            force-destination="yes" 
+            preferred-redirect="yes">full-width.tmpl</template>
+    </template-list>
+</tcf>

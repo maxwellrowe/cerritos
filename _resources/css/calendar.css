@@ -1,0 +1,53 @@
+/***** CLASS SELECTORS ******/
+
+.event-label {
+	display: none;
+}
+
+.event-list-left, .featured-event-image{
+/* 	background-image: url(https://www.cerritos.edu/calendar/_includes/img/cc_logo-500x500.jpg) !important; */
+	border: .1em solid #E1E1E8;
+}
+
+#event-submission-form form label[for="category"] {
+    position: relative;
+    visibility: hidden;
+}
+
+#event-submission-form form label[for="category"]::after {
+ position: absolute;
+    visibility: visible;
+    top: 1em;
+    left: 0;
+ content: 'Calendar *';
+}
+
+#event-submission-form form span[id="help-block-tags"] {
+    position: relative;
+    visibility: hidden;
+}
+
+#event-submission-form form span[id="help-block-tags"]::after {
+ position: absolute;
+    visibility: visible;
+    top: 1em;
+    left: 0;
+ content: 'Tags filter events on the published calendar. Enter comma-separated words such as: academics, athletics, basketball, daily falcon.';
+}
+
+.hero{
+	display: none;
+}
+
+.hero+.wrapper{
+	top: 0;
+}
+
+.hero .wrapper [data-action=event-search] input[type=search] {
+    border: 0.06em solid transparent;
+    font-size: 1em;
+    height: 2.8em;
+    margin: 0;
+    padding: 0.44em 0.5em;
+    width: 25em;
+}

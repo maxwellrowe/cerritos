@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/dept-inside.xsl" title="Dept Inside" extension="htm"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<!-- Best practice is to have a couple common empty nodes in case a page needs to have page-unique code.
+These are only editable in source and therefore admins. -->
+<headcode></headcode> <!-- Output just before closing head tag. -->
+<bodycode></bodycode> <!-- Output just after opening body tag. -->
+<footcode></footcode> <!-- Output just before closing body tag. -->
+<!-- Meta page properites. Defines the meta elements that are placed in the head of the HTML document. -->
+<ouc:properties label="metadata">
+<title>Department Inside</title>
+<meta name="description" content="<!--%echo var="description" encoding="none" -->" />
+<meta name="keywords" content="<!--%echo var="keywords" encoding="none" -->" />
+<meta name="author" content="<!--%echo var="author" encoding="none" -->" />
+<meta name="robots" content="follow, all" />
+</ouc:properties>
+<ouc:properties label="config">
+<parameter name="BrcPageTitle" type="text" group="Everyone" prompt="Breadcrumbs Title" alt="(Optional) What is the page title for breadcrumbs if different from the title above?"></parameter>
+<parameter name="LeftNav" type="filechooser" group="Everyone" prompt="Left Navigation" alt="Which left navigation file (*.inc) does this page use?">/campus-guide/_includes/assets/deptnav.inc</parameter>
+<parameter name="DeptInfo" type="filechooser" group="Everyone" prompt="Dept Info Include" alt="Which dept info file (*.inc) does this page use?">/campus-guide/_includes/assets/deptinfo.inc</parameter>
+<parameter name="WebCss" type="filechooser" group="Administrators" prompt="CSS File" alt="(Admin) Which style sheet (*.css file) does this page use?"></parameter>
+<parameter name="TrackingInclude" type="filechooser" group="Administrators" prompt="Tracking Code Include" alt="(Admin) Which special tracking code include file (*.inc) for Facebook, Twitter, etc. if any does this page use?"></parameter>
+        <parameter section="Gallery Options" name="gallery-type" type="select" group="Administrators" prompt="Gallery Type" alt="Select the type of gallery that will display on this page when a gallery asset is used.">
+            <option value="slick" selected="false">Slick Slider</option>
+            <option value="fancybox" selected="true">FancyBox Thumbnail Gallery</option>
+        </parameter>
+</ouc:properties>
+
+<!-- Editable region. An ouc:div defines an editable region so a user can edit content within the WYSIWYG editor. Every ouc: div must have a unique label. 
+The ouc: editor defines the CSS styling in the WYSIWYG editor for this editable region.
+More information here: http :    //support.omniupdate.com/oucampus9/development/templating/page-tagging/tagging-reference.html#editable -->
+
+<ouc:div label="maincontent" group="Everyone" button-text="Main Content"><ouc:editor toolbar="Main" csspath="/_resources/css/editor.css" width="1020" wysiwyg-class="maincontent"/><p>&nbsp;</p>
+<p><strong>CAMPUS MAPS</strong></p>
+<ul>
+<li><a href="http://www.cerritos.edu/map-pdf">Campus Map (PDF)</a></li>
+<li><a href="http://www.cerritos.edu/wifi-pdf">Wireless Access Availability</a></li>
+<li><a href="{{f:80113901}}">Learning Resource Center Map</a></li>
+<li><a href="http://maps.google.com/maps?q=11110+Alondra+Boulevard,+Norwalk,+CA&amp;hl=en&amp;sll=37.269174,-119.306607&amp;sspn=28.513119,15.358887&amp;oq=11110+alondra&amp;hnear=11110+Alondra+Blvd,+Norwalk,+Los+Angeles,+California+90650&amp;t=m&amp;z=17">Google Map</a></li>
+</ul>
+<p><strong>GENERAL INFO</strong></p>
+<ul>
+<li><a href="http://www.cerritos.edu/parking">Parking</a></li>
+<li><a href="#">Directions to Campus</a></li>
+<li><a href="http://www.cerritos.edu/academiccalendar-pdf">Academic Calendar (PDF)</a></li>
+<li><a href="#">Employment Opportunities</a></li>
+<li><a href="http://www.cerritos.edu/default/news.aspx">News &amp; Views</a></li>
+<li><a href="http://www.cerritos.edu/facts">Cerritos College Facts at a Glance</a></li>
+<li><a href="#">President's Office</a></li>
+<li><a href="#">Mission Statement</a></li>
+</ul></ouc:div>
+
+</document>

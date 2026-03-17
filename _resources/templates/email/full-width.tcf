@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tcf>
+	<title>New Full Width Email</title>
+	
+	<variable-list>
+		<variable section="General Page Setup" name="title" type="text" prompt="Page Title" alt="Required Field. Enter the page title. This will also be displayed by search engines as well as the web browser window.">Page Title</variable>
+		<!-- A safer way to create a file, forces PCF file extension -->
+		<variable name="pcf-filename" prompt="Filename" alt="Enter a filename using only lowercase letters, underscores, or dashes">untitled</variable>
+	</variable-list>
+	
+	<template-list>
+		<template 
+			prompt-prefix="Page"
+			filename="{pcf-filename}"
+			display-filename="no"
+			extension="pcf">full-width.tmpl</template>
+	</template-list>
+
+</tcf>

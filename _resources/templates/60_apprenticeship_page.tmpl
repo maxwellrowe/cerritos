@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/apprenticeship_page.xsl" title="Apprenticeship Page" extension="htm"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<!-- Best practice is to have a couple common empty nodes in case a page needs to have page-unique code.
+These are only editable in source and therefore admins. -->
+<headcode></headcode> <!-- Output just before closing head tag. -->
+<bodycode></bodycode> <!-- Output just after opening body tag. -->
+<footcode></footcode> <!-- Output just before closing body tag. -->
+<!-- Meta page properites. Defines the meta elements that are placed in the head of the HTML document. -->
+<ouc:properties label="metadata">
+<title>Page Title</title>
+<meta name="description" content="<!--%echo var="description" encoding="none" -->" />
+<meta name="keywords" content="<!--%echo var="keywords" encoding="none" -->" />
+<meta name="author" content="<!--%echo var="author" encoding="none" -->" />
+<meta name="robots" content="follow, all" />
+</ouc:properties>
+<ouc:properties label="config">
+<parameter name="BrcPageTitle" type="text" group="Everyone" prompt="Breadcrumbs Title" alt="(Optional) What is the page title for breadcrumbs if different from the title above?"></parameter>
+<parameter section="Show Hero Section?" name="custom-hero" type="select" group="Everyone" prompt="Custom Hero/ Page Header?" alt="Select whether to hide the default page header/ hero.">
+	<option value="disabled" selected="true">No</option>
+	<option value="enabled" selected="false">Yes</option>
+</parameter>
+<parameter name="body_id" type="text" group="Everyone" prompt="Page Body ID" alt="(Administrators) If you want a custom ID added to the body tag, add it here."></parameter>
+<parameter name="TrackingInclude" type="filechooser" group="Administrators" prompt="Tracking Code Include" alt="(Admin) Which special tracking code include file (*.inc) for Facebook, Twitter, etc. if any does this page use?"></parameter>
+</ouc:properties>
+<!-- Editable region. An ouc:div defines an editable region so a user can edit content within the WYSIWYG editor. Every ouc: div must have a unique label. 
+The ouc: editor defines the CSS styling in the WYSIWYG editor for this editable region.
+More information here: http ://support.omniupdate.com/oucampus9/development/templating/page-tagging/tagging-reference.html#editable -->
+	
+<ouc:div label="page_hero" group="Administrators" button-text="Page Hero"><ouc:editor toolbar="Main" csspath="/_resources/css/editor.css" width="1020" wysiwyg-class="toppanel"/>
+Insert a the Page Hero Component here...
+</ouc:div>
+	
+<ouc:div label="maincontent" group="Everyone" button-text="Main Content"><ouc:editor toolbar="Main" csspath="/_resources/css/editor.css" width="1020" wysiwyg-class="depthours"/><p>Main Content goes here. Make sure to insert the Container Snippet if you do not want your content full width.</p></ouc:div>
+</document>

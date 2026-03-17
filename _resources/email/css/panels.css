@@ -1,0 +1,75 @@
+/*************************
+*  Callouts CSS Styling  *
+**************************/
+.callout{
+	background: #f2f2f2;
+	border: 1px solid #d9d9d9;
+	padding: 10px !important;
+}
+
+.callout-grey{
+	background:#f2f2f2;
+	border: 1px solid #d8d8d8;
+}
+
+.callout-blue {
+	background: #6091ba;
+	border: 1px solid #2f506c;
+	padding: 10px !important;
+	color:#ffffff;
+}
+
+.callout-red {
+	background: #A72222;
+	border: 1px solid #792222;
+	padding: 10px !important;
+	color:#ffffff;
+}
+
+.callout-green {
+	background: #055C05;
+	border: 1px solid #0F440F;
+	padding: 10px !important;
+	color:#ffffff;
+}
+
+.callout-dgrey{
+	background:#444;
+	border: 1px solid #b2b2b2;
+	color:#FFF;
+}
+
+.callout-blue h1,
+.callout-blue h2,
+.callout-blue h3,
+.callout-blue h4,
+.callout-blue h5,
+.callout-blue h6,
+.callout-blue p,
+.callout-blue p a,
+.callout-red h1,
+.callout-red h2,
+.callout-red h3,
+.callout-red h4,
+.callout-red h5,
+.callout-red h6,
+.callout-red p,
+.callout-red p a,
+.callout-green h1,
+.callout-green h2,
+.callout-green h3,
+.callout-green h4,
+.callout-green h5,
+.callout-green h6,
+.callout-green p,
+.callout-green p a,
+.callout-dgrey h1,
+.callout-dgrey h2,
+.callout-dgrey h3,
+.callout-dgrey h4,
+.callout-dgrey h5,
+.callout-dgrey h6,
+.callout-dgrey p,
+.callout-dgrey p a{
+	color:#ffffff;
+}

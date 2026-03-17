@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/landing-page.xsl" title="Landing Page" extension="htm"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<!-- Best practice is to have a couple common empty nodes in case a page needs to have page-unique code.
+These are only editable in source and therefore admins. -->
+<headcode></headcode> <!-- Output just before closing head tag. -->
+<bodycode></bodycode> <!-- Output just after opening body tag. -->
+<footcode></footcode> <!-- Output just before closing body tag. -->
+<!-- Meta page properites. Defines the meta elements that are placed in the head of the HTML document. -->
+<ouc:properties label="metadata">
+<title><!--%echo var="title" encoding="none" --></title>
+<meta name="description" content="<!--%echo var="description" encoding="none" -->" />
+<meta name="keywords" content="<!--%echo var="keywords" encoding="none" -->" />
+<meta name="author" content="<!--%echo var="author" encoding="none" -->" />
+<meta name="robots" content="follow, all" />
+</ouc:properties>
+<ouc:properties label="config">
+<parameter section="Landing Page Options" name="hero-bg-image" type="filechooser" group="Everyone" prompt="Hero Background Image" alt="Choose an image to use as the background for the hero. You can also set this in the CSS." source="staging" dependency="yes" path="<!--%echo var="directory/" -->_includes/images/"></parameter>
+
+<parameter name="lp-hide-introduction" group="Everyone" type="checkbox" prompt="Hide Introduction Region" alt="">
+<option value="hide" selected="false">Yes, hide.</option>
+</parameter>
+	
+<parameter name="lp-hide-popular-links" group="Everyone" type="checkbox" prompt="Hide Popular Links" alt="">
+<option value="hide" selected="false">Yes, hide.</option>
+</parameter>
+	
+<parameter name="lp-hide-other-content" group="Everyone" type="checkbox" prompt="Hide Other Content Region" alt="">
+<option value="hide" selected="false">Yes, hide.</option>
+</parameter>
+	
+<parameter name="lp-hide-bottom-feature" group="Everyone" type="checkbox" prompt="Hide Bottom Feature Region" alt="">
+<option value="hide" selected="false">Yes, hide.</option>
+</parameter>
+	
+<!-- NEW Body ID -->
+<parameter name="body_id" type="text" group="Everyone" prompt="Body ID" alt="(Optional) Add an ID for the body. Only one value, no spaces.">test</parameter>
+<!-- END Body ID -->
+	
+<parameter name="Popular" type="textarea" rows="10" group="Everyone" prompt="Popular Links" alt="What are the popular links? Use HTML LIs.">
+	<li><h3>Popular</h3></li>
+	<li><a href="#" class="button">Popular Link</a></li>
+	<li><a href="#" class="button">Popular Link</a></li>
+	<li><a href="#" class="button">Popular Link</a></li>
+</parameter>
+
+<parameter name="PageCSS" type="text" rows="10" group="Administrators" prompt="Page CSS" alt="(Admin) What is the page CSS to change the header and bottom feature backgrounds?">/*---Bottom Feature on Landing Page---*/
+
+.landing-page #BottomFeature {
+    background: url(/_resources/images/landing/cerritos-landing-PanelAd.jpg) no-repeat;
+    height: 45.071rem;
+    position: relative;
+    margin: 0 auto 3.214rem;
+    border: 1px solid #ccc;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+	.landing-page #BottomFeature {
+    		background: url(/_resources/images/landing/cerritos-landing-PanelAd_700.jpg) no-repeat;
+		background-size: contain;
+	}
+}
+
+
+/*-----Top Panel on Landing Page---*/
+
+#about-header {
+    background: url(/_resources/images/landing/cerritos-landing-top.jpg) no-repeat;
+    background-size: 100%;
+    width: 92.85714rem;
+    height: 35.92857rem;
+    margin-bottom: 40px;
+    border: 1px solid #ccc;
+    max-width: 100%;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+	#about-header {
+    		background: url(/_resources/images/landing/cerritos-landing-top_700.jpg) no-repeat;
+		background-size: contain;
+	}
+}
+</parameter>
+	</ouc:properties>
+<!-- Editable region. An ouc:div defines an editable region so a user can edit content within the WYSIWYG editor. Every ouc: div must have a unique label. 
+The ouc: editor defines the CSS styling in the WYSIWYG editor for this editable region.
+More information here: http :    //support.omniupdate.com/oucampus9/development/templating/page-tagging/tagging-reference.html#editable -->
+	
+	<ouc:div label="landingintro" group="Everyone" button-text="Introduction"><ouc:editor toolbar="Main" csspath="/_resources/css/editor.css" width="1020" wysiwyg-class="landingintro"/>At Cerritos College, students can get the full college experience without the full college debt. We give our students the support and excellent education they need to succeed in new careers, gain admission into top-tier universities, or advance in their current line of work. We have a billion degree and certificate programs, tons of support programs, and 30,000 student clubs and athletic programs.</ouc:div>
+	
+<ouc:div label="maincontent" group="Everyone" button-text="Main Content"><ouc:editor toolbar="Main" csspath="/_resources/css/editor.css" width="1020" wysiwyg-class="maincontent"/>
+<div class="columns clearfix">
+<div class="col-md-4">
+            <div class="block">
+                <h3>
+                    <i class="fa fa-question-circle"></i>
+                    <span>WHY CERRITOS COLLEGE?</span>
+                </h3>
+                <ul>
+                    <li>
+                        <a href="#">Welcome To Cerritos</a>
+                        <p>Lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                    <li>
+                        <a href="#">Facts At A Glance</a>
+                        <p>Lorem ipsum dolor sit amet elit and lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                    <li>
+                        <a href="#">Student Life &amp; Student Government</a>
+                        <p>Lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                    <li>
+                        <a href="#">The History of Cerritos</a>
+                        <p>Lorem ipsum dolor sit amet elit and lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                    <li>
+                        <a href="#">Office of College Relations &amp; Public Affairs</a>
+                        <p>Lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <h3>
+                    <i class="fa fa-newspaper-o"></i>
+                    <span>News &amp; Calendar</span>
+                </h3>
+                <ul>
+                    <li>
+                        <a href="#">Campus News</a>
+                    </li>
+                    <li>
+                        <a href="#">Campus Events Calendar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="block">
+                <h3>
+                    <i class="fa fa-phone-square"></i>
+                    <span>Directory &amp; Administration</span>
+                </h3>
+                <ul>
+                    <li>
+                        <a href="#">Faculty &amp; Staff Directory</a>
+                        <p>Lorem ipsum dolor sit amet elit and lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                    <li>
+                        <a href="#">President's Office</a>
+                        <p>Lorem ipsum dolor sit amet elit and lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                    <li>
+                        <a href="#">Board of Trustees</a>
+                        <p>Lorem ipsum dolor sit amet elit and lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                    <li>
+                        <a href="#">Community Task Force</a>
+                        <p>Lorem ipsum dolor sit amet elit and lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                    <li>
+                        <a href="#">Campus Police</a>
+                        <p>Lorem ipsum dolor sit amet elit and lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <h3>
+                    <i class="fa fa-gavel"></i>
+                    <span>Accreditation</span>
+                </h3>
+                <ul>
+                    <li>
+                        <a href="#">Accreditation</a>
+                        <p>Lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="block">
+                <h3>
+                    <i class="fa fa-map-marker"></i>
+                    <span>Maps &amp; Parking</span>
+                </h3>
+                <ul>
+                    <li>
+                        <a href="#">Campus Map</a>
+                        <p>Lorem ipsum dolor sit amet elit and lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                    <li>
+                        <a href="#">Parking &amp; Directions</a>
+                        <p>Lorem ipsum dolor sit amet elit and lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                    <li>
+                        <a href="#">Green Campus</a>
+                        <p>Lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                    <li>
+                        <a href="#">Bond Construction Program</a>
+                        <p>Lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <h3>
+                    <i class="fa fa-suitcase"></i>
+                    <span>Employment At Cerritos College</span>
+                </h3>
+                <ul>
+                    <li>
+                        <a href="#">Jobs at Cerritos College</a>
+                        <p>Lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                    <li>
+                        <a href="#">Human Resources</a>
+                        <p>Lorem ipsum dolor sit amet consectetur elit.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	</div>
+</ouc:div>
+		<ouc:div label="othercontent" group="Everyone" button-text="Other Content"><ouc:editor toolbar="Main" csspath="/_resources/css/editor.css" width="1020" wysiwyg-class="othercontent"/><div id="NewsDiv"></div>
+<script>// <![CDATA[
+				$("#NewsDiv").load("/scripts/home-news-2.ashx?feed=http://www.cerritos.edu/calendar/rss/home-news.php&cid=50");
+			
+// ]]></script>
+<noscript>The calendar requires javascript enabled.</noscript></ouc:div>
+	<ouc:div label="bottomfeature" group="Everyone" button-text="Bottom Feature"><ouc:editor toolbar="Main" csspath="/_resources/css/editor.css" width="1020" wysiwyg-class="bottomfeature"/>
+                <div class="fc-small-top">Participate in Cerritos College's</div>
+                <div class="fc-large-bottom">Innovative Group Learning Programs</div>
+                <a href="#" class="button">Group Learning Programs Overview</a>
+</ouc:div>
+</document>

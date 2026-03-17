@@ -1,0 +1,24 @@
+<!-- com.omniupdate.properties --><title>Dept Home</title><!-- /com.omniupdate.properties -->
+
+<variable-list>
+<variable name="filename" prompt="Filename:" alt="Provide a filename for this new page. Use only letters, numbers, hyphens and underscores, no extension.">default</variable>
+<variable name="title" prompt="Page Title/Heading:" alt="Give your new page a title. (Avoid 'Home')">Apprenticeship Page</variable>
+<variable name="author" prompt="Author:" alt="The author for this page."></variable>
+<variable name="description" rows="2" prompt="Description:" alt="Describe your new page in about 40 words."></variable>	
+<variable name="keywords" rows="2" prompt="Keywords:"  alt="Keywords for this page"  output="xml"></variable>
+
+</variable-list>
+
+<template-list>
+	<template 
+		prompt-prefix="New Apprenticeship Subsite" 
+		filename="{filename}" 
+		display-filename="no"
+		display-group="no"
+		display-overwrite="yes"
+		extension="pcf" 
+		destination="{directory/}{dirname}" 
+		force-destination="yes" 
+		preferred-redirect="no">60_apprenticeship_page.tmpl</template>
+</template-list>
+

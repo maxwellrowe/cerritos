@@ -1,0 +1,20 @@
+<!-- com.omniupdate.properties --><title>Properties</title><!-- /com.omniupdate.properties -->
+
+<template-list>
+	<template 
+		prompt-prefix="New _props.pcf File" 
+		filename="_props" 
+		display-filename="no"
+		display-group="no"
+		display-overwrite="yes"
+		extension="pcf" 
+		destination="{directory/}{dirname}" 
+		force-destination="yes" 
+		exclude-search="yes"
+		no-publish="yes"
+		exclude-sitemap="yes"
+		preferred-redirect="no">70_properties.tmpl</template>
+</template-list>
+
+
+exclude-sitemap="yes" exclude-search="yes"

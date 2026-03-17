@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tcf>
+	
+	<title>Photo Gallery &amp; Folder</title>
+	
+	<variable-list>
+		<variable section="Folder Information" prompt="Subsite Folder" name="subsitedir" alt="Enter the subsite folder name."></variable>
+		<variable name="photodirectory" prompt="Photos Folder" alt="Enter the photo gallery folder name. No special characters or spaces.">photo-gallery-1</variable>
+		<variable name="filename" prompt="Filename:" alt="Provide a filename for this new page. Use only letters, numbers, hyphens and underscores, no extension.">photo-gallery-1</variable>
+		<variable name="GalleryFile" prompt="XML File" type="filechooser" path="/" alt="Select the gallery XML file for your photos.">/_resources/xml/gallery.xml</variable>
+		<!-- general page setup -->
+<variable section="Default Page Information" name="title" prompt="Page Title/Heading:" alt="Also displayed in the breadcrumbs for the folder (avoid 'Home').">Photo Gallery</variable>
+<variable name="author" prompt="Author:" alt="The author for this page."></variable>
+<variable name="description" rows="2" prompt="Description:" alt="Describe your new page in about 40 words."></variable>	
+<variable name="keywords" rows="2" prompt="Keywords:"  alt="Keywords for this page"  output="xml"></variable>
+
+	</variable-list>
+	
+	<template-list>
+		<template destination="/{subsitedir}/_includes/images/{photodirectory}" force-destination="yes" publish="no" filename="gallery" extension="xml" display-filename="no" display-group="no" display-overwrite="no" exclude-sitemap="yes" exclude-search="yes">06_section-gallery-xml.tmpl</template>
+		<template 
+			prompt-prefix="Photo Gallery &amp; Folder" 
+			filename="{filename}" 
+			display-filename="no"
+			display-group="no"
+			display-overwrite="yes"
+			extension="pcf" 
+			destination="{ou:dirname}" 
+			force-destination="yes" 
+			preferred-redirect="no">06_photogallery.tmpl</template>
+	</template-list>
+</tcf>

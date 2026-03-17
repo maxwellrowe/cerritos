@@ -1,0 +1,18 @@
+<!-- com.omniupdate.properties --><title>Dept Info</title><!-- /com.omniupdate.properties -->
+
+<variable-list>
+<variable name="filename" prompt="Filename:" alt="Provide a filename for this new page. Use only letters, numbers, hyphens and underscores, no extension.">deptinfo</variable>
+</variable-list>
+
+<template-list>
+<template prompt-prefix="Include Menu"  
+    filename="{filename}" 
+    display-group="no" 
+    display-destination="no" 
+    display-filename="no" 
+    display-overwrite="no" 
+    preferred-redirect="no" 
+    publish="no" 
+    extension="pcf">11_deptinfo.tmpl</template>
+</template-list>
+

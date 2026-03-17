@@ -1,0 +1,42 @@
+/* emergency notice */
+/*#emergencyNotice 
+{
+float:left;
+    padding:0em;
+     font-style: normal;
+     font-size:1.25em;
+     font-weight:normal;
+     color:#000;
+     text-align:center;
+width:100%;
+	margin:0 ;
+    }*/
+.close-icon {margin:1em 1em 0 0;cursor:pointer;}
+.RedAlert {background-color:#ffa4a4;}
+.YellowWarning {background-color:#FFEAA1;}
+.BlueInfo {background-color:#ADE0F9;}
+.WhiteInfo {background-color:#fff;}
+
+.top-bar{
+	background-color: #DB296D;
+}
+
+.navbar .audience > li > a, .navbar .quick-nav > li.a-z-index > a, .navbar .quick-nav > li.quick-links > a{
+	color: #FFFFFF;
+}
+
+#button-apply{
+	background: #000000;
+}
+
+.navbar .quick-nav > li > a.apply-now{
+	color: #FFFFFF;
+}
+
+.navbar .quick-nav .give a{
+	color: #FFFFFF;
+}
+
+.navbar .audience > li > a:hover, .navbar .audience > li > a:focus{
+	color: #400000;
+}

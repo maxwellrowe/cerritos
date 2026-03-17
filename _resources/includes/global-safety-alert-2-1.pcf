@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/global-safety-alert-2.xsl" title="Global Alert" extension="inc"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<!-- Best practice is to have a couple common empty nodes in case a page needs to have page-unique code.
+These are only editable in source and therefore admins. -->
+
+<!-- Meta page properites. Defines the meta elements that are placed in the head of the HTML document. -->
+<ouc:properties label="metadata">
+
+</ouc:properties>
+<ouc:properties label="config">
+<parameter name="alertsdiv-2" type="radio" group="Everyone" prompt="Home Page Alerts" alt="Enable alerts on the home page?">
+<option value="disabled" selected="true">Disabled</option>
+<option value="info-green" selected="false">Green- Information</option>
+<option value="info-white" selected="false">White - Information</option>
+<option value="info-blue" selected="false">Blue - Information</option>
+<option value="warning" selected="false">Yellow - Warning</option>
+<option value="emergency" selected="false">Red - Emergency</option>
+</parameter>
+	</ouc:properties>
+<!-- Editable region. An ouc:div defines an editable region so a user can edit content within the WYSIWYG editor. Every ouc: div must have a unique label. 
+The ouc: editor defines the CSS styling in the WYSIWYG editor for this editable region.
+More information here: http :    //support.omniupdate.com/oucampus9/development/templating/page-tagging/tagging-reference.html#editable -->
+
+	<ouc:div label="alertsdiv-2" group="Everyone" button-text="Alert Content"><ouc:editor toolbar="Main" csspath="/_resources/css/editor.css" width="1020" wysiwyg-class="alertsdiv-2"/><p>CCERRITOS COLLEGE ALERT 9/30/22 1:07 pm: Police are currently on campus investigating a possible crim e. No danger to the campus at this time. Further information will follow.</p></ouc:div>
+</document>
+
+<!--Archives
+
+MyCerritos down:
+
+<div class="alert-2">
+		<p>
+			We are currently experiencing technical issues with MyCerritos. We are working to resolve these issues as soon as possible.
+		</p>
+	</div>
+
+Independence Day:
+
+<div class="alert-2">
+		<p>
+			In observance of Independence Day, campus will be closed virtually and physically on July 5, 2021.
+		</p>
+	</div>
+
+<div class="alert-2">
+		<p>
+			In observance of Juneteenth, campus will be closed virtually and physically on June 18.
+		</p>
+	</div>
+
+<p><a href="/coronavirus/">COVID-19 Updates</a> | Happy Holidays! Campus will be closed December 24, 2020 &ndash; January 1, 2021 and re-open on January 4, 2021.</p>
+
+
+We are currently experiencing technical issues with <br/>campus portals, email, Canvas, Rosters+, PeopleSoft, MyCerritos, and SARS.<br/>We are working to resolve these issues.
+
+
+<a href="/coronavirus/">COVID-19 Updates</a>
+
+<p><a href="/coronavirus">District update on coronavirus (March 17, 2020)</a>.</p>
+
+Vote Center:
+2020: Our Vote Center opens on Saturday, Feb. 29 through Election Day on March 3. Check the hours <a href="/public-affairs/_includes/docs/2020/Vote_Here_ua.pdf">online</a>.<br/>Cast your vote in the Conference Center (behind the gym) and park in lots #1 and 2 (off Alondra Blvd.) #votecenter
+
+Memorial Day:
+Campus will be closed for Memorial Day on Monday, May 27
+
+Shelter in Place Drill:
+<p><strong>Shelter in Place Drill:</strong></p>
+<p>Cerritos College is currently conducting a Shelter-in-Place <strong>DRILL</strong>. The drill is designed to test the emergency communication system and
+protocols, and to ensure that the campus community is prepared in the event of an Active Shooter.</p> 
+
+Spring Break:
+Campus will be closed on Friday, March 22 for Spring Break.
+
+President's Day:
+2020: Campus will be closed on Friday, Feb. 14 and Monday, Feb. 17 for President’s Day
+Campus will be closed on Friday, Feb. 15 and Monday, Feb. 18 for President’s Day.
+In observance of President's Day holiday, campus will be closed February 15 - 18, 2019.
+
+Martin Luther King:
+2020: Campus will be closed on Monday, Jan. 20 in observance of Dr. Martin Luther King, Jr. Day
+2019: In observance of the Dr. Martin Luther King, Jr. holiday, campus will be closed on Monday, Jan. 21. #dreambig
+
+Winter Break:
+2021: Campus will be closed December 23, 2021 – January 2, 2022. We wish you a joyous and safe holiday season!
+2019: Campus will be closed for the winter break and holiday season on December 24, 2019 &ndash; January 1, 2020
+2018: Campus will be closed December 24, 2018 – January 1, 2019 for the winter recess. Happy Holidays!
+
+MyCerritos Down:
+PeopleSoft (my.cerritos.edu) will be down April 27-30 for maintenance.
+
+Thanksgiving:
+In observance of Thanksgiving, campus will be closed on Nov. 22-25. #wearegrateful
+2020: In observance of Thanksgiving, campus will be closed virtually and physically on Nov. 26-27.
+
+Veteran's Day:
+In honor of Veterans Day, Cerritos College will be closed on Monday, November 12.
+2020: In observance of Veterans Day, campus will be closed on Wednesday, November 11.
+
+California Great Shakeout:
+
+<p>It’s 10:21 a.m., and we are participating in the Great California Shake Out Earthquake Drill. Learn more about earthquake-safe actions at <a href="https://www.shakeout.org">www.shakeout.org</a>. If you are on campus and need help, contact Campus Police at (562) 924-3618.</p>
+
+<p><strong>Great California ShakeOut:</strong></p>
+<p>Cerritos College is currently participating in the annual Great California ShakeOut with several emergency preparedness drills, including a combined earthquake and emergency evacuation drill.</p>
+<p>Your safety is a top priority. All students and employees are asked to participate to the completion of the drill. Good practice in these drills will enhance our college-wide readiness for an actual earthquake or other emergency. If you experience a real emergency during the drill, please contact Campus Police at 562-402-3674. Thank you for your time and attention.</p>
+
+Labor Day:
+Campus will be closed Monday, September 2 for Labor Day.
+<p>In observance of Labor Day on Monday, September 3, campus will be closed.</p>
+
+Summer Fridays:
+Summer Hours: campus offices will be open Monday-Thursday and closed Fridays from May 28 – August 9 For information, email community@cerritos.edu
+-->

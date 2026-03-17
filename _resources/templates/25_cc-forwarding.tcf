@@ -1,0 +1,9 @@
+<title>Forwarding Page</title>
+
+<variable-list>
+	<variable name="target" prompt="Target File" type="filechooser" path="/" alt="Select the file you want the forwarding script to point to. NOTE: be sure to select file from prodution server."></variable>
+</variable-list>
+
+<template-list>
+	<template prompt-prefix="Existing Redirect File" publish="yes" redirect="no" display-group="no" group="everyone" force-destination="yes" destination="{dirname}" display-filename="no" filename="default" extension="aspx" title="Web">25_cc-forwarding.tmpl</template>
+</template-list>

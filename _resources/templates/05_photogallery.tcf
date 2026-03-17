@@ -1,0 +1,26 @@
+<!-- com.omniupdate.properties --><title>Photo Gallery</title><!-- /com.omniupdate.properties -->
+
+<variable-list>
+<variable name="filename" prompt="Filename:" alt="Provide a filename for this new page. Use only letters, numbers, hyphens and underscores, no extension.">photo-gallery</variable>
+<variable name="title" prompt="Page Title/Heading:" alt="Give your new page a title. (Avoid 'Home')">Photo Gallery</variable>
+<variable name="author" prompt="Author:" alt="The author for this page."></variable>
+<variable name="description" rows="2" prompt="Description:" alt="Describe your new page in about 40 words."></variable>	
+<variable name="keywords" rows="2" prompt="Keywords:"  alt="Keywords for this page"  output="xml"></variable>
+<variable name="GalleryFile" prompt="XML File" type="filechooser" path="/" alt="Select the gallery XML file for your photos.">/_resources/xml/gallery.xml</variable>
+<variable name="LeftNav" prompt="Left Menu File" type="filechooser" path="/" alt="Select the left navigation file (*.inc) for this page.">/campus-guide/_includes/assets/deptnav.inc</variable>
+<variable name="DeptInfo" type="filechooser" group="Everyone" prompt="Dept Info File" alt="Select the dept info file (*.inc) for this page.">/campus-guide/_includes/assets/deptinfo.inc</variable>
+
+</variable-list>
+
+<template-list>
+<template prompt-prefix="Photo Gallery"  
+    filename="{filename}" 
+    display-group="no" 
+    display-destination="no" 
+    display-filename="no" 
+    display-overwrite="no" 
+    preferred-redirect="no" 
+    publish="no" 
+    extension="pcf">05_photogallery.tmpl</template>
+</template-list>
+
