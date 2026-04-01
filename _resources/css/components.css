@@ -111,3 +111,21 @@ button:hover {
 	
 
 /* End Custom Slick Slider Styles */
+
+/* Mail To Links */
+.email-secure {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.email-secure-copy {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.email-secure-copy.is-copied {
+  opacity: 0.7;
+}
