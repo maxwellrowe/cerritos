@@ -19,7 +19,7 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:ou="http://omniupdate.com/XSL/Variables"
 	xmlns:ouc="http://omniupdate.com/XSL/Variables"
-	exclude-result-prefixes="xsl xs ou ouc">
+	exclude-result-prefixes="xsl xs ou ouc f">
 	
 	<!--	** Identity template matches **
 			The following templates handle all possible conditions processed with an xsl:apply-templates.
