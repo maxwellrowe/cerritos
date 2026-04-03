@@ -45,6 +45,7 @@
 	<!--<xsl:import href="_shared/galleries-custom-buttons.xsl" />-->
     <xsl:import href="_shared/forms.xsl" />
 	<xsl:import href="_shared/components.xsl" />
+	<xsl:import href="_shared/mailto.xsl" />
 	
 	<!-- Breadcrumbs -->
 	<xsl:import href="_shared/breadcrumbs.xsl" />
