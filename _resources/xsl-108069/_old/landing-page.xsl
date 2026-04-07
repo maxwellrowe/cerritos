@@ -60,7 +60,7 @@ exclude-result-prefixes="xsl xs ou ouc">
 	
 <div class="body-wrap">
 	<!-- header -->
-	<xsl:copy-of select="ou:includeFile('/_resources/includes/header-3.inc')"/>
+	<xsl:copy-of select="ou:includeFile('/_resources/includes/header.inc')"/>
 <div class="heading">
         <div id="about-header">
             <h2><xsl:value-of select="$Title" disable-output-escaping="yes" /></h2>

@@ -38,7 +38,7 @@ exclude-result-prefixes="xsl xs ou ouc">
 	<html lang="en-us">
 	<head>
 		<!-- head include -->
-		<xsl:copy-of select="ou:includeFile('/_resources/includes/head-6.inc')"/>
+		<xsl:copy-of select="ou:includeFile('/_resources/includes/head.inc')"/>
 		
      	<!-- inserts 'cerritos college' in title if not there -->
      	 <title>

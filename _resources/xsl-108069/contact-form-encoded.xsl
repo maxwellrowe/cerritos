@@ -122,7 +122,7 @@ exclude-result-prefixes="xsl xs ou ouc">
 			</xsl:call-template>
 
 	<!-- header -->
-	<xsl:copy-of select="ou:includeFile('/_resources/includes/header-3.inc')"/>
+	<xsl:copy-of select="ou:includeFile('/_resources/includes/header.inc')"/>
 		<div class="body-wrap">
 <div class="clearfix">
 	
@@ -181,7 +181,7 @@ exclude-result-prefixes="xsl xs ou ouc">
 </div>
 	
 <!-- footer -->
-	<xsl:copy-of select="ou:includeFile('/_resources/includes/footer-3.inc')"/>
+	<xsl:copy-of select="ou:includeFile('/_resources/includes/footer.inc')"/>
 	
 	<!-- Cerritos direct edit button. 3 params: site, dirname, filename -->
 	<div id="lastUpdate">

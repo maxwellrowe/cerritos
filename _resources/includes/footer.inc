@@ -1,73 +1,60 @@
 <div id="social-wrap">
 <div id="social" class="clearfix">
-    <div class="col-md-4">
-        <h3>Stay Connected</h3>
-    </div>
-    <div class="col-md-8">
-        <div class="social-buttons">
-            <section class="mobile-row">
-                <a class="social" href="https://www.facebook.com/cerritoscollege/" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a class="social" href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-                <a class="social" href="https://twitter.com/cerritoscollege" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a class="social" href="#" target="_blank"><i class="fa fa-snapchat-ghost"></i></a>
-            </section>
-            <section class="mobile-row">
-                <a class="social" href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
-                <a class="social" href="https://www.youtube.com/channel/UCmQYFzgOkYGPAAfHuNe7mOg" target="_blank"><i class="fa fa-youtube-play"></i></a>
-                <div class="sharethis-inline-share-buttons"></div>
-            </section>
-        </div>
-        <div class="click-throughs">
-            <a class="button" href="http://social.pomona.edu" rel="external">Visit Our Social Media Hub</a>
-            <div class="sharethis-inline-share-buttons"></div>
-			        </div>
-    </div>
+<div class="col-md-6">
+<h3>Stay Connected</h3>
+</div>
+<div class="col-md-6">
+<div class="social-buttons">
+<section class="mobile-row">
+	<a class="social inverse" title="Facebook" href="https://www.facebook.com/cerritoscollege/" target="_blank" rel="noopener"><span class="fa-brands fa-facebook-f"><span class="sr-only">Facebook</span></span></a> 
+	
+	<a class="social inverse" title="Instagram" href="https://www.instagram.com/cerritoscollege/" target="_blank" rel="noopener"><span class="fa-brands fa-instagram"><span class="sr-only">Instagram</span></span></a> 
+	
+	<a class="social inverse" title="TikTok" href="https://www.tiktok.com/@cerritoscollege" target="_blank" rel="noopener"><span class="fa-brands fa-tiktok"><span class="sr-only">TikTok</span></span></a>
+	
+	<a class="social inverse" title="Twitter/X" href="https://twitter.com/cerritoscollege" target="_blank" rel="noopener"><span class="fa-brands fa-x-twitter"><span class="sr-only">Twitter/X</span></span></a> 
+	
+	<a class="social inverse" title="YouTube" href="https://www.youtube.com/channel/UCmQYFzgOkYGPAAfHuNe7mOg" target="_blank" rel="noopener"><span class="fa-brands fa-youtube"><span class="sr-only">YouTube</span></span></a>
+	
+	</section>
+</div>
+<!--<div class="click-throughs">
+            <a class="button inverse" href="http://social.pomona.edu" rel="external" target="_blank">Visit Our Social Media Hub</a>
+			        </div>--></div>
 </div>
 </div>
 <div id="footer-wrap">
-<div id="footer" class="clearfix">
-    <div class="col-md-4 info">
-        <h5>CERRITOS COLLEGE</h5>
-        <p>
-            11110 Alondra Blvd.<br/>
-            Norwalk, California 90650<br/>
-            [<a href ="/campus-guide/#map">Campus map</a>]
-        </p>
-        <p>Phone: <a href="tel:+15628602451">(562) 860-2451</a><br/>
-            Emergency: <a href="tel:+15624023674">(562) 402-3674</a>
-        </p>
-    </div>
-    <div class="col-md-8">
-        <div class="col-md-4">
-            <a href="/admissions-and-records/catalogue-schedule/">Schedule of Classes</a>
-            <a href="/admissions-and-records/catalogue-schedule/">Class Catalog</a>
-            <a href="https://ep-secure.cerritos.edu/psp/por91prd/EMPLOYEE/EMPL/h/?tab=PAPP_GUEST" rel="external" class="inverse">MyCerritos</a>
-            <a href="https://cerritos.instructure.com/login/canvas" rel="external" class="inverse">Canvas</a>
-            <a href="https://orgsync.com/login/cerritos-college" rel="external" class="inverse">OrgSync</a>
-        </div>
-        <div class="col-md-4">
-            <a href="{{d:9121100}}">Campus Police <i class="fa fa-exclamation-triangle"></i></a>
-            <a href="/about/accreditation/">Accreditation</a>
-            <a href="{{d:9127996}}">Disabled Students <i class="fa fa-wheelchair"></i></a>
-            <div class="external-links">
-                <a href="https://get.adobe.com/reader/" rel="external" class="inverse">Download Adobe Reader</a>
-                <a href="http://www.microsoft.com/en-us/download/details.aspx?id=4" rel="external" class="inverse">Download MS Word Viewer</a>
-                <a href="http://www.microsoft.com/en-us/download/details.aspx?id=10" rel="external" class="inverse">Download MS Excel Viewer</a>
-                <a href="http://www.microsoft.com/en-us/download/details.aspx?id=13" rel="external" class="inverse">Download MS PowerPoint Viewer</a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <a href="{{d:9131091}}">Send Website Feedback</a>
-            <a href="{{f:80275967}}">Disclaimer</a>
-            TRANSLATE THIS PAGE
-            <div id="google_translate_element"></div>
-			<script type="text/javascript">
-function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
-                }
-            </script>
-			<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        </div>
-    </div>
-</div></div>
-<a class="back-to-top" href="#"><img alt="Back to Top" title="Back to Top" src="{{f:80150918}}" /></a>
+<div id="footer" class="clearfix" role="navigation">
+<div class="col-xs-5 col-sm-4 col-md-5 info">
+<div class="col-md-5"><a title="Cerritos College" href="/"><img class="footer-logo" src="/_resources/images/common/cerritos-college-logo-white.svg" alt="Cerritos College" /></a></div>
+<div class="col-md-7">
+<p>11110 Alondra Blvd.<br />Norwalk, California 90650<br />[<a href="/map">Campus map</a>]</p>
+<p>Phone: <a href="tel:+15628602451">(562) 860-2451</a><br />Emergency: <a href="tel:+15629243618">(562) 924-3618</a><br /><br /><a href="/police/">Police Department <span class="fa fa-exclamation-triangle"></span></a></p>
+</div>
+</div>
+<div class="col-xs-7 col-sm-8 col-md-7">
+<div class="col-sm-6 col-md-8">
+<h4>Resources</h4>
+<div class="col-md-6"><a href="/public-relations/forms/community-contact-form.htm">Contact Us</a> <a class="inverse" href="https://portal.cerritos.edu/" target="_blank" rel="noopener">MyCerritos</a> <a href="/sas/">Student Accessibility Services</a> <a href="/financial-aid/CARES-Act-Reporting.htm">CARES Act</a> <a href="/title-ix/default.htm">Title-IX &amp;&nbsp;Discrimination</a></div>
+<!--<a href="/admissions-and-records/catalogue-schedule/">Catalog &amp; Schedule</a>  <a class="inverse" href="https://cerritos.instructure.com/login/canvas" target="_blank" rel="external">Canvas</a> <a class="inverse" href="https://cerritos.campuslabs.com/engage/" target="_blank">FalconSync</a>-->
+<div class="col-md-6"><a href="/campus-guide/abc-index.htm">A-Z Index</a> <a href="/newsroom/">News</a> <a href="/calendar/default.htm">Events</a> <a href="/employees/">Directory</a> <a href="http://cerritoscf.org/" target="_blank" rel="noopener">Give to Cerritos College</a> <a class="inverse" href="https://cerritos.campusgroups.com/home_login" target="_blank" rel="noopener">FalConnect</a></div>
+</div>
+<div class="col-sm-6 col-md-4">
+<h4>Get Started</h4>
+<a href="/apply" target="_blank" rel="noopener">Apply Now!</a> <!--<a href="/school-relations/programs-and-services/campus-tours.htm">Visit Campus</a> <a href="*** Broken Link ***">Request Info</a>--> <br /><a class="button" href="https://go.boarddocs.com/ca/cerritos/Board.nsf/Public">Board Agenda</a></div>
+</div>
+</div>
+</div>
+<div><button class="back-to-top" title="Back to Top"><img title="Back to Top" src="/_resources/images/common/cerritos-back-to-top.png" alt="Back to Top" /></button></div>
+<!--#include virtual="/ou-alerts/alerts-config.alerts.html" -->
+
+<!-- scripts moved from <head> to footer 10/27/2023 -->
+<script src="/_resources/js/flexslider.js"></script>
+<script src="/_resources/js/accordion-1.js"></script>
+<script src="/_resources/js/cerritos-legacy.js"></script>
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58dc7d749801000011c55022&product=inline-share-buttons"></script>
+
+<!-- mailto script added 2025 -->
+<script src="/_resources/js/mailto.js"></script>
+
+<!--#include virtual="/_resources/includes/scripts-footer.inc" -->

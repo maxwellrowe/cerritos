@@ -4,9 +4,9 @@
 <div class="container">
 	<ul id="nav-audience" class="nav navbar-nav audience">
 <li><a href="/get-started/default.htm">Future Students</a></li>
-<li><a href="{{f:80147106}}">Current Students</a></li>
-<li><a href="{{f:80267046}}">Faculty &amp; Staff</a></li>
-<li><a href="{{f:80270022}}">Community</a></li>
+<li><a href="/current-students/default.htm">Current Students</a></li>
+<li><a href="/faculty-staff/default.htm">Faculty &amp; Staff</a></li>
+<li><a href="/community/default.htm">Community</a></li>
 </ul>
 	<ul id="quick-links" class="nav navbar-nav navbar-right quick-nav">
 <li class="a-z-index"><a href="/campus-guide/abc-index.htm">A-Z Index</a></li>
@@ -21,12 +21,12 @@
 <li><a class="external" href="https://www.bkstr.com/cerritosstore/home/en" target="_blank" rel="noopener">Bookstore</a></li>
 <li><a class="external" href="https://libraryguides.cerritos.edu/libraryservices" target="_blank" rel="noopener">Library &amp; Chat</a></li>
 <li class="divider" role="separator">&nbsp;</li>
-<li><a href="{{d:9127896}}"><span class="fa fa-phone" aria-hidden="true"><span class="sr-only">Directory</span></span> Faculty &amp; Staff Directory</a></li>
+<li><a href="/employees/"><span class="fa fa-phone" aria-hidden="true"><span class="sr-only">Directory</span></span> Faculty &amp; Staff Directory</a></li>
 <li><a href="/campus-guide/program-directory/default.htm"><span class="fa fa-sitemap" aria-hidden="true"><span class="sr-only">Sitemap</span></span> Programs and Services Directory</a></li>
 <li><a href="https://cerritos.onbio-key.com/"><span class="fas fa-sign-in-alt" aria-hidden="true"><span class="sr-only">Cerritos Portal</span></span> Cerritos Portal</a></li>
 <li><a href="/calendar/default.htm"><span class="fa fa-calendar" aria-hidden="true"><span class="sr-only">Cerritos College Calendar</span></span> Cerritos College Calendar</a></li>
 <li><a href="/parking/"><span class="fas fa-parking" aria-hidden="true"><span class="sr-only">Parking</span></span> Parking</a></li>
-<li><a href="{{d:9121100}}"><span class="fas fa-taxi" aria-hidden="true"><span class="sr-only">Safety</span></span> Campus Safety</a></li>
+<li><a href="/police/"><span class="fas fa-taxi" aria-hidden="true"><span class="sr-only">Safety</span></span> Campus Safety</a></li>
 </ul>
 </li>
 	
@@ -50,11 +50,11 @@
 <div class="container">
 	
 <div class="navbar-header">
-<h1>Cerritos College<a class="navbar-brand logo" title="College Home" href="{{d:9116620}}"><img title="Cerritos College, Norwalk California" src="{{f:80150947}}" alt="Cerritos College, Norwalk California" /></a></h1>
+<h1>Cerritos College<a class="navbar-brand logo" title="College Home" href="/"><img title="Cerritos College, Norwalk California" src="/_resources/images/common/cerritos-college-logo.svg" alt="Cerritos College, Norwalk California" /></a></h1>
 	
 <ul class="mobile mobile-quicklinks">
 <li><a href="/campus-guide/abc-index.htm"> <span class="big">A-Z</span> <span class="small">Index</span> </a></li>
-<li><a title="Directory" href="{{d:9127896}}"><span class="fa fa-phone" aria-hidden="true"><span class="sr-only">Faculty &amp; Staff Directory</span></span></a></li>
+<li><a title="Directory" href="/employees/"><span class="fa fa-phone" aria-hidden="true"><span class="sr-only">Faculty &amp; Staff Directory</span></span></a></li>
 <li><a title="Calendar" href="/calendar/default.htm"><span class="fa fa-calendar" aria-hidden="true"><span class="sr-only">Cerritos College Calendar</span></span></a></li>
 <li class="dropdown search"><a class="dropdown-toggle" title="Search" role="button" href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"><span class="fa fa-search" aria-hidden="true"><span class="sr-only">Search</span></span></a>
 <ul class="dropdown-menu">
@@ -98,12 +98,12 @@ s.parentNode.insertBefore(gcse, s);
 <li><a class="external" href="https://www.bkstr.com/cerritosstore/home/en" target="_blank" rel="noopener">Bookstore</a></li>
 <li><a class="external" href="https://libraryguides.cerritos.edu/libraryservices" target="_blank" rel="noopener">Library &amp; Chat</a></li>
 <li class="divider" role="separator">&nbsp;</li>
-<li><a href="{{d:9127896}}"><span class="fas fa-phone" aria-hidden="true"><span class="sr-only">Directory</span></span> Faculty &amp; Staff Directory</a></li>
+<li><a href="/employees/"><span class="fas fa-phone" aria-hidden="true"><span class="sr-only">Directory</span></span> Faculty &amp; Staff Directory</a></li>
 <li><a href="/campus-guide/program-directory/default.htm"><span class="fas fa-sitemap" aria-hidden="true"><span class="sr-only">Sitemap</span></span> Programs and Services Directory</a></li>
 <li><a href="https://cerritos.onbio-key.com/"><span class="fas fa-sign-in-alt" aria-hidden="true"><span class="sr-only">Cerritos Portal</span></span> Cerritos Portal</a></li>
 <li><a href="/calendar/default.htm"><span class="fas fa-calendar" aria-hidden="true"><span class="sr-only">Cerritos College Calendar</span></span> Cerritos College Calendar</a></li>
 <li><a href="/parking/"><span class="fas fa-parking" aria-hidden="true"><span class="sr-only">Parking</span></span> Parking</a></li>
-<li><a href="{{d:9121100}}"><span class="fas fa-taxi" aria-hidden="true"><span class="sr-only">Safety</span></span> Campus Safety</a></li>
+<li><a href="/police/"><span class="fas fa-taxi" aria-hidden="true"><span class="sr-only">Safety</span></span> Campus Safety</a></li>
 </ul>
 </li>
 </ul>
@@ -119,18 +119,18 @@ s.parentNode.insertBefore(gcse, s);
 <li class="hidden-lg"><a class="apply-now" href="/campus-guide/default.htm">Campus Maps</a></li>
 <li><a href="/about/default.htm">About</a></li>
 <li><a href="/admissions-and-records/default.htm">Admissions</a></li>
-<li><a href="{{f:80068190}}">Financial Aid</a></li>
+<li><a href="/financial-aid/default.htm">Financial Aid</a></li>
 <li><a href="/academics/default.htm">Academics</a></li>
-<li><a href="{{f:80134189}}">Services &amp; Support </a></li>
+<li><a href="/services/default.htm">Services &amp; Support </a></li>
 <!--<li><a href="/caring-campus/default.htm"><span class="fa fa-heart" aria-hidden="true"></span> We Care</a></li>-->
 	
 	
 	
 	
 <li class="hidden-lg audience-mobile"><a href="/get-started/default.htm">Future Students</a></li>
-<li class="hidden-lg audience-mobile"><a href="{{f:80147106}}">Current Students</a></li>
-<li class="hidden-lg audience-mobile"><a href="{{f:80267046}}">Faculty &amp; Staff</a></li>
-<li class="hidden-lg audience-mobile"><a href="{{f:80270022}}">Community</a></li>
+<li class="hidden-lg audience-mobile"><a href="/current-students/default.htm">Current Students</a></li>
+<li class="hidden-lg audience-mobile"><a href="/faculty-staff/default.htm">Faculty &amp; Staff</a></li>
+<li class="hidden-lg audience-mobile"><a href="/community/default.htm">Community</a></li>
 <li class="dropdown search"><a class="dropdown-toggle" role="button" href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"> <span class="fa fa-search" aria-hidden="true"><span class="sr-only">Search</span></span></a>
 <ul class="dropdown-menu">
 <li><!--<form id="searchForm-2" method="get" action="/campus-guide/search.htm" class="navbar-form navbar-left">

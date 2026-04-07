@@ -48,7 +48,7 @@
         <html lang="en-us">
             <head>				
                 <!-- head include -->
-                <xsl:copy-of select="ou:includeFile('/_resources/includes/head-6.inc')"/>
+                <xsl:copy-of select="ou:includeFile('/_resources/includes/head.inc')"/>
                 
                 <!-- inserts 'cerritos college' in title if not there -->
                 <title>
@@ -138,7 +138,7 @@
                 
                 
                 <!-- header -->
-                <xsl:copy-of select="ou:includeFile('/_resources/includes/header-3.inc')"/>
+                <xsl:copy-of select="ou:includeFile('/_resources/includes/header.inc')"/>
                 <div class="body-wrap">
                     <div class="clearfix">
                         <!-- main content -->
@@ -161,7 +161,7 @@
 				<xsl:apply-templates select="document/ouc:div[@label='maincontent']" />	
                 
                 <!-- footer -->
-                <xsl:copy-of select="ou:includeFile('/_resources/includes/footer-3.inc')"/>
+                <xsl:copy-of select="ou:includeFile('/_resources/includes/footer.inc')"/>
                 
                 <!-- Cerritos direct edit button. 3 params: site, dirname, filename -->
                 <div id="lastUpdate">

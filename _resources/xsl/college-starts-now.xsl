@@ -44,7 +44,7 @@ exclude-result-prefixes="xsl xs ou ouc">
 	<html lang="en-us">
 	<head>
 		<!-- head include -->
-		<xsl:copy-of select="ou:includeFile('/_resources/includes/head-6.inc')"/>
+		<xsl:copy-of select="ou:includeFile('/_resources/includes/head.inc')"/>
 		
      	<!-- title -->
      	<title><xsl:value-of select="$Title" disable-output-escaping="yes" /></title>
@@ -107,7 +107,7 @@ exclude-result-prefixes="xsl xs ou ouc">
 	
 
 	<!-- header -->
-	<xsl:copy-of select="ou:includeFile('/_resources/includes/header-3.inc')"/>
+	<xsl:copy-of select="ou:includeFile('/_resources/includes/header.inc')"/>
 	</header>
 	<main role="main">
 		
@@ -160,7 +160,7 @@ exclude-result-prefixes="xsl xs ou ouc">
 	
 <footer role="contentinfo">
 <!-- footer -->
-	<xsl:copy-of select="ou:includeFile('/_resources/includes/footer-3.inc')"/>
+	<xsl:copy-of select="ou:includeFile('/_resources/includes/footer.inc')"/>
 	
 	<!-- Cerritos direct edit button. 3 params: site, dirname, filename -->
 	<div id="lastUpdate">

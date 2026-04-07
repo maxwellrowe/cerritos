@@ -51,7 +51,7 @@
         <html lang="en-us">
             <head>				
                 <!-- head include -->
-                <xsl:copy-of select="ou:includeFile('/_resources/includes/head-6.inc')"/>
+                <xsl:copy-of select="ou:includeFile('/_resources/includes/head.inc')"/>
                 
                 <!-- inserts 'cerritos college' in title if not there -->
                 <title>
@@ -142,7 +142,7 @@
 
 
 					<!-- header -->
-					<xsl:copy-of select="ou:includeFile('/_resources/includes/header-3.inc')"/>
+					<xsl:copy-of select="ou:includeFile('/_resources/includes/header.inc')"/>
 				</header>
 				
                 <div class="body-wrap">
