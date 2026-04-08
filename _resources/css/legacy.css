@@ -12,7 +12,7 @@ html {
 }
 body {
     overflow-x: hidden;
-	font-family: "Open Sans", sans-serif !important; /*Updated by RRD*/
+	font-family: "Karla", sans-serif !important; /*Updated by RRD*/
 	font-size: 16px; /*Updated by RRD*/
 	}
 p {
@@ -297,7 +297,7 @@ img {
 }
 #searchDiv {
 	margin-bottom: 2rem;
-	font-family: "Open sans";
+	font-family: "Karla";
 }
 #searchDiv .gsc-control-cse div {
 	height: 100%;
@@ -508,7 +508,7 @@ min-width: 330px;
 .navbar .main-nav > li > a {
     font-size: 1.25rem;
 
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     color: #002c66;
     text-transform: uppercase;
     font-weight: 600;
@@ -516,7 +516,7 @@ min-width: 330px;
 }
 .navbar .quick-nav > li > a {
     padding: 15px 15px 0.714rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     text-transform: uppercase;
     font-size: 1.071rem;
     line-height: 16px;
@@ -636,7 +636,7 @@ min-width: 330px;
 }
 .navbar .audience > li > a {
     font-size: .95rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     color: #fff;
     padding: .8rem 15px; /*Updated by RRD*/ /*padding: 0.714rem 22px;*/
     font-weight: 700;
@@ -690,7 +690,7 @@ a.button, .click-throughs a.button, .click-throughs div.button, #maincontent a.b
     color: #333; /*#444;*/
     padding: 9px 13px;
     font-weight: 700;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     text-transform: uppercase;
     text-decoration: none;
 
@@ -716,7 +716,7 @@ a.button.full-width, #maincontent a.button.full-width {
 #contentDiv {
     /*! max-width: 1170px; */ /*Updated by RRD*//*max-width: 71.429rem;*/
     margin: 0 auto 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     clear: both;
 }
 #contentDiv a.button {
@@ -726,7 +726,7 @@ a.button.full-width, #maincontent a.button.full-width {
     margin: 1.071rem 0 0;
 }
 #contentDiv h2{
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #002e66;
     font-size: 4.5rem;/*font-size: 3.571rem;*/
 
@@ -836,7 +836,8 @@ a.button.full-width, #maincontent a.button.full-width {
 	border: 5px solid #5fb08f;
 }
 .student-testimonials .quote:before{
-	font-family: 'FontAwesome';
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
 	content: '\f10d';
 	color: #364f7a;
 	font-size: 30px;
@@ -845,7 +846,8 @@ a.button.full-width, #maincontent a.button.full-width {
     padding-right: 10px;
 }
 .student-testimonials .quote:after{
-	font-family: 'FontAwesome';
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
     content: '\f10e';
     color: #364f7a;
 	font-size: 30px;
@@ -862,14 +864,14 @@ a.button.full-width, #maincontent a.button.full-width {
 .student-testimonials .name {
 	color: #fff;
 	font-size: 28px;
-	font-family: "Roboto Condensed", sans-serif;
+	font-family: "Poppins", sans-serif;
 	font-weight: 600;
 	margin-top: 25px;
 	margin-left: 20px;
 }
 .student-testimonials .title {
 	color: #fff;
-	font-family: "Roboto Condensed", sans-serif;
+	font-family: "Poppins", sans-serif;
 	font-size: 20px;
 	font-style: italic;
 	margin-left: 20px;
@@ -882,7 +884,7 @@ a.button.full-width, #maincontent a.button.full-width {
 }
 #NewsDiv h3, #EventsDiv h3, #ImportantDatesDiv h3{
 	float: left;
-	font-family: "Roboto Condensed", sans-serif;
+	font-family: "Poppins", sans-serif;
     color: #002e66;
     font-size: 4.5rem;
 	margin: 0px 7px;
@@ -992,7 +994,7 @@ a.button.full-width, #maincontent a.button.full-width {
     max-width: 100%;
 }
 #BottomFeature h2, #BottomFeature h3, .department #othercontent #BottomFeature h2, .department #othercontent #BottomFeature h3{
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 3.357rem;
     font-weight: 400;
     padding: 1.786rem 2.286rem;
@@ -1037,7 +1039,7 @@ a.button.full-width, #maincontent a.button.full-width {
     z-index: 0;
 }
 #BottomFeature .circle h4, .department #othercontent #BottomFeature .circle h4 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 100px;
     margin: 40px 0 0;
     font-weight: 700;
@@ -1085,7 +1087,7 @@ a.button.full-width, #maincontent a.button.full-width {
     max-width: 100%;
 }
 .landing-page #BottomFeature .feature-content {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     position: relative;
     padding: 30px; /*padding: 1.071rem 1.571rem;*/ /*Updated by RRD*/
     background: rgba(255, 255, 255, .85);
@@ -1155,7 +1157,7 @@ table.table-rs tr:nth-child(even) {
     margin: 0 auto;
 }
 #social h3, #social h4 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 3.646rem;
     color: #fff;
     text-align: right;
@@ -1239,7 +1241,7 @@ font-weight: normal;
 #social #st-3 .st-btn > span {
     color: #444;
     font-weight: 700;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     text-transform: uppercase;
     font-size: 14px;
     transition: all 500ms;
@@ -1252,7 +1254,7 @@ font-weight: normal;
 }
 #footer {
     color: #fff;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     padding: 2.286rem 7.643rem;
     font-size: 1.071rem;
     max-width: 1700px;
@@ -1343,7 +1345,7 @@ color: #002e66;
 }
 #about-header h2 {
     position: absolute;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 4rem;
     font-weight: 400;
     padding: 1.42857rem;
@@ -1365,7 +1367,7 @@ color: #002e66;
 	border:1px solid #CCCCCC;
     margin: 0;
     text-transform: uppercase;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     font-size: 1rem;
     font-weight: 700;
     color: #002e66;
@@ -1402,7 +1404,7 @@ h3{
 	font-size:1.1rem;
 }
 p.lead-in {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     font-weight: 700;
     font-size: 1.42857rem;
     margin-bottom: 1.78571rem;
@@ -1428,7 +1430,7 @@ p.lead-in {
     font-size: 1.75rem; /*font-size: 1.5rem;*/ /*Updated by RRD*/
     padding: 1.429rem 1.714rem;
 	border-radius: 0px; /*Updated by RRD*/
-	font-family: "Open Sans", sans-serif; /*Updated by RRD*/
+	font-family: "Karla", sans-serif; /*Updated by RRD*/
 	margin-bottom: 20px; /*Updated by RRD*/
 	margin-top: 40px; /*Updated by RRD*/
 	font-weight: 500;
@@ -1488,7 +1490,7 @@ p.lead-in {
     max-width: 100%;
 }
 .department #top-panel .top-panel-content {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     position: absolute;
     padding: 1.571rem; /*padding: 1.071rem 1.571rem;*/ /*Updated by RRD*/
 	background-color:rgba(255, 255, 255, .85);
@@ -1536,7 +1538,7 @@ p.lead-in {
 
 
 .department #sidebar .tabH4_Main{
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #fff;
 	background-color:rgba(0, 46, 102, 1);
     font-size: 3rem !important;
@@ -1549,7 +1551,7 @@ p.lead-in {
 }
 .
 department #sidebar .nopanel .tabH4_Main {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #fff;
     background-color: rgba(0, 46, 102, 1.0);
     font-size: 3rem;
@@ -1608,7 +1610,7 @@ department #sidebar .nopanel .tabH4_Main {
     display: inline-block;
     border-bottom: 1px solid #fff;
     font-size: 16px; /*font-size: 1rem;*/ /*Updated by RRD*/
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
 }
 
 .department #sidebar ul li ul li {
@@ -1687,7 +1689,10 @@ ul.cal_events li {
     background: #305589;
 }
 .department #sidebar #menuLeft ul#Accordion.pageletLinks li span a:after  {
-	font: normal normal normal 12px/1 FontAwesome;
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	font-size: 12px;
+	line-height: 1;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     content: "\f067";
@@ -1695,7 +1700,10 @@ ul.cal_events li {
 	padding-top:4px;
 }
 .department #sidebar #menuLeft ul#Accordion.pageletLinks li span a.open:after  {
-	font: normal normal normal 12px/1 FontAwesome;
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	font-size: 12px;
+	line-height: 1;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     content: "\f068";
@@ -1703,7 +1711,10 @@ ul.cal_events li {
 	padding-top:4px;
 }
 .department #sidebar #menuLeft ul#Accordion.pageletLinks li span a.closed:after  {
-	font: normal normal normal 12px/1 FontAwesome;
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	font-size: 12px;
+	line-height: 1;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     content: "\f067";
@@ -1722,14 +1733,14 @@ ul.cal_events li {
 
 .department #contentcontainer {
     clear: both;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     font-size: 17px;
 	padding-top:1rem;
 }
 .department #contentcontainer h2, .department #othercontent h2, .landing-page #content h2 {
     font-size: 2.5rem;
     color: #002e66;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     border-bottom: 1px solid #666;
     padding-bottom: 1.429rem;
     margin-bottom: 15px;
@@ -1786,7 +1797,7 @@ white-space: normal;
 /* Add down and up arrows to panel titles. - schavez 7-9-24 */
 
 .btn-link[data-toggle].collapsed:after{
-font-family: "Font Awesome 5 Free";
+font-family: "Font Awesome 6 Free";
 font-weight: 900;
 content: "\f078";
 position: absolute;
@@ -1796,7 +1807,7 @@ right: 40px;
 .btn-link[data-toggle]:not(.collapsed):after {
 
 
-font-family: "Font Awesome 5 Free";
+font-family: "Font Awesome 6 Free";
 font-weight: 900;
 content: "\f077";
 position: absolute;
@@ -1888,7 +1899,7 @@ right: 40px;
     position: relative;
 }
 #photoDivNew .slide-content {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     position: absolute;
     padding: 4rem 1.571rem 3rem;
     left: 40px;
@@ -2054,7 +2065,7 @@ right: 40px;
 	right: 25px;
 	width: auto;
 	height: auto;
-	font-family: "Roboto Condensed", sans-serif;
+	font-family: "Poppins", sans-serif;
 	padding: 9px 13px;
 	font-weight:700;
 	text-transform:uppercase;
@@ -2499,7 +2510,10 @@ body .body-wrap {
 	font-size: 24px;
 }
 #headerDiv a.menuClose::after {
-    font: normal normal normal 12px/1 FontAwesome;
+    font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	font-size: 12px;
+	line-height: 1;
         font-size: 12px;
     content: "\f00d";
     float: right;
@@ -2971,7 +2985,10 @@ body .body-wrap {
 	font-size: 24px;
 }
 #headerDiv a.menuClose::after {
-    font: normal normal normal 12px/1 FontAwesome;
+    font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	font-size: 12px;
+	line-height: 1;
         font-size: 12px;
     content: "\f00d";
     float: right;
@@ -3550,7 +3567,10 @@ body .body-wrap {
 	font-size: 24px;
 }
 #headerDiv a.menuClose::after {
-    font: normal normal normal 12px/1 FontAwesome;
+    font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	font-size: 12px;
+	line-height: 1;
     content: "\f00d";
     float: right;
     padding-top: 4px;
@@ -4054,7 +4074,7 @@ a.button, .click-throughs a.button, .click-throughs div.button, #maincontent a.b
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
 body {
-	font-family: "Open Sans", sans-serif !important;
+	font-family: "Karla", sans-serif !important;
     font-size: 14px;
 /*	border: 2px solid #F26522;*/
 	}/*Orange*/

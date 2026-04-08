@@ -6,6 +6,7 @@
 <script src="/_resources/js/flexslider.js"></script>
 <script src="/_resources/js/accordion-1.js"></script>
 <script src="/_resources/js/cerritos-legacy.js"></script>
+<script src="/_resources/js/cerritos.js"></script>
 <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58dc7d749801000011c55022&product=inline-share-buttons"></script>
 
 <!-- mailto script added 2025 -->

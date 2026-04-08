@@ -43,7 +43,7 @@ img {
 
 #searchDiv {
 	margin-bottom: 2rem;
-	font-family: "Open sans";
+	font-family: "Karla";
 }
 
 #searchDiv .gsc-control-cse div {
@@ -168,7 +168,7 @@ body.home-page .accessibility li#skip-secnav, body.landing-page .accessibility l
 
 .navbar .main-nav > li > a {
     font-size: 1rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     color: #002c66;
     text-transform: uppercase;
     font-weight: 600;
@@ -176,7 +176,7 @@ body.home-page .accessibility li#skip-secnav, body.landing-page .accessibility l
 
 .navbar .quick-nav > li > a {
     padding: 15px 15px 0.714rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     text-transform: uppercase;
     font-size: 1.071rem;
     line-height: 16px;
@@ -257,7 +257,7 @@ body.home-page .accessibility li#skip-secnav, body.landing-page .accessibility l
 
 .navbar .audience > li > a {
     font-size: 1.013rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     color: #fff;
     padding: 0.714rem 22px;
     font-weight: 700;
@@ -273,7 +273,7 @@ body.home-page .accessibility li#skip-secnav, body.landing-page .accessibility l
 }
 
 #photoDivNew .slide-content {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     position: absolute;
     padding: 1.071rem 1.571rem;
     background: #002E66;
@@ -349,7 +349,7 @@ a.button, .click-throughs a.button, .click-throughs div.button, #maincontent a.b
     color: #444;
     padding: 9px 13px;
     font-weight: 700;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
@@ -373,7 +373,7 @@ a.button:hover, .click-throughs a.button:hover, .click-throughs div.button:hover
 #contentDiv {
     max-width: 71.429rem;
     margin: 0 auto 3.214rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
 }
 
 #contentDiv a.button {
@@ -383,7 +383,7 @@ a.button:hover, .click-throughs a.button:hover, .click-throughs div.button:hover
 }
 
 #contentDiv h3 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #002e66;
     font-size: 3.571rem;
     margin: 0 5px;
@@ -429,7 +429,7 @@ a.button:hover, .click-throughs a.button:hover, .click-throughs div.button:hover
 }
 
 #BottomFeature h2 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 3.357rem;
     font-weight: 400;
     padding: 1.786rem 2.286rem;
@@ -479,7 +479,7 @@ a.button:hover, .click-throughs a.button:hover, .click-throughs div.button:hover
 }
 
 #BottomFeature .circle h4 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 100px;
     margin: 40px 0 0;
     font-weight: 700;
@@ -510,7 +510,7 @@ a.button:hover, .click-throughs a.button:hover, .click-throughs div.button:hover
 }
 
 .landing-page #BottomFeature .feature-content {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     position: relative;
     padding: 1.071rem 1.571rem;
     background: #fff;
@@ -574,7 +574,7 @@ table.table-rs th, table.table-rs td {
 }
 
 #social h3 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 3.646rem;
     color: #fff;
     text-align: right;
@@ -664,7 +664,7 @@ table.table-rs th, table.table-rs td {
 #social #st-3 .st-btn > span {
     color: #444;
     font-weight: 700;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     text-transform: uppercase;
     font-size: 14px;
     transition: all 500ms;
@@ -680,7 +680,7 @@ table.table-rs th, table.table-rs td {
 
 #footer {
     color: #fff;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     padding: 2.286rem 7.643rem;
     font-size: 1.071rem;
     max-width: 1300px;
@@ -734,7 +734,7 @@ table.table-rs th, table.table-rs td {
 
 #about-header h2 {
     position: absolute;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 4rem;
     font-weight: 400;
     padding: 1.42857rem;
@@ -758,7 +758,7 @@ table.table-rs th, table.table-rs td {
 	border:1px solid #CCCCCC;
     margin: 0;
     text-transform: uppercase;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     font-size: 1rem;
     font-weight: 700;
     color: #002e66;
@@ -789,7 +789,7 @@ table.table-rs th, table.table-rs td {
 }
 
 p.lead-in {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     font-weight: 700;
     font-size: 1.42857rem;
     margin-bottom: 1.78571rem;
@@ -854,7 +854,7 @@ p.lead-in {
 }
 
 .department #top-panel .top-panel-content {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     position: absolute;
     padding: 1.071rem 1.571rem;
     background: #fff;
@@ -901,7 +901,7 @@ p.lead-in {
 }
 
 .department #sidebar .tabH4_Main {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #fff;
     background: #002e66;
     font-size: 3.5rem;
@@ -962,7 +962,7 @@ p.lead-in {
     display: inline-block;
     border-bottom: 1px solid #fff;
     font-size: 1rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
 }
 
 .department #sidebar #menuLeft ul.pageletLinks li a:hover, .department #sidebar #menuLeft ul.pageletLinks li a:focus {
@@ -976,7 +976,10 @@ p.lead-in {
 
 .department #sidebar #menuLeft ul.pageletLinks li ul:before {
     display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     content: "\f0da";
@@ -1012,7 +1015,7 @@ p.lead-in {
 
 .department #contentcontainer {
     clear: both;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     font-size: 1.143rem;
 	padding-top:1rem;
 }
@@ -1020,7 +1023,7 @@ p.lead-in {
 .department #contentcontainer h2 {
     font-size: 2.429rem;
     color: #002e66;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     border-bottom: 1px solid #666;
     padding-bottom: 1.429rem;
     margin-bottom: 1.786rem;
@@ -1108,7 +1111,7 @@ p.lead-in {
 	right: 25px;
 	width: auto;
 	height: auto;
-	font-family: "Roboto Condensed", sans-serif;
+	font-family: "Poppins", sans-serif;
 	padding: 9px 13px;
 	font-weight:700;
 	text-transform:uppercase;
