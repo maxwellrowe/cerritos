@@ -1,49 +1,7 @@
 /*
 Changes made to this stylesheet are indicated by Updated by RRD. The old version is commented out next to the update.
 */
-@media (min-width: 1200px){
-.container-wider{
-	width: 1300px;
-}
-}
 
-html {
-    font-size: 14px;
-}
-body {
-    overflow-x: hidden;
-	font-family: "Karla", sans-serif !important; /*Updated by RRD*/
-	font-size: 16px; /*Updated by RRD*/
-	}
-p {
-    margin: 0 0 20px !important; /*Updated by RRD*/
-}
-
-.cog-content p{
-	margin-bottom: 0 !important;
-}
-
-:root .cog-cognito {
-	--label__font-weight: bold;
-}
-
-.cog-cognito label{
-	font-weight: normal;
-}
-
-.cog-helptext p{
-	margin-bottom: 0 !important;
-}
-
-
-
-a {
-	color: #305589;
-}
-a:focus {
-	border:1px #cccccc solid;
-	outline: none;
-}
 .mobile-button{
 	background-color: #002e66;
     padding: 15px;
@@ -197,7 +155,7 @@ img + h3 {
 	border: none;
 }
 .well .fa {
-	font-size: 50px;
+	font-size: 3.125rem;
 	margin-bottom: 20px;
 }
 .well.blue {
@@ -215,7 +173,7 @@ img + h3 {
 	color: #002E66;
 }
 .well h3 {
-	font-size: 30px;
+	font-size: 1.875rem;
 	margin-top: 0;
 }
 .well a.button:hover, .well .click-throughs a.button:hover, .well .click-throughs div.button:hover, #maincontent .well a.button:hover, .well .heading .popular li a.button:hover, .well a.button:focus, .well .click-throughs a.button:focus, .well .click-throughs div.button:focus, #maincontent .well a.button:focus, .well .heading .popular li a.button:focus {
@@ -273,7 +231,7 @@ img + h3 {
     line-height: 2.75em!important; /*Updated by RRD*/
 }
 .h3, h3 {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 blockquote {
 	border:none;
@@ -281,7 +239,7 @@ blockquote {
 	width: 340px;
 	text-align:right;
 	margin-right:0;
-	font-size: 16px !important; /*Updated by RRD*/
+	font-size: 1rem !important; /*Updated by RRD*/
 }
 blockquote p {
 	background-color:#ccedf9;
@@ -422,7 +380,7 @@ a[class="external"]::after { /*Updated by RRD*/
 
 
 #emergencyNotice .fa, #emergencyNotice-2 .fa {
-    font-size: 40px;
+    font-size: 2.5rem;
     padding: 10px 10px 0;
 
 }
@@ -524,7 +482,7 @@ min-width: 330px;
 }
 .navbar .quick-nav .give a {
     color: #fff;
-    font-size: 30px;
+    font-size: 1.875rem;
     padding: 5px 15px;
 }
 .navbar-default .navbar-nav > .give > a:focus, .navbar-default .navbar-nav > .give > a:hover {
@@ -721,7 +679,7 @@ a.button.full-width, #maincontent a.button.full-width {
 }
 #contentDiv a.button {
     padding: 0.714rem 1.186rem;
-    font-size: 18px;
+    font-size: 1.125rem;
 
     margin: 1.071rem 0 0;
 }
@@ -741,20 +699,20 @@ a.button.full-width, #maincontent a.button.full-width {
 
 
 #contentDiv h3{
-    font-size: 21px;
+    font-size: 1.3125rem;
     color: #002E66;
 
     font-weight: 400;
 	padding: 0.47em 0;
 }
 #contentDiv h4 {
-   font-size: 21px; /* font-size: 1.214rem;*/ /*Updated by RRD*/
+   font-size: 1.3125rem; /* font-size: 1.214rem;*/ /*Updated by RRD*/
     color: #002e66;
     font-weight: 700;
 }
 
 #contentDiv p {
-    font-size: 13px; /*font-size: 0.857rem;*/ /*Updated by RRD*/
+    font-size: 0.8125rem; /*font-size: 0.857rem;*/ /*Updated by RRD*/
     color: #002E66;
     font-weight: 400;
 }
@@ -791,7 +749,7 @@ a.button.full-width, #maincontent a.button.full-width {
 	margin: 20px;
 }
 #masonry-container .item h4{
-	font-size: 18px;
+	font-size: 1.125rem;
 	margin-top: 20px;
 	margin-right: 20px;
 	margin-bottom: 20px;
@@ -836,26 +794,24 @@ a.button.full-width, #maincontent a.button.full-width {
 	border: 5px solid #5fb08f;
 }
 .student-testimonials .quote:before{
-	font-family: "Font Awesome 6 Free";
-	font-weight: 900;
+	font: var(--fa-font-sharp-solid);
 	content: '\f10d';
 	color: #364f7a;
-	font-size: 30px;
+	font-size: 1.875rem;
 	font-style: normal;
 	margin-left: -40px;
     padding-right: 10px;
 }
 .student-testimonials .quote:after{
-	font-family: "Font Awesome 6 Free";
-	font-weight: 900;
+	font: var(--fa-font-sharp-solid);
     content: '\f10e';
     color: #364f7a;
-	font-size: 30px;
+	font-size: 1.875rem;
 	font-style: normal;
 }
 .student-testimonials .quote {
 	color: #fff;
-	font-size: 30px;
+	font-size: 1.875rem;
 	line-height: 40px;
 	font-style: italic;
 	margin-left: 20px;
@@ -863,7 +819,7 @@ a.button.full-width, #maincontent a.button.full-width {
 }
 .student-testimonials .name {
 	color: #fff;
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-family: "Poppins", sans-serif;
 	font-weight: 600;
 	margin-top: 25px;
@@ -872,7 +828,7 @@ a.button.full-width, #maincontent a.button.full-width {
 .student-testimonials .title {
 	color: #fff;
 	font-family: "Poppins", sans-serif;
-	font-size: 20px;
+	font-size: 1.25rem;
 	font-style: italic;
 	margin-left: 20px;
 }
@@ -922,17 +878,17 @@ a.button.full-width, #maincontent a.button.full-width {
 	display: block;
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 18px;
+	font-size: 1.125rem;
 }
 .event-day {
 	display: block;
 	text-align: center;
-	font-size: 50px;
+	font-size: 3.125rem;
 	font-weight: 300;
 }
 .event-text {
 	color: #555555;
-	font-size: 16px;
+	font-size: 1rem;
 	line-height: 20px;
 	position: relative;
 	vertical-align: bottom;
@@ -940,7 +896,7 @@ a.button.full-width, #maincontent a.button.full-width {
 }
 .news-text {
 	color: #555555;
-	font-size: 16px;
+	font-size: 1rem;
 	line-height: 20px;
 	position: relative;
 	vertical-align: bottom;
@@ -960,13 +916,13 @@ a.button.full-width, #maincontent a.button.full-width {
 
 .journey .lead {
 
-	font-size: 24px !important;/*font-size: 16px !important;*/
+	font-size: 1.5rem !important;/*font-size: 1rem !important;*/
 	font-weight: lighter;
 	padding: 0 1rem;
 }
 
 .journey .j_sub_txt{
-	font-size: 21px !important;
+	font-size: 1.3125rem !important;
 /* 	padding: 1rem 1rem .5rem 1rem; */
 }
 
@@ -1040,7 +996,7 @@ a.button.full-width, #maincontent a.button.full-width {
 }
 #BottomFeature .circle h4, .department #othercontent #BottomFeature .circle h4 {
     font-family: "Poppins", sans-serif;
-    font-size: 100px;
+    font-size: 6.25rem;
     margin: 40px 0 0;
     font-weight: 700;
 	color: #fff;
@@ -1048,7 +1004,7 @@ a.button.full-width, #maincontent a.button.full-width {
 	letter-spacing: -5px;
 }
 .home-page #BottomFeature .circle.blue h4 {
-	font-size: 80px;
+	font-size: 5rem;
 	letter-spacing:-5px;
 	margin-top: .2em;
 }
@@ -1058,14 +1014,14 @@ a.button.full-width, #maincontent a.button.full-width {
 	letter-spacing:-5px;
 }
 .home-page #BottomFeature .circle.red h4.first {
-	font-size: 50px;
+	font-size: 3.125rem;
 	margin-top: 30px;
 	line-height: 50px;
 	text-transform: uppercase;
 	letter-spacing:0;
 }
 #BottomFeature .circle p, .department #othercontent #BottomFeature .circle p {
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 700;
     text-transform: uppercase;
     max-width: 155px;
@@ -1243,7 +1199,7 @@ font-weight: normal;
     font-weight: 700;
     font-family: "Poppins", sans-serif;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 0.875rem;
     transition: all 500ms;
 }
 #social #st-3 .st-btn > span:hover {
@@ -1286,7 +1242,7 @@ color: #002e66;
     margin-top: 0;
     margin-bottom: 20px;
 	font-weight: 700; /*Updated by RRD*/
-    font-size: 16px; /*Updated by RRD*/
+    font-size: 1rem; /*Updated by RRD*/
 	text-transform: uppercase; /*Updated by RRD*/
 }
 
@@ -1441,7 +1397,7 @@ p.lead-in {
 	margin-top: -5px; /*Updated by RRD*/
 }
 .block h3 .fa {
-	font-size: 30px;
+	font-size: 1.875rem;
 }
 .block h3 span {
     overflow: hidden;
@@ -1522,7 +1478,7 @@ p.lead-in {
     line-height: 1;
 }
 .department #top-panel .top-panel-content .tpc-large-bottom {
-    font-size: 34px;/*font-size: 2.771rem;*/ /*Updated by RRD*/
+    font-size: 2.125rem;/*font-size: 2.771rem;*/ /*Updated by RRD*/
     font-weight: 700;
     margin: 0 0 15px;
     line-height: 1;
@@ -1588,7 +1544,7 @@ department #sidebar .nopanel .tabH4_Main {
     font-weight: 700;
 }
 .department #sidebar h3 .fa-lg {
-	font-size: 20px !important;
+	font-size: 1.25rem !important;
 	line-height: 0px !important;
 }
 .department #sidebar p {
@@ -1609,7 +1565,7 @@ department #sidebar .nopanel .tabH4_Main {
     text-decoration: none;
     display: inline-block;
     border-bottom: 1px solid #fff;
-    font-size: 16px; /*font-size: 1rem;*/ /*Updated by RRD*/
+    font-size: 1rem; /*font-size: 1rem;*/ /*Updated by RRD*/
     font-family: "Karla", sans-serif;
 }
 
@@ -1689,9 +1645,8 @@ ul.cal_events li {
     background: #305589;
 }
 .department #sidebar #menuLeft ul#Accordion.pageletLinks li span a:after  {
-	font-family: "Font Awesome 6 Free";
-	font-weight: 900;
-	font-size: 12px;
+	font: var(--fa-font-sharp-solid);
+	font-size: 0.75rem;
 	line-height: 1;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -1700,9 +1655,8 @@ ul.cal_events li {
 	padding-top:4px;
 }
 .department #sidebar #menuLeft ul#Accordion.pageletLinks li span a.open:after  {
-	font-family: "Font Awesome 6 Free";
-	font-weight: 900;
-	font-size: 12px;
+	font: var(--fa-font-sharp-solid);
+	font-size: 0.75rem;
 	line-height: 1;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -1711,9 +1665,8 @@ ul.cal_events li {
 	padding-top:4px;
 }
 .department #sidebar #menuLeft ul#Accordion.pageletLinks li span a.closed:after  {
-	font-family: "Font Awesome 6 Free";
-	font-weight: 900;
-	font-size: 12px;
+	font: var(--fa-font-sharp-solid);
+	font-size: 0.75rem;
 	line-height: 1;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -1734,7 +1687,7 @@ ul.cal_events li {
 .department #contentcontainer {
     clear: both;
     font-family: "Karla", sans-serif;
-    font-size: 17px;
+    font-size: 1.0625rem;
 	padding-top:1rem;
 }
 .department #contentcontainer h2, .department #othercontent h2, .landing-page #content h2 {
@@ -1758,7 +1711,7 @@ ul.cal_events li {
 .department #contentcontainer form h2{
 
 	text-transform: none;
-	font-size: 21px;
+	font-size: 1.3125rem;
 	color: #333;
 	border-bottom: none;
 	padding-bottom: 0;
@@ -1773,21 +1726,12 @@ ul.cal_events li {
 
 .department #contentcontainer h3.panel-title, .department #othercontent h3.panel-title, .landing-page #content h3.panel-title {
     text-transform: none;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .panel-title>a{
 display: block;
 text-align: left;
-white-space: normal;
-}
-
-/* Button Link Block Styles*/
-.btn-link{
-display: block;
-width: 100%;
-text-align: left;
-
 white-space: normal;
 }
 
@@ -1797,8 +1741,7 @@ white-space: normal;
 /* Add down and up arrows to panel titles. - schavez 7-9-24 */
 
 .btn-link[data-toggle].collapsed:after{
-font-family: "Font Awesome 6 Free";
-font-weight: 900;
+font: var(--fa-font-sharp-solid);
 content: "\f078";
 position: absolute;
 right: 40px;
@@ -1807,8 +1750,7 @@ right: 40px;
 .btn-link[data-toggle]:not(.collapsed):after {
 
 
-font-family: "Font Awesome 6 Free";
-font-weight: 900;
+font: var(--fa-font-sharp-solid);
 content: "\f077";
 position: absolute;
 right: 40px;
@@ -1817,10 +1759,10 @@ right: 40px;
 /* End down and up arrow styles */
 
 
-.department #contentcontainer h3, .department #othercontent h3, .landing-page #content h3, .btn-link {
+.department #contentcontainer h3, .department #othercontent h3, .landing-page #content h3 {
     text-transform: uppercase;
     color: #002e66;
-    font-size: 24.006px;/*font-size: 1.714rem;*/ /*Updated by RRD*/
+    font-size: 1.5rem;/*font-size: 1.714rem;*/ /*Updated by RRD*/
     font-weight: 700;
 }
 .department #contentcontainer h4, .department #othercontent h4, .landing-page #content h4 {
@@ -1830,7 +1772,7 @@ right: 40px;
     line-height: 1.5;
 }
 .department #contentcontainer .block.block-square h4 .fas, .department #contentcontainer .block.block-square h4 .far, .department #contentcontainer .block.block-square h4 .fab{
-	font-size: 0px;
+	font-size: 0;
 }
 .department #contentcontainer .block.block-square h4 .fas:before, .department #contentcontainer .block.block-square h4 .far:before, .department #contentcontainer .block.block-square h4 .fab:before{
 	font-size: 6rem;
@@ -1926,7 +1868,7 @@ right: 40px;
 
 
 #photoDivNew .slide-content .sc-large-top, #photoDivNew .slide-content h2.sc-large-top {
-    font-size: 4.5rem; /*font-size: 72px;*/ /* Updated by schavez font-size: 92px; 5-11-22*/
+    font-size: 4.5rem; /*font-size: 4.5rem;*/ /* Updated by schavez font-size: 5.75rem; 5-11-22*/
 	margin: 0;
 	line-height: .8; /*line-height:1;*/
 	font-weight: 700;
@@ -1946,7 +1888,7 @@ right: 40px;
 
 
 #photoDivNew .slide-content .sc-large-bottom, #photoDivNew .slide-content h3.sc-large-bottom {
-    font-size: 4.5rem; /*font-size: 72px;*/ /* Updated by schavez font-size: 92px; 5-11-22 */
+    font-size: 4.5rem; /*font-size: 4.5rem;*/ /* Updated by schavez font-size: 5.75rem; 5-11-22 */
 	margin: 0; /*margin: 0 0 15px;*/
 	font-weight: 700;
 }
@@ -2118,7 +2060,7 @@ i.fa-exclamation-triangle {
 /* ---------- breadcrumbs ---------- */
 
 #BreadcrumbList {
-   font-size: 13px; /* font-size: .85rem;*/ /*Updated by RRD*/
+   font-size: 0.8125rem; /* font-size: .85rem;*/ /*Updated by RRD*/
 }
 #BreadcrumbList ol {
     float: right;
@@ -2380,7 +2322,7 @@ body .body-wrap {
 }
 #contentDiv a.button {
     padding: 10px;
-    font-size: 17px;
+    font-size: 1.0625rem;
 }
 #photoDivNew .slide-content {
 	bottom: 0;	
@@ -2389,10 +2331,10 @@ body .body-wrap {
     font-size: 2rem;
 }
 #photoDivNew .slide-content div.sc-large-bottom, #photoDivNew .slide-content h3.sc-large-bottom {
-    font-size: 52px;
+    font-size: 3.25rem;
 }
 #photoDivNew .slide-content div.sc-large-top, #photoDivNew .slide-content h2.sc-large-top {
-    font-size: 52px;
+    font-size: 3.25rem;
 }
 #photoDivNew .slide-content div.sc-small-bottom, #photoDivNew .slide-content h3.sc-small-bottom {
     font-size: 2rem;
@@ -2464,7 +2406,7 @@ body .body-wrap {
 	
 .journey .j_sub_txt{
 	text-align: center !important;
-	font-size: 17px !important;/*font-size: 16px !important;*/
+	font-size: 1.0625rem !important;/*font-size: 1rem !important;*/
 	padding: 1rem 0 .5rem 0;
 
 
@@ -2507,18 +2449,17 @@ body .body-wrap {
 	left: 10px;
 	z-index: 9;
 	color: #fff;
-	font-size: 24px;
+	font-size: 1.5rem;
 }
 #headerDiv a.menuClose::after {
-    font-family: "Font Awesome 6 Free";
-	font-weight: 900;
-	font-size: 12px;
+    font: var(--fa-font-sharp-solid);
+	font-size: 0.75rem;
 	line-height: 1;
-        font-size: 12px;
+        font-size: 0.75rem;
     content: "\f00d";
     float: right;
     padding-top: 4px;
-    font-size: 24px;
+    font-size: 1.5rem;
     padding-left: 10px;
     padding-top: 10px;
 }
@@ -2712,7 +2653,7 @@ body .body-wrap {
 	position: relative;
 	right: -210px;
 	top: 45px;
-	font-size: 14px;
+	font-size: 0.875rem;
 	float: right;
 	}
 .mobile-quicklinks.dropdown .open .dropdown-menu {
@@ -2724,7 +2665,7 @@ body .body-wrap {
 	width: 100%;
 	}
 .mobile-quicklinks.dropdown li a {
-	font-size: 14px;
+	font-size: 0.875rem;
 	padding: 5px;
 	text-align: left;
 }
@@ -2774,7 +2715,7 @@ body .body-wrap {
 #BottomFeature .circle h4 {
 	padding-top: 2.5rem;
 	margin: -15px 0 0;
-	font-size: 90px;
+	font-size: 5.625rem;
 }
 .home-page #BottomFeature .circle.red h4.first {
 	margin-top: 10px;
@@ -2785,7 +2726,7 @@ body .body-wrap {
 	margin-top: -10px;
 	}
 .home-page#BottomFeature .circle.red p {
-	font-size: 14px;
+	font-size: 0.875rem;
 	}
 #social h3 {
 	text-align: center;
@@ -2904,7 +2845,7 @@ body .body-wrap {
   padding: 5rem 1.286rem 2rem;
 }
 .student-testimonials .quote {
-	font-size: 25px;
+	font-size: 1.5625rem;
 	line-height: 35px;
 }
 .student-testimonials.owl-theme .owl-controls {
@@ -2912,7 +2853,7 @@ body .body-wrap {
 	width: 350px !important;
 	}
 .student-testimonials .name, .student-testimonials .title {
-    font-size: 24px;
+    font-size: 1.5rem;
 	}
 #photoDivNew .slide-content {
 	bottom: 0;	
@@ -2925,17 +2866,17 @@ body .body-wrap {
 }
 	/* Added by schavez 5-11-22 */
 #photoDivNew .slide-content h2.sc-large-top {
-	font-size: 52px;
+	font-size: 3.25rem;
 }
 /* End add */
 #photoDivNew .slide-content div.sc-small-top, #photoDivNew .slide-content h2.sc-small-top {
     font-size: 2rem;
 }
 #photoDivNew .slide-content div.sc-large-bottom, #photoDivNew .slide-content h3.sc-large-bottom {
-    font-size: 52px;
+    font-size: 3.25rem;
 }
 #photoDivNew .slide-content div.sc-large-top, #photoDivNew .slide-content h2.sc-small-top {
-    font-size: 52px;
+    font-size: 3.25rem;
 }
 
 #photoDivNew .slide-content div.sc-small-bottom, #photoDivNew .slide-content h3.sc-small-bottom {
@@ -2982,18 +2923,17 @@ body .body-wrap {
 	left: 10px;
 	z-index: 9;
 	color: #fff;
-	font-size: 24px;
+	font-size: 1.5rem;
 }
 #headerDiv a.menuClose::after {
-    font-family: "Font Awesome 6 Free";
-	font-weight: 900;
-	font-size: 12px;
+    font: var(--fa-font-sharp-solid);
+	font-size: 0.75rem;
 	line-height: 1;
-        font-size: 12px;
+        font-size: 0.75rem;
     content: "\f00d";
     float: right;
     padding-top: 4px;
-    font-size: 24px;
+    font-size: 1.5rem;
     padding-left: 10px;
     padding-top: 10px;
 }
@@ -3183,7 +3123,7 @@ body .body-wrap {
 	position: relative;
 	right: -210px;
 	top: 45px;
-	font-size: 14px;
+	font-size: 0.875rem;
 	float: right;
 	}
 .mobile-quicklinks.dropdown .open .dropdown-menu {
@@ -3195,7 +3135,7 @@ body .body-wrap {
 	width: 100%;
 	}
 .mobile-quicklinks.dropdown li a {
-	font-size: 14px;
+	font-size: 0.875rem;
 	padding: 5px;
 	text-align: left;
 }
@@ -3224,7 +3164,7 @@ body .body-wrap {
 	float: left;
 	}
 #contentDiv h4 {
-    font-size: 18px;
+    font-size: 1.125rem;
 	}
 
 
@@ -3299,7 +3239,7 @@ table.table-rs, table.table-rs thead, table.table-rs tbody, table.table-rs th, t
 	height: 12.5rem;
 	margin: 0 0 0 20px;
 	position: static;
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 #BottomFeature .circle:nth-child(2n) {
     top: 200px;
@@ -3326,22 +3266,22 @@ table.table-rs, table.table-rs thead, table.table-rs tbody, table.table-rs th, t
 #BottomFeature .circle h4 {
    padding-top: .75rem;
 	margin: -15px 0 0;
-	font-size: 60px;
+	font-size: 3.75rem;
 	line-height: 85px;
     }
 .home-page #BottomFeature .circle.red h4.first {
-	font-size: 30px;
+	font-size: 1.875rem;
 	margin-top: -15px;
 	line-height: 0;
 	letter-spacing: 0;
 	padding-top: 22px;
 	}
 .home-page #BottomFeature .circle.blue h4 {
-	font-size: 60px;
+	font-size: 3.75rem;
 	line-height: 85px;
 	}
 #BottomFeature .circle p {
-    font-size: 14px;
+    font-size: 0.875rem;
 	}
 #BottomFeature .circle:nth-child(3n) h4 {
 	padding-top: 10px;
@@ -3461,20 +3401,20 @@ body .body-wrap {
     padding: 25px;
 }
 .student-testimonials .quote {
-    font-size: 25px;
+    font-size: 1.5625rem;
     line-height: 35px;
     text-align: center;
     display: block;
     margin: 0 auto;
 }
 .student-testimonials .name{
-	font-size: 24px;
+	font-size: 1.5rem;
 	display: block;
 	margin: 20px auto 0;
 	text-align: center;
 	}
 .student-testimonials .title {
-	font-size: 24px;
+	font-size: 1.5rem;
 	display: block;
 	margin: 0 auto;
 	text-align: center;
@@ -3511,10 +3451,10 @@ body .body-wrap {
 	line-height: 30px;
 }
 #photoDivNew .slide-content .sc-large-bottom, #photoDivNew .slide-content h3.sc-large-bottom {
-    font-size: 52px;
+    font-size: 3.25rem;
 }
 #photoDivNew .slide-content .sc-large-top, #photoDivNew .slide-content h2.sc-large-top {
-    font-size: 52px;
+    font-size: 3.25rem;
 }
 #photoDivNew .slide-content .sc-small-bottom, #photoDivNew .slide-content h3.sc-small-bottom {
     font-size: 2rem;
@@ -3564,17 +3504,16 @@ body .body-wrap {
 	left: 10px;
 	z-index: 9;
 	color: #fff;
-	font-size: 24px;
+	font-size: 1.5rem;
 }
 #headerDiv a.menuClose::after {
-    font-family: "Font Awesome 6 Free";
-	font-weight: 900;
-	font-size: 12px;
+    font: var(--fa-font-sharp-solid);
+	font-size: 0.75rem;
 	line-height: 1;
     content: "\f00d";
     float: right;
     padding-top: 4px;
-	font-size: 24px;
+	font-size: 1.5rem;
 	padding-left: 10px;
 	padding-top: 10px;
 }
@@ -3774,7 +3713,7 @@ body .body-wrap {
     position: relative;
     right: -125px;
     top: 45px;
-    font-size: 14px;
+    font-size: 0.875rem;
     float: right;
 	}
 .mobile-quicklinks.dropdown .open .dropdown-menu {
@@ -3784,13 +3723,13 @@ body .body-wrap {
 	padding: 5px;
 	}
 .mobile-quicklinks.dropdown li.dropdown.quick-links ul.dropdown-menu li a {
-	font-size: 12px;
+	font-size: 0.75rem;
 	}
 .mobile-quicklinks.dropdown li {
 	width: 100%;
 	}
 .mobile-quicklinks.dropdown li a {
-	font-size: 14px;
+	font-size: 0.875rem;
 	padding: 5px;
 	text-align: left;
 }
@@ -3806,7 +3745,7 @@ body .body-wrap {
 	height: 12.5rem;
 	margin: 0 0 0 5px;
 	position: static;
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 #BottomFeature .circle:nth-child(2n) {
     top: 200px;
@@ -3833,21 +3772,21 @@ body .body-wrap {
 #BottomFeature .circle h4 {
    padding-top: .75rem;
 	margin: -15px 0 0;
-	font-size: 70px;
+	font-size: 4.375rem;
 	line-height: 90px;
     }
 .home-page #BottomFeature .circle.blue h4 {
-	font-size: 70px;
+	font-size: 4.375rem;
 	}
 .home-page #BottomFeature .circle.red h4.first {
-    font-size: 30px;
+    font-size: 1.875rem;
     margin-top: -15px;
     line-height: 0;
     letter-spacing: 0;
     padding-top: 22px;
 }
 #BottomFeature .circle p {
-    font-size: 12px;
+    font-size: 0.75rem;
 	}
 #BottomFeature .circle:nth-child(3n) h4 {
 	padding-top: 5px;
@@ -4075,7 +4014,7 @@ a.button, .click-throughs a.button, .click-throughs div.button, #maincontent a.b
 @media (max-width: 480px) {
 body {
 	font-family: "Karla", sans-serif !important;
-    font-size: 14px;
+    font-size: 0.875rem;
 /*	border: 2px solid #F26522;*/
 	}/*Orange*/
 .flex-direction-nav a {
@@ -4104,7 +4043,7 @@ body {
 	font-size: 2.1rem;
 	}	
 #BottomFeature .feature-content a.button {
-	font-size: 12px;
+	font-size: 0.75rem;
 	}
 #footer .col-xs-5.info, #footer .col-xs-7.col-sm-8.col-md-7 {
 	width: 100%;
@@ -4147,7 +4086,7 @@ body {
 .flex-pauseplay a {
     right: 15px;
 	bottom: 15px;
-	font-size: 14px;
+	font-size: 0.875rem;
 	padding: 7px 13px;
 }
 ul.flex-direction-nav {
@@ -4182,13 +4121,13 @@ ul.flex-direction-nav {
 .mobile-quicklinks.dropdown {
 	position: relative;
 	top: 45px;
-	font-size: 14px;
+	font-size: 0.875rem;
 	float: right;
 	padding: 0;
 	right: -120px;
 	}
 .mobile-quicklinks.dropdown li a {
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 .mobile-quicklinks.dropdown li {
     padding: 0;
@@ -4210,15 +4149,15 @@ ul.flex-direction-nav {
 	padding: 1rem 1.286rem;
 	}
 .department #sidebar ul li a {
-	font-size: 14px;
+	font-size: 0.875rem;
 	padding: 10px;
 	}
 .department #sidebar ul.cal_events li.time{
-	font-size: 14px;
+	font-size: 0.875rem;
 	/*padding: 10px 0 0 25px;*/
 }
 .department #sidebar ul.cal_events li.location{
-	font-size: 14px;
+	font-size: 0.875rem;
 	/*padding: 10px  0 0 25px;*/
 }
 .department #sidebar h3 {
@@ -4272,4 +4211,3 @@ width:100%;
 		display: block !important;
 	}
 }
-

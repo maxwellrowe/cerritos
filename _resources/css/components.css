@@ -50,32 +50,6 @@
 	/*margin-bottom: 1.4rem;*/
 }
 
-.buttons{
-	display: block;
-	position: absolute;
-	margin-top: -2.5em; 
-	margin-bottom: 1rem;
-	left: auto;
-	right: 20px;
-	height: auto;
-}
-
-button {
-    background: #002E66;
-    color: #FFFFFF;
-    border: none;
-    position: relative;
-    padding: 2px 8px 2px;
-    min-width: 100px;
-	font-weight: bold;
- }
-
-button:hover {
-	background: #FFBE00;
-	color: #002E66;
-	font-weight: bold;
-}
-
 .custom-slick .spacer, .custom-slick-2 .spacer{
 	min-height: 3rem;
 }

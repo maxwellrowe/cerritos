@@ -17,7 +17,12 @@
 	<!-- Link to latest font awesome set 5.6.3 added by Samuel for newer icon sets on the SEM division home page --> 
 	<!-- 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
  -->
-	<link rel="stylesheet" href="{{f:80148448}}"><!-- /_resources/fonts/fontawesome-free-6.4.2-web/css/all.min.css-->
+	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/fontawesome.min.css"><!-- /_resources/fonts/font-awesome-6-pro/css/fontawesome.min.css -->
+	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/brands.min.css"><!-- /_resources/fonts/font-awesome-6-pro/css/brands.min.css -->
+	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/regular.min.css"><!-- /_resources/fonts/font-awesome-6-pro/css/regular.min.css -->
+	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/solid.min.css"><!-- /_resources/fonts/font-awesome-6-pro/css/solid.min.css -->
+	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/sharp-regular.min.css"><!-- /_resources/fonts/font-awesome-6-pro/css/sharp-regular.min.css -->
+	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/sharp-solid.min.css"><!-- /_resources/fonts/font-awesome-6-pro/css/sharp-solid.min.css -->
 
 	<!-- Load fonts from Google Fonts CDN -- 10/27/2023 - Open Sans and Roboto Condensed -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
