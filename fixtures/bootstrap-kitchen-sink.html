@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cerritos Bootstrap Kitchen Sink</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
+	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/fontawesome.min.css">
+	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/brands.min.css">
+	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/regular.min.css">
+	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/solid.min.css">
+	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/sharp-regular.min.css">
+	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/sharp-solid.min.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="/_resources/css/legacy.css">
+	<link rel="stylesheet" href="/_resources/css/components.css">
+	<link rel="stylesheet" href="/_resources/css/modern-campus-forms.css">
+	<link rel="stylesheet" href="/_resources/css/cerritos-bootstrap.css">
+	<link rel="stylesheet" href="/_resources/css/cerritos.css">
+
+	<style>
+		body {
+			background: linear-gradient(180deg, #f3f3f4 0%, #ffffff 22rem);
+		}
+
+		.kitchen-hero {
+			padding: 5rem 0 2rem;
+		}
+
+		.kitchen-chip {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			padding: 0.5rem 0.85rem;
+			margin: 0 0.5rem 0.75rem 0;
+			border: 1px solid var(--bs-border-color);
+			background: #fff;
+			box-shadow: var(--bs-box-shadow-sm);
+			font-size: 0.95rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.03em;
+		}
+
+		.kitchen-section {
+			padding: 1.5rem;
+			margin-bottom: 1.5rem;
+			background: #fff;
+			border: 1px solid var(--bs-gray-200);
+			box-shadow: var(--bs-box-shadow-sm);
+		}
+
+		.kitchen-swatch {
+			height: 7rem;
+			padding: 0.85rem;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			color: #fff;
+			font-weight: 700;
+		}
+
+		.kitchen-swatch.light {
+			color: #1a2432;
+		}
+
+		.kitchen-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+			gap: 1rem;
+		}
+
+		.kitchen-icons {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+			gap: 1rem;
+		}
+
+		.kitchen-icons .icon-card {
+			padding: 1rem;
+			text-align: center;
+			border: 1px solid var(--bs-gray-200);
+			background: var(--bs-light);
+		}
+
+		.kitchen-icons i {
+			display: block;
+			margin-bottom: 0.75rem;
+			font-size: 1.75rem;
+		}
+
+		.kitchen-demo-navbar {
+			border: 1px solid var(--bs-gray-200);
+			box-shadow: var(--bs-box-shadow-sm);
+		}
+	</style>
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/_resources/js/bootstrap-3-shim.js"></script>
+
+	<div class="container kitchen-hero">
+		<div class="row align-items-end g-4">
+			<div class="col-lg-8">
+				<div class="kitchen-chip"><i class="fa-solid fa-flask"></i> Theme Audit</div>
+				<div class="kitchen-chip"><i class="fa-sharp fa-solid fa-bolt"></i> Bootstrap 5.3</div>
+				<div class="kitchen-chip"><i class="fa-brands fa-font-awesome"></i> Icon Check</div>
+				<h1 class="display-4 fw-bold mt-3 mb-3" style="font-family: 'Poppins', sans-serif;">Cerritos Bootstrap Kitchen Sink</h1>
+				<p class="lead text-secondary">Use this page to inspect the current Bootstrap 5 + shim + Cerritos theme styling for common components before touching live templates.</p>
+			</div>
+			<div class="col-lg-4">
+				<div class="kitchen-section mb-0">
+					<p class="small text-uppercase fw-bold text-secondary mb-2">Quick Actions</p>
+					<div class="d-flex flex-wrap gap-2">
+						<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kitchenModal">Open Modal</button>
+						<button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#kitchenOffcanvas" aria-controls="kitchenOffcanvas">Open Offcanvas</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container pb-5">
+		<section class="kitchen-section">
+			<h2>Color Tokens</h2>
+			<div class="kitchen-grid">
+				<div class="kitchen-swatch" style="background:#002e66;">Primary<br><small>#002e66</small></div>
+				<div class="kitchen-swatch" style="background:#011b3b;">Secondary<br><small>#011b3b</small></div>
+				<div class="kitchen-swatch" style="background:#28a8e0;">Info<br><small>#28a8e0</small></div>
+				<div class="kitchen-swatch light" style="background:#ffbe00;">Warning<br><small>#ffbe00</small></div>
+				<div class="kitchen-swatch" style="background:#a23248;">Danger<br><small>#a23248</small></div>
+				<div class="kitchen-swatch" style="background:#00b389;">Success<br><small>#00b389</small></div>
+				<div class="kitchen-swatch light" style="background:#f3f3f4;">Light<br><small>#f3f3f4</small></div>
+				<div class="kitchen-swatch" style="background:#1a2432;">Ink / Dark<br><small>#1a2432</small></div>
+			</div>
+		</section>
+
+		<section class="kitchen-section">
+			<h2>Typography Scale</h2>
+			<div class="row g-4">
+				<div class="col-lg-7">
+					<h1>Heading One / H1</h1>
+					<h2>Heading Two / H2</h2>
+					<h3>Heading Three / H3</h3>
+					<h4>Heading Four / H4</h4>
+					<h5>Heading Five / H5</h5>
+				</div>
+				<div class="col-lg-5">
+					<p class="lead">Lead / intro text should land at a stronger, more spacious reading size.</p>
+					<p>This is the default body size. It should resolve to 16px at desktop and scale down smoothly on smaller screens.</p>
+					<p class="body-xl">This is XL body text for callouts, oversized intros, or supporting statements.</p>
+					<p><small>This is small body text for metadata, captions, and secondary information.</small></p>
+				</div>
+			</div>
+			<hr class="my-4">
+			<div class="row g-4">
+				<div class="col-md-6">
+					<p class="mb-2 text-secondary text-uppercase fw-bold">Utility Samples</p>
+					<p class="h1 mb-2">.h1 utility</p>
+					<p class="h2 mb-2">.h2 utility</p>
+					<p class="h3 mb-2">.h3 utility</p>
+					<p class="h4 mb-2">.h4 utility</p>
+					<p class="h5 mb-0">.h5 utility</p>
+				</div>
+				<div class="col-md-6">
+					<p class="mb-2 text-secondary text-uppercase fw-bold">Specimen</p>
+					<p><strong>Poppins</strong> is used for headings and buttons.</p>
+					<p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+					<p>abcdefghijklmnopqrstuvwxyz</p>
+					<p>0123456789 !@#$%^&amp;*()</p>
+					<p style="font-family: 'Karla', sans-serif;"><strong>Karla</strong> is used for body copy, UI text, and forms.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="kitchen-section">
+			<h2>Buttons</h2>
+			<div class="d-flex flex-wrap gap-2 mb-3">
+				<button class="btn btn-primary">Primary</button>
+				<button class="btn btn-secondary">Secondary</button>
+				<button class="btn btn-success">Success</button>
+				<button class="btn btn-info text-white">Info</button>
+				<button class="btn btn-warning">Warning</button>
+				<button class="btn btn-danger">Danger</button>
+				<button class="btn btn-light">Light</button>
+				<button class="btn btn-dark">Dark</button>
+			</div>
+			<div class="d-flex flex-wrap gap-2 mb-3">
+				<button class="btn btn-outline-primary">Outline Primary</button>
+				<button class="btn btn-outline-secondary">Outline Secondary</button>
+				<button class="btn btn-outline-success">Outline Success</button>
+				<button class="btn btn-outline-danger">Outline Danger</button>
+			</div>
+			<div class="d-flex flex-wrap gap-2">
+				<a class="btn btn-primary btn-lg" href="#">Large CTA</a>
+				<button class="btn btn-default">Legacy `.btn-default`</button>
+				<button class="btn btn-link">Link Button</button>
+			</div>
+		</section>
+
+		<section class="kitchen-section">
+			<h2>Forms</h2>
+			<div class="row g-4">
+				<div class="col-lg-6">
+					<div class="mb-3">
+						<label class="form-label" for="kitchenName">Full name</label>
+						<input id="kitchenName" class="form-control" type="text" placeholder="Jane Falcon">
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="kitchenEmail">Email address</label>
+						<input id="kitchenEmail" class="form-control" type="email" placeholder="jane@cerritos.edu">
+						<div class="form-text">Helper text should inherit the updated typography and color tokens.</div>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="kitchenSelect">Select</label>
+						<select id="kitchenSelect" class="form-select">
+							<option selected>Choose one</option>
+							<option>Option one</option>
+							<option>Option two</option>
+						</select>
+					</div>
+					<div class="input-group mb-3">
+						<span class="input-group-addon">@</span>
+						<input class="form-control" type="text" placeholder="Legacy input-group-addon check">
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="mb-3">
+						<label class="form-label" for="kitchenTextarea">Message</label>
+						<textarea id="kitchenTextarea" class="form-control" rows="6" placeholder="Preview textarea styling"></textarea>
+					</div>
+					<div class="form-check mb-2">
+						<input id="kitchenCheck" class="form-check-input" type="checkbox" checked>
+						<label class="form-check-label" for="kitchenCheck">Email me updates</label>
+					</div>
+					<div class="form-check mb-3">
+						<input id="kitchenRadio" class="form-check-input" type="radio" name="kitchenRadio" checked>
+						<label class="form-check-label" for="kitchenRadio">Default radio</label>
+					</div>
+					<button class="btn btn-primary me-2">Submit</button>
+					<button class="btn btn-outline-secondary" type="reset">Reset</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="kitchen-section">
+			<h2>Alerts, Badges, Progress</h2>
+			<div class="alert alert-primary" role="alert">Primary alert with <a href="#" class="alert-link">a sample link</a>.</div>
+			<div class="alert alert-warning" role="alert">Warning alert to test contrast on your gold/yellow token.</div>
+			<div class="d-flex flex-wrap gap-2 mb-3">
+				<span class="badge text-bg-primary">Primary</span>
+				<span class="badge text-bg-secondary">Secondary</span>
+				<span class="badge text-bg-success">Success</span>
+				<span class="badge text-bg-danger">Danger</span>
+			</div>
+			<div class="progress" role="progressbar" aria-label="Example progress" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+				<div class="progress-bar bg-primary" style="width: 72%">72%</div>
+			</div>
+		</section>
+
+		<section class="kitchen-section">
+			<h2>Cards, Tables, Lists</h2>
+			<div class="row g-4 mb-4">
+				<div class="col-md-6 col-xl-4">
+					<div class="card h-100">
+						<div class="card-body">
+							<h3 class="h5 card-title">Card Title</h3>
+							<p class="card-text">Cards are useful for spotting spacing, heading hierarchy, and default surface styling.</p>
+							<a href="#" class="btn btn-outline-primary">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-xl-4">
+					<div class="well h-100">
+						<h3 class="h5">Legacy `.well`</h3>
+						<p>This checks your Bootstrap 3 compatibility styling inside the new token system.</p>
+					</div>
+				</div>
+				<div class="col-md-12 col-xl-4">
+					<ul class="list-group">
+						<li class="list-group-item d-flex justify-content-between align-items-center">Item One <span class="badge text-bg-primary">4</span></li>
+						<li class="list-group-item d-flex justify-content-between align-items-center">Item Two <span class="badge text-bg-secondary">7</span></li>
+						<li class="list-group-item d-flex justify-content-between align-items-center">Item Three <span class="badge text-bg-success">2</span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered align-middle">
+					<thead>
+						<tr>
+							<th>Program</th>
+							<th>Status</th>
+							<th>Seats</th>
+							<th>Deadline</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Nursing</td>
+							<td><span class="badge text-bg-success">Open</span></td>
+							<td>32</td>
+							<td>May 30</td>
+						</tr>
+						<tr>
+							<td>Automotive</td>
+							<td><span class="badge text-bg-warning">Waitlist</span></td>
+							<td>0</td>
+							<td>June 12</td>
+						</tr>
+						<tr>
+							<td>Architecture</td>
+							<td><span class="badge text-bg-primary">Review</span></td>
+							<td>12</td>
+							<td>July 1</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="kitchen-section">
+			<h2>Accordion, Tabs, Collapse</h2>
+			<div class="row g-4">
+				<div class="col-lg-6">
+					<div class="accordion" id="kitchenAccordion">
+						<div class="accordion-item">
+							<h3 class="accordion-header">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#kitchenCollapseOne" aria-expanded="true" aria-controls="kitchenCollapseOne">
+									Accordion One
+								</button>
+							</h3>
+							<div id="kitchenCollapseOne" class="accordion-collapse collapse show" data-bs-parent="#kitchenAccordion">
+								<div class="accordion-body">Accordion body styling should feel consistent with the new theme tokens.</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h3 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#kitchenCollapseTwo" aria-expanded="false" aria-controls="kitchenCollapseTwo">
+									Accordion Two
+								</button>
+							</h3>
+							<div id="kitchenCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#kitchenAccordion">
+								<div class="accordion-body">Useful for checking contrast, border colors, and collapsed states.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<ul class="nav nav-tabs" id="kitchenTabs" role="tablist">
+						<li class="nav-item" role="presentation">
+							<button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-pane" type="button" role="tab" aria-controls="overview-pane" aria-selected="true">Overview</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details-pane" type="button" role="tab" aria-controls="details-pane" aria-selected="false">Details</button>
+						</li>
+					</ul>
+					<div class="tab-content border border-top-0 p-3">
+						<div class="tab-pane fade show active" id="overview-pane" role="tabpanel" aria-labelledby="overview-tab" tabindex="0">
+							This tests tabs, borders, spacing, and body text.
+						</div>
+						<div class="tab-pane fade" id="details-pane" role="tabpanel" aria-labelledby="details-tab" tabindex="0">
+							<button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#inlineCollapse" aria-expanded="false" aria-controls="inlineCollapse">Toggle Inline Collapse</button>
+							<div class="collapse mt-3" id="inlineCollapse">
+								<div class="card card-body">Inline collapse content for quick interaction testing.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="kitchen-section">
+			<h2>Navbar + Icons</h2>
+			<nav class="navbar navbar-expand-lg bg-body-tertiary kitchen-demo-navbar mb-4">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#">Cerritos Demo</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#kitchenNav" aria-controls="kitchenNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="kitchenNav">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Programs</a></li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Admissions</a></li>
+									<li><a class="dropdown-item" href="#">Financial Aid</a></li>
+								</ul>
+							</li>
+						</ul>
+						<form class="d-flex" role="search">
+							<input class="form-control me-2" type="search" placeholder="Search">
+							<button class="btn btn-outline-primary" type="submit">Search</button>
+						</form>
+					</div>
+				</div>
+			</nav>
+
+			<div class="kitchen-icons">
+				<div class="icon-card"><i class="fa-solid fa-graduation-cap"></i>Classic Solid</div>
+				<div class="icon-card"><i class="fa-regular fa-envelope"></i>Classic Regular</div>
+				<div class="icon-card"><i class="fa-sharp fa-solid fa-bolt"></i>Sharp Solid</div>
+				<div class="icon-card"><i class="fa-sharp fa-regular fa-calendar"></i>Sharp Regular</div>
+				<div class="icon-card"><i class="fa-brands fa-instagram"></i>Brands</div>
+			</div>
+		</section>
+	</div>
+
+	<div class="modal fade" id="kitchenModal" tabindex="-1" aria-labelledby="kitchenModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title fs-5" id="kitchenModalLabel">Modal Example</h2>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					This is here to verify modal styling, overlay behavior, close affordances, and typography.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary">Save Changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="kitchenOffcanvas" aria-labelledby="kitchenOffcanvasLabel">
+		<div class="offcanvas-header">
+			<h2 class="offcanvas-title fs-5" id="kitchenOffcanvasLabel">Offcanvas Example</h2>
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<div class="offcanvas-body">
+			<p>Helpful for checking overlay panels, spacing, and mobile-style navigation surfaces.</p>
+			<div class="d-grid gap-2">
+				<button class="btn btn-primary">Primary Action</button>
+				<button class="btn btn-outline-primary">Secondary Action</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
