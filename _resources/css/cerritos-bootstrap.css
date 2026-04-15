@@ -79,8 +79,8 @@ a:not(.btn):not(.dropdown-item):not(.nav-link):not(.page-link) {
 	text-decoration-line: underline;
 	text-decoration-style: dotted;
 	text-decoration-color: var(--bs-info);
-	text-decoration-thickness: 1px;
-	text-underline-offset: 0.15em;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 0.25rem;
 	transition: color 0.2s ease, text-decoration-color 0.2s ease, outline-color 0.2s ease;
 }
 
@@ -189,6 +189,49 @@ small,
 .btn-sm {
 	--bs-btn-padding-y: 0.5rem;
 	--bs-btn-padding-x: 1rem;
+}
+
+a.button,
+.click-throughs a.button,
+.click-throughs div.button,
+#maincontent a.button,
+.heading .popular li a.button {
+	display: inline-block;
+	padding: var(--space-3) var(--space-5);
+	font-family: "Poppins", "Segoe UI", sans-serif;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--bs-secondary);
+	background: var(--bs-warning);
+	border: 2px solid var(--bs-warning);
+	border-radius: 2px;
+	box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+a.button:hover,
+.click-throughs a.button:hover,
+.click-throughs div.button:hover,
+#maincontent a.button:hover,
+.heading .popular li a.button:hover,
+a.button:focus,
+.click-throughs a.button:focus,
+.click-throughs div.button:focus,
+#maincontent a.button:focus,
+.heading .popular li a.button:focus,
+a.button:active,
+.click-throughs a.button:active,
+.click-throughs div.button:active,
+#maincontent a.button:active,
+.heading .popular li a.button:active {
+	color: var(--bs-secondary);
+	background: var(--bs-warning);
+	border-color: var(--bs-secondary);
+	text-decoration: none;
+	box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary {

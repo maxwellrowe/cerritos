@@ -1,0 +1,19 @@
+/* Custom CSS for Cerritos College */
+
+/* Links & Buttons */
+a[rel="external"],
+a[target="_blank"] {
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: start;
+    align-items: center;
+}
+a[rel="external"]::after,
+a[target="_blank"]::after {
+    content: '\f08e';
+    color: inherit;
+    font-family: 'Font Awesome 6 Sharp';
+    font-weight: 400;
+    font-size: 70%;
+}
