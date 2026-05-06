@@ -31,12 +31,19 @@
 <link rel="stylesheet" href="/_resources/css/owl.theme.default.min.css"><!-- /_resources/css/owl.theme.default.min.css -->
 <link rel="stylesheet" href="/_resources/css/components.css"/> <!--/_resources/css/components.css  -->
 <link rel="stylesheet" href="/_resources/css/modern-campus-forms.css"/> <!--/_resources/css/modern-campus-forms.css  -->
+<link rel="stylesheet" href="/_resources/ldp/galleries/fancybox/bootstrap-thumbnails.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/_resources/ldp/galleries/fancybox/jquery.fancybox.min.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/_resources/ldp/galleries/fancybox/ou.fancybox.accessibility.css" media="screen" />
+<link rel="stylesheet" href="/_resources/ldp/galleries/slick/slick.css" type="text/css" />
+<link rel="stylesheet" href="/_resources/ldp/galleries/slick/slick-theme.css" type="text/css" />
 
 <!-- Custom Override for BS -->
 <link rel="stylesheet" href="/_resources/css/cerritos-bootstrap.css"/><!-- /_resources/css/cerritos-bootstrap.css -->
 
 <!-- Custom CSS for Cerritos -->
 <link rel="stylesheet" href="/_resources/css/cerritos.css"/><!-- /_resources/css/cerritos.css -->
+
+
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
@@ -96,12 +103,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/ou-alerts/alerts-config.css.html')) {
 						include($_SERVER['DOCUMENT_ROOT'] . '/ou-alerts/alerts-config.css.html');
 						}
-						?><link rel="stylesheet" href="/_resources/ldp/galleries/fancybox/bootstrap-thumbnails.css" media="screen">
-      <link rel="stylesheet" type="text/css" href="/_resources/ldp/galleries/fancybox/jquery.fancybox.min.css" media="screen">
-      <link rel="stylesheet" type="text/css" href="/_resources/ldp/galleries/fancybox/ou.fancybox.accessibility.css" media="screen">
-      <link rel="stylesheet" href="/_resources/ldp/galleries/slick/slick.css" type="text/css">
-      <link rel="stylesheet" href="/_resources/ldp/galleries/slick/slick-theme.css" type="text/css">
-      <style>								.department #top-panel {
+						?><style>								.department #top-panel {
 									background: url(https://www.cerritos.edu/financial-aid/_includes/images/financial-aid-2.jpg) no-repeat; 
 									background-size: 100%;
 									max-width: 100%;
@@ -153,7 +155,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								}
 									</style>
    </head>
-   <body class="department" id=""><!-- Cerritos main google tracking code -->
+   <body class="department home" id=""><!-- Cerritos main google tracking code -->
       <noscript>
     <iframe
       src="https://www.googletagmanager.com/ns.html?id=GTM-MHSR46S"
@@ -164,196 +166,98 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       aria-hidden="true">
     </iframe>
   </noscript>
-      <header role="banner"><nav id="accessibility" class="accessibility" aria-label="accessibility">
+      <header role="banner" id="global-header">
+
+<nav class="visually-hidden" aria-label="accessibility">
 	<a href="#skiptocontent">Skip to main content</a>
 </nav>
-<div id="headerDiv">
-	<nav class="navbar navbar-default" aria-label="navigation bar">
-		<div class="top-bar">
-			<div class="container">
-				<ul id="nav-audience" class="nav navbar-nav audience">
-					<li><a href="/get-started/default.htm">Future Students</a></li>
-					<li><a href="/current-students/default.htm">Current Students</a></li>
-					<li><a href="/faculty-staff/default.htm">Faculty &amp; Staff</a></li>
-					<li><a href="/community/default.htm">Community</a></li>
-				</ul>
-				<ul id="quick-links" class="nav navbar-nav navbar-right quick-nav">
-					<li class="a-z-index"><a href="/campus-guide/abc-index.htm">A-Z Index</a></li>
-					<li class="dropdown quick-links">
-						<a class="dropdown-toggle" role="button" href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown">Quick Links &nbsp;<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a class="external" href="https://cerritos.onbio-key.com/" target="_blank" rel="noopener">MyCerritos</a></li>
-							<li><a class="external" href="http://www.cerritos.edu/canvas/" target="_blank" rel="noopener">Canvas</a></li>
-							<li><a href="https://go.boarddocs.com/ca/cerritos/Board.nsf/Public" target="_blank" rel="noopener">BoardDocs</a></li>
-							<li><a href="/campus-guide/academic-calendar.htm">Academic Calendar</a></li>
-							<li><a class="external" href="https://cerritos-public.courseleaf.com/" target="_blank" rel="noopener">Catalog</a></li>
-							<li><a class="external" href="http://www.cerritos.edu/schedule/" target="_blank" rel="noopener">Class Schedule</a></li>
-							<li><a class="external" href="https://www.bkstr.com/cerritosstore/home/en" target="_blank" rel="noopener">Bookstore</a></li>
-							<li><a class="external" href="https://libraryguides.cerritos.edu/libraryservices" target="_blank" rel="noopener">Library &amp; Chat</a></li>
-							<li class="divider" role="separator">&nbsp;</li>
-							<li><a href="/employees/"><span class="fa fa-phone" aria-hidden="true"><span class="sr-only">Directory</span></span> Faculty &amp; Staff Directory</a></li>
-							<li><a href="/campus-guide/program-directory/default.htm"><span class="fa fa-sitemap" aria-hidden="true"><span class="sr-only">Sitemap</span></span> Programs and Services Directory</a></li>
-							<li><a href="https://cerritos.onbio-key.com/"><span class="fas fa-sign-in-alt" aria-hidden="true"><span class="sr-only">Cerritos Portal</span></span> Cerritos Portal</a></li>
-							<li><a href="/calendar/default.htm"><span class="fa fa-calendar" aria-hidden="true"><span class="sr-only">Cerritos College Calendar</span></span> Cerritos College Calendar</a></li>
-							<li><a href="/parking/"><span class="fas fa-parking" aria-hidden="true"><span class="sr-only">Parking</span></span> Parking</a></li>
-							<li><a href="/police/"><span class="fas fa-taxi" aria-hidden="true"><span class="sr-only">Safety</span></span> Campus Safety</a></li>
-						</ul>
-					</li>
-					<li id="button-apply" class="dropdown quick-links">
-						<a class="dropdown-toggle apply-now" role="button" href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown">Apply Now&nbsp;<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="https://www.cerritos.edu/apply" target="_blank" rel="noopener">Student Application</a></li>
-							<li><a href="https://intl.opencccapply.net/gateway/intl?cccMisCode=811" target="_blank" rel="noopener">International Student Application</a></li>
-						</ul>
-					</li>
-					<li id="button-give">
-						<a class="give" href="http://cerritoscf.org/" target="_blank" rel="noopener"><!--<span class="fa fa-gift" aria-hidden="true"><span class="sr-only">Give</span></span>-->Give</a>
-					</li>
-					<li id="button-map"><a class="campus-map" href="/campus-guide/default.htm">Campus Maps</a></li>
-				</ul>
+<div id="navigation">
+	<div id="search-panel" class="collapse bg-secondary">
+		<div class="container-xl">
+			<form class="py-4" id="searchbox-panel" action="/campus-guide/search.htm" method="get" name="cse">
+				<input name="cx" type="hidden" value="your-008525147052714186440:tkcmuqghz4s" />
+				<input name="ie" type="hidden" value="utf-8" />
+				<input name="hl" type="hidden" value="en" />
+				<div class="row g-3 align-items-center">
+					<div class="col-12 col-md">
+						<label class="form-label visually-hidden" for="q-panel">Search Site</label>
+						<input class="form-control form-control-lg" id="q-panel" name="q" type="text" placeholder="Enter your search..." />
+					</div>
+					<div class="col-12 col-md-auto">
+						<input class="btn btn-primary w-100" name="sa" type="submit" value="Search" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="container-xxl py-3">
+		<div class="row">
+			<div class="col">
+				<div class="d-flex align-items-center justify-content-between">
+					<div class="logo">
+						<a href="/">
+							<span class="visually-hidden">Cerritos College Home</span>
+							<img src="/_resources/images/2026/cerritos-logo-white.svg" class="d-none d-lg-block" alt="Cerritos College Logo" />
+							<img src="/_resources/images/2026/cerritos-logo-white-mobile.svg" class="d-block d-lg-none" alt="Cerritos College Logo" />
+						</a>
+					</div>
+					<nav class="primary-nav d-flex justify-content-end align-items-center">
+						<a href="" class="btn btn-primary">Apply <span class="d-none d-lg-inline">Now</span></a>
+						<button class="btn btn-transparent btn-white btn-circle" id="search-panel-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#search-panel" aria-expanded="false" aria-controls="search-panel">
+							<span class="visually-hidden">Search</span>
+							<span class="fa-sharp fa-regular fa-search" aria-hidden="true"></span>
+						</button>
+						<button class="btn btn-transparent btn-white btn-circle" id="main-nav-panel-toggle" type="button" aria-expanded="false" aria-controls="main-nav-panel">
+							<span class="visually-hidden">Open Main Navigation Menu</span>
+							<span class="main-nav-toggle-icon" aria-hidden="true">
+								<span class="main-nav-toggle-icon__bar"></span>
+								<span class="main-nav-toggle-icon__bar"></span>
+								<span class="main-nav-toggle-icon__bar"></span>
+							</span>
+						</button>
+					</nav>
+				</div>
 			</div>
 		</div>
-		<div class="container">
-			<div class="navbar-header">
-				<h1>Cerritos College<a class="navbar-brand logo" title="College Home" href="/"><img title="Cerritos College, Norwalk California" src="/_resources/images/common/cerritos-college-logo.svg" alt="Cerritos College, Norwalk California" /></a></h1>
-				<ul class="mobile mobile-quicklinks">
-					<li><a href="/campus-guide/abc-index.htm"> <span class="big">A-Z</span> <span class="small">Index</span> </a></li>
-					<li><a title="Directory" href="/employees/"><span class="fa fa-phone" aria-hidden="true"><span class="sr-only">Faculty &amp; Staff Directory</span></span></a></li>
-					<li><a title="Calendar" href="/calendar/default.htm"><span class="fa fa-calendar" aria-hidden="true"><span class="sr-only">Cerritos College Calendar</span></span></a></li>
-					<li class="dropdown search">
-						<a class="dropdown-toggle" title="Search" role="button" href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"><span class="fa fa-search" aria-hidden="true"><span class="sr-only">Search</span></span></a>
-						<ul class="dropdown-menu">
-							<li>
-								<!--<form id="searchForm" method="get" action="/campus-guide/search.htm" class="navbar-form navbar-left">
-<div class="form-group">
-<input class="form-control" placeholder="Search" name="q" id="q" aria-lable="search" type="text">
-</div>
-</form>-->
-								<!--Mobile Search-->
-								<!--
-<script>
+	</div>
+	
+	
 
-(function() {
-var cx = '008525147052714186440:tkcmuqghz4s';
-var gcse = document.createElement('script');
-gcse.type = 'text/javascript';
-gcse.async = true;
-gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(gcse, s);
-})();
-
-
-</script>
-<gcse:searchbox-only resultsUrl="/campus-guide/search.htm"></gcse:searchbox-only>
--->
-								<div class="w-form form-wrapper"><form id="searchbox-mobile" action="/campus-guide/search.htm" method="get" name="cse"><input name="cx" type="hidden" value="your-008525147052714186440:tkcmuqghz4s" /> <input name="ie" type="hidden" value="utf-8" /> <input name="hl" type="hidden" value="en" /> <label for="q-mobile">Search:&nbsp;</label><input id="q-mobile" name="q" type="text" /> <input name="sa" type="submit" value="Go" /></form></div>
-							</li>
-						</ul>
-					</li>
-					<li><a href="https://www-cerritos-edu.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp"><span class="fa-solid fa-language"><span class="sr-only">Translate</span></span></a></li>
-				</ul>
-				<ul class="mobile mobile-quicklinks dropdown">
-					<li class="dropdown quick-links">
-						<a class="dropdown-toggle" role="button" href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown">Quick Links </a>
-						<ul class="dropdown-menu">
-							<li><a class="external" href="https://cerritos.onbio-key.com/" target="_blank" rel="noopener">MyCerritos</a></li>
-							<li><a class="external" href="http://www.cerritos.edu/canvas/" target="_blank" rel="noopener">Canvas</a></li>
-							<li><a href="https://go.boarddocs.com/ca/cerritos/Board.nsf/Public" target="_blank" rel="noopener">BoardDocs</a></li>
-							<li><a href="/campus-guide/academic-calendar.htm">Academic Calendar</a></li>
-							<li><a class="external" href="https://cerritos-public.courseleaf.com/" target="_blank" rel="noopener">Catalog</a></li>
-							<li><a class="external" href="http://www.cerritos.edu/schedule/" target="_blank" rel="noopener">Class Schedule</a></li>
-							<li><a class="external" href="https://www.bkstr.com/cerritosstore/home/en" target="_blank" rel="noopener">Bookstore</a></li>
-							<li><a class="external" href="https://libraryguides.cerritos.edu/libraryservices" target="_blank" rel="noopener">Library &amp; Chat</a></li>
-							<li class="divider" role="separator">&nbsp;</li>
-							<li><a href="/employees/"><span class="fas fa-phone" aria-hidden="true"><span class="sr-only">Directory</span></span> Faculty &amp; Staff Directory</a></li>
-							<li><a href="/campus-guide/program-directory/default.htm"><span class="fas fa-sitemap" aria-hidden="true"><span class="sr-only">Sitemap</span></span> Programs and Services Directory</a></li>
-							<li><a href="https://cerritos.onbio-key.com/"><span class="fas fa-sign-in-alt" aria-hidden="true"><span class="sr-only">Cerritos Portal</span></span> Cerritos Portal</a></li>
-							<li><a href="/calendar/default.htm"><span class="fas fa-calendar" aria-hidden="true"><span class="sr-only">Cerritos College Calendar</span></span> Cerritos College Calendar</a></li>
-							<li><a href="/parking/"><span class="fas fa-parking" aria-hidden="true"><span class="sr-only">Parking</span></span> Parking</a></li>
-							<li><a href="/police/"><span class="fas fa-taxi" aria-hidden="true"><span class="sr-only">Safety</span></span> Campus Safety</a></li>
-						</ul>
-					</li>
-				</ul>
-				<a class="navbar-toggle" role="button" href="#siteNavigation" data-target="#siteNavigation">
-					<div class="bars">&nbsp;</div>
-					<div class="text">Menu</div>
-				</a>
+<div id="main-nav-panel">
+	<div class="container-xl">
+		<div class="row">
+			<div class="col-12 col-md-6">
+				Left Nav
 			</div>
-			<div id="siteNavigation" class="siteNavigation">
-				<a class="menuClose visible-md visible-sm visible-xs" href="#"><span class="sr-only">Close</span></a>
-				<ul class="nav navbar-nav main-nav">
-					<li id="button-apply-2" class="hidden-lg"><a class="apply-now" href="/apply" target="_blank" rel="noopener">Student Application</a></li>
-					<li id="button-apply-intl" class="hidden-lg"><a class="apply-now" href="https://intl.opencccapply.net/gateway/intl?cccMisCode=811" target="_blank" rel="noopener">International Student Application</a></li>
-					<li class="hidden-lg"><a class="apply-now" href="http://cerritoscf.org/" target="_blank" rel="noopener">Make a Gift</a></li>
-					<li class="hidden-lg"><a class="apply-now" href="/campus-guide/default.htm">Campus Maps</a></li>
-					<li><a href="/about/default.htm">About</a></li>
-					<li><a href="/admissions-and-records/default.htm">Admissions</a></li>
-					<li><a href="/financial-aid/default.htm">Financial Aid</a></li>
-					<li><a href="/academics/default.htm">Academics</a></li>
-					<li><a href="/services/default.htm">Services &amp; Support </a></li>
-					<!--<li><a href="/caring-campus/default.htm"><span class="fa fa-heart" aria-hidden="true"></span> We Care</a></li>-->
-					<li class="hidden-lg audience-mobile"><a href="/get-started/default.htm">Future Students</a></li>
-					<li class="hidden-lg audience-mobile"><a href="/current-students/default.htm">Current Students</a></li>
-					<li class="hidden-lg audience-mobile"><a href="/faculty-staff/default.htm">Faculty &amp; Staff</a></li>
-					<li class="hidden-lg audience-mobile"><a href="/community/default.htm">Community</a></li>
-					<li class="dropdown search">
-						<a class="dropdown-toggle" role="button" href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"> <span class="fa fa-search" aria-hidden="true"><span class="sr-only">Search</span></span></a>
-						<ul class="dropdown-menu">
-							<li>
-								<!--<form id="searchForm-2" method="get" action="/campus-guide/search.htm" class="navbar-form navbar-left">
-<div class="form-group">
-<input name="q-2" id="q-2" class="form-control" placeholder="Search" aria-lable="search" type="text">
-</div>
-</form>
--->
-								<!--
-<script>
-function() {
-var cx = '008525147052714186440:tkcmuqghz4s';
-var gcse = document.createElement('script');
-gcse.type = 'text/javascript';
-gcse.async = true;
-gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(gcse, s);
-}();
-</script>
-<gcse:searchbox-only resultsUrl="/campus-guide/search.htm"></gcse:searchbox-only>
--->
-								<div class="w-form form-wrapper"><form id="searchbox-desktop" action="/campus-guide/search.htm" method="get" name="cse"><input name="cx" type="hidden" value="your-008525147052714186440:tkcmuqghz4s" /> <input name="ie" type="hidden" value="utf-8" /> <input name="hl" type="hidden" value="en" /> <label for="q-desktop">Search Site:&nbsp;</label><input id="q-desktop" name="q" type="text" /> <input name="sa" type="submit" value="Go" /></form></div>
-							</li>
-						</ul>
-					</li>
-					<li class="google_translate">
-						<div id="google_translate_element"></div>
-						<script type="text/javascript">// <![CDATA[
-function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.VERTICAL, autoDisplay: false}, 'google_translate_element');
-	
-	var $googleDiv = $("#google_translate_element .skiptranslate");
-var $googleDivChild = $("#google_translate_element .skiptranslate div");
-$googleDivChild.next().remove();
-
-$googleDiv.contents().filter(function(){
-return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
-}).remove();
-	
-	
-                }
-// ]]></script>
-						<noscript>Your browser does not support JavaScript!</noscript>
-						<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-						<noscript>Your browser does not support JavaScript!</noscript>
-					</li>
-				</ul>
+			<div class="col-12 col-md-6">
+				Right Nav
 			</div>
 		</div>
-	</nav>
+	</div>
+</div>
+
 </div>
 
 <link href="https://ouc-dev.cerritos.edu/ou-alerts/alerts-config.alerts.css?v=2.1-20260407134602" rel="stylesheet">
 
+         <div class="page-hero z-3 position-relative">
+            <div class="container-xxl mt-5 mb-3">
+               <nav aria-label="breadcrumb" id="BreadcrumbList" class="mb-3">
+                  <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumbs breadcrumb">
+                     <li property="itemListElement" class="breadcrumb-item" typeof="ListItem"><a property="item" typeof="WebPage" href="/" title="College Home"><span property="name"><span class="fa fa-home"><span class="sr-only">Home</span></span></span></a><meta property="position" content="1">
+                     </li>
+                     <li property="itemListElement" class="breadcrumb-item" typeof="ListItem"><a property="item" typeof="WebPage" href="/student-services/default.htm"><span property="name">Student Services</span></a><meta property="position" content="2">
+                     </li>
+                     <li property="itemListElement" class="breadcrumb-item" typeof="ListItem"><a property="item" typeof="WebPage" href="/financial-aid/default.htm"><span property="name">Financial Aid</span></a><meta property="position" content="3">
+                     </li>
+                     <li property="itemListElement" class="breadcrumb-item active" aria-current="page" typeof="ListItem"><span property="name" class="title">Home</span><meta property="position" content="4">
+                     </li>
+                  </ol>
+               </nav>
+               <h1 class="text-light">Financial Aid</h1>
+            </div>
+         </div>
          <div id="top-panel">
             <div class="top-panel-content">
                <div class="tpc-small-top">POPULAR</div>
@@ -365,12 +269,8 @@ return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
             </div>
          </div>
       </header>
-      <div class="body-wrap">
-         <div class="clearfix">
-            <div class="row">
-               <div id="sidebar" class="col-sm-4 col-md-3">
-                  <div id="skiptonavigation">
-                     <div id="menuLeft"><button type="button" class="mobile-button hidden-lg" data-toggle="collapse" data-target=".left-nav-collapse">Navigate this Section  <span class="fa fa-chevron-down" aria-hidden="true"></span></button><nav id="navigation-collaspe" class="navbar-collapse left-nav-collapse collapse" aria-label="navigation-collaspe">
+      <div class="d-block d-lg-none"><button type="button" class="d-flex align-items-center justify-content-between btn btn-warning w-100 gap-2 shadow-none rounded-0" data-bs-toggle="collapse" data-bs-target="#sidebar-nav-mobile" aria-expanded="false" aria-conrols="sidebar-nav-mobile"><span class="d-flex align-items-center justify-content-center gap-2"><span class="fa-sharp fa-regular fa-bars-sort"></span><span>In This Section</span></span><span class="fa-sharp fa-regular fa-plus" aria-hidden="true"></span></button><div id="sidebar-nav-mobile" class="collapse">
+            <nav class="sidebar-nav">
    
    <div class="tabH4_Main">Financial Aid</div>
    <ul id="Accordion" class="pageletLinks">
@@ -418,10 +318,339 @@ return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
       <li><a href="/financial-aid/staff.htm">Staff</a></li>
    </ul>
 </nav>
+         </div>
+      </div>
+      <div class="container-xxl py-5">
+         <div class="row">
+            <main id="maincontent" class="col-12 col-lg-8 col-xl-9">
+               <div id="skiptocontent"></div>
+               <div class="faSliderContainer">
+                  <div class="custom-slick-2">
+                     <div><img src="/financial-aid/_includes/images/slider/1-Welcome-to-Financial-Aid.jpg" alt="Welcome to Financial Aid. We are here to support YOU!"><div class="slick-caption"></div>
+                     </div>
+                     <div><img src="/financial-aid/_includes/images/26_26FAFSA.png" alt="2026-2027 fafsa now available apply now"><div class="slick-caption"><a class="button" href="https://studentaid.gov/h/apply-for-aid/fafsa">Start a 2026-2027 FAFSA Form</a></div>
+                     </div>
+                     <div><img src="/financial-aid/_includes/images/slider/4-Apply-for-Financial-Aid-in-4-Steps-Lets-GO.png" alt="4-Steps for Financial Aid. Apply Now."><div class="slick-caption"><a class="button" href="/financial-aid/application-process.htm">How to Apply</a></div>
+                     </div>
+                     <div><img src="/financial-aid/_includes/images/slider/application-process/Step-2-ToDo-List.png" alt="Cerritos College Financial Aid - Step 2: check your to-do list"><div class="slick-caption"><a class="button" href="/financial-aid/studentforms.htm">Don't forget to check your To Do List!</a></div>
+                     </div>
+                     <div><img src="/financial-aid/_includes/images/slider/Student-Success-Completion-Grant.png" alt="Enroll full-time to receive up to $8,000 more in financial aid"><div class="slick-caption"><a class="button" href="/financial-aid/programs/Student-success.htm">Student Success Completion Grant</a></div>
+                     </div>
+                     <div><img src="/financial-aid/_includes/images/slider/apply-for-scholarship.png" alt="Apply for a scholarship!"><div class="slick-caption"><a class="button" href="/financial-aid/programs/scholarship.htm">Scholarships</a></div>
+                     </div>
+                     <div><img src="/financial-aid/_includes/images/slider/5-SAP.png" alt="Satisfactory Academic Progress"><div class="slick-caption"><a class="button" href="/financial-aid/sap.htm">More Information</a></div>
                      </div>
                   </div>
-                  <div>
-                     <div id="deptinfo">
+                  <div class="buttons"><a class="dlinkPage" href="/financial-aid/D-Link/FA_Home_Slider_d-link.htm">d</a>&nbsp;<button id="toggle-custom-2">Pause</button></div>
+               </div>
+               <div>&nbsp;</div>
+               <p>The NEW 2026-2027 FAFSA Application is now available. We are here to help! Join our
+                  zoom sessions or come into the office for assistance, see below for details. You can
+                  also call us at (562) 860-2451 ext. 2397. &nbsp;We are answering phones from 8 am – 6 pm
+                  Monday – Thursday, and 8 am – 4:30 pm on Fridays. &nbsp;For general questions, <a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/financial-aid/contact-us.htm">please contact us.</a></p>
+               <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables">2026-2027 fafsa/CADAA Things to Know</h3>
+               <ul class="bullet_list_arrow_yellow">
+                  <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://www.nasfaa.org/uploads/documents/FSA_ID_without_SSN.pdf')">How to create a Parent FSA ID without a Social Security Number</a>/ <a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://www.nasfaa.org/uploads/documents/Spanish_FSA_ID_without_SSN.pdf')">Spanish Version</a></li>
+                  <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/financial-aid/programs/cal-grant.htm">Cal Grant</a> and <a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/financial-aid/programs/Student-success.htm">Student Success Completion Grant</a> Deadline is <strong>March 2nd</strong></li>
+                  <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/financial-aid/_includes/docs/2026-2027_FinAid_SatWorkshop.pdf">Financial Aid Saturday Application Workshops</a></li>
+                  <li>FAFSA Customer Service Phone Number 1-800-4-FED-AID</li>
+                  <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://cerritos-edu.zoom.us/rec/play/4S7kAz9GLynOTuBIf3vpqGrUXf1l95K6bxdz_Eq4Na1qYoK4EEeVxdKeE_oXO7IBbzJYe_hqPOLexppA.G_3eOmi6brqH7Y4o?accessLevel=meeting&amp;canPlayFromShare=true&amp;from=share_recording_detail&amp;continueMode=true&amp;componentName=rec-play&amp;originRequestUrl=https%3A%2F%2Fcerritos-edu.zoom.us%2Frec%2Fshare%2Fid9ZYDJZJ7QBatW0ERpZDC4wumBB6okGV3LZgLSuvKc1E7uA8Jqb0IRQ1U7KiYUF.RSxp_60ff_PFWl_v')">Mixed-Status Families Informational Video</a> (English/Spanish)</li>
+               </ul>
+               <p>We want to assure you that we are here to support you.&nbsp; &nbsp;</p>
+               <p><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/financial-aid/FAQs.htm">Frequently Asked Questions Related to Financial Aid</a></p>
+               <p>Sincerely,<br>Financial Aid Office</p>
+               <div id="accordion-d19e179" class="panel-group">
+                  <div class="panel panel-default card">
+                     <div id="item-d19e190-headingOne" class="panel-heading">
+                        <h3 class="panel-title"><button class="btn btn-link accordion-trigger collapsed" role="button" data-toggle="collapse" data-target="#item-d19e190-collapseOne" aria-expanded="false" aria-controls="item-d19e190-collapseOne" style="font-size:20px; font-weight:800;">Online Services</button></h3>
+                     </div>
+                     <div id="item-d19e190-collapseOne" class=" panel-collapse collapse" aria-labelledby="item-d19e190-headingOne" data-parent="#accordion-d19e179">
+                        <div class="panel-body">
+                           <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables" style="text-align: center;">Financial Aid&nbsp;Zoom Sessions</h3>
+                           <table class="table-rs">
+                              <thead>
+                                 <tr>
+                                    <th style="text-align: center;">General Questions</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td style="text-align: center;">
+                                       <p>Monday, Tuesday, Thursday &amp; Friday 10 am - 2 pm&nbsp;<br>Wednesday 10 am - 6 pm</p>
+                                       <p>Join Zoom Meeting<br><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://cerritos-edu.zoom.us/j/83630657964')">https://cerritos-edu.zoom.us/j/83630657964</a>&nbsp;</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <table class="table-rs">
+                              <thead>
+                                 <tr>
+                                    <th style="text-align: center;">FAFSA and Dream Act Application Zoom Sessions</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td style="text-align: center;">
+                                       <p>Monday - Thursday 8 - 4:30 pm<br>&nbsp;Friday Closed</p>
+                                       <p>Join Zoom Meeting<br><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://cerritos-edu.zoom.us/j/98865749738')">https://cerritos-edu.zoom.us/j/98865749738</a>&nbsp;</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <p style="text-align: center;">*Students who need sign language interpreters or real time captioning in order to
+                              participate should <a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/sas/deafhardofhearingservices/current-student-interpreter-request.htm">submit an interpreter request</a>. All other requests for accommodations should <a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/sas/accommodations-request-form.htm">submit a request via the accommodation&nbsp;form</a>.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="panel panel-default card">
+                     <div id="item-d19e240-headingOne" class="panel-heading">
+                        <h3 class="panel-title"><button class="btn btn-link accordion-trigger collapsed" role="button" data-toggle="collapse" data-target="#item-d19e240-collapseOne" aria-expanded="false" aria-controls="item-d19e240-collapseOne" style="font-size:20px; font-weight:800;">In-Person Services</button></h3>
+                     </div>
+                     <div id="item-d19e240-collapseOne" class=" panel-collapse collapse" aria-labelledby="item-d19e240-headingOne" data-parent="#accordion-d19e179">
+                        <div class="panel-body">
+                           <table class="table-rs">
+                              <thead>
+                                 <tr>
+                                    <th style="text-align: center;">Financial Aid Resource Center - Computer Lab</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td style="text-align: center;">
+                                       <p><strong>Monday, Tuesday and Thursday 8 am - 5 pm</strong><br><strong>Wednesday 8 am - 6 pm<br>Friday 8 am - 4:30 pm</strong></p>
+                                       <p style="text-align: left;"><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://kiosk.us1.qless.com/kiosk/app/home/15448')">Check-in online through Qless</a>, and add yourself to the Financial Aid Resource Center - Computer Lab Line from virtually
+                                          anywhere.</p>
+                                       <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables" style="text-align: left;">Get assistance on the following:</h3>
+                                       <div class="row">
+                                          <div class="col-md-6">
+                                             <ul>
+                                                <li style="text-align: left;">FAFSA Application</li>
+                                                <li style="text-align: left;">Apply for Student Loans</li>
+                                                <li style="text-align: left;">BankMobile</li>
+                                                <li style="text-align: left;">Check for Disbursement</li>
+                                                <li style="text-align: left;">Pending Financial Aid Tasks</li>
+                                                <li style="text-align: left;">Check Course Eligibility</li>
+                                             </ul>
+                                          </div>
+                                          <div class="col-md-6">
+                                             <ul>
+                                                <li style="text-align: left;">Dream Act Application</li>
+                                                <li style="text-align: left;">Navigation MyCerritos</li>
+                                                <li style="text-align: left;">View your Financial Aid Award</li>
+                                                <li style="text-align: left;">Submit Forms</li>
+                                                <li style="text-align: left;">Submit SAP Appeal</li>
+                                                <li style="text-align: left;">Submit Census Date Appeal</li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <table class="table-rs">
+                              <thead>
+                                 <tr>
+                                    <th style="text-align: center;">Financial Aid Counter Services</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td style="text-align: center;">
+                                       <p><strong>Monday, Tuesday and Thursday 8 am - 5 pm</strong><br><strong>Wednesday 8 am - 6 pm<br>Friday 8 am - 4:30 pm</strong></p>
+                                       <p style="text-align: left;"><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://kiosk.us1.qless.com/kiosk/app/home/15448')">Check-in online through Qless</a>, and add yourself to the Financial Aid Line from virtually anywhere.</p>
+                                       <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables" style="text-align: left;">Get assistance on the following:</h3>
+                                       <div class="row">
+                                          <div class="col-md-6">
+                                             <ul>
+                                                <li style="text-align: left;">Application Questions</li>
+                                                <li style="text-align: left;">BankMobile</li>
+                                                <li style="text-align: left;">Cal Grants</li>
+                                                <li style="text-align: left;">Disbursements</li>
+                                             </ul>
+                                          </div>
+                                          <div class="col-md-6">
+                                             <ul>
+                                                <li style="text-align: left;">Status of File</li>
+                                                <li style="text-align: left;">General Questions</li>
+                                                <li style="text-align: left;">Dream Act/AB540</li>
+                                                <li style="text-align: left;">Loans</li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables" style="text-align: left;">Mission Statement</h3>
+               <p style="text-align: left;">The Financial Aid Office at Cerritos College is here to provide students and the community
+                  a better understanding of financial aid programs and services available. Our department
+                  is responsible for the review and dissemination of financial resources to assist students
+                  in meeting their educational expenses and achieving their educational goals. We are
+                  committed to administering our programs with integrity and professionalism. We value
+                  and take pride in the diversity of our students and the support we provide in promoting
+                  student success.</p>
+               <hr>
+               <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables">PAYING FOR COLLEGE</h3>
+               <p>At $46 per unit, Cerritos College offers the best financial value to meet your education
+                  and career goals. Our professional staff helps students identify available financial
+                  resources.</p>
+               <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables">LOW-COST TEXTBOOKS AND MATERIALS</h3>
+               <ul>
+                  <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://www.bkstr.com/cerritosstore/shop/textbooks-and-course-materials?cm_sp=Global-_-ShipStripTextbooks80-_-603')">Rent books from the Bookstore</a></li>
+                  <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://caccl-cerritos.primo.exlibrisgroup.com/discovery/search?vid=01CACCL_CERRITOS:CERRITOS&amp;lang=en&amp;mode=advanced')">Check out reserved books/textbooks from the Library</a></li>
+                  <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://caccl-cerritos.primo.exlibrisgroup.com/discovery/collectionDiscovery?vid=01CACCL_CERRITOS:CERRITOS')">Online Textbooks at the Library</a></li>
+                  <li>Ask faculty about low- to no-cost Open Educational Resources</li>
+               </ul>
+               <div id="faSocialMedia" class="row">
+                  <div class="col-md-5"><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://www.instagram.com/cerritosfinaid/?utm_source=ig_embed&amp;ig_rid=c5ee4b0a-a803-489b-92e2-89642a34ee65')"><img class="finaid-insta" src="/financial-aid/_includes/images/IG3.png" alt="Instagram - Follow Us! @cerritosfinaid | cerritos.edu/finaid"></a></div>
+                  <div class="col-md-7"><iframe id="instagram-embed-0" class="instagram-media instagram-media-rendered" style="background: white; max-width: 540px; width: calc(100% - 2px); border-radius: 3px; border: 0px; box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;" title="Instagram" src="https://www.instagram.com/cerritosfinaid/embed/?cr=1&amp;v=14&amp;wp=540&amp;rd=https%3A%2F%2Fwww.cerritos.edu&amp;rp=%2Fpractice%2Fdefault-fa.htm#%7B%22ci%22%3A0%2C%22os%22%3A1332.2000000029802%2C%22ls%22%3A253.70000000298023%2C%22le%22%3A482.5%7D" height="541" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen" data-instgrm-payload-id="instagram-media-payload-0"></iframe></div>
+               </div>
+               <div class="row flex">
+                  <div class="col-sm-6">
+                     <div class="feature-box"><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://kiosk.us1.qless.com/kiosk/app/home/15448')"><img style="margin-bottom: 30px; margin-top: 30px;" src="/financial-aid/_includes/images/Qless3.png" alt="Financial Aid is Introducing Qless " width="588" height="267"></a><span class="fa fa-clock-o" aria-hidden="true"><!--Empty--></span><div class="title">Save Time, Skip the Line</div>
+                        <p>Check-in online through QLess, and add yourself to the Financial Aid line from virtually
+                           anywhere.</p>
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                     <div class="feature-box"><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://cerritos.financialaidtv.com/')"><img style="margin-bottom: 30px; margin-top: 30px;" src="/financial-aid/_includes/images/588X246%20FinAid%20TV.jpg" alt="Financial Aid TV - Answers on demand" width="440" height="184"></a><br><div class="embed-responsive embed-responsive-16by9"><iframe class="fatv-video embed-responsive-item" title="Applying for Financial Aid" src="https://embed.ocelotbot.com/cms/embed/playlist-ng/1264?current_entity=187&amp;video=237&amp;dim=450x600" width="450" height="600" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen">
+                              <p>Video not supported.</p></iframe></div><br><div class="title"><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://cerritos.financialaidtv.com/')">You Can Afford College</a></div>
+                        <p>Find answers to questions, learn more about financial aid and key benefits on how
+                           to utilize your resources to get the most out of your financial aid.</p>
+                     </div>
+                  </div>
+               </div>
+               <div><script type="text/javascript" src="/_resources/ldp/galleries/slick/slick.min.js"></script><script type="text/javascript">
+		$(document).ready(function() {
+
+			$('.slick').slick({
+				infinite: false,
+				slidesToShow: 1,
+				accessibility: true,
+				pauseOnHover: false,
+				pauseOnFocus: false,
+				pauseOnDotsHover: false
+			});	
+
+			$('#toggle').click( function() {
+				if ($(this).html() == 'Play'){
+				$('.slick').slick('slickPlay')
+				$(this).html('Pause') 
+				} else {
+				$('.slick').slick('slickPause')  
+				$(this).html('Play') 
+				}
+			});
+		
+			$('.custom-slick-2').slick({
+				infinite: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				arrows: true,
+				dots: false,
+				responsive: [
+				{
+				breakpoint: 1024,
+				settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				dots: false
+				}
+				},
+				{
+				breakpoint: 600,
+				settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+				}
+				},
+				{
+				breakpoint: 480,
+				settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+				}
+				}
+
+				]
+			});
+	
+			$('#toggle-custom-2').click( function() {
+				if ($(this).html() == 'Play'){
+				$('.custom-slick-2').slick('slickPlay')
+				$(this).html('Pause') 
+				} else {
+				$('.custom-slick-2').slick('slickPause')  
+				$(this).html('Play') 
+				} 
+			});
+
+
+
+		});
+
+
+	</script></div>
+            </main>
+            <div class="col-12 col-lg-4 col-xl-3">
+               <div class="d-none d-lg-block">
+                  <div class="card shadow-sm">
+                     <nav class="sidebar-nav">
+   
+   <div class="tabH4_Main">Financial Aid</div>
+   <ul id="Accordion" class="pageletLinks">
+      <li><a href="/financial-aid/default.htm">Home</a></li>
+      <li><span><a href="#">Apply for Financial Aid</a></span><ul>
+            <li><a href="/financial-aid/application-process.htm">How Do I Apply?</a></li>
+            <li><a href="/financial-aid/deadlines.htm">Important Dates</a></li>
+            <li><a href="/financial-aid/eligibility.htm">Eligibility</a></li>
+         </ul>
+      </li>
+      <li><a href="/financial-aid/financial-aid-Application-Workshops.htm">Saturday Application Workshops</a></li>
+      <li><a href="/financial-aid/studentforms.htm">Submit Forms Online</a></li>
+      <li><a href="/financial-aid/Special_Circumstances.htm">Special Circumstances</a></li>
+      <li><a href="/financial-aid/Message_Center.htm">Message Center</a></li>
+      <li><span></span><a href="/financial-aid/financial-literacy.htm">Financial Wellness</a></li>
+      <li><span><a href="#">Disbursements</a></span><ul>
+            <li><a href="https://bankmobiledisbursements.com/refundchoices/">Refund Choices</a></li>
+            <li><a href="/financial-aid/disbursement-dates.htm">Disbursement Schedule</a></li>
+            <li><a href="/financial-aid/return-of-title-iv-funds.htm">Return of Title IV</a></li>
+         </ul>
+      </li>
+      <li><span><a href="#">Adds, Drops, and Withdrawals</a></span><ul>
+            <li><a href="/financial-aid/_Adding_Classes.htm">Adding Classes</a></li>
+            <li><a href="/financial-aid/_Dropping_Classes.htm">Dropping Classes</a></li>
+            <li><a href="/financial-aid/_Withdrawing_from_Classes.htm">Withdrawing from Classes</a></li>
+            <li><a href="/financial-aid/_Types_of_Debt.htm">Types of Debt</a></li>
+            <li><a href="/financial-aid/_Resolving_a_Debt.htm">Resolving a Debt</a></li>
+            <li><a href="/financial-aid/_FAQs_dropping.htm">FAQ's</a></li>
+         </ul>
+      </li>
+      <li><span><a href="#">Important! Limits on FA</a></span><ul>
+            <li><a href="/financial-aid/Pell-Lifetime-Eligibility-LEU.htm">Pell Grant Lifetime Eligibility Used (LEU)</a></li>
+            <li><a href="/financial-aid/Cal-Grant-Lifetime-Eligibility-LEU.htm">Cal Grant Eligibility Limit</a></li>
+         </ul>
+      </li>
+      <li><a href="/financial-aid/programs.htm">Types of Aid &amp; Programs</a></li>
+      <li><a href="/student-services/student-equity-cmte/ab540/default.htm">Dream Act / AB 540</a></li>
+      <li><span><a href="#">Satisfactory&nbsp;Academic Progress (SAP)</a></span><ul>
+            <li><a href="/financial-aid/sap.htm">SAP Policy</a></li>
+            <li><a href="https://cerritos.get-counseling.com/">GetSAP Counseling Sessions</a></li>
+            <li><a href="/financial-aid/sap.htm#item-d13e237-collapseOne">Appeal Process</a></li>
+         </ul>
+      </li>
+      <li><a href="/financial-aid/Outreach.htm">Outreach</a></li>
+      <li><a href="/financial-aid/staff.htm">Staff</a></li>
+   </ul>
+</nav>
+                  </div>
+               </div>
+               <div id="deptinfo" class="card shadow-sm mt-4 px-3 py-1">
    
    <aside>
       <hr>
@@ -504,350 +733,105 @@ return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
 // </script><script type="text/javascript" src="https://ai.fatv.us/embed/standard/f044297f-ebb4-4c95-a610-4a098e3f13d3"></script></div>
    </aside>
 </div>
-                  </div>
-               </div>
-               <div id="maincontent" class="col-sm-8 col-md-9" role="main">
-                  <div id="skiptocontent"></div>
-                  <div id="BreadcrumbList">
-                     <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumbs">
-                        <li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="/" title="College Home"><span property="name"><span class="fa fa-home"><span class="sr-only">Home</span></span></span></a><meta property="position" content="1">
-                        </li>
-                        <li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="/student-services/default.htm"><span property="name">Student Services</span></a><meta property="position" content="2">
-                        </li>
-                        <li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="/financial-aid/default.htm"><span property="name">Financial Aid</span></a><meta property="position" content="3">
-                        </li>
-                        <li property="itemListElement" typeof="ListItem"><span property="name" class="title">Home</span><meta property="position" content="4">
-                        </li>
-                     </ol>
-                  </div>
-                  <div id="contentcontainer">
-                     <h2>Financial Aid</h2>
-                     <div class="department-statement"></div><br class="clearall" clear="all"><div class="faSliderContainer">
-                        <div class="custom-slick-2">
-                           <div><img src="https://www.cerritos.edu/financial-aid/_includes/images/slider/1-Welcome-to-Financial-Aid.jpg" alt="Welcome to Financial Aid. We are here to support YOU!"><div class="slick-caption"></div>
-                           </div>
-                           <div><img src="https://www.cerritos.edu/financial-aid/_includes/images/26_26FAFSA.png" alt="2026-2027 fafsa now available apply now"><div class="slick-caption"><a class="button" href="https://studentaid.gov/h/apply-for-aid/fafsa">Start a 2026-2027 FAFSA Form</a></div>
-                           </div>
-                           <div><img src="https://www.cerritos.edu/financial-aid/_includes/images/slider/4-Apply-for-Financial-Aid-in-4-Steps-Lets-GO.png" alt="4-Steps for Financial Aid. Apply Now."><div class="slick-caption"><a class="button" href="/financial-aid/application-process.htm">How to Apply</a></div>
-                           </div>
-                           <div><img src="https://www.cerritos.edu/financial-aid/_includes/images/slider/application-process/Step-2-ToDo-List.png" alt="Cerritos College Financial Aid - Step 2: check your to-do list"><div class="slick-caption"><a class="button" href="/financial-aid/studentforms.htm">Don't forget to check your To Do List!</a></div>
-                           </div>
-                           <div><img src="https://www.cerritos.edu/financial-aid/_includes/images/slider/Student-Success-Completion-Grant.png" alt="Enroll full-time to receive up to $8,000 more in financial aid"><div class="slick-caption"><a class="button" href="/financial-aid/programs/Student-success.htm">Student Success Completion Grant</a></div>
-                           </div>
-                           <div><img src="https://www.cerritos.edu/financial-aid/_includes/images/slider/apply-for-scholarship.png" alt="Apply for a scholarship!"><div class="slick-caption"><a class="button" href="/financial-aid/programs/scholarship.htm">Scholarships</a></div>
-                           </div>
-                           <div><img src="https://www.cerritos.edu/financial-aid/_includes/images/slider/5-SAP.png" alt="Satisfactory Academic Progress"><div class="slick-caption"><a class="button" href="/financial-aid/sap.htm">More Information</a></div>
-                           </div>
-                        </div>
-                        <div class="buttons"><a class="dlinkPage" href="/financial-aid/D-Link/FA_Home_Slider_d-link.htm">d</a>&nbsp;<button id="toggle-custom-2">Pause</button></div>
-                     </div>
-                     <div>&nbsp;</div>
-                     <p>The NEW 2026-2027 FAFSA Application is now available. We are here to help! Join our
-                        zoom sessions or come into the office for assistance, see below for details. You can
-                        also call us at (562) 860-2451 ext. 2397. &nbsp;We are answering phones from 8 am – 6 pm
-                        Monday – Thursday, and 8 am – 4:30 pm on Fridays. &nbsp;For general questions, <a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/financial-aid/contact-us.htm">please contact us.</a></p>
-                     <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables">2026-2027 fafsa/CADAA Things to Know</h3>
-                     <ul class="bullet_list_arrow_yellow">
-                        <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://www.nasfaa.org/uploads/documents/FSA_ID_without_SSN.pdf')">How to create a Parent FSA ID without a Social Security Number</a>/ <a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://www.nasfaa.org/uploads/documents/Spanish_FSA_ID_without_SSN.pdf')">Spanish Version</a></li>
-                        <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/financial-aid/programs/cal-grant.htm">Cal Grant</a> and <a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/financial-aid/programs/Student-success.htm">Student Success Completion Grant</a> Deadline is <strong>March 2nd</strong></li>
-                        <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/financial-aid/_includes/docs/2026-2027_FinAid_SatWorkshop.pdf">Financial Aid Saturday Application Workshops</a></li>
-                        <li>FAFSA Customer Service Phone Number 1-800-4-FED-AID</li>
-                        <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://cerritos-edu.zoom.us/rec/play/4S7kAz9GLynOTuBIf3vpqGrUXf1l95K6bxdz_Eq4Na1qYoK4EEeVxdKeE_oXO7IBbzJYe_hqPOLexppA.G_3eOmi6brqH7Y4o?accessLevel=meeting&amp;canPlayFromShare=true&amp;from=share_recording_detail&amp;continueMode=true&amp;componentName=rec-play&amp;originRequestUrl=https%3A%2F%2Fcerritos-edu.zoom.us%2Frec%2Fshare%2Fid9ZYDJZJ7QBatW0ERpZDC4wumBB6okGV3LZgLSuvKc1E7uA8Jqb0IRQ1U7KiYUF.RSxp_60ff_PFWl_v')">Mixed-Status Families Informational Video</a> (English/Spanish)</li>
-                     </ul>
-                     <p>We want to assure you that we are here to support you.&nbsp; &nbsp;</p>
-                     <p><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/financial-aid/FAQs.htm">Frequently Asked Questions Related to Financial Aid</a></p>
-                     <p>Sincerely,<br>Financial Aid Office</p>
-                     <div id="accordion-d19e179" class="panel-group">
-                        <div class="panel panel-default card">
-                           <div id="item-d19e190-headingOne" class="panel-heading">
-                              <h3 class="panel-title"><button class="btn btn-link accordion-trigger collapsed" role="button" data-toggle="collapse" data-target="#item-d19e190-collapseOne" aria-expanded="false" aria-controls="item-d19e190-collapseOne" style="font-size:20px; font-weight:800;">Online Services</button></h3>
-                           </div>
-                           <div id="item-d19e190-collapseOne" class=" panel-collapse collapse" aria-labelledby="item-d19e190-headingOne" data-parent="#accordion-d19e179">
-                              <div class="panel-body">
-                                 <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables" style="text-align: center;">Financial Aid&nbsp;Zoom Sessions</h3>
-                                 <table class="table-rs">
-                                    <thead>
-                                       <tr>
-                                          <th style="text-align: center;">General Questions</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody>
-                                       <tr>
-                                          <td style="text-align: center;">
-                                             <p>Monday, Tuesday, Thursday &amp; Friday 10 am - 2 pm&nbsp;<br>Wednesday 10 am - 6 pm</p>
-                                             <p>Join Zoom Meeting<br><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://cerritos-edu.zoom.us/j/83630657964')">https://cerritos-edu.zoom.us/j/83630657964</a>&nbsp;</p>
-                                          </td>
-                                       </tr>
-                                    </tbody>
-                                 </table>
-                                 <table class="table-rs">
-                                    <thead>
-                                       <tr>
-                                          <th style="text-align: center;">FAFSA and Dream Act Application Zoom Sessions</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody>
-                                       <tr>
-                                          <td style="text-align: center;">
-                                             <p>Monday - Thursday 8 - 4:30 pm<br>&nbsp;Friday Closed</p>
-                                             <p>Join Zoom Meeting<br><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://cerritos-edu.zoom.us/j/98865749738')">https://cerritos-edu.zoom.us/j/98865749738</a>&nbsp;</p>
-                                          </td>
-                                       </tr>
-                                    </tbody>
-                                 </table>
-                                 <p style="text-align: center;">*Students who need sign language interpreters or real time captioning in order to
-                                    participate should <a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/sas/deafhardofhearingservices/current-student-interpreter-request.htm">submit an interpreter request</a>. All other requests for accommodations should <a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="/sas/accommodations-request-form.htm">submit a request via the accommodation&nbsp;form</a>.</p>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="panel panel-default card">
-                           <div id="item-d19e240-headingOne" class="panel-heading">
-                              <h3 class="panel-title"><button class="btn btn-link accordion-trigger collapsed" role="button" data-toggle="collapse" data-target="#item-d19e240-collapseOne" aria-expanded="false" aria-controls="item-d19e240-collapseOne" style="font-size:20px; font-weight:800;">In-Person Services</button></h3>
-                           </div>
-                           <div id="item-d19e240-collapseOne" class=" panel-collapse collapse" aria-labelledby="item-d19e240-headingOne" data-parent="#accordion-d19e179">
-                              <div class="panel-body">
-                                 <table class="table-rs">
-                                    <thead>
-                                       <tr>
-                                          <th style="text-align: center;">Financial Aid Resource Center - Computer Lab</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody>
-                                       <tr>
-                                          <td style="text-align: center;">
-                                             <p><strong>Monday, Tuesday and Thursday 8 am - 5 pm</strong><br><strong>Wednesday 8 am - 6 pm<br>Friday 8 am - 4:30 pm</strong></p>
-                                             <p style="text-align: left;"><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://kiosk.us1.qless.com/kiosk/app/home/15448')">Check-in online through Qless</a>, and add yourself to the Financial Aid Resource Center - Computer Lab Line from virtually
-                                                anywhere.</p>
-                                             <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables" style="text-align: left;">Get assistance on the following:</h3>
-                                             <div class="row">
-                                                <div class="col-md-6">
-                                                   <ul>
-                                                      <li style="text-align: left;">FAFSA Application</li>
-                                                      <li style="text-align: left;">Apply for Student Loans</li>
-                                                      <li style="text-align: left;">BankMobile</li>
-                                                      <li style="text-align: left;">Check for Disbursement</li>
-                                                      <li style="text-align: left;">Pending Financial Aid Tasks</li>
-                                                      <li style="text-align: left;">Check Course Eligibility</li>
-                                                   </ul>
-                                                </div>
-                                                <div class="col-md-6">
-                                                   <ul>
-                                                      <li style="text-align: left;">Dream Act Application</li>
-                                                      <li style="text-align: left;">Navigation MyCerritos</li>
-                                                      <li style="text-align: left;">View your Financial Aid Award</li>
-                                                      <li style="text-align: left;">Submit Forms</li>
-                                                      <li style="text-align: left;">Submit SAP Appeal</li>
-                                                      <li style="text-align: left;">Submit Census Date Appeal</li>
-                                                   </ul>
-                                                </div>
-                                             </div>
-                                          </td>
-                                       </tr>
-                                    </tbody>
-                                 </table>
-                                 <table class="table-rs">
-                                    <thead>
-                                       <tr>
-                                          <th style="text-align: center;">Financial Aid Counter Services</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody>
-                                       <tr>
-                                          <td style="text-align: center;">
-                                             <p><strong>Monday, Tuesday and Thursday 8 am - 5 pm</strong><br><strong>Wednesday 8 am - 6 pm<br>Friday 8 am - 4:30 pm</strong></p>
-                                             <p style="text-align: left;"><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://kiosk.us1.qless.com/kiosk/app/home/15448')">Check-in online through Qless</a>, and add yourself to the Financial Aid Line from virtually anywhere.</p>
-                                             <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables" style="text-align: left;">Get assistance on the following:</h3>
-                                             <div class="row">
-                                                <div class="col-md-6">
-                                                   <ul>
-                                                      <li style="text-align: left;">Application Questions</li>
-                                                      <li style="text-align: left;">BankMobile</li>
-                                                      <li style="text-align: left;">Cal Grants</li>
-                                                      <li style="text-align: left;">Disbursements</li>
-                                                   </ul>
-                                                </div>
-                                                <div class="col-md-6">
-                                                   <ul>
-                                                      <li style="text-align: left;">Status of File</li>
-                                                      <li style="text-align: left;">General Questions</li>
-                                                      <li style="text-align: left;">Dream Act/AB540</li>
-                                                      <li style="text-align: left;">Loans</li>
-                                                   </ul>
-                                                </div>
-                                             </div>
-                                          </td>
-                                       </tr>
-                                    </tbody>
-                                 </table>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables" style="text-align: left;">Mission Statement</h3>
-                     <p style="text-align: left;">The Financial Aid Office at Cerritos College is here to provide students and the community
-                        a better understanding of financial aid programs and services available. Our department
-                        is responsible for the review and dissemination of financial resources to assist students
-                        in meeting their educational expenses and achieving their educational goals. We are
-                        committed to administering our programs with integrity and professionalism. We value
-                        and take pride in the diversity of our students and the support we provide in promoting
-                        student success.</p>
-                     <hr>
-                     <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables">PAYING FOR COLLEGE</h3>
-                     <p>At $46 per unit, Cerritos College offers the best financial value to meet your education
-                        and career goals. Our professional staff helps students identify available financial
-                        resources.</p>
-                     <h3 xmlns:ouc="http://omniupdate.com/XSL/Variables">LOW-COST TEXTBOOKS AND MATERIALS</h3>
-                     <ul>
-                        <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://www.bkstr.com/cerritosstore/shop/textbooks-and-course-materials?cm_sp=Global-_-ShipStripTextbooks80-_-603')">Rent books from the Bookstore</a></li>
-                        <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://caccl-cerritos.primo.exlibrisgroup.com/discovery/search?vid=01CACCL_CERRITOS:CERRITOS&amp;lang=en&amp;mode=advanced')">Check out reserved books/textbooks from the Library</a></li>
-                        <li><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://caccl-cerritos.primo.exlibrisgroup.com/discovery/collectionDiscovery?vid=01CACCL_CERRITOS:CERRITOS')">Online Textbooks at the Library</a></li>
-                        <li>Ask faculty about low- to no-cost Open Educational Resources</li>
-                     </ul>
-                     <div id="faSocialMedia" class="row">
-                        <div class="col-md-5"><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://www.instagram.com/cerritosfinaid/?utm_source=ig_embed&amp;ig_rid=c5ee4b0a-a803-489b-92e2-89642a34ee65')"><img class="finaid-insta" src="https://www.cerritos.edu/financial-aid/_includes/images/IG3.png" alt="Instagram - Follow Us! @cerritosfinaid | cerritos.edu/finaid"></a></div>
-                        <div class="col-md-7"><iframe id="instagram-embed-0" class="instagram-media instagram-media-rendered" style="background: white; max-width: 540px; width: calc(100% - 2px); border-radius: 3px; border: 0px; box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;" title="Instagram" src="https://www.instagram.com/cerritosfinaid/embed/?cr=1&amp;v=14&amp;wp=540&amp;rd=https%3A%2F%2Fwww.cerritos.edu&amp;rp=%2Fpractice%2Fdefault-fa.htm#%7B%22ci%22%3A0%2C%22os%22%3A1332.2000000029802%2C%22ls%22%3A253.70000000298023%2C%22le%22%3A482.5%7D" height="541" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen" data-instgrm-payload-id="instagram-media-payload-0"></iframe></div>
-                     </div>
-                     <div class="row flex">
-                        <div class="col-sm-6">
-                           <div class="feature-box"><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://kiosk.us1.qless.com/kiosk/app/home/15448')"><img style="margin-bottom: 30px; margin-top: 30px;" src="https://www.cerritos.edu/financial-aid/_includes/images/Qless3.png" alt="Financial Aid is Introducing Qless " width="588" height="267"></a><span class="fa fa-clock-o" aria-hidden="true"><!--Empty--></span><div class="title">Save Time, Skip the Line</div>
-                              <p>Check-in online through QLess, and add yourself to the Financial Aid line from virtually
-                                 anywhere.</p>
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="feature-box"><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://cerritos.financialaidtv.com/')"><img style="margin-bottom: 30px; margin-top: 30px;" src="https://www.cerritos.edu/financial-aid/_includes/images/588X246%20FinAid%20TV.jpg" alt="Financial Aid TV - Answers on demand" width="440" height="184"></a><br><div class="embed-responsive embed-responsive-16by9"><iframe class="fatv-video embed-responsive-item" title="Applying for Financial Aid" src="https://embed.ocelotbot.com/cms/embed/playlist-ng/1264?current_entity=187&amp;video=237&amp;dim=450x600" width="450" height="600" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen">
-                                    <p>Video not supported.</p></iframe></div><br><div class="title"><a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="javascript:void(0);" class="" rel="external" onclick="popupWarning_offcampus('https://cerritos.financialaidtv.com/')">You Can Afford College</a></div>
-                              <p>Find answers to questions, learn more about financial aid and key benefits on how
-                                 to utilize your resources to get the most out of your financial aid.</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div><script type="text/javascript" src="/_resources/ldp/galleries/slick/slick.min.js"></script><script type="text/javascript">
-		$(document).ready(function() {
-
-			$('.slick').slick({
-				infinite: false,
-				slidesToShow: 1,
-				accessibility: true,
-				pauseOnHover: false,
-				pauseOnFocus: false,
-				pauseOnDotsHover: false
-			});	
-
-			$('#toggle').click( function() {
-				if ($(this).html() == 'Play'){
-				$('.slick').slick('slickPlay')
-				$(this).html('Pause') 
-				} else {
-				$('.slick').slick('slickPause')  
-				$(this).html('Play') 
-				}
-			});
-		
-			$('.custom-slick-2').slick({
-				infinite: true,
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				arrows: true,
-				dots: false,
-				responsive: [
-				{
-				breakpoint: 1024,
-				settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: true,
-				dots: false
-				}
-				},
-				{
-				breakpoint: 600,
-				settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-				}
-				},
-				{
-				breakpoint: 480,
-				settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-				}
-				}
-
-				]
-			});
-	
-			$('#toggle-custom-2').click( function() {
-				if ($(this).html() == 'Play'){
-				$('.custom-slick-2').slick('slickPlay')
-				$(this).html('Pause') 
-				} else {
-				$('.custom-slick-2').slick('slickPause')  
-				$(this).html('Play') 
-				} 
-			});
-
-
-
-		});
-
-
-	</script></div>
-                  </div>
-                  <div id="othercontent"></div>
-               </div>
             </div>
          </div>
       </div>
-      <footer><div id="social-wrap">
-<div id="social" class="clearfix">
-<div class="col-md-6">
-<h3>Stay Connected</h3>
-</div>
-<div class="col-md-6">
-<div class="social-buttons">
-<section class="mobile-row">
-	<a class="social inverse" title="Facebook" href="https://www.facebook.com/cerritoscollege/" target="_blank" rel="noopener"><span class="fa-brands fa-facebook-f"><span class="sr-only">Facebook</span></span></a> 
-	
-	<a class="social inverse" title="Instagram" href="https://www.instagram.com/cerritoscollege/" target="_blank" rel="noopener"><span class="fa-brands fa-instagram"><span class="sr-only">Instagram</span></span></a> 
-	
-	<a class="social inverse" title="TikTok" href="https://www.tiktok.com/@cerritoscollege" target="_blank" rel="noopener"><span class="fa-brands fa-tiktok"><span class="sr-only">TikTok</span></span></a>
-	
-	<a class="social inverse" title="Twitter/X" href="https://twitter.com/cerritoscollege" target="_blank" rel="noopener"><span class="fa-brands fa-x-twitter"><span class="sr-only">Twitter/X</span></span></a> 
-	
-	<a class="social inverse" title="YouTube" href="https://www.youtube.com/channel/UCmQYFzgOkYGPAAfHuNe7mOg" target="_blank" rel="noopener"><span class="fa-brands fa-youtube"><span class="sr-only">YouTube</span></span></a>
-	
-	</section>
-</div>
-<!--<div class="click-throughs">
-            <a class="button inverse" href="http://social.pomona.edu" rel="external" target="_blank">Visit Our Social Media Hub</a>
-			        </div>--></div>
-</div>
-</div>
-<div id="footer-wrap">
-<div id="footer" class="clearfix" role="navigation">
-<div class="col-xs-5 col-sm-4 col-md-5 info">
-<div class="col-md-5"><a title="Cerritos College" href="/"><img class="footer-logo" src="/_resources/images/common/cerritos-college-logo-white.svg" alt="Cerritos College" /></a></div>
-<div class="col-md-7">
-<p>11110 Alondra Blvd.<br />Norwalk, California 90650<br />[<a href="/map">Campus map</a>]</p>
-<p>Phone: <a href="tel:+15628602451">(562) 860-2451</a><br />Emergency: <a href="tel:+15629243618">(562) 924-3618</a><br /><br /><a href="/police/">Police Department <span class="fa fa-exclamation-triangle"></span></a></p>
-</div>
-</div>
-<div class="col-xs-7 col-sm-8 col-md-7">
-<div class="col-sm-6 col-md-8">
-<h4>Resources</h4>
-<div class="col-md-6"><a href="/public-relations/forms/community-contact-form.htm">Contact Us</a> <a class="inverse" href="https://portal.cerritos.edu/" target="_blank" rel="noopener">MyCerritos</a> <a href="/sas/">Student Accessibility Services</a> <a href="/financial-aid/CARES-Act-Reporting.htm">CARES Act</a> <a href="/title-ix/default.htm">Title-IX &amp;&nbsp;Discrimination</a></div>
-<!--<a href="/admissions-and-records/catalogue-schedule/">Catalog &amp; Schedule</a>  <a class="inverse" href="https://cerritos.instructure.com/login/canvas" target="_blank" rel="external">Canvas</a> <a class="inverse" href="https://cerritos.campuslabs.com/engage/" target="_blank">FalconSync</a>-->
-<div class="col-md-6"><a href="/campus-guide/abc-index.htm">A-Z Index</a> <a href="/newsroom/">News</a> <a href="/calendar/default.htm">Events</a> <a href="/employees/">Directory</a> <a href="http://cerritoscf.org/" target="_blank" rel="noopener">Give to Cerritos College</a> <a class="inverse" href="https://cerritos.campusgroups.com/home_login" target="_blank" rel="noopener">FalConnect</a></div>
-</div>
-<div class="col-sm-6 col-md-4">
-<h4>Get Started</h4>
-<a href="/apply" target="_blank" rel="noopener">Apply Now!</a> <!--<a href="/school-relations/programs-and-services/campus-tours.htm">Visit Campus</a> <a href="*** Broken Link ***">Request Info</a>--> <br /><a class="button" href="https://go.boarddocs.com/ca/cerritos/Board.nsf/Public">Board Agenda</a></div>
-</div>
-</div>
-</div>
-<div><button class="back-to-top" title="Back to Top"><img title="Back to Top" src="/_resources/images/common/cerritos-back-to-top.png" alt="Back to Top" /></button></div>
+      
+
+<footer id="site-footer" role="contentinfo">
+	<div class="container-xl site-footer__inner">
+		<div class="row">
+			<div class="col-12">
+				<div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-3 gap-lg-4 text-center pt-4 pb-5">
+					<h2 class="h3 mb-0 text-white">Stay Connected</h2>
+					<div class="d-flex align-items-center justify-content-center gap-4 site-footer__social">
+						<a title="TikTok" href="https://www.tiktok.com/@cerritoscollege" target="_blank" rel="noopener" aria-label="TikTok">
+							<span class="fa-brands fa-tiktok" aria-hidden="true"></span>
+						</a>
+						<a title="Instagram" href="https://www.instagram.com/cerritoscollege/" target="_blank" rel="noopener" aria-label="Instagram">
+							<span class="fa-brands fa-instagram" aria-hidden="true"></span>
+						</a>
+						<a title="Twitter/X" href="https://twitter.com/cerritoscollege" target="_blank" rel="noopener" aria-label="Twitter/X">
+							<span class="fa-brands fa-x-twitter" aria-hidden="true"></span>
+						</a>
+						<a title="Facebook" href="https://www.facebook.com/cerritoscollege/" target="_blank" rel="noopener" aria-label="Facebook">
+							<span class="fa-brands fa-facebook-f" aria-hidden="true"></span>
+						</a>
+						<a title="YouTube" href="https://www.youtube.com/channel/UCmQYFzgOkYGPAAfHuNe7mOg" target="_blank" rel="noopener" aria-label="YouTube">
+							<span class="fa-brands fa-youtube" aria-hidden="true"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row g-4 g-lg-5 align-items-start pb-5 pb-lg-6 site-footer__main">
+			<div class="col-12 col-md-6 pb-4 pb-md-0">
+				<div class="row g-4 align-items-start">
+					<div class="col-6 col-md-3">
+						<a href="/" class="d-inline-block site-footer__logo-link" title="Cerritos College">
+							<img class="img-fluid site-footer__logo" src="/_resources/images/2026/cerritos-logo-white-mobile.svg" alt="Cerritos College" />
+						</a>
+					</div>
+					<div class="col-6 col-md-9">
+						<p class="mb-3 site-footer__address">11110 Alondra Blvd.<br />Norwalk, California 90650</p>
+						<p class="mb-4">
+							<span class="d-flex align-items-center justify-content-start gap-1">
+								<span class="fa-regular fa-location-dot" aria-hidden="true"></span>
+								<a href="/map" class="site-footer__contact-link">
+									<span>Campus Map</span>
+								</a>
+							</span>
+						</p>
+						<div class="d-flex flex-column gap-3 site-footer__contact-list">
+							<div>
+								<div class="site-footer__contact-label mb-1 text-white">Phone</div>
+								<a href="tel:+15628602451" class="site-footer__phone">(562) 860-2451</a>
+							</div>
+							<div>
+								<div class="site-footer__contact-label mb-1 text-white">Emergency</div>
+								<a href="tel:+15629243618" class="site-footer__phone">(562) 924-3618</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 col-md-6">
+				<div class="row g-4 g-lg-5">
+					<div class="col-6 col-lg-5">
+						<nav aria-label="Footer resources">
+							<ul class="list-unstyled mb-4 site-footer__links">
+								<li><a href="https://go.boarddocs.com/ca/cerritos/Board.nsf/Public" target="_blank" rel="noopener">BoardDocs</a></li>
+								<li><a href="/about/accreditation/">Accreditation</a></li>
+								<li><a href="http://cerritoscf.org/" target="_blank" rel="noopener">Give to Cerritos College</a></li>
+								<li><a href="/title-ix/default.htm">Title IX &amp; Discrimination</a></li>
+								<li><a href="/hr/">Employment</a></li>
+							</ul>
+						</nav>
+						<a class="btn btn-primary btn-sm" href="https://go.boarddocs.com/ca/cerritos/Board.nsf/Public" target="_blank" rel="noopener">Board Agenda</a>
+					</div>
+					<div class="col-6 col-lg-7">
+						<nav aria-label="Footer legal">
+							<ul class="list-unstyled mb-0 site-footer__links">
+								<li><a href="/campus-guide/site-map.htm">Site Map</a></li>
+								<li><a href="">Disclaimer</a></li>
+								<li><a href="">Privacy Statement</a></li>
+								<li><a href="">Report a Website/Accessibility Issue</a></li>
+								<li><a href="">Consumer Information</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="site-footer__wordmark text-center anim-fade-up" aria-hidden="true">
+			<img src="/_resources/images/2026/cerritos-footer.svg" alt="" />
+		</div>
+	</div>
+</footer>
+
 <script src="https://ouc-dev.cerritos.edu/ou-alerts/alerts-config.alerts.js?v=2.1-20260407134601"></script>
 <script>
 	// archive alert processing
@@ -1102,6 +1086,12 @@ return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
 </ul>
 </script>
 
+      <div id="lastUpdate" class="bg-secondary">
+         <div class="container-xl">
+<p class="text-center py-3 text-xs text-light m-0">&copy; Cerritos College, All Rights Reserved |
+            				Last Update: <a href="javascript:void(0);" onclick="popupWarningEdit('https://a.cms.omniupdate.com/11/?skin=cerritos&amp;account=2017&amp;site=Mackey_Site_Revamp_Dev_2026&amp;action=de&amp;path=/financial-aid/default.pcf');">3/4/2026</a></div>
+      </div>
+      
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
@@ -1109,19 +1099,14 @@ return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollSmoother.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollToPlugin.min.js"></script>
 <script src="/_resources/js/flexslider.js"></script>
+<script src="/_resources/js/owl.carousel.min.js"></script>
 <script src="/_resources/js/accordion-1.js"></script>
 <script src="/_resources/js/cerritos-legacy.js"></script>
 <script src="/_resources/js/cerritos.js"></script>
 <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58dc7d749801000011c55022&product=inline-share-buttons"></script>
 
 <!-- mailto script added 2025 -->
-<script src="/_resources/js/mailto.js"></script>
-         <div id="lastUpdate">
-            <div class="container"><p><a href="/campus-guide/site-map.htm">Site Map</a> | <a href="/about/accreditation/">Accreditation</a> | <a href="/public-relations/web-administrator/web-handbook/disclaimer.htm">Disclaimer</a> | <a href="/public-relations/privacy-statement.htm">Privacy Statement</a> | <a href="/public-relations/web-administrator/report_issues.htm">Report a Website/Accessibility Issue</a> | <a href="/financial-aid/Consumer_Information.htm">Consumer Information</a> |
-               				Last Update: <a href="javascript:void(0);" onclick="popupWarningEdit('https://a.cms.omniupdate.com/11/?skin=cerritos&amp;account=2017&amp;site=Mackey_Site_Revamp_Dev_2026&amp;action=de&amp;path=/financial-aid/default.pcf');">3/4/2026</a></div>
-         </div>
-      </footer><script src="/_resources/js/mobile-menu.js"></script><noscript>Your browser does not support JavaScript!</noscript><script src="/_resources/js/owl.carousel.min.js"></script><noscript>Your browser does not support JavaScript!</noscript>
-      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/ou-alerts/alerts-config.alerts.html')) {
+<script src="/_resources/js/mailto.js"></script><?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/ou-alerts/alerts-config.alerts.html')) {
 				include($_SERVER['DOCUMENT_ROOT'] . '/ou-alerts/alerts-config.alerts.html');
 				}
 				?></body>

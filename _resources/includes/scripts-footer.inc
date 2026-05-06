@@ -3,7 +3,9 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollSmoother.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
 <script src="/_resources/js/flexslider.js"></script>
+<script src="/_resources/js/owl.carousel.min.js"></script>
 <script src="/_resources/js/accordion-1.js"></script>
 <script src="/_resources/js/cerritos-legacy.js"></script>
 <script src="/_resources/js/cerritos.js"></script>

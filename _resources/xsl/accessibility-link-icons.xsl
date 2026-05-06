@@ -43,57 +43,23 @@
 					<!-- off campus link... if href is not in cerritos domain, then new window with accessibility warning -->
 					<!-- MACKEY 7/23/25 changed to NOT courseleaf.com urls so alert is not displayed-->
 					<xsl:when test="starts-with(@href, 'http') and not(contains(@href, 'cerritos.edu')) and not(contains(@href, 'cerritos-public.courseleaf.com'))">
-						<xsl:copy> 
+						<xsl:copy>
+							<xsl:copy-of select="@*[not(local-name() = ('href', 'rel', 'onclick'))]"/>
 							<xsl:attribute name="href">javascript:void(0);</xsl:attribute>
-							<!-- 1/29/19 | Samuel Chavez edit: Added class attribute to assume local class names assigned to links -->
-							<xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
-							<!-- START aria-label attribute (added by Mackey)-->
-							<xsl:if test="@aria-label">
-								<xsl:attribute name="aria-label">
-									<xsl:value-of select="@aria-label"/>
-								</xsl:attribute>
-							</xsl:if>
-							<!-- aria-label END -->
 							<xsl:attribute name="rel">external</xsl:attribute>
 							<xsl:attribute name="onclick">popupWarning_offcampus('<xsl:value-of select="@href"/>')</xsl:attribute>
-							<xsl:value-of select="text()"/>
-							<!-- handles linked images -->
-
-							<xsl:if test=".//img/@src != ''">
-								<xsl:copy-of select=".//img"/>
-							</xsl:if>
-							<xsl:if test=".//* != ''">
-								<xsl:copy-of select=".//*"/>
-							</xsl:if>
-
+							<xsl:apply-templates select="node()"/>
 						</xsl:copy>
 					</xsl:when>
 
 					<!-- off campus link... if onclick is not in cerritos domain, then new window with accessibility warning -->
-					<xsl:when test="starts-with(@href, 'http') and not(contains(@href, 'cerritos.edu')) and not(contains(@href, 'cerritos-public.courseleaf.com'))">
-						<xsl:copy> 
-							<xsl:attribute name="href">javascript:void(0);</xsl:attribute> 
-							<!-- 1/29/19 | Samuel Chavez edit: Added class attribute to assume local class names assigned to links -->
-							<xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
-							<!-- START aria-label attribute (added by Mackey)-->
-							<xsl:if test="@aria-label">
-								<xsl:attribute name="aria-label">
-									<xsl:value-of select="@aria-label"/>
-								</xsl:attribute>
-							</xsl:if>
-							<!-- aria-label END -->
+					<xsl:when test="contains(@onclick, 'http') and not(contains(@onclick, 'cerritos.edu')) and not(contains(@onclick, 'cerritos-public.courseleaf.com'))">
+						<xsl:copy>
+							<xsl:copy-of select="@*[not(local-name() = ('href', 'rel', 'onclick'))]"/>
+							<xsl:attribute name="href">javascript:void(0);</xsl:attribute>
 							<xsl:attribute name="rel">external</xsl:attribute>
 							<xsl:attribute name="onclick"><xsl:value-of select="@onclick"/></xsl:attribute>
-							<xsl:value-of select="text()"/>
-							<!-- handles linked images -->
-
-							<xsl:if test=".//img/@src != ''">
-								<xsl:copy-of select=".//img"/>
-							</xsl:if>
-							<xsl:if test=".//* != ''">
-								<xsl:copy-of select=".//*"/>
-							</xsl:if>
-
+							<xsl:apply-templates select="node()"/>
 						</xsl:copy>
 					</xsl:when>
 					
@@ -101,14 +67,11 @@
 					<!-- Program Mapper URL Case (8/30/21 added by Samuel Chavez) -->
 					<!-- off campus link... if href is not in cerritos domain, then new window with accessibility warning -->
 					<xsl:when test=".[(starts-with(@href, 'http')) and (contains(@href, 'programmap.'))]">
-						<xsl:copy> 
-							<xsl:attribute name="href">javascript:void(0);</xsl:attribute>
-							<xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
+						<xsl:copy>
+							<xsl:copy-of select="@*[not(local-name() = ('rel', 'target'))]"/>
 							<xsl:attribute name="rel">external</xsl:attribute>
-<!-- 							<xsl:attribute name="onclick">popupWarning_offcampus('<xsl:value-of select="@href"/>')</xsl:attribute> -->
-							<xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute>
-							<xsl:attribute name="target">_blank</xsl:attribute> 
-							<xsl:value-of select="text()"/>
+							<xsl:attribute name="target">_blank</xsl:attribute>
+							<xsl:apply-templates select="node()"/>
 						</xsl:copy>
 					</xsl:when>
 								
@@ -119,14 +82,9 @@
 					<!-- MACKEY 7/23/25 Rewrote transformation to only add the target blank attribute-->
 					<xsl:when test="starts-with(@href, 'https') and contains(@href, 'cerritos-public.courseleaf.com/')">
 						<xsl:copy>
-							<!-- Copy all existing attributes -->
-							<xsl:apply-templates select="@*"/>
-
-							<!-- Add or override the target attribute -->
+							<xsl:copy-of select="@*[not(local-name() = 'target')]"/>
 							<xsl:attribute name="target">_blank</xsl:attribute>
-
-							<!-- Copy inner content (text, spans, img, etc.) -->
-							<xsl:apply-templates/>
+							<xsl:apply-templates select="node()"/>
 						</xsl:copy>
 					</xsl:when>
 					
@@ -150,21 +108,10 @@
 
 							<!-- email link icon -->
 							<xsl:when test=".[contains(lower-case(@href), 'mailto:')]">
-								<xsl:copy> 
-									<xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute>
-									<!-- 8/27/20 | Samuel Chavez edit: Added class attribute to assume local class names assigned to links -->
-									<xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
+								<xsl:copy>
+									<xsl:copy-of select="@*[not(local-name() = 'rel')]"/>
 									<xsl:attribute name="rel">mailto</xsl:attribute>
-									<xsl:value-of select="text()"/> 
-									<!-- handles linked images -->
-
-									<xsl:if test=".//img/@src != ''">
-										<xsl:copy-of select=".//img"/>
-									</xsl:if>
-									<xsl:if test=".//* != ''">
-										<xsl:copy-of select=".//*"/>
-									</xsl:if>
-
+									<xsl:apply-templates select="node()"/>
 								</xsl:copy>
 							</xsl:when>
 							
@@ -193,64 +140,31 @@
 						
 							<!-- word doc file icon -->
 							<xsl:when test=".[contains(lower-case(@href), '.doc')]">
-								<xsl:copy> 
-									<xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute> 
-									<!-- 7/07/21 | Samuel Chavez edit: Added class attribute to assume local class names assigned to links -->
-							<xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
+								<xsl:copy>
+									<xsl:copy-of select="@*[not(local-name() = ('rel', 'target'))]"/>
 									<xsl:attribute name="rel">Word</xsl:attribute>
-									<xsl:attribute name="target">_blank</xsl:attribute> 
-									<xsl:value-of select="text()"/>
-									<!-- handles linked images -->
-
-									<xsl:if test=".//img/@src != ''">
-										<xsl:copy-of select=".//img"/>
-									</xsl:if>
-									<xsl:if test=".//* != ''">
-										<xsl:copy-of select=".//*"/>
-									</xsl:if>
-
+									<xsl:attribute name="target">_blank</xsl:attribute>
+									<xsl:apply-templates select="node()"/>
 								</xsl:copy>
 							</xsl:when>
 						
 							<!-- excel file icon -->
 							<xsl:when test=".[contains(lower-case(@href), '.xls')]">
-								<xsl:copy> 
-									<xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute>
-									<!-- 10/12/22 | Samuel Chavez edit: Added class attribute to assume local class names assigned to links -->
-									<xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
+								<xsl:copy>
+									<xsl:copy-of select="@*[not(local-name() = ('rel', 'target'))]"/>
 									<xsl:attribute name="rel">Excel</xsl:attribute>
-									<xsl:attribute name="target">_blank</xsl:attribute> 
-									<xsl:value-of select="text()"/>
-									<!-- handles linked images -->
-									
-									<xsl:if test=".//img/@src != ''">
-										<xsl:copy-of select=".//img"/>
-									</xsl:if>
-									<xsl:if test=".//* != ''">
-										<xsl:copy-of select=".//*"/>
-									</xsl:if>
-
+									<xsl:attribute name="target">_blank</xsl:attribute>
+									<xsl:apply-templates select="node()"/>
 								</xsl:copy>
 							</xsl:when>
 						
 							<!-- pp file icon -->
 							<xsl:when test=".[contains(lower-case(@href), '.ppt')]">
-								<xsl:copy> 
-									<xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute>
-									<!-- 10/12/22 | Samuel Chavez edit: Added class attribute to assume local class names assigned to links -->
-									<xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
+								<xsl:copy>
+									<xsl:copy-of select="@*[not(local-name() = ('rel', 'target'))]"/>
 									<xsl:attribute name="rel">PowerPoint</xsl:attribute>
-									<xsl:attribute name="target">_blank</xsl:attribute> 
-									<xsl:value-of select="text()"/>
-									<!-- handles linked images -->
-								
-									<xsl:if test=".//img/@src != ''">
-										<xsl:copy-of select=".//img"/>
-									</xsl:if>
-									<xsl:if test=".//* != ''">
-										<xsl:copy-of select=".//*"/>
-									</xsl:if>
-
+									<xsl:attribute name="target">_blank</xsl:attribute>
+									<xsl:apply-templates select="node()"/>
 								</xsl:copy>
 							</xsl:when>
 						
@@ -281,58 +195,24 @@
 			<xsl:choose>
 				<!-- off campus link... if href is not in cerritos domain, then new window with accessibility warning -->
 				<xsl:when test=".[(starts-with(@href, 'http')) and not(contains(@href, 'cerritos.edu'))]">
-					<xsl:copy> 
+					<xsl:copy>
+						<xsl:copy-of select="@*[not(local-name() = ('href', 'rel', 'onclick'))]"/>
 						<xsl:attribute name="href">javascript:void(0);</xsl:attribute>
-						<!-- 1/29/19 | Samuel Chavez edit: Added class attribute to assume local class names assigned to links -->
-						<xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
-						<!-- START aria-label attribute (added by Mackey)-->
-						<xsl:if test="@aria-label">
-							<xsl:attribute name="aria-label">
-								<xsl:value-of select="@aria-label"/>
-							</xsl:attribute>
-						</xsl:if>
-						<!-- aria-label END -->
 						<xsl:attribute name="rel">external</xsl:attribute>
 						<xsl:attribute name="onclick">popupWarning_offcampus('<xsl:value-of select="@href"/>')</xsl:attribute>
-						<xsl:value-of select="text()"/>
-						<!-- handles linked images -->
-
-						<xsl:if test=".//img/@src != ''">
-							<xsl:copy-of select=".//img"/>
-						</xsl:if>
-						<xsl:if test=".//* != ''">
-							<xsl:copy-of select=".//*"/>
-						</xsl:if>
-
+						<xsl:apply-templates select="node()"/>
 					</xsl:copy>
 				</xsl:when>
 
 				<!-- off campus link... if onclick is not in cerritos domain, then new window with accessibility warning -->
 				<!-- MACKEY 7/23/25 changed to NOT courseleaf.com urls so alert is not displayed-->
-				<xsl:when test="starts-with(@href, 'http') and not(contains(@href, 'cerritos.edu')) and not(contains(@href, 'cerritos-public.courseleaf.com'))">
-					<xsl:copy> 
+				<xsl:when test="contains(@onclick, 'http') and not(contains(@onclick, 'cerritos.edu')) and not(contains(@onclick, 'cerritos-public.courseleaf.com'))">
+					<xsl:copy>
+						<xsl:copy-of select="@*[not(local-name() = ('href', 'rel', 'onclick'))]"/>
 						<xsl:attribute name="href">javascript:void(0);</xsl:attribute>
-						<!-- 1/29/19 | Samuel Chavez edit: Added class attribute to assume local class names assigned to links -->
-						<xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
-						<!-- START aria-label attribute (added by Mackey)-->
-							<xsl:if test="@aria-label">
-							<xsl:attribute name="aria-label">
-								<xsl:value-of select="@aria-label"/>
-							</xsl:attribute>
-						</xsl:if>
-						<!-- aria-label END -->
 						<xsl:attribute name="rel">external</xsl:attribute>
 						<xsl:attribute name="onclick"><xsl:value-of select="@onclick"/></xsl:attribute>
-						<xsl:value-of select="text()"/>
-						<!-- handles linked images -->
-						
-						<xsl:if test=".//img/@src != ''">
-							<xsl:copy-of select=".//img"/>
-						</xsl:if>
-						<xsl:if test=".//* != ''">
-							<xsl:copy-of select=".//*"/>
-						</xsl:if>
-
+						<xsl:apply-templates select="node()"/>
 					</xsl:copy>
 				</xsl:when>
 

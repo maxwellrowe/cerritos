@@ -261,6 +261,13 @@
 	  <xsl:sequence select="ou:find-up-include($start-dir, $filename, false())"/>
 	</xsl:function>
 
+	<!-- Public: find nearest ancestor _props.pcf value for a parameter -->
+	<xsl:function name="ou:find-up-props-param" as="xs:string">
+	  <xsl:param name="start-dir" as="xs:string"/>
+	  <xsl:param name="param-name" as="xs:string"/>
+	  <xsl:sequence select="ou:find-up-props-param($start-dir, $param-name, false())"/>
+	</xsl:function>
+
 	<!-- Worker -->
 	<xsl:function name="ou:find-up-include" as="xs:string">
 	  <xsl:param name="start-dir" as="xs:string"/>
@@ -278,6 +285,31 @@
 		if (unparsed-text-available($probe)) then $candidate
 		else if ($dir = '/') then concat('/_includes/assets/', $filename)
 		else ou:find-up-include(ou:parent-path($dir), $filename, $global)
+	  "/>
+	</xsl:function>
+
+	<!-- Worker -->
+	<xsl:function name="ou:find-up-props-param" as="xs:string">
+	  <xsl:param name="start-dir" as="xs:string"/>
+	  <xsl:param name="param-name" as="xs:string"/>
+	  <xsl:param name="global" as="xs:boolean"/>
+
+	  <xsl:variable name="dir"
+		select="if (ends-with($start-dir,'/')) then $start-dir else concat($start-dir,'/')" />
+
+	  <xsl:variable name="probe"
+		select="if ($global)
+			then concat($ou:www-ftproot, $dir, '_props.pcf')
+			else concat($ou:root, $ou:site, $dir, '_props.pcf')" />
+	  <xsl:variable name="props-doc" as="document-node()?"
+		select="if (doc-available($probe)) then doc($probe) else ()" />
+	  <xsl:variable name="param-value"
+		select="if ($props-doc) then normalize-space(($props-doc//parameter[@name = $param-name])[1]) else ''" />
+
+	  <xsl:sequence select="
+		if ($param-value != '') then $param-value
+		else if ($dir = '/') then ''
+		else ou:find-up-props-param(ou:parent-path($dir), $param-name, $global)
 	  "/>
 	</xsl:function>
 </xsl:stylesheet>

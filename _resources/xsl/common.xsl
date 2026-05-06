@@ -46,6 +46,7 @@
     <xsl:import href="_shared/forms.xsl" />
 	<xsl:import href="_shared/components.xsl" />
 	<xsl:import href="_shared/mailto.xsl" />
+	<xsl:import href="_shared/sidebar.xsl" />
 	
 	<!-- Breadcrumbs -->
 	<xsl:import href="_shared/breadcrumbs.xsl" />
@@ -67,6 +68,10 @@
 	<xsl:variable name="DeptInfo" select="normalize-space(document/ouc:properties[@label='config']/parameter[@name='DeptInfo']/text())" />
 	<xsl:variable name="TrackingInclude" select="normalize-space(document/ouc:properties[@label='config']/parameter[@name='TrackingInclude']/text())" />
 	<xsl:variable name="WebCss" select="normalize-space(document/ouc:properties[@label='config']/parameter[@name='WebCss']/text())" />
+	
+	<!-- Legacy Variables to make Landing Page work with new templates - 2026-->
+	<xsl:param name="lp-hide-page-title" select="'false'"/>
+	<xsl:param name="lp-hide-sidebar" select="'false'"/>
 	
 	<!-- Set Body Class Param - this can be overwritten in "page-content" template -->
 	<xsl:param name="body-classes" as="xs:string" select="''"/>
@@ -165,16 +170,21 @@
 				</script>
 				<!-- END Structured Data-->
 				
+				<xsl:variable name="effectiveWebCss" select="
+					if (string-length($WebCss) > 0) then $WebCss
+					else ou:find-up-props-param(ou:parent-path($ou:path), 'props_WebCss')
+				"/>
+				
 				<!-- Dept style sheet -->
-                <xsl:if test="string-length($WebCss) > 0 ">
+                <xsl:if test="string-length($effectiveWebCss) > 0 ">
                     <xsl:choose>
                         <!-- if it's a full path -->
-                        <xsl:when test="contains($WebCss, '/')">
-                            <link href="{$WebCss}" rel="stylesheet" type="text/css" media="all" /><xsl:text>&#xA;</xsl:text>
+                        <xsl:when test="contains($effectiveWebCss, '/')">
+                            <link href="{$effectiveWebCss}" rel="stylesheet" type="text/css" media="all" /><xsl:text>&#xA;</xsl:text>
                         </xsl:when>
                         <!-- if it's just a file name -->
                         <xsl:otherwise>
-                            <link href="{concat($firstdir,'/_includes/assets/',$WebCss)}" rel="stylesheet" type="text/css" media="all" /><xsl:text>&#xA;</xsl:text>
+                            <link href="{concat($firstdir,'/_includes/assets/',$effectiveWebCss)}" rel="stylesheet" type="text/css" media="all" /><xsl:text>&#xA;</xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:if>
@@ -206,13 +216,6 @@
 						?</xsl:processing-instruction>
 				</xsl:if>
 				
-				<link rel="stylesheet" href="{{f:80147691}}" media="screen" />
-      <link rel="stylesheet" type="text/css" href="{{f:80147689}}" media="screen" />
-      <link rel="stylesheet" type="text/css" href="{{f:80147690}}" media="screen" />
-				
-				<link rel="stylesheet" href="{{f:80147702}}" type="text/css" />
-     			<link rel="stylesheet" href="{{f:80147701}}" type="text/css" />
-				
 				<!-- Optional Add to head of page -->
 				<xsl:call-template name="page-head" />
 				
@@ -234,7 +237,7 @@
 				<xsl:comment> Cerritos main google tracking code </xsl:comment><xsl:text>&#xA;</xsl:text>
 				<xsl:copy-of select="ou:includeFile('/_resources/includes/google-tag-manager-body-script.inc')"/>
 				
-				<header role="banner">
+				<header role="banner" id="global-header">
 					<!--######## Global Safety Alert ######## -->
 					<!-- added for ticket #38482, the function is in functions-workshop.xsl. -->
 					<xsl:call-template name="unparsed-include-file">
@@ -248,9 +251,61 @@
 					<!-- header -->
 					<xsl:copy-of select="ou:includeFile('/_resources/includes/header.inc')"/>
 					
-					<!-- Hero NEW -->
-					<xsl:if test="ou:pcf-param('custom-hero') = 'enabled'">
-						<xsl:apply-templates select="document/ouc:div[@label='page_hero']" />
+					<!-- Mobile Sidebar Nav -->
+					<xsl:if test="lower-case(normalize-space(ou:pcf-param('page-fullwidth'))) != 'true'">
+						<xsl:if test="lower-case(normalize-space(ou:pcf-param('hide-left-nav'))) != 'true'">
+							<xsl:if test="$lp-hide-sidebar != 'true'">
+								<div class="d-block d-lg-none position-relative z-3">
+									<xsl:call-template name="sidebar-nav-mobile"/>
+								</div>
+							</xsl:if>
+						</xsl:if>
+					</xsl:if>
+					
+					<!-- Page Header/ Hero -->
+					<xsl:if test="$lp-hide-page-title != 'true'">
+						<div class="page-hero z-3 position-relative">
+							<xsl:choose>
+								<xsl:when test="ou:pcf-param('custom-hero') = 'enabled'">
+									<xsl:apply-templates select="document/ouc:div[@label='page_hero']" />
+								</xsl:when>
+								<xsl:otherwise>
+									<div class="container-xxl mt-5 mb-3">
+										<!-- Breadcrumbs START - based on imported templates -->
+										<xsl:variable name="legacy-breadcrumbs" select="ou:pcf-param('legacy-breadcrumbs')" />
+										<xsl:choose>
+											<xsl:when test="ou:pcf-param('hide-breadcrumbs') = 'true'">
+												<!-- Do Nothing -->
+											</xsl:when>
+											<xsl:otherwise>
+												<xsl:choose>
+													<xsl:when test="$legacy-breadcrumbs = 'enabled'">
+														<xsl:call-template name="legacyBreadcrumbs"/>
+													</xsl:when>
+													<xsl:when test="$legacy-breadcrumbs != 'disabled'">
+														<xsl:call-template name="legacyBreadcrumbs"/>
+													</xsl:when>
+													<xsl:otherwise>
+														<xsl:call-template name="breadcrumbsList" />
+													</xsl:otherwise>
+												</xsl:choose>
+											</xsl:otherwise>
+										</xsl:choose>
+										<!-- Breadcrumbs END -->
+
+										<!-- Page Title -->
+										<xsl:choose>
+											<xsl:when test="ou:pcf-param('hide-page-title') = 'true'">
+												<!-- Do Nothing -->
+											</xsl:when>
+											<xsl:otherwise>
+												<h1 class="text-light"><xsl:value-of select="$Title" disable-output-escaping="yes" /></h1>
+											</xsl:otherwise>
+										</xsl:choose>
+									</div>
+								</xsl:otherwise>
+							</xsl:choose>
+						</div>
 					</xsl:if>
 
 					<!-- Optional Add To Header-->
@@ -259,26 +314,25 @@
 				</header>
 				
 				<!-- Call Page -->
-				<xsl:call-template name="page-content"/><!-- Each page is unique -->
+				<xsl:call-template name="page-content"/>
 				
-				<footer>
-					<!-- footer -->
-					<xsl:copy-of select="ou:includeFile('/_resources/includes/footer.inc')"/>
+				<!-- footer -->
+				<xsl:copy-of select="ou:includeFile('/_resources/includes/footer.inc')"/>
 
-					<!-- Cerritos direct edit button. 3 params: site, dirname, filename -->
-					<div id="lastUpdate">
-						<div class="container">
-							<xsl:copy-of select="ou:includeFile('/_resources/includes/footer-bottom.inc')"/>
-							<xsl:call-template name="CerritosDirectEditButton">
-								<xsl:with-param name="site1" select="$ou:site" />
-								<xsl:with-param name="dirname1" select="$ou:dirname" />
-								<xsl:with-param name="filename1" select="$ou:filename" />
-							</xsl:call-template>
-						</div>
+				<!-- Cerritos direct edit button. 3 params: site, dirname, filename -->
+				<div id="lastUpdate" class="bg-secondary">
+					<div class="container-xl">
+						<xsl:copy-of select="ou:includeFile('/_resources/includes/footer-bottom.inc')"/>
+						<xsl:call-template name="CerritosDirectEditButton">
+							<xsl:with-param name="site1" select="$ou:site" />
+							<xsl:with-param name="dirname1" select="$ou:dirname" />
+							<xsl:with-param name="filename1" select="$ou:filename" />
+						</xsl:call-template>
 					</div>
-				</footer>
+				</div>
                 
 				<!-- Footer Scripts -->
+				<xsl:copy-of select="ou:includeFile('/_resources/includes/scripts-footer.inc')"/>
 				<xsl:call-template name="footer-scripts" />
 				
 			</body>
@@ -288,10 +342,6 @@
 	
 	<!-- START Footer Scripts Template -->
 	<xsl:template name="footer-scripts">
-		<script src="{{f:80151160}}"></script>
-		<noscript>Your browser does not support JavaScript!</noscript>
-		<script src="{{f:80151167}}"></script>
-		<noscript>Your browser does not support JavaScript!</noscript>
 		<xsl:call-template name="gallery-footcode">
 			<xsl:with-param name="domain" />
 		</xsl:call-template>

@@ -21,36 +21,86 @@
 	xmlns:ouc="http://omniupdate.com/XSL/Variables"
 	exclude-result-prefixes="xsl xs ou ouc">	
 
-	<!-- Sidebar -->
-	 <xsl:template name="sidebar">
-		 <!-- choose deptnav filename based on staging vs publish -->
+	<!-- Sidebar Nav -->
+	<xsl:template name="sidebar-nav">
+		<!-- choose deptnav filename based on staging vs publish -->
 		<xsl:variable name="deptnav-file" select="'deptnav.inc'"/>
+		<xsl:variable name="props-leftnav-path" select="ou:find-up-props-param(ou:parent-path($ou:path), 'props_LeftNav')"/>
 		<xsl:variable name="deptnav-path" select="ou:find-up-include(ou:parent-path($ou:path), $deptnav-file)"/>
+		
+		<div class="card shadow-sm">
+			<!-- added for ticket #38482, the function is in functions-workshop.xsl. -->
+			<nav class="sidebar-nav">
+				<xsl:call-template name="unparsed-include-file">
+					<xsl:with-param name="path" select="
+						if ($LeftNav != '') then $LeftNav
+						else if ($props-leftnav-path != '') then $props-leftnav-path
+						else $deptnav-path"/>
+				</xsl:call-template>
+			</nav>
+		</div>
+	</xsl:template>
+	
+	<!--Sidebar Nav Mobile -->
+	<xsl:template name="sidebar-nav-mobile">
+		<!-- choose deptnav filename based on staging vs publish -->
+		<xsl:variable name="deptnav-file" select="'deptnav.inc'"/>
+		<xsl:variable name="props-leftnav-path" select="ou:find-up-props-param(ou:parent-path($ou:path), 'props_LeftNav')"/>
+		<xsl:variable name="deptnav-path" select="ou:find-up-include(ou:parent-path($ou:path), $deptnav-file)"/>
+
+		<button 
+			type="button" 
+			class="d-flex align-items-center justify-content-between btn btn-warning w-100 gap-2 shadow-none rounded-0"
+			data-bs-toggle="collapse"
+			data-bs-target="#sidebar-nav-mobile"
+			aria-expanded="false"
+			aria-conrols="sidebar-nav-mobile"
+		>
+			<span class="d-flex align-items-center justify-content-center gap-2">
+				<span class="fa-sharp fa-regular fa-bars-sort"></span>
+				<span>In This Section</span>
+			</span>
+			<span class="fa-sharp fa-regular fa-plus" aria-hidden="true"></span>
+		</button>
+		
+		<div
+			id="sidebar-nav-mobile"
+			class="collapse"
+		>
+			<nav class="sidebar-nav">
+				<xsl:call-template name="unparsed-include-file">
+					<xsl:with-param name="path" select="
+						if ($LeftNav != '') then $LeftNav
+						else if ($props-leftnav-path != '') then $props-leftnav-path
+						else $deptnav-path"/>
+				</xsl:call-template>
+			</nav>
+		</div>
+		
+	</xsl:template>
+	
+	<!-- Sidebar Info -->
+	<xsl:template name="sidebar-info">
+		<xsl:variable name="props-deptinfo-path" select="ou:find-up-props-param(ou:parent-path($ou:path), 'props_DeptInfo')"/>
 		<xsl:variable name="deptinfo-path" select="ou:find-up-include(ou:parent-path($ou:path), 'deptinfo.inc')"/>
 		 
-		<div id="sidebar" class="col-sm-4 col-md-3">
-			<div id="skiptonavigation">
-				<div id="menuLeft">
-				<button type="button" class="mobile-button hidden-lg" data-toggle="collapse" data-target=".left-nav-collapse">Navigate this Section  <span class="fa fa-chevron-down" aria-hidden="true"></span>
-				</button>
-				<!-- added for ticket #38482, the function is in functions-workshop.xsl. -->
-				<nav id="navigation-collaspe" class="navbar-collapse left-nav-collapse collapse" aria-label="navigation-collaspe">
-				<xsl:call-template name="unparsed-include-file">
-				  <xsl:with-param name="path"
-					select="if ($LeftNav != '') then $LeftNav else $deptnav-path"/>
-				</xsl:call-template>
-				</nav>
-				</div>
-			</div>
-			<div>
-				<div id="deptinfo">
-					<!-- added for ticket #38482, the function is in functions-workshop.xsl. -->									
-					<xsl:call-template name="unparsed-include-file">
-					  <xsl:with-param name="path"
-						select="if ($DeptInfo != '') then $DeptInfo else $deptinfo-path"/>
-					</xsl:call-template>
-				</div>
-			</div>
+		<div id="deptinfo" class="card shadow-sm mt-4 px-3 py-1">
+			<!-- added for ticket #38482, the function is in functions-workshop.xsl. -->									
+			<xsl:call-template name="unparsed-include-file">
+			  <xsl:with-param name="path"
+				select="
+					if ($DeptInfo != '') then $DeptInfo
+					else if ($props-deptinfo-path != '') then $props-deptinfo-path
+					else $deptinfo-path"/>
+			</xsl:call-template>
+		</div>
+	</xsl:template>
+	
+	<!-- Sidebar Legacy - fallback for old templates -->
+	<xsl:template name="sidebar">
+		<div class="col-sm-4 col-md-3">
+			<xsl:call-template name="sidebar-nav"/>
+			<xsl:call-template name="sidebar-info"/>
 		</div>
 	</xsl:template>
 

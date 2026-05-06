@@ -1,19 +1,38 @@
-/* emergency notice */
-/*#emergencyNotice 
-{
-float:left;
-    padding:0em;
-     font-style: normal;
-     font-size:1.25em;
-     font-weight:normal;
-     color:#000;
-     text-align:center;
-width:100%;
-	margin:0 ;
-    }*/
-.close-icon {margin:2em 1em 0 0;cursor:pointer;}
-.RedAlert {background-color:#ffa4a4;}
-.YellowWarning {background-color:#FFEAA1;}
-.BlueInfo {background-color:#ADE0F9;}
-.WhiteInfo {background-color:#fff;}
-.GreenInfo {background-color:#5fb08f;}
+/* Home Custom CSS */
+header#global-header {
+	position: sticky;
+	top: 0;
+}
+#maincontent .container-xxl,
+#maincontent section {
+	position: relative;
+	z-index: 3;
+}
+.home-steps-accordion .accordion-button {
+	background: var(--bs-white);
+}
+
+.home-steps-accordion .accordion-header .accordion-button::after {
+	background-color: var(--bs-gray-100);
+}
+
+.home-steps-accordion .accordion-header .accordion-button:hover::after {
+	background-color: var(--bs-warning);
+}
+
+.home-steps-accordion .accordion-header .accordion-button:not(.collapsed)::after {
+	background-color: var(--accordion-icon-bg-active);
+}
+
+.scrollspy-component.scrollspy-large .nav-link {
+	color: var(--bs-white);
+}
+.scrollspy-component.scrollspy-large .nav-link.active {
+	color: var(--bs-warning);
+} 
+
+@media screen and (min-width: 992px) {
+	.home-steps-image figure {
+		margin-top: -4rem;
+	}
+}

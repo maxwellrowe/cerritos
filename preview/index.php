@@ -42,53 +42,6 @@ function list_fixture_files(string $fixturesDir): array
 
 function inject_preview_banner(string $html, string $fixtureName): string
 {
-    $bannerCss = <<<CSS
-<style id="preview-banner-styles">
-    .preview-banner {
-        position: sticky;
-        top: 0;
-        z-index: 9999;
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 16px;
-        background: #083b6d;
-        color: #ffffff;
-        font: 14px/1.4 Arial, sans-serif;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
-    }
-
-    .preview-banner strong {
-        font-weight: 700;
-    }
-
-    .preview-banner a {
-        color: #ffffff;
-        text-decoration: underline;
-    }
-</style>
-CSS;
-
-    $bannerHtml = '<div class="preview-banner">'
-        . '<div><strong>Local Preview</strong> Rendering fixture: '
-        . htmlspecialchars($fixtureName, ENT_QUOTES, 'UTF-8')
-        . '</div>'
-        . '<div><a href="?">Change fixture</a></div>'
-        . '</div>';
-
-    if (stripos($html, '</head>') !== false) {
-        $html = preg_replace('/<\/head>/i', $bannerCss . "\n</head>", $html, 1);
-    } else {
-        $html = $bannerCss . "\n" . $html;
-    }
-
-    if (stripos($html, '<body') !== false) {
-        $html = preg_replace('/(<body\b[^>]*>)/i', '$1' . "\n" . $bannerHtml, $html, 1);
-    } else {
-        $html = $bannerHtml . "\n" . $html;
-    }
-
     return $html;
 }
 

@@ -2,6 +2,10 @@ $(document).ready( function() {
 				
 				// initialize accordion
 				$('#Accordion ul').each( function() {
+					if ($(this).closest('.sidebar-nav').length) {
+						return;
+					}
+
 					var currentURI = window.location.href;
 					var links = $('a', this);
 					var collapse = true;
@@ -26,6 +30,10 @@ $(document).ready( function() {
 
 				//click function
 				$("#Accordion").delegate('span', 'click', function(event) {
+					if ($(this).closest('.sidebar-nav').length) {
+						return;
+					}
+
 					var a = $(this).children('a');
 					var ul = $(this).next('ul');
 					if (ul.is(':visible')) {
@@ -48,9 +56,21 @@ $(document).ready( function() {
 				});
 	//onload		
 	function setActive() {
-  	var aObj = document.getElementById('Accordion').getElementsByTagName('a');
+  	var accordion = document.getElementById('Accordion');
+  	var aObj;
   	var i;
+
+  	if (!accordion) {
+		return;
+	}
+
+  	aObj = accordion.getElementsByTagName('a');
+
   	for(i=0;i<aObj.length;i++) { 
+		if ($(aObj[i]).closest('.sidebar-nav').length) {
+			continue;
+		}
+
 		//add selected to a tags without the # in the url
 		if(document.location.href.indexOf(aObj[i].href)>=0 && aObj[i].href.indexOf("#") == -1) { 
       		aObj[i].className='selected';

@@ -1,1 +1,2 @@
-<p><a href="/campus-guide/site-map.htm">Site Map</a> | <a href="/about/accreditation/">Accreditation</a> | <a href="{{f:80275967}}">Disclaimer</a> | <a href="{{f:80276519}}">Privacy Statement</a> | <a href="{{f:80275928}}">Report a Website/Accessibility Issue</a> | <a href="{{f:80068171}}">Consumer Information</a> |</p>
+<ouc:editor wysiwyg="no"/>
+<p class="text-center py-3 text-xs text-light m-0">&copy; Cerritos College, All Rights Reserved |</p>
