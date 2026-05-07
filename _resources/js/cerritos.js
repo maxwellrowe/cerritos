@@ -428,6 +428,203 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Testimonial Slider
+document.addEventListener('DOMContentLoaded', function () {
+    var sliders = document.querySelectorAll('.cerritos-component-testimonial-slider');
+
+    if (!sliders.length || typeof Swiper === 'undefined') {
+        return;
+    }
+
+    sliders.forEach(function (slider) {
+        var swiperElement = slider.querySelector('.ccts__swiper-slider.swiper');
+        var slides = swiperElement ? swiperElement.querySelectorAll('.swiper-slide') : [];
+        var slideCount = slides.length;
+        var prevButton = slider.querySelector('.swiper-button-prev');
+        var nextButton = slider.querySelector('.swiper-button-next');
+        var pausePlayButton = slider.querySelector('.swiper-pause-play');
+        var pausePlayLabel = pausePlayButton ? pausePlayButton.querySelector('.visually-hidden') : null;
+        var hasMultipleSlides = slideCount > 1;
+        var isManuallyPaused = false;
+        var swiper;
+
+        if (!swiperElement) {
+            return;
+        }
+
+        if (pausePlayButton) {
+            pausePlayButton.setAttribute('type', 'button');
+        }
+
+        if (!hasMultipleSlides) {
+            if (prevButton) {
+                prevButton.hidden = true;
+            }
+
+            if (nextButton) {
+                nextButton.hidden = true;
+            }
+
+            if (pausePlayButton) {
+                pausePlayButton.hidden = true;
+            }
+        }
+
+        swiper = new Swiper(swiperElement, {
+            slidesPerView: 1,
+            loop: hasMultipleSlides,
+            autoplay: hasMultipleSlides ? {
+                delay: 4000,
+                disableOnInteraction: false
+            } : false,
+            navigation: hasMultipleSlides && prevButton && nextButton ? {
+                prevEl: prevButton,
+                nextEl: nextButton,
+                addIcons: false
+            } : undefined
+        });
+
+        if (!hasMultipleSlides || !pausePlayButton) {
+            return;
+        }
+
+        function updatePausePlayButton(isPaused) {
+            pausePlayButton.classList.toggle('is-paused', isPaused);
+            pausePlayButton.setAttribute('aria-pressed', isPaused ? 'true' : 'false');
+
+            if (pausePlayLabel) {
+                pausePlayLabel.textContent = isPaused ? 'Play Slideshow' : 'Pause Slideshow';
+            }
+        }
+
+        updatePausePlayButton(false);
+
+        pausePlayButton.addEventListener('click', function () {
+            isManuallyPaused = !isManuallyPaused;
+
+            if (isManuallyPaused) {
+                swiper.autoplay.stop();
+                updatePausePlayButton(true);
+            } else {
+                swiper.autoplay.start();
+                updatePausePlayButton(false);
+            }
+        });
+    });
+});
+
+// Image Slider
+document.addEventListener('DOMContentLoaded', function () {
+    var sliders = document.querySelectorAll('.cerritos-component-image-slider');
+
+    if (!sliders.length || typeof Swiper === 'undefined') {
+        return;
+    }
+
+    sliders.forEach(function (slider) {
+        var swiperElement = slider.querySelector('.cerritos-swiper-offcanvas.swiper, .cerritos-swiper-single.swiper');
+        var slides = swiperElement ? swiperElement.querySelectorAll('.swiper-slide') : [];
+        var slideCount = slides.length;
+        var prevButton = slider.querySelector('.swiper-button-prev');
+        var nextButton = slider.querySelector('.swiper-button-next');
+        var pausePlayButton = slider.querySelector('.swiper-pause-play');
+        var pausePlayLabel = pausePlayButton ? pausePlayButton.querySelector('.visually-hidden') : null;
+        var hasMultipleSlides = slideCount > 1;
+        var isOffcanvasSlider = swiperElement ? swiperElement.classList.contains('cerritos-swiper-offcanvas') : false;
+        var swiper;
+        var resizeObserver;
+
+        if (!swiperElement) {
+            return;
+        }
+
+        function updateOffcanvasSlideWidth() {
+            if (!isOffcanvasSlider) {
+                return;
+            }
+
+            swiperElement.style.setProperty('--cerritos-swiper-base-width', slider.clientWidth + 'px');
+
+            if (swiper) {
+                swiper.update();
+            }
+        }
+
+        if (pausePlayButton) {
+            pausePlayButton.setAttribute('type', 'button');
+        }
+
+        if (!hasMultipleSlides) {
+            if (prevButton) {
+                prevButton.hidden = true;
+            }
+
+            if (nextButton) {
+                nextButton.hidden = true;
+            }
+
+            if (pausePlayButton) {
+                pausePlayButton.hidden = true;
+            }
+        }
+
+        swiper = new Swiper(swiperElement, {
+            slidesPerView: isOffcanvasSlider ? 'auto' : 1,
+            spaceBetween: isOffcanvasSlider ? 16 : 0,
+            loop: hasMultipleSlides,
+            autoplay: hasMultipleSlides ? {
+                delay: 4000,
+                disableOnInteraction: false
+            } : false,
+            navigation: hasMultipleSlides && prevButton && nextButton ? {
+                prevEl: prevButton,
+                nextEl: nextButton,
+                addIcons: false
+            } : undefined
+        });
+
+        updateOffcanvasSlideWidth();
+
+        if (isOffcanvasSlider) {
+            if (typeof ResizeObserver !== 'undefined') {
+                resizeObserver = new ResizeObserver(function () {
+                    updateOffcanvasSlideWidth();
+                });
+                resizeObserver.observe(slider);
+            } else {
+                window.addEventListener('resize', updateOffcanvasSlideWidth);
+            }
+        }
+
+        if (!hasMultipleSlides || !pausePlayButton) {
+            return;
+        }
+
+        function updatePausePlayButton(isPaused) {
+            pausePlayButton.classList.toggle('is-paused', isPaused);
+            pausePlayButton.setAttribute('aria-pressed', isPaused ? 'true' : 'false');
+
+            if (pausePlayLabel) {
+                pausePlayLabel.textContent = isPaused ? 'Play Slideshow' : 'Pause Slideshow';
+            }
+        }
+
+        updatePausePlayButton(false);
+
+        pausePlayButton.addEventListener('click', function () {
+            var isPaused = pausePlayButton.classList.contains('is-paused');
+
+            if (isPaused) {
+                swiper.autoplay.start();
+                updatePausePlayButton(false);
+            } else {
+                swiper.autoplay.stop();
+                updatePausePlayButton(true);
+            }
+        });
+    });
+});
+
 // Hero Background Video
 document.addEventListener('DOMContentLoaded', function () {
     var heroVideos = document.querySelectorAll('.cerritos-hero-component.chc__video .chc__bg-video');
@@ -512,6 +709,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     applyMatchHeight();
     $(window).on('load resize orientationchange', applyMatchHeight);
+    $('.accordion-collapse, .collapse').on('shown.bs.collapse', applyMatchHeight);
 });
 
 // Sticky Media

@@ -30,7 +30,9 @@ header#global-header {
 .scrollspy-component.scrollspy-large .nav-link.active {
 	color: var(--bs-warning);
 } 
-
+.scrollspy-component.scrollspy-large .nav-link span {
+    background-color: var(--bs-primary);
+}
 @media screen and (min-width: 992px) {
 	.home-steps-image figure {
 		margin-top: -4rem;
