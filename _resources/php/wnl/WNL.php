@@ -465,6 +465,7 @@ class XmlCollection {
 
 // WNL ITEM
 
+#[\AllowDynamicProperties]
 class WnlItem {
     public $original_element;
     public $title = "title";
@@ -472,6 +473,7 @@ class WnlItem {
     public $link = "#";
     public $pubDate = "Fri, 07 Dec 2012 09:29:55 -0800";
 	public $author = '';
+    public $pubDateAsTime;
 
     function __construct($element) {
         $this->original_element = $element;
@@ -508,6 +510,11 @@ class WnlItem {
 class YahooRssItem extends WnlItem {
     var $yns = "http://search.yahoo.com/mrss/"; //$yns = yahoo media namespace
     var $ouns = "http://omniupdate.com/XSL/Variables"; //$ouns = omniupdate namespace
+    public $murl;
+    public $mtitle;
+    public $mkey;
+    public $mdesc;
+    public $mthumb;
 
     function __construct($element) {
         parent::__construct($element);
@@ -530,6 +537,11 @@ class CategoryRssItem extends WnlItem {
     var $yns = "http://search.yahoo.com/mrss/"; //$yns = yahoo media namespace
     var $ouc = "http://omniupdate.com/XSL/Variables"; //$ouc = ouc namespace
 	public $category = [];
+    public $murl;
+    public $mtitle;
+    public $mkey;
+    public $mdesc;
+    public $mthumb;
 
     function __construct($element) {
         parent::__construct($element);
@@ -561,6 +573,11 @@ class OmniCalendarRssItem extends WnlItem {
     var $yns = "http://search.yahoo.com/mrss/"; //$yns = yahoo media namespace
     var $ouc = "http://omniupdate.com/XSL/Variables"; //$ouc = ouc namespace
 	public $category = [];
+    public $murl;
+    public $mtitle;
+    public $mkey;
+    public $mdesc;
+    public $mthumb;
 
     function __construct($element) {
         parent::__construct($element);

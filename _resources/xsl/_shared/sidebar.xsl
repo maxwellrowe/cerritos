@@ -27,18 +27,23 @@
 		<xsl:variable name="deptnav-file" select="'deptnav.inc'"/>
 		<xsl:variable name="props-leftnav-path" select="ou:find-up-props-param(ou:parent-path($ou:path), 'props_LeftNav')"/>
 		<xsl:variable name="deptnav-path" select="ou:find-up-include(ou:parent-path($ou:path), $deptnav-file)"/>
+		<xsl:variable name="deptnav-include-path" select="
+			if ($LeftNav != '') then $LeftNav
+			else if ($props-leftnav-path != '') then $props-leftnav-path
+			else $deptnav-path"/>
 		
-		<div class="card shadow-sm">
-			<!-- added for ticket #38482, the function is in functions-workshop.xsl. -->
-			<nav class="sidebar-nav">
+		<xsl:choose>
+			<xsl:when test="$ou:action = 'pub'">
+				<xsl:if test="$deptnav-include-path != ''">
+					<xsl:copy-of select="ou:ssi($deptnav-include-path)" />
+				</xsl:if>
+			</xsl:when>
+			<xsl:otherwise>
 				<xsl:call-template name="unparsed-include-file">
-					<xsl:with-param name="path" select="
-						if ($LeftNav != '') then $LeftNav
-						else if ($props-leftnav-path != '') then $props-leftnav-path
-						else $deptnav-path"/>
+					<xsl:with-param name="path" select="$deptnav-include-path"/>
 				</xsl:call-template>
-			</nav>
-		</div>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 	
 	<!--Sidebar Nav Mobile -->
@@ -47,6 +52,10 @@
 		<xsl:variable name="deptnav-file" select="'deptnav.inc'"/>
 		<xsl:variable name="props-leftnav-path" select="ou:find-up-props-param(ou:parent-path($ou:path), 'props_LeftNav')"/>
 		<xsl:variable name="deptnav-path" select="ou:find-up-include(ou:parent-path($ou:path), $deptnav-file)"/>
+		<xsl:variable name="deptnav-include-path" select="
+			if ($LeftNav != '') then $LeftNav
+			else if ($props-leftnav-path != '') then $props-leftnav-path
+			else $deptnav-path"/>
 
 		<button 
 			type="button" 
@@ -67,14 +76,18 @@
 			id="sidebar-nav-mobile"
 			class="collapse"
 		>
-			<nav class="sidebar-nav">
-				<xsl:call-template name="unparsed-include-file">
-					<xsl:with-param name="path" select="
-						if ($LeftNav != '') then $LeftNav
-						else if ($props-leftnav-path != '') then $props-leftnav-path
-						else $deptnav-path"/>
-				</xsl:call-template>
-			</nav>
+			<xsl:choose>
+				<xsl:when test="$ou:action = 'pub'">
+					<xsl:if test="$deptnav-include-path != ''">
+						<xsl:copy-of select="ou:ssi($deptnav-include-path)" />
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:call-template name="unparsed-include-file">
+						<xsl:with-param name="path" select="$deptnav-include-path"/>
+					</xsl:call-template>
+				</xsl:otherwise>
+			</xsl:choose>
 		</div>
 		
 	</xsl:template>
@@ -83,17 +96,41 @@
 	<xsl:template name="sidebar-info">
 		<xsl:variable name="props-deptinfo-path" select="ou:find-up-props-param(ou:parent-path($ou:path), 'props_DeptInfo')"/>
 		<xsl:variable name="deptinfo-path" select="ou:find-up-include(ou:parent-path($ou:path), 'deptinfo.inc')"/>
+		<xsl:variable name="deptinfo-include-path" select="
+			if ($DeptInfo != '') then $DeptInfo
+			else if ($props-deptinfo-path != '') then $props-deptinfo-path
+			else $deptinfo-path"/>
+		<xsl:variable name="deptinfo-prod-path" select="concat($domain, $deptinfo-include-path)"/>
+		<xsl:variable name="deptinfo-raw" select="
+			if (unparsed-text-available($deptinfo-prod-path) and not(contains(unparsed-text($deptinfo-prod-path), 'Page Not Found')))
+			then unparsed-text($deptinfo-prod-path)
+			else ''"/>
+		<xsl:variable name="deptinfo-text" select="
+			normalize-space(
+				replace(
+					replace(
+						replace($deptinfo-raw, '&lt;!--.*?--&gt;', ' ', 's'),
+						'&lt;[^&gt;]+&gt;',
+						' ',
+						's'
+					),
+					'&nbsp;|&#160;',
+					' '
+				)
+			)"/>
 		 
-		<div id="deptinfo" class="card shadow-sm mt-4 px-3 py-1">
-			<!-- added for ticket #38482, the function is in functions-workshop.xsl. -->									
-			<xsl:call-template name="unparsed-include-file">
-			  <xsl:with-param name="path"
-				select="
-					if ($DeptInfo != '') then $DeptInfo
-					else if ($props-deptinfo-path != '') then $props-deptinfo-path
-					else $deptinfo-path"/>
-			</xsl:call-template>
-		</div>
+		<xsl:choose>
+			<xsl:when test="$ou:action = 'pub'">
+				<xsl:if test="$deptinfo-include-path != ''">
+					<xsl:copy-of select="ou:ssi($deptinfo-include-path)" />
+				</xsl:if>
+			</xsl:when>
+			<xsl:when test="$deptinfo-text != ''">
+				<xsl:call-template name="unparsed-include-file">
+				  <xsl:with-param name="path" select="$deptinfo-include-path"/>
+				</xsl:call-template>
+			</xsl:when>
+		</xsl:choose>
 	</xsl:template>
 	
 	<!-- Sidebar Legacy - fallback for old templates -->

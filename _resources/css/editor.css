@@ -1,3 +1,7 @@
+.ou-justedit-region .text-white {
+	color: #ccc !important;
+}
+
 /* editor accessibility comment */
 .ua-comment {display:none;}
 
@@ -124,11 +128,12 @@ table[class^="ou-"] {
 	border: 2px solid #bbb;
 	border-bottom: 4px solid #bbb;
 	margin: 15px 0;
+	caption-side: top;
 }
 
 table[class^="ou-"] > caption {
-	background: none repeat scroll 0 0 rgba(11, 72, 107, 0.85);
-	color: #FFFFFF;
+	background: #FFF9C4;
+	color: #000;
 	font-size: 120%;
 	font-weight: bold;
 	padding: 5px;
@@ -138,17 +143,26 @@ table[class^="ou-"] > caption {
 	-webkit-user-select: none;
 	user-select: none;
 	border: 2px solid #bbb;
+	border-bottom-width: 0px;
+	border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+table[class^="ou-"] > caption:before {
+	content: 'Snippet';
+	opacity: 0.75;
+	font-size: 0.75rem;
+	display: block;
 }
 
 table[class^="ou-"] > thead > tr > th,
 table[class^="ou-"] > tbody > tr > th {
 	background: none repeat scroll 0 0 rgba(185, 185, 195, 0.5);
 	color: #666;
-	cursor: not-allowed;
+	/*cursor: not-allowed;*/
 	-moz-user-select: none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
-	user-select: none;
+	/*user-select: none;*/
 	border: 1px dashed #bbb;
 }
 
@@ -168,6 +182,19 @@ table[class^="ou-"].mceItemTable img {
 
 table[class^="ou-"] td.ou-prompt {
 	border: 1px solid #ddd !important;
+	font-weight: 900;
+    font-size: 0.875rem;
+    background: var(--bs-light);
+	user-select: none;
+	cursor: not-allowed;
+}
+
+table[class^="ou-"] td.ou-prompt span.ou-prompt-help,
+table[class^="ou-"] th.ou-prompt span.ou-prompt-help,
+table[class^="ou-"] caption span.ou-prompt-help {
+	display: block;
+    font-weight: 400;
+    font-size: .75rem;
 }
 
 table[class^="ou-"] td.ou-value {
@@ -241,7 +268,7 @@ table[class^='ou-'] > thead > tr > th::before,
 table[class^='ou-'] > thead > tr > td::before,
 table[class^='ou-'] > tbody > tr > th::before,
 table[class^='ou-'] > tbody > tr > td::before,
-table[class^='ou-'] > caption::before {
+/* table[class^='ou-'] > caption::before */ {
 	display: block;
 	padding:5px 15px;
 	margin-bottom:10px;
@@ -294,3 +321,21 @@ button {
 }
 
 /* End editor button size reset */
+
+.ou-justedit-active .cerritos-spacer {
+	border: 1px dotted #ccc;
+	position: relative;
+}
+.ou-justedit-active .cerritos-spacer:before {
+	content: 'Spacer';
+	text-transform: uppercase;
+	color: #999;
+	position: absolute;
+	left: 0.5rem;
+	bottom: 0.5rem;
+	font-size: 0.75rem;
+}
+
+.ou-justedit-active #main-nav-panel a.link-arrow {
+	color: var(--bs-gray-400);
+}

@@ -37,6 +37,47 @@
     height: auto;
 }
 
+.faSliderContainer {
+	position: relative;
+}
+
+.faSliderContainer .buttons {
+	display: block;
+    position: relative;
+    padding: 1rem;
+	margin: 0 auto;
+	text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+	.faSliderContainer .buttons {
+		display: block;
+		position: absolute;
+		left: auto;
+		right: 1rem;
+		height: auto;
+		bottom: 1.125rem;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+#toggle-custom-2 {
+	background: #002E66;
+	color: #FFFFFF;
+	border: none;
+	position: relative;
+	padding: 2px 8px 2px;
+	min-width: 100px;
+	font-weight: bold;
+}
+
+#toggle-custom-2:hover {
+	background: #FFBE00;
+	color: #002E66;
+	font-weight: bold;
+}
+
 .mainHeadingText{
 	font-size: 1.5714rem;
 	color: #002e66;
@@ -109,6 +150,49 @@
 	opacity: 0.7;
 }
 
+/* Google Translate */
+.gtranslate_wrapper {
+	display: inline-flex;
+	align-items: center;
+	max-width: 8rem;
+	padding: 0 1rem;
+}
+
+.gtranslate_wrapper .gt_selector {
+	width: auto;
+	max-width: none;
+	min-width: 0;
+	min-height: 2.5rem;
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+	border-radius: 0;
+	color: var(--bs-white);
+	padding: 0.5rem 1.75rem 0.5rem 0;
+	font-family: "Poppins", "Segoe UI", sans-serif;
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.2;
+	box-shadow: none;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+	background-position: calc(100% - 1rem) calc(50% - 0.125rem), calc(100% - 0.6875rem) calc(50% - 0.125rem);
+	background-size: 0.375rem 0.375rem, 0.375rem 0.375rem;
+	background-repeat: no-repeat;
+}
+
+.gtranslate_wrapper .gt_selector:focus,
+.gtranslate_wrapper .gt_selector:focus-visible {
+	box-shadow: var(--bs-btn-focus-box-shadow);
+	outline: 0;
+}
+
+.gtranslate_wrapper .gt-current-lang {
+	font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
 /* Container Snippet */
 .cerritos-full-width .container-xxl {
 	padding-top: 1px;
@@ -159,6 +243,8 @@ ul.bullet_list_arrow_yellow li::before {
 .feature-box img {
 	border: none;
 	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
 }
 
 .department #contentcontainer .feature-box img {
@@ -376,6 +462,10 @@ ul.bullet_list_arrow_yellow li::before {
 .accordion-style-steps .accordion-header .accordion-button:not(.collapsed)::before {
 	transform: translateY(-50%);
 	border-radius: 9999px;
+}
+
+.accordion-style-steps .accordion-collapse {
+	border-top: 1.5px dashed var(--bs-gray-300);
 }
 
 
@@ -897,7 +987,7 @@ ul.bullet_list_arrow_yellow li::before {
 	top: 2rem;
 }
 .scrollspy-component.scrollspy-large .nav {
-	gap: 1.5rem;
+	gap: 3rem;
 	align-items: flex-start;
 	padding-right: 1rem
 }
@@ -961,9 +1051,9 @@ ul.bullet_list_arrow_yellow li::before {
 .cerritos-component-testimonial-slider .ccts__slider-controls {
 	position: absolute;
 	left: 1rem;
-	bottom: 1rem;
+	bottom: -2rem;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: flex-start;
 	gap: 1rem;
 	z-index: 3;
@@ -976,13 +1066,15 @@ ul.bullet_list_arrow_yellow li::before {
 }
 
 .cerritos-component-testimonial-slider .ccts__top .ccts__image {
-	flex: 0 0 70%;
-	width: 70%;
+	flex: 0 0 35%;
+	width: 35%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
 .cerritos-component-testimonial-slider .ccts__top .ccts__name {
 	flex: 1 1 auto;
-	padding-bottom: 3rem;
 	font-family: "Poppins", "Segoe UI", sans-serif;
 	font-size: 1.125rem;
 	font-weight: 700;
@@ -995,9 +1087,9 @@ ul.bullet_list_arrow_yellow li::before {
 }
 
 .cerritos-component-testimonial-slider .ccts__bottom {
-	margin-top: -2rem;
 	margin-left: auto;
-	width: calc(100% - 3rem);
+	width: 100%;
+	margin-top: 1rem;
 }
 
 .cerritos-component-testimonial-slider .ccts__slider-controls .swiper-button-prev,
@@ -1065,6 +1157,24 @@ ul.bullet_list_arrow_yellow li::before {
 .cerritos-component-testimonial-slider .ccts__slider-controls .swiper-pause-play[hidden] {
 	display: none;
 }
+
+@media screen and (min-width: 600px) {
+	.cerritos-component-testimonial-slider .ccts__bottom {
+		width: calc(100% - 3rem);
+		margin-top: -2rem;
+	}
+	.cerritos-component-testimonial-slider .ccts__top .ccts__name {
+		padding-bottom: 3rem;
+	}
+	.cerritos-component-testimonial-slider .ccts__slider-controls {
+		bottom: 1rem;
+		flex-direction: column;
+	}
+	.cerritos-component-testimonial-slider .ccts__top .ccts__image {
+		flex: 0 0 70%;
+		width: 70%;
+	}
+}	
 
 /* Image Slider */
 .cerritos-component-image-slider {
@@ -1174,6 +1284,271 @@ ul.bullet_list_arrow_yellow li::before {
 	width: 100%;
 	height: auto;
 	display: block;
+}
+
+@media screen and (max-width: 991px) {
+	.cerritos-component-image-slider .cerritos-swiper-offcanvas {
+		overflow: hidden;
+		width: 100%;
+		max-width: 100%;
+		clip-path: none;
+	}
+
+	.cerritos-component-image-slider .cerritos-swiper-offcanvas .swiper-slide {
+		width: 100%;
+	}
+}
+
+/* Calendar Events */
+.cerritos-component-events {
+	--cce-border-color: rgba(var(--bs-secondary-rgb), 0.35);
+	--cce-badge-bg: var(--bs-warning);
+	--cce-badge-text: var(--bs-primary);
+}
+
+.cerritos-calendar-events {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.cerritos-calendar-events__item {
+	border-top: 1.5px dashed var(--cce-border-color);
+}
+
+.cerritos-calendar-events__item:last-child {
+	border-bottom: 1.5px dashed var(--cce-border-color);
+}
+
+.cerritos-calendar-events__item-link {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: start;
+	gap: 1.25rem;
+	padding: 1.25rem 0.75rem;
+	color: inherit;
+	text-decoration: none !important;
+	transition: background-color .2s ease-in-out;
+}
+
+.cerritos-calendar-events__item-link:hover,
+.cerritos-calendar-events__item-link:focus-visible {
+	background-color: var(--color-light-teal);
+	text-decoration: none !important;
+}
+
+.cerritos-calendar-events__date-badge {
+	width: 4.8rem;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	background: var(--cce-badge-bg);
+	color: var(--cce-badge-text);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	box-shadow: inset 0 0 0 1px rgba(var(--bs-primary-rgb), 0.04);
+}
+
+.cerritos-calendar-events__date-month,
+.cerritos-calendar-events__date-day {
+	display: block;
+	line-height: 0.9;
+	font-family: "Poppins", "Segoe UI", sans-serif;
+	font-weight: 700;
+}
+
+.cerritos-calendar-events__date-month {
+	font-size: 0.75rem;
+	margin-bottom: 0.25rem;
+}
+
+.cerritos-calendar-events__date-day {
+	font-size: 2.25rem;
+	letter-spacing: -0.04em;
+}
+
+.cerritos-calendar-events__body {
+	min-width: 0;
+}
+
+.cerritos-calendar-events__title {
+	margin: 0 0 0.5rem;
+	font-family: "Poppins", "Segoe UI", sans-serif;
+	font-size: clamp(1.375rem, 1.25rem + 0.3vw, 1.5rem);
+	font-weight: 700;
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+	color: var(--bs-secondary);
+}
+
+.cerritos-calendar-events__description {
+	margin: 0 0 0.625rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: var(--bs-secondary);
+}
+
+.cerritos-calendar-events__meta {
+	margin: 0;
+	font-family: "Poppins", "Segoe UI", sans-serif;
+	font-size: 0.825rem;
+	font-weight: 700;
+	line-height: 1.3;
+	color: var(--bs-secondary);
+}
+
+.cerritos-calendar-events__time {
+	white-space: nowrap;
+}
+
+@media screen and (max-width: 767px) {
+	.cerritos-calendar-events__item-link {
+		grid-template-columns: 1fr;
+		justify-items: start;
+		gap: 1rem;
+	}
+
+	.cerritos-calendar-events__title {
+		font-size: 1.375rem;
+	}
+}
+
+/* News Slider */
+.cerritos-component-news {
+	--ccn-card-accent: var(--bs-warning);
+	min-width: 0;
+}
+
+.cerritos-component-news .ccn__swiper {
+	width: 100%;
+	max-width: 100%;
+	min-width: 0;
+	overflow: hidden;
+}
+
+.cerritos-component-news .swiper-slide {
+	height: auto;
+	min-width: 0;
+	padding: 0.25rem;
+}
+
+.cerritos-component-news .ccn__card {
+	height: 100%;
+	text-decoration: none !important;
+	transition: all .2s ease-in-out;
+}
+
+.cerritos-component-news .ccn__card:hover,
+.cerritos-component-news .ccn__card:focus-visible {
+	text-decoration: none !important;
+	transform: translateY(-3px);
+	box-shadow: var(--bs-box-shadow);
+}
+
+.cerritos-component-news .ccn__image {
+	background-color: var(--color-light-light-gray);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.cerritos-component-news .ccn__card .card-body {
+	padding: 1.75rem;
+}
+
+.cerritos-component-news .ccn__title {
+	margin: 0;
+	color: var(--bs-primary);
+}
+
+.cerritos-component-news .ccn__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-top: 1.5rem;
+}
+
+.cerritos-component-news .ccn__slider-controls {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+}
+
+.cerritos-component-news .ccn__slider-controls .swiper-button-prev,
+.cerritos-component-news .ccn__slider-controls .swiper-button-next {
+	position: static;
+	width: auto;
+	height: auto;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	color: var(--bs-primary);
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+	opacity: 1;
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+	transition: color .2s ease-in-out, transform .2s ease-in-out;
+}
+
+.cerritos-component-news .ccn__slider-controls .swiper-button-prev::after,
+.cerritos-component-news .ccn__slider-controls .swiper-button-next::after {
+	font-family: 'Font Awesome 6 Sharp';
+	font-weight: 400;
+	font-size: 2rem;
+	line-height: 1;
+	display: block;
+}
+
+.cerritos-component-news .ccn__slider-controls .swiper-button-prev::after {
+	content: '\f060';
+}
+
+.cerritos-component-news .ccn__slider-controls .swiper-button-next::after {
+	content: '\f061';
+}
+
+.cerritos-component-news .ccn__slider-controls .swiper-button-prev:hover,
+.cerritos-component-news .ccn__slider-controls .swiper-button-next:hover,
+.cerritos-component-news .ccn__slider-controls .swiper-button-prev:focus-visible,
+.cerritos-component-news .ccn__slider-controls .swiper-button-next:focus-visible {
+	color: var(--color-bright-blue);
+	transform: translateX(0);
+}
+
+.cerritos-component-news .ccn__slider-controls .swiper-button-disabled {
+	opacity: 0.3;
+	pointer-events: none;
+}
+
+.cerritos-component-news .ccn__cta {
+	margin-left: auto;
+}
+
+@media screen and (max-width: 767px) {
+	.cerritos-component-news .ccn__card .card-body {
+		padding: 1.25rem;
+	}
+
+	.cerritos-component-news .ccn__title {
+		font-size: 1.375rem;
+	}
+
+	.cerritos-component-news .ccn__footer {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.cerritos-component-news .ccn__cta {
+		margin-left: 0;
+	}
 }
 
 /* Metric */
@@ -1308,4 +1683,57 @@ a.cerritos-component-metric .ccm__short-desc {
 
 .cerritos-component-horz-bar-graph .cchbg__bar span {
 	white-space: nowrap;
+}
+
+
+/* Quicklinks */
+.cerritos-component-quicklinks a.ccq__item {
+	text-decoration: none !important;
+	transition: all .2s ease-in-out;
+}
+.cerritos-component-quicklinks a.ccq__item .d-flex {
+    padding: 1.5rem 1rem;
+	transition: all .2s ease-in-out;
+}
+.cerritos-component-quicklinks .ccq__item span {
+	transition: all .2s ease-in-out;
+}
+.cerritos-component-quicklinks .row.ccq__light a.ccq__item .d-flex {
+	background: #0D386E;
+}
+.cerritos-component-quicklinks .row.ccq__light .ccq__item-text {
+	color: var(--bs-white);
+	font-weight: 400;
+	font-size: 0.875rem;
+	margin-top: 0.5rem;
+	line-height: 1.2;
+}
+.cerritos-component-quicklinks .row.ccq__light .ccq__item span {
+	color: var(--color-periwinkle);
+	font-size: 1.5rem;
+}
+.cerritos-component-quicklinks .row.ccq__light a.ccq__item:hover .d-flex {
+	background-color: var(--bs-secondary);
+}
+.cerritos-component-quicklinks a.ccq__item:hover span {
+	transform: translateY(-3px);
+}
+
+
+.block {
+	border-radius: var(--bs-border-radius);
+	overflow: hidden;
+}
+
+#maincontent .block h1,
+#maincontent .block h2,
+#maincontent .block h3,
+#maincontent .block h4,
+#maincontent .block h5,
+#maincontent .block h6 {
+	margin: 0;
+}
+
+.block-square {
+	padding: 1.5rem;
 }

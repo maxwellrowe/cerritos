@@ -105,39 +105,44 @@
 	<!-- 3. Accordion -->
 	<xsl:template match="table[contains(@class, 'ou-apprenticeship-accordion')]">
 		<xsl:variable name="accordion-id" select="'accordion-' || generate-id()"/>
-		<div id="{$accordion-id}" class="panel-group">
+		<div id="{$accordion-id}" class="accordion apprenticeship-accordion">
 			<xsl:for-each select="tbody/tr[@class = 'ou-panel']">
 				<xsl:variable name="item-id" select="'item-' || generate-id()"/>
 				<xsl:variable name="open" select="td[contains(@class, 'ou-open')]/node()" />
-				<div class="panel panel-default card">
-					<div id="{$item-id}-headingOne" class="panel-heading">
-						<h2 class="panel-title">
-							<xsl:choose>
-								<xsl:when test="$open = 'true'">
-									<button class="btn btn-link accordion-trigger collapsed" role="button" data-toggle="collapse" data-target="#{$item-id}-collapseOne" aria-expanded="true" aria-controls="{$item-id}-collapseOne"><xsl:apply-templates select="td[contains(@class, 'ou-title')]/node()"/></button>
-								</xsl:when>
-								<xsl:otherwise>
-									<button class="btn btn-link accordion-trigger collapsed" role="button" data-toggle="collapse" data-target="#{$item-id}-collapseOne" aria-expanded="false" aria-controls="{$item-id}-collapseOne"><xsl:apply-templates select="td[contains(@class, 'ou-title')]/node()"/></button>
-								</xsl:otherwise>
-							</xsl:choose>
-						</h2>
+				<div class="accordion-item">
+					<h2 id="{$item-id}-heading" class="accordion-header">
+						<button
+							class="accordion-button apprenticeship-accordion__trigger"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#{$item-id}-collapse"
+							aria-controls="{$item-id}-collapse"
+						>
+							<xsl:if test="$open != 'true'">
+								<xsl:attribute name="class">accordion-button apprenticeship-accordion__trigger collapsed</xsl:attribute>
+							</xsl:if>
+							<xsl:attribute name="aria-expanded">
+								<xsl:choose>
+									<xsl:when test="$open = 'true'">true</xsl:when>
+									<xsl:otherwise>false</xsl:otherwise>
+								</xsl:choose>
+							</xsl:attribute>
+							<xsl:apply-templates select="td[contains(@class, 'ou-title')]/node()"/>
+						</button>
+					</h2>
+					<div
+						id="{$item-id}-collapse"
+						class="accordion-collapse collapse"
+						aria-labelledby="{$item-id}-heading"
+						data-bs-parent="#{$accordion-id}"
+					>
+						<xsl:if test="$open = 'true'">
+							<xsl:attribute name="class">accordion-collapse collapse show</xsl:attribute>
+						</xsl:if>
+						<div class="accordion-body apprenticeship-accordion__body">
+							<xsl:apply-templates select="td[contains(@class, 'ou-content')]/node()" />
+						</div>
 					</div>
-					<xsl:choose>
-						<xsl:when test="$open = 'true'">
-							<div id="{$item-id}-collapseOne" class=" panel-collapse collapse in" aria-labelledby="{$item-id}-headingOne" data-parent="#{$accordion-id}">
-								<div class="panel-body">
-									<xsl:apply-templates select="td[contains(@class, 'ou-content')]/node()" />
-								</div>
-							</div>
-						</xsl:when>
-						<xsl:otherwise>
-							<div id="{$item-id}-collapseOne" class=" panel-collapse collapse" aria-labelledby="{$item-id}-headingOne" data-parent="#{$accordion-id}">
-								<div class="panel-body">
-									<xsl:apply-templates select="td[contains(@class, 'ou-content')]/node()" />
-								</div>
-							</div>
-						</xsl:otherwise>
-					</xsl:choose>
 				</div>
 			</xsl:for-each>
 		</div>
@@ -265,18 +270,21 @@
 			<img src="{$image}" alt="{$alt}" class="img-responsive cerritos-rounded-image" />
 			<span class="sr-only">Open <xsl:value-of select="$alt" /> Video in a Popup</span>
 		</a>
-		<div id="video-lightbox-{$unique-id}" class="modal fade cerritos-video-lightbox-component-modal" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-lg">
+		<div id="video-lightbox-{$unique-id}" class="modal fade cerritos-video-lightbox-component-modal" tabindex="-1" aria-labelledby="video-lightbox-title-{$unique-id}" aria-hidden="true">
+			<div class="modal-dialog modal-xl">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-close"></span><span class="sr-only">Close</span></button>
 						<xsl:if test="$title != ''">
-							<h2 class="h4 modal-title"><xsl:value-of select="$title" /></h2>
+							<h2 id="video-lightbox-title-{$unique-id}" class="h4 modal-title"><xsl:value-of select="$title" /></h2>
 						</xsl:if>
+						<xsl:if test="$title = ''">
+							<span id="video-lightbox-title-{$unique-id}" class="visually-hidden">Video Lightbox</span>
+						</xsl:if>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<div class="embed-responsive embed-responsive-16by9">
-							<xsl:copy-of select="$embed" />
+						<div class="ratio ratio-16x9">
+							<xsl:copy-of select="$embed/node()" />
 						</div>
 					</div>
 				</div>
@@ -329,15 +337,16 @@
 			</xsl:choose>
 		</div>
 		<xsl:if test="$show-video = 'yes'">
-			<div id="video-lightbox-{$unique-id}" class="modal fade cerritos-video-lightbox-component-modal" tabindex="-1" role="dialog">
-				<div class="modal-dialog modal-lg">
+			<div id="video-lightbox-{$unique-id}" class="modal fade cerritos-video-lightbox-component-modal" tabindex="-1" aria-labelledby="video-lightbox-title-{$unique-id}" aria-hidden="true">
+				<div class="modal-dialog modal-xl">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-close"></span><span class="sr-only">Close</span></button>
+							<span id="video-lightbox-title-{$unique-id}" class="visually-hidden"><xsl:value-of select="$heading" /></span>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
-							<div class="embed-responsive embed-responsive-16by9">
-								<xsl:copy-of select="$embed" />
+							<div class="ratio ratio-16x9">
+								<xsl:copy-of select="$embed/node()" />
 							</div>
 						</div>
 					</div>

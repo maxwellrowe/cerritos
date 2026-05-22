@@ -1,3 +1,5 @@
+<ouc:editor wysiwyg="no"/>
+
 <nav class="visually-hidden" aria-label="accessibility">
 	<a href="#skiptocontent">Skip to main content</a>
 </nav>
@@ -21,7 +23,7 @@
 		</div>
 	</div>
 
-	<div class="container-xl py-3">
+	<div class="container-xxl py-3">
 		<div class="row">
 			<div class="col">
 				<div class="d-flex align-items-center justify-content-between">
@@ -34,6 +36,7 @@
 					</div>
 					<nav class="primary-nav d-flex justify-content-end align-items-center">
 						<a href="" class="btn btn-primary">Apply <span class="d-none d-lg-inline">Now</span></a>
+						<!--#include virtual="/_resources/includes/google-translate.inc" -->
 						<button class="btn btn-transparent btn-white btn-circle" id="search-panel-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#search-panel" aria-expanded="false" aria-controls="search-panel">
 							<span class="visually-hidden">Search</span>
 							<span class="fa-sharp fa-regular fa-search-plus" aria-hidden="true"></span>
@@ -51,27 +54,8 @@
 			</div>
 		</div>
 	</div>
-
-	<div id="main-nav-panel">
-		<div class="container-xl">
-			<div class="row">
-				<div class="col-12 col-md-6">
-					Left Nav
-				</div>
-				<div class="col-12 col-md-6">
-					Right Nav
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="container-xl mt-5 mb-3">
-	<div class="row">
-		<div class="col-12">
-			<h1 class="text-white">Financial Aid</h1>
-		</div>
-	</div>
+	
+	<!--#include virtual="/_resources/includes/main-nav.inc" -->
 </div>
 
 <!--#include virtual="/ou-alerts/alerts-config.css.html" -->

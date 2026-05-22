@@ -28,20 +28,6 @@ Changes made to this stylesheet are indicated by Updated by RRD. The old version
     right: 0px;
 }
 
-.gsc-input-box {
-	height: 30px !important;
-}
-.cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2 {
-	width: auto !important; 
-	height: auto !important;
-}
-.cse input.gsc-search-button, input.gsc-search-button {
-	background-color: #CECECE !important;
-}
-input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
-	border-color: #CECECE !important;
-	background-image: none !important;
-}
 .landing-page .block a:focus, .landing-page .block a:focus img {
 	border: none;
 }
@@ -58,8 +44,8 @@ body .body-wrap {
    max-width: 1300px;
     margin: 0 auto;
 }
-#maincontent .list-group a {
-	text-decoration: none;
+.center {
+	text-align: center;
 }
 #instructor img.left {
 	margin-right: 15px;
@@ -158,6 +144,13 @@ img + h3 {
 .well a {
 	color: #fff;
 }
+.bg-primary.dark-blue-well a {
+	color: var(--bs-white) !important;
+}
+.bg-primary.dark-blue-well a:hover,
+.bg-primary.dark-blue-well a:focus {
+	opacity: 0.75;
+}
 .well.blue a {
 	color: #002E66;
 }
@@ -187,38 +180,11 @@ img + h3 {
 #AbcDiv ul.AbcItem li {
     line-height: 2.75em!important; /*Updated by RRD*/
 }
-.h3, h3 {
-    font-size: 1.25rem;
-}
 #searchDiv {
 	margin-bottom: 2rem;
 	font-family: "Karla";
 }
-#searchDiv .gsc-control-cse div {
-	height: 100%;
-}
-#searchDiv .gsc-search-button input {
-	-webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-}
-.gsc-thumbnail-inside {
-	font-weight: bold;
-}
-.gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
-	padding-left:0px !important;
-}
-.gs-webResult .gs-snippet, .gs-imageResult .gs-snippet, .gs-fileFormatType {
-	font-size:0.857rem;
-}
-h1 {
 
-
-
-    font-size: 0;
-    line-height: 0;
-    margin: 0px;
-}
 
 
 
@@ -240,64 +206,25 @@ a[class="inverse"]::after {
     padding-left: 4px;
 }
 
-
-
- #emergencyNotice, #emergencyNotice-2 {
-    padding: 1em 1em 1em !important; /* updated L/R margins from 0 to 1em - schavez 8-23-22 */
-    font-style: normal;
-    /*font-size:1.25em;*/
-    font-weight:normal;
-    color:#000;
-
-    text-align:center;
-
-    width:100%;
-    margin:0;
-	/*box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);*/
-}
-
-#emergencyNotice p, #emergencyNotice-2 p {
-	margin-top: 1rem !important; /* Adjusted on 12/7/22 - schavez */
-	padding-bottom: 0px;
-    margin-bottom: 0 !important;
-	display: inline-block;
-}
-#emergencyNotice .close-icon, #emergencyNotice-2 .close-icon-2 {
-    margin:1em 1em 0 0;
-}
-#emergencyNotice .right{
-    float: none;
-    position: absolute;
-    right: 10px;
-    top: 20px;
-}
-#emergencyNotice-2 .right {
-	float: none;
-    position: absolute;
-    right: 10px;
-}
-
-
-#emergencyNotice .fa, #emergencyNotice-2 .fa {
-    font-size: 2.5rem;
-    padding: 10px 10px 0;
-
-}
-#emergencyNotice .RedAlert, #emergencyNotice-2 .RedAlert {
-    background-color:#ffa4a4;
-}
-#emergencyNotice .YellowWarning, #emergencyNotice-2 .YellowWarning {
-    background-color:#FFEAA1;
-}
-#emergencyNotice .BlueInfo, #emergencyNotice-2 .BlueInfo {
-    background-color:#ADE0F9;
-}
-#emergencyNotice .WhiteInfo, #emergencyNotice-2 .WhiteInfo {
-    background-color:#fff;
-}
 .alert_link{
 	color: #000000;
 	font-weight:bold;
+}
+
+.ua-info-icon {
+	content: url(/_resources/images/common/1486598561_Info.svg);
+	display: inline-block;
+	vertical-align: middle;
+	padding-bottom: 4px;
+	margin: 0 5px;
+}
+
+.ua-info {
+	display: inline;
+	background-color: #cfc;
+	padding: .2em;
+	margin-top: .2em;
+	margin-left: .2em;
 }
 
 /*Temporary adjustment to second p tag in the alert area. alert-2 class assigned to p tag. 5-20-21 schavez */
@@ -719,7 +646,7 @@ a.button.full-width, #maincontent a.button.full-width {
     letter-spacing: -1px;
 }
 table.table-rs {
-    width:100%;
+    width: 100% !important;
 }
 table.table-rs th {
     font-weight:bold;
@@ -743,12 +670,6 @@ table.table-rs tr:nth-child(even) {
 /* landing page */
 .heading {
     position: relative;
-}
-h3{
-    padding: 1.07143rem 0;
-    margin: 0;
-    text-align: left;
-    font-weight: 700;
 }
 p.lead-in {
     font-size: var(--text-lead);
@@ -780,6 +701,15 @@ p.lead-in {
 	margin-top: 40px; /*Updated by RRD*/
 	font-weight: 500;
 }
+
+.block h3 a, .landing-page #content .block h3 a {
+	color: var(--bs-white) !important;
+}
+
+.block h3 a:hover, .block h3 a:focus, .landing-page #content .block h3 a:hover, .landing-page #content .block h3 a:focus {
+	opacity: 0.75;
+}
+
 .block h3 i, .block h3 .fa {
     float: left;
     padding-right: 1.25rem; /*padding-right: 1.429rem;*/ /*Updated by RRD*/
@@ -820,10 +750,7 @@ p.lead-in {
 	padding-left: 0;
 }
 .columns .block .list-group li.list-group-item {
-	margin: 0 0 -1px;
-}
-.columns .block ul.list-group li.list-group-item > a {
-	text-decoration: none;
+	margin: 0;
 }
 /* department pages */
 .department #sidebar {
@@ -1565,13 +1492,6 @@ margin: 0 auto;
 #about-header {
     height: 50rem;
 }
-/* Added 20em L/R padding for larger viewports - schavez 8-23-22 */
-#emergencyNotice, #emergencyNotice-2 {
-padding: .1em 20em 1em !important;
-}
-
-
-/* End add - schavez 8-23-22 */
 	
 }
 /* Large desktops and laptops */
@@ -2471,19 +2391,10 @@ width:100%;
 	
 }
 
-/* added for ticket 156338 */
-#emergencyNotice{
-	height: auto !important;
-}
-
 @media only screen and (max-width: 1270px) and (orientation: landscape) {
 	#oualerts-active-alert-display {
 		z-index: 0 !important;
 		height: 92px;
-	}
-	#emergencyNotice{
-		height: 92px;
-		padding: 0.5em 0 !important;
 	}
 	.fa{
 		display: block;

@@ -173,6 +173,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Mobile Sidebar Navigation Guard
+document.addEventListener('DOMContentLoaded', function () {
+    var mobileSidebarToggle = document.querySelector('[data-bs-target="#sidebar-nav-mobile"]');
+    var mobileSidebarPanel = document.getElementById('sidebar-nav-mobile');
+
+    if (!mobileSidebarToggle || !mobileSidebarPanel) {
+        return;
+    }
+
+    function hasMeaningfulContent(element) {
+        return Array.from(element.childNodes).some(function (node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                return node.textContent.trim() !== '';
+            }
+
+            if (node.nodeType !== Node.ELEMENT_NODE) {
+                return false;
+            }
+
+            return node.textContent.trim() !== '';
+        });
+    }
+
+    if (!hasMeaningfulContent(mobileSidebarPanel)) {
+        mobileSidebarToggle.hidden = true;
+        mobileSidebarPanel.hidden = true;
+    }
+});
+
 // Global Header
 document.addEventListener('DOMContentLoaded', function () {
     var header = document.querySelector('header#global-header');
@@ -447,9 +476,39 @@ document.addEventListener('DOMContentLoaded', function () {
         var hasMultipleSlides = slideCount > 1;
         var isManuallyPaused = false;
         var swiper;
+        var resizeObserver;
 
         if (!swiperElement) {
             return;
+        }
+
+        function syncBottomHeights() {
+            var bottomPanels = slider.querySelectorAll('.ccts__bottom');
+            var tallestHeight = 0;
+
+            if (!bottomPanels.length) {
+                return;
+            }
+
+            bottomPanels.forEach(function (panel) {
+                panel.style.minHeight = '';
+            });
+
+            bottomPanels.forEach(function (panel) {
+                tallestHeight = Math.max(tallestHeight, panel.offsetHeight);
+            });
+
+            if (!tallestHeight) {
+                return;
+            }
+
+            bottomPanels.forEach(function (panel) {
+                panel.style.minHeight = tallestHeight + 'px';
+            });
+        }
+
+        function queueBottomHeightSync() {
+            window.requestAnimationFrame(syncBottomHeights);
         }
 
         if (pausePlayButton) {
@@ -482,6 +541,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 nextEl: nextButton,
                 addIcons: false
             } : undefined
+        });
+
+        queueBottomHeightSync();
+
+        if (typeof ResizeObserver !== 'undefined') {
+            resizeObserver = new ResizeObserver(function () {
+                queueBottomHeightSync();
+            });
+            resizeObserver.observe(slider);
+        } else {
+            window.addEventListener('resize', queueBottomHeightSync);
+        }
+
+        window.addEventListener('load', queueBottomHeightSync);
+        document.querySelectorAll('.accordion-collapse, .collapse').forEach(function (collapseElement) {
+            collapseElement.addEventListener('shown.bs.collapse', queueBottomHeightSync);
         });
 
         if (!hasMultipleSlides || !pausePlayButton) {
@@ -623,6 +698,73 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+});
+
+// News Slider
+function initializeCerritosNewsSliders(root) {
+    var scope = root && root.querySelectorAll ? root : document;
+    var sliders = scope.querySelectorAll('.cerritos-component-news');
+
+    if (!sliders.length || typeof Swiper === 'undefined') {
+        return;
+    }
+
+    sliders.forEach(function (slider) {
+        if (slider.getAttribute('data-swiper-initialized') === 'true') {
+            return;
+        }
+
+        var swiperElement = slider.querySelector('.ccn__swiper.swiper');
+        var slides = swiperElement ? swiperElement.querySelectorAll('.swiper-slide') : [];
+        var slideCount = slides.length;
+        var prevButton = slider.querySelector('.swiper-button-prev');
+        var nextButton = slider.querySelector('.swiper-button-next');
+        var mobileCol = parseInt(slider.getAttribute('data-mobile-col'), 10) || 1;
+        var tabletCol = parseInt(slider.getAttribute('data-tablet-col'), 10) || 2;
+        var desktopCol = parseInt(slider.getAttribute('data-desktop-col'), 10) || 2;
+        var maxColumns = Math.max(mobileCol, tabletCol, desktopCol);
+        var hasMultipleSlides = slideCount > maxColumns;
+
+        if (!swiperElement) {
+            return;
+        }
+
+        slider.setAttribute('data-swiper-initialized', 'true');
+
+        if (!hasMultipleSlides) {
+            if (prevButton) {
+                prevButton.hidden = true;
+            }
+
+            if (nextButton) {
+                nextButton.hidden = true;
+            }
+        }
+
+        new Swiper(swiperElement, {
+            slidesPerView: mobileCol,
+            spaceBetween: 24,
+            loop: hasMultipleSlides,
+            watchOverflow: true,
+            navigation: hasMultipleSlides && prevButton && nextButton ? {
+                prevEl: prevButton,
+                nextEl: nextButton,
+                addIcons: false
+            } : undefined,
+            breakpoints: {
+                768: {
+                    slidesPerView: tabletCol
+                },
+                992: {
+                    slidesPerView: desktopCol
+                }
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    initializeCerritosNewsSliders(document);
 });
 
 // Hero Background Video

@@ -22,6 +22,9 @@ exclude-result-prefixes="xsl xs ou ouc">
 	<!-- 10/09/18 Added by Samuel to accomodate left menu mini calendar -->
 	<xsl:output method="html" version="5.0" indent="yes" encoding="UTF-8" include-content-type="no" />
 
+	<xsl:variable name="include-menu-node" select="document/ouc:div[@label='includemenu']" />
+	<xsl:variable name="include-menu-text" select="normalize-space(string-join($include-menu-node//text(), ' '))" />
+
 	<xsl:template match="/">
 		<xsl:choose>
 			<xsl:when test="$ou:action != 'pub'">
@@ -29,19 +32,44 @@ exclude-result-prefixes="xsl xs ou ouc">
 					<head><title>Page Navigation</title></head>
 					<body>
 						<xsl:variable name="Title" select="normalize-space(document/ouc:properties[@label='metadata']/title)" />
-						<xsl:apply-templates select="document/ouc:div[@label='includemenu']" />
+						<xsl:call-template name="render-include-menu" />
 					</body>
 				</html>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:variable name="Title" select="normalize-space(document/ouc:properties[@label='metadata']/title)" />
-				<xsl:apply-templates select="document/ouc:div[@label='includemenu']" />
+				<xsl:call-template name="render-include-menu" />
 			</xsl:otherwise>
 		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template name="render-include-menu">
+		<xsl:if test="$include-menu-node and $include-menu-text != ''">
+			<xsl:choose>
+				<xsl:when test="$ou:filename = 'deptnav.inc'">
+					<div class="card shadow-sm">
+						<nav class="sidebar-nav">
+							<xsl:apply-templates select="$include-menu-node" />
+						</nav>
+					</div>
+				</xsl:when>
+				<xsl:when test="$ou:filename = 'deptinfo.inc'">
+					<div id="deptinfo" class="card shadow-sm mt-4 px-3 py-1">
+						<xsl:apply-templates select="$include-menu-node" />
+					</div>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:apply-templates select="$include-menu-node" />
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
 	</xsl:template>
 	
 	<xsl:template match="attribute()|text()|comment()" mode="#all">
 		<xsl:copy />
+	</xsl:template>
+	<xsl:template match="a" mode="#all">
+		<xsl:apply-imports />
 	</xsl:template>
 	<xsl:template match="element()" mode="#all">
 		<xsl:element name="{name()}">

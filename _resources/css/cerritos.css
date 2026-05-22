@@ -2,10 +2,13 @@
 
 /* Links & Buttons */
 a[rel="external"],
-a[target="_blank"] {
+a[target="_blank"],
+a[href$=".pdf" i],
+a[href*=".pdf?" i],
+a[href*=".pdf#" i] {
     position: relative;
-    display: inline-flex;
-    gap: 0.5rem;
+    /*display: inline-flex;*/
+    gap: 0;
     justify-content: start;
     align-items: center;
 }
@@ -16,6 +19,18 @@ a[target="_blank"]::after {
     font-family: 'Font Awesome 6 Sharp';
     font-weight: 400;
     font-size: 70%;
+    margin-inline-start: 0.5rem;
+}
+
+a[href$=".pdf" i]::after,
+a[href*=".pdf?" i]::after,
+a[href*=".pdf#" i]::after {
+    content: '\f1c1';
+    color: inherit;
+    font-family: 'Font Awesome 6 Pro';
+    font-weight: 900;
+    font-size: 80%;
+    margin-inline-start: 0.5rem;
 }
 
 a.button.full-width,
@@ -68,36 +83,62 @@ a.button.full-width:focus {
     will-change: opacity;
 }
 
+#maincontent img {
+    max-width: 100%;
+}
+
+#searchDiv form.gsc-search-box {
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+#searchDiv .gsc-control-cse,
+#searchDiv .gsc-control-cse form,
+#searchDiv .gsc-input-box {
+    max-width: 100%;
+}
+
+#searchDiv .gsc-input-box {
+    height: auto !important;
+    min-height: 2.75rem;
+    border-radius: var(--bs-border-radius);
+}
+
+#searchDiv .gsc-input-box table {
+    padding: 0;
+    margin: 0;
+}
+
+#searchDiv input.gsc-input {
+    padding: 0.5rem 0.75rem !important;
+    box-sizing: border-box;
+}
+
 /* Global Header */
 header#global-header {
-    background: var(--bs-primary);
     position: relative;
-    overflow: hidden;
-    --header-parallax-overscan: 180px;
+    display: flow-root;
+    overflow: visible;
+    --header-parallax-overscan: 0px;
     --header-parallax-y: -80px;
+    background-color: var(--bs-primary);
+    background-image:
+        linear-gradient(rgba(0, 46, 102, 0.85), rgba(0, 46, 102, 0.85)),
+        url(/_resources/images/2026/cloudsbg.jpg);
+    background-size: auto, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, center calc(50% + var(--header-parallax-y));
+    background-blend-mode: normal, screen;
 }
 
 header#global-header::before {
-    content: '';
-    position: absolute;
-    top: calc(var(--header-parallax-overscan) * -0.5);
-    left: 0;
-    width: 100%;
-    height: calc(100% + var(--header-parallax-overscan));
-    background-image: url(/_resources/images/2026/cloudsbg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    z-index: 1;
-    opacity: 0.15;
-    transform: translate3d(0, var(--header-parallax-y), 0);
-    will-change: transform;
+    content: none;
 }
 
 /* Main Nav */
 #navigation {
     position: relative;
-    z-index: 2; 
+    z-index: 4; 
     transition: all .2s ease-in-out;
 }
 
@@ -118,12 +159,13 @@ body.main-nav-panel-open #navigation {
 #navigation #main-nav-panel {
     max-height: 0;
     opacity: 0;
-    overflow: hidden;
+    overflow: auto;
 }
 
 body.main-nav-panel-open #navigation #main-nav-panel {
     max-height: 100vh;
     opacity: 1;
+    padding-bottom: 5rem;
 }
 
 #navigation #search-panel-toggle {
@@ -211,6 +253,54 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     }
 }
 
+/* Main Nav Panel */
+#main-nav-panel {
+    color: var(--bs-white);
+}
+#main-nav-panel .accordion-item,
+#main-nav-panel .accordion-item .accordion-button {
+    background: transparent;
+    border-color: transparent; 
+    color: var(--bs-white);
+}
+#main-nav-panel .accordion-item {
+    border-bottom: 2px dashed rgba(var(--bs-light-rgb), 0.25);
+    margin-top: 0;
+}
+#main-nav-panel .accordion-item .accordion-button {
+    font-size: 1.5rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+#main-nav-panel .accordion-item .accordion-button:hover {
+    color: var(--color-periwinkle);
+}
+#main-nav-panel .accordion-item .accordion-button[aria-expanded="true"] {
+    color: var(--bs-warning);
+}
+#main-nav-panel  .accordion-header .accordion-button::after {
+    color: var(--bs-white);
+    background: transparent;
+}
+#main-nav-panel  .accordion-header .accordion-button:hover::after {
+    background: var(--bs-secondary);
+}
+#main-nav-panel .accordion-collapse .accordion-body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#main-nav-panel a.link-arrow {
+    color: var(--bs-white);
+    text-decoration: none !important;
+}
+.ou-justedit-region #main-nav-panel a.link-arrow {
+    color: #ccc;
+}
+#main-nav-panel a.link-arrow:hover {
+    color: var(--bs-warning);
+}
+
 /* Breadcrumbs */
 #BreadcrumbList {
     font-size: 0.875rem;
@@ -258,7 +348,7 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
 .sidebar-nav .tabH4_Main {
     color: var(--bs-gray-600);
     font-family: "Poppins", "Segoe UI", sans-serif;
-    font-size: 0.875rem;
+    font-size: 0.875rem !important;
     font-weight: 700;
     letter-spacing: 0.08em;
     line-height: 1.2;
@@ -355,13 +445,31 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     content: '\f061';
 }
 
+.sidebar-nav li:not(.has-children) > a[href$=".pdf" i]::after,
+.sidebar-nav li:not(.has-children) > a[href*=".pdf?" i]::after,
+.sidebar-nav li:not(.has-children) > a[href*=".pdf#" i]::after {
+    content: '\f1c1';
+    font-family: 'Font Awesome 6 Pro';
+    font-weight: 900;
+}
+
+.sidebar-nav li:not(.has-children) > a[target="_blank"]::after,
+.sidebar-nav li:not(.has-children) > a[href^="http"]:not([href*="cerritos.edu"])::after,
+.sidebar-nav li:not(.has-children) > a[href^="//"]:not([href*="cerritos.edu"])::after {
+    content: '\f08e';
+}
+
 .sidebar-nav li > ul {
-    display: none;
-    padding-bottom: 0.75rem;
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: all .2s ease-in-out;
 }
 
 .sidebar-nav li.is-expanded > ul {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    max-height: 9999px;
 }
 
 .sidebar-nav li > ul li {
@@ -372,7 +480,7 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     min-height: 0;
     color: var(--bs-secondary-color);
     font-size: 0.9375rem;
-    padding: 0.625rem 2rem 0.625rem 3rem;
+    padding: 1.25rem 2rem 1.25rem 3rem;
 }
 
 .sidebar-nav li > ul a::after {
@@ -488,6 +596,15 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     line-height: 1.2;
     margin: 0;
 }
+.department.home #top-panel .top-panel-content .tpc-large-bottom {
+    flex: 0 0 100%;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
 
 .department.home #top-panel .top-panel-content p {
     margin: 0;
@@ -564,12 +681,12 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     margin: 0 0 1rem;
 }
 
-#maincontent ul:not(.nav):not(.nav-tabs):not(.dropdown-menu):not(.pagination),
+#maincontent ul:not(.nav):not(.nav-tabs):not(.dropdown-menu):not(.pagination):not(.list-group),
 #maincontent ol:not(.breadcrumb) {
-    padding-left: 1.25rem;
+    padding-left: 3rem;
 }
 
-#maincontent li:not(.nav-item):not(.breadcrumb-item):not(.page-item) {
+#maincontent li:not(.nav-item):not(.breadcrumb-item):not(.page-item):not(.list-group-item) {
     margin-bottom: 0.5rem;
 }
 
@@ -632,6 +749,7 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     background-size: cover;
     margin: 0;
     overflow: hidden;
+    border: none;
 }
 
 .heading.landing-page-legacy-hero #about-header::before {
@@ -702,7 +820,8 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     flex: 0 0 100%;
 }
 
-.heading.landing-page-legacy-hero .popular h3 {
+.heading.landing-page-legacy-hero .popular h3,
+.heading.landing-page-legacy-hero .popular h2 {
     color: var(--bs-light);
     font-size: 1.125rem;
     font-weight: 700;
@@ -710,6 +829,10 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     margin: 0;
     padding: 0;
     text-transform: uppercase;
+}
+.heading.landing-page-legacy-hero .popular h4,
+.heading.landing-page-legacy-hero .popular h5 {
+    color: var(--bs-light);
 }
 
 .heading.landing-page-legacy-hero .popular a.button {
@@ -840,6 +963,11 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     color: var(--bs-warning);
 }
 
+#emergencyNotice .e-body > p:last-child,
+#emergencyNotice-2 .e-body > p:last-child {
+    margin-bottom: 0;
+}
+
 @media screen and (min-width: 992px) {
     #site-footer .site-footer__wordmark {
         padding-top: 9rem;
@@ -849,3 +977,4 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
         width: 20rem;
     }
 }
+
