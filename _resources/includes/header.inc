@@ -10,13 +10,23 @@
 				<input name="cx" type="hidden" value="your-008525147052714186440:tkcmuqghz4s" />
 				<input name="ie" type="hidden" value="utf-8" />
 				<input name="hl" type="hidden" value="en" />
-				<div class="row g-3 align-items-center">
-					<div class="col-12 col-md">
-						<label class="form-label visually-hidden" for="q-panel">Search Site</label>
-						<input class="form-control form-control-lg" id="q-panel" name="q" type="text" placeholder="Enter your search..." />
+				<div class="row g-3 align-items-start align-items-md-center">
+					<div class="col">
+						<div class="row">
+							<div class="col-12 col-md">
+								<label class="form-label visually-hidden" for="q-panel">Search Site</label>
+								<input class="form-control form-control-lg" id="q-panel" name="q" type="text" placeholder="Enter your search..." />
+							</div>
+							<div class="col-12 mt-2 mt-md-0 col-md-auto">
+								<input class="btn btn-primary w-100" name="sa" type="submit" value="Search" />
+							</div>
+						</div>
 					</div>
-					<div class="col-12 col-md-auto">
-						<input class="btn btn-primary w-100" name="sa" type="submit" value="Search" />
+					<div class="col-auto ms-auto order-1 order-md-3">
+						<button class="btn btn-secondary btn-circle" type="button" data-bs-toggle="collapse" data-bs-target="#search-panel" aria-expanded="true" aria-controls="search-panel">
+							<span class="visually-hidden">Close Search</span>
+							<span class="fa-sharp fa-regular fa-xmark" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div>
 			</form>

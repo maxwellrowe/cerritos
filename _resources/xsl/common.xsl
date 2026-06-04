@@ -230,8 +230,11 @@
 					<xsl:otherwise></xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
+
+			<xsl:variable name="hero-type" select="normalize-space((document//ouc:component[@name='cerritos-hero'][1]/div[@class='type'])[1])" />
+			<xsl:variable name="effective-body-classes" select="normalize-space(string-join(($body-classes, if ($hero-type != '') then concat('hero-type-', $hero-type) else ()), ' '))" />
 				
-			<body class="{$body-classes}" id="{$body_id}">
+			<body class="{$effective-body-classes}" id="{$body_id}">
 				
 				<!-- Cerritos main google tracking code -->
 				<xsl:comment> Cerritos main google tracking code </xsl:comment><xsl:text>&#xA;</xsl:text>
@@ -264,35 +267,38 @@
 					
 					<!-- Page Header/ Hero -->
 					<xsl:if test="$lp-hide-page-title != 'true'">
-						<div class="page-hero z-3 position-relative">
+						<div class="{normalize-space(string-join(('page-hero', 'z-3', 'position-relative', if (ou:pcf-param('hide-page-title') = 'true') then 'page-hero__custom' else ()), ' '))}">
+							<div class="cerritos-page-breadcrumbs">
+								<div class="container-xxl mt-5 mb-3">
+									<!-- Breadcrumbs START - based on imported templates -->
+									<xsl:variable name="legacy-breadcrumbs" select="ou:pcf-param('legacy-breadcrumbs')" />
+									<xsl:choose>
+										<xsl:when test="ou:pcf-param('hide-breadcrumbs') = 'true'">
+											<!-- Do Nothing -->
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:choose>
+												<xsl:when test="$legacy-breadcrumbs = 'enabled'">
+													<xsl:call-template name="legacyBreadcrumbs"/>
+												</xsl:when>
+												<xsl:when test="$legacy-breadcrumbs != 'disabled'">
+													<xsl:call-template name="legacyBreadcrumbs"/>
+												</xsl:when>
+												<xsl:otherwise>
+													<xsl:call-template name="breadcrumbsList" />
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:otherwise>
+									</xsl:choose>
+									<!-- Breadcrumbs END -->
+								</div>
+							</div>
 							<xsl:choose>
 								<xsl:when test="ou:pcf-param('custom-hero') = 'enabled'">
 									<xsl:apply-templates select="document/ouc:div[@label='page_hero']" />
 								</xsl:when>
 								<xsl:otherwise>
 									<div class="container-xxl mt-5 mb-3">
-										<!-- Breadcrumbs START - based on imported templates -->
-										<xsl:variable name="legacy-breadcrumbs" select="ou:pcf-param('legacy-breadcrumbs')" />
-										<xsl:choose>
-											<xsl:when test="ou:pcf-param('hide-breadcrumbs') = 'true'">
-												<!-- Do Nothing -->
-											</xsl:when>
-											<xsl:otherwise>
-												<xsl:choose>
-													<xsl:when test="$legacy-breadcrumbs = 'enabled'">
-														<xsl:call-template name="legacyBreadcrumbs"/>
-													</xsl:when>
-													<xsl:when test="$legacy-breadcrumbs != 'disabled'">
-														<xsl:call-template name="legacyBreadcrumbs"/>
-													</xsl:when>
-													<xsl:otherwise>
-														<xsl:call-template name="breadcrumbsList" />
-													</xsl:otherwise>
-												</xsl:choose>
-											</xsl:otherwise>
-										</xsl:choose>
-										<!-- Breadcrumbs END -->
-
 										<!-- Page Title -->
 										<xsl:choose>
 											<xsl:when test="ou:pcf-param('hide-page-title') = 'true'">

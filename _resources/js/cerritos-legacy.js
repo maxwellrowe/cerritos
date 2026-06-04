@@ -1,4 +1,196 @@
-function formHandler(){var e=document.KeyWordSearch.site.options[document.KeyWordSearch.site.selectedIndex].value;window.location.href=e}function js_PopUpWindow(e,o,t){alert("Warning: This link will open a popup window. Please adjust your browser settings to allow popups.");var n="width="+e+",height="+o+",resizable=yes,status=yes,scrollbars=no";n=(n+="left=10,")+"top=10",newWindow=window.open(t,"PopUpWindow",n)}function popupWarning(e){!0==confirm("Warning: This link will open a popup window for an offsite URL.  Please adjust your browser settings to allow popups.\nSelect 'OK' to open a new window or select 'Cancel' to navigate without a popup.")?window.open(e):window.location.href=e}function photo_detail(e,o){window.location.href="/scripts/photo_detail.asp?src="+e+"&alt="+o}function popupWarning_subscribe(e){!0==confirm("Warning: This link will open a popup window.  Please adjust your browser settings to allow popups.\nDo you want to continue?  Select 'OK' to continue or select 'Cancel' to navigate without a popup.")?window.open(e,"name","height=275, width=350"):window.location.href=e}function popupWarning_offcampus(e){if(!0!=confirm("Warning: This link will open content located on another site not associated with Cerritos College. We cannot ensure accessibility of pages visited. Please adjust your browser settings to allow popups.\n\nDo you want to continue?"))return!1;window.open(e,"_blank")}function popup_offcampus_simple(e){if(!0!=confirm("Warning: This link navigates away from Cerritos College. Please adjust your browser settings to allow popups."))return!1;window.open(e)}function popupWarningEdit(e){!window.opera&&navigator.userAgent.indexOf(" OPR/"),Object.prototype.toString.call(window.HTMLElement).indexOf("Constructor"),window.chrome,document.documentMode?alert("Warning: OU Campus does not work with IE. Please use Google Chrome for best results."):window.location.href=e}var RecaptchaOptions={theme:"white"};$(document).ready(function(){$(".close-icon").click(function(){return $("#emergencyNotice").hide(750),createCookie("hide",!0,1),!1}),readCookie("hide")?$("#emergencyNotice").hide():$("#emergencyNotice").show()}),$(document).ready(function(){$(".close-icon").click(function(){return $("#emergencyNotice-2").hide(750),createCookie("hide-2",!0,1),!1}),readCookie("hide-2")?$("#emergencyNotice-2").hide():$("#emergencyNotice-2").show()}),$(document).ready(function(){$(".acceptcookies-2").click(function(){return $("#CC_Alert-2").hide(),createCookie("hide-modal",!0,1),$("body").removeClass("modal-open"),$(".modal-backdrop").remove(),!1}),readCookie("hide-modal")?$("#CC_Alert-2").hide():$("#CC_Alert-2").modal({backdrop:"static"})}),$(document).ready(function(){$(".acceptcookies-summer").click(function(){return $("#CC_Alert-summer").hide(),createCookie("hide-modal-summer",!0,1),$("body").removeClass("modal-open"),$(".modal-backdrop").remove(),!1}),readCookie("hide-modal-summer")?$("#CC_Alert-summer").hide():$("#CC_Alert-summer").modal({backdrop:"static"})});var now=new Date;function createCookie(e,o,t){if(t){var n=new Date;n.setTime(n.getTime()+18e5);var i="; expires="+n.toGMTString()}else var i="";document.cookie=e+"="+o+i+"; path=/"}function readCookie(e){for(var o=e+"=",t=document.cookie.split(";"),n=0;n<t.length;n++){for(var i=t[n];" "==i.charAt(0);)i=i.substring(1,i.length);if(0==i.indexOf(o))return i.substring(o.length,i.length)}return null}function eraseCookie(e){createCookie(e,"",-1)}now.setTime(now.getTime()+36e5),document.cookie="name=value; expires="+now.toUTCString()+"; path=/",/*!
+function formHandler() {
+    var destination = document.KeyWordSearch.site.options[
+        document.KeyWordSearch.site.selectedIndex
+    ].value;
+
+    window.location.href = destination;
+}
+
+function js_PopUpWindow(width, height, url) {
+    alert("Warning: This link will open a popup window. Please adjust your browser settings to allow popups.");
+
+    var settings = "width=" + width + ",height=" + height + ",resizable=yes,status=yes,scrollbars=no";
+    settings += "left=10,";
+    settings += "top=10";
+
+    newWindow = window.open(url, "PopUpWindow", settings);
+}
+
+function popupWarning(url) {
+    if (
+        confirm(
+            "Warning: This link will open a popup window for an offsite URL.  Please adjust your browser settings to allow popups.\nSelect 'OK' to open a new window or select 'Cancel' to navigate without a popup."
+        ) === true
+    ) {
+        window.open(url);
+    } else {
+        window.location.href = url;
+    }
+}
+
+function photo_detail(src, alt) {
+    window.location.href = "/scripts/photo_detail.asp?src=" + src + "&alt=" + alt;
+}
+
+function popupWarning_subscribe(url) {
+    if (
+        confirm(
+            "Warning: This link will open a popup window.  Please adjust your browser settings to allow popups.\nDo you want to continue?  Select 'OK' to continue or select 'Cancel' to navigate without a popup."
+        ) === true
+    ) {
+        window.open(url, "name", "height=275, width=350");
+    } else {
+        window.location.href = url;
+    }
+}
+
+function popupWarning_offcampus(url) {
+    if (
+        confirm(
+            "Warning: This link will open content located on another site not associated with Cerritos College. We cannot ensure accessibility of pages visited. Please adjust your browser settings to allow popups.\n\nDo you want to continue?"
+        ) !== true
+    ) {
+        return false;
+    }
+
+    window.open(url, "_blank");
+}
+
+function popup_offcampus_simple(url) {
+    if (
+        confirm(
+            "Warning: This link navigates away from Cerritos College. Please adjust your browser settings to allow popups."
+        ) !== true
+    ) {
+        return false;
+    }
+
+    window.open(url);
+}
+
+function popupWarningEdit(url) {
+    !window.opera && navigator.userAgent.indexOf(" OPR/");
+    Object.prototype.toString.call(window.HTMLElement).indexOf("Constructor");
+    window.chrome;
+
+    if (document.documentMode) {
+        alert("Warning: OU Campus does not work with IE. Please use Google Chrome for best results.");
+    } else {
+        window.location.href = url;
+    }
+}
+
+var RecaptchaOptions = {
+    theme: "white"
+};
+
+$(document).ready(function () {
+    $(".close-icon").click(function () {
+        $("#emergencyNotice").hide(750);
+        createCookie("hide", true, 1);
+        return false;
+    });
+
+    if (readCookie("hide")) {
+        $("#emergencyNotice").hide();
+    } else {
+        $("#emergencyNotice").show();
+    }
+});
+
+$(document).ready(function () {
+    $(".close-icon").click(function () {
+        $("#emergencyNotice-2").hide(750);
+        createCookie("hide-2", true, 1);
+        return false;
+    });
+
+    if (readCookie("hide-2")) {
+        $("#emergencyNotice-2").hide();
+    } else {
+        $("#emergencyNotice-2").show();
+    }
+});
+
+$(document).ready(function () {
+    $(".acceptcookies-2").click(function () {
+        $("#CC_Alert-2").hide();
+        createCookie("hide-modal", true, 1);
+        $("body").removeClass("modal-open");
+        $(".modal-backdrop").remove();
+        return false;
+    });
+
+    if (readCookie("hide-modal")) {
+        $("#CC_Alert-2").hide();
+    } else {
+        $("#CC_Alert-2").modal({
+            backdrop: "static"
+        });
+    }
+});
+
+$(document).ready(function () {
+    $(".acceptcookies-summer").click(function () {
+        $("#CC_Alert-summer").hide();
+        createCookie("hide-modal-summer", true, 1);
+        $("body").removeClass("modal-open");
+        $(".modal-backdrop").remove();
+        return false;
+    });
+
+    if (readCookie("hide-modal-summer")) {
+        $("#CC_Alert-summer").hide();
+    } else {
+        $("#CC_Alert-summer").modal({
+            backdrop: "static"
+        });
+    }
+});
+
+var now = new Date();
+
+function createCookie(name, value, days) {
+    var expires;
+
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + 1800000);
+        expires = "; expires=" + date.toGMTString();
+    } else {
+        expires = "";
+    }
+
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+
+        while (cookie.charAt(0) === " ") {
+            cookie = cookie.substring(1, cookie.length);
+        }
+
+        if (cookie.indexOf(nameEQ) === 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
+        }
+    }
+
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name, "", -1);
+}
+
+now.setTime(now.getTime() + 3600000);
+document.cookie = "name=value; expires=" + now.toUTCString() + "; path=/";
+
+/*!
   jQuery a11yExpandable plugin
   @name jquery.a11yExpandable.js
   @author Heydon (heydon@heydonworks.com or @heydonworks)
@@ -7,4 +199,59 @@ function formHandler(){var e=document.KeyWordSearch.site.options[document.KeyWor
   @category jQuery Plugin
   @copyright (c) 2015 (Heydon Pickering)
   @license Licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) license.
-*/ $(document).ready(function(){var e;(e=jQuery).fn.a11yExpandable=function(){return this.each(function(){var o=e(this);o.attr({"aria-expanded":"false","aria-controls":o.attr("data-expandable")});var t=e("#"+o.attr("data-expandable")).attr({"aria-hidden":"true",class:"expandable"});o.on("click",function(){var n="false"!==e(this).attr("aria-expanded");o.attr("aria-expanded",!n),t.attr("aria-hidden",n)})})},$("[data-expandable]").a11yExpandable()}),$(function(){$("#hide_t_rows").hide(),$("#btn1").click(function(){$(".buttonInactive").not(this).removeClass("buttonInactive"),$(this).toggleClass("buttonActive"),$(this).hasClass("buttonActive")?($("#hide_t_rows").show(),$("#btn1").html("Less Majors")):($("#hide_t_rows").hide(),$("#btn1").html("More Majors"))})}),$(window).load(function(){$(".search").on("shown.bs.dropdown",function(){var e=$(this).find("input:text").first();setTimeout(function(){e.focus()},100)})});
+*/
+$(document).ready(function () {
+    var $ = jQuery;
+
+    $.fn.a11yExpandable = function () {
+        return this.each(function () {
+            var trigger = $(this);
+
+            trigger.attr({
+                "aria-expanded": "false",
+                "aria-controls": trigger.attr("data-expandable")
+            });
+
+            var target = $("#" + trigger.attr("data-expandable")).attr({
+                "aria-hidden": "true",
+                "class": "expandable"
+            });
+
+            trigger.on("click", function () {
+                var expanded = $(this).attr("aria-expanded") !== "false";
+
+                trigger.attr("aria-expanded", !expanded);
+                target.attr("aria-hidden", expanded);
+            });
+        });
+    };
+
+    $("[data-expandable]").a11yExpandable();
+});
+
+$(function () {
+    $("#hide_t_rows").hide();
+
+    $("#btn1").click(function () {
+        $(".buttonInactive").not(this).removeClass("buttonInactive");
+        $(this).toggleClass("buttonActive");
+
+        if ($(this).hasClass("buttonActive")) {
+            $("#hide_t_rows").show();
+            $("#btn1").html("Less Majors");
+        } else {
+            $("#hide_t_rows").hide();
+            $("#btn1").html("More Majors");
+        }
+    });
+});
+
+$(window).load(function () {
+    $(".search").on("shown.bs.dropdown", function () {
+        var input = $(this).find("input:text").first();
+
+        setTimeout(function () {
+            input.focus();
+        }, 100);
+    });
+});

@@ -45,23 +45,7 @@ exclude-result-prefixes="xsl xs ou ouc">
 
 	<xsl:template name="render-include-menu">
 		<xsl:if test="$include-menu-node and $include-menu-text != ''">
-			<xsl:choose>
-				<xsl:when test="$ou:filename = 'deptnav.inc'">
-					<div class="card shadow-sm">
-						<nav class="sidebar-nav">
-							<xsl:apply-templates select="$include-menu-node" />
-						</nav>
-					</div>
-				</xsl:when>
-				<xsl:when test="$ou:filename = 'deptinfo.inc'">
-					<div id="deptinfo" class="card shadow-sm mt-4 px-3 py-1">
-						<xsl:apply-templates select="$include-menu-node" />
-					</div>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:apply-templates select="$include-menu-node" />
-				</xsl:otherwise>
-			</xsl:choose>
+			<xsl:apply-templates select="$include-menu-node" />
 		</xsl:if>
 	</xsl:template>
 	

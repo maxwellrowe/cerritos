@@ -170,7 +170,10 @@
 						
 							<!-- just show the local link as it is  -->
 							<xsl:otherwise>
-								<xsl:copy-of select="."/>
+								<xsl:copy>
+									<xsl:copy-of select="@*[not(local-name() = 'target')]"/>
+									<xsl:apply-templates select="node()"/>
+								</xsl:copy>
 							</xsl:otherwise>
 						<!-- end local to web server files  -->
 						</xsl:choose>
@@ -218,7 +221,10 @@
 
 				
 				<xsl:otherwise>
-					<xsl:copy-of select="."/>
+					<xsl:copy>
+						<xsl:copy-of select="@*[not(local-name() = 'target')]"/>
+						<xsl:apply-templates select="node()"/>
+					</xsl:copy>
 				</xsl:otherwise>
 			</xsl:choose>
 			

@@ -33,6 +33,8 @@
 	9. Testimonial Slider
 	10. Events
 	11. News
+	12. Collapse
+	13. Card(s) as Link
 	-->
 
 	<!-- Component 1: Placeholder for Components with no Preview -->
@@ -564,6 +566,99 @@
 				</xsl:choose>
 			</div>
 		</div>
+	</xsl:template>
+
+	<!-- 12. Collapse -->
+	<xsl:template match="ouc:component[@name='cerritos-component-collapse']">
+		<xsl:variable name="component-id" select="generate-id()" />
+
+		<div class="cerritos-component-wrapper cerritos-component-collapse">
+			<xsl:for-each select="div[@class='collapse-item']">
+				<xsl:variable name="button-style" select="normalize-space(div[@class='collapse-button-style'])" />
+				<xsl:variable name="button-width" select="normalize-space(div[@class='collapse-button-width'])" />
+				<xsl:variable name="title" select="normalize-space(div[@class='collapse-title'])" />
+				<xsl:variable name="collapse-id" select="concat($component-id, '-panel-', position())" />
+				<xsl:variable name="button-classes" select="normalize-space(string-join(('cerritos-component-collapse__button', 'collapsed', $button-style, $button-width), ' '))" />
+				<xsl:variable name="has-content" select="exists(div[@class='collapse-content']/node()[not(self::ouc:editor) and not(self::text()[not(normalize-space())])])" />
+				<xsl:variable name="has-asset-content" select="exists(div[@class='collapse-asset']/node()[not(self::ouc:editor) and not(self::text()[not(normalize-space())])])" />
+
+				<div class="cerritos-component-collapse__item">
+					<button
+						class="{$button-classes}"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#{$collapse-id}"
+						aria-expanded="false"
+						aria-controls="{$collapse-id}">
+						<span class="cerritos-component-collapse__title">
+							<xsl:value-of select="$title" />
+						</span>
+						<span class="cerritos-component-collapse__toggle-icon fa-sharp fa-regular fa-plus" aria-hidden="true"></span>
+					</button>
+					<div id="{$collapse-id}" class="collapse cerritos-component-collapse__panel">
+						<div class="cerritos-component-collapse__content">
+							<xsl:if test="$has-content">
+								<div class="cerritos-component-collapse__wysiwyg">
+									<xsl:apply-templates select="div[@class='collapse-content']/node()" />
+								</div>
+							</xsl:if>
+							<xsl:if test="$has-asset-content">
+								<div class="cerritos-component-collapse__asset">
+									<xsl:apply-templates select="div[@class='collapse-asset']/node()" />
+								</div>
+							</xsl:if>
+						</div>
+					</div>
+				</div>
+			</xsl:for-each>
+		</div>
+	</xsl:template>
+
+	<!-- 13. Card(s) as Link -->
+	<xsl:template match="ouc:component[@name='cerritos-component-card-as-link']">
+		<xsl:variable name="card-style" select="normalize-space(div[@class='card-style'])" />
+		<xsl:variable name="title-bg" select="normalize-space(div[@class='title-bg'])" />
+		<xsl:variable name="title-color" select="normalize-space(div[@class='title-color'])" />
+		<xsl:variable name="title-size" select="normalize-space(div[@class='title-size'])" />
+		<xsl:variable name="card-shadow" select="normalize-space(div[@class='card-shadow'])" />
+		<xsl:variable name="alignment" select="normalize-space(div[@class='alignment'])" />
+
+		<xsl:for-each select="div[@class='cards']/div[@class='card']">
+			<xsl:variable name="title" select="normalize-space(div[@class='title'])" />
+			<xsl:variable name="image" select="div[@class='image']/node()" />
+			<xsl:variable name="content" select="div[@class='content']/node()" />
+			<xsl:variable name="asset" select="div[@class='asset']/node()" />
+			<xsl:variable name="url" select="normalize-space(div[@class='url'])" />
+			<xsl:variable name="card-classes" select="normalize-space(string-join(('cerritos-component-card-as-link', 'card', 'h-100', 'overflow-hidden', 'match-height-row', $card-style, $card-shadow), ' '))" />
+			<xsl:variable name="title-classes" select="normalize-space(string-join(($title-size, $title-bg, $title-color), ' '))" />
+
+			<div class="col">
+				<a href="{$url}" class="{$card-classes}">
+					<xsl:if test="exists($image)">
+						<div class="cerritos-component-card-as-link__image">
+							<xsl:apply-templates select="div[@class='image']/node()" />
+						</div>
+					</xsl:if>
+					<div class="card-body p-0">
+						<xsl:if test="$title != ''">
+							<div class="cerritos-component-card-as-link__title text-{$alignment} {$title-classes} px-4 py-3">
+								<xsl:value-of select="$title" />
+							</div>
+						</xsl:if>
+						<xsl:if test="exists($content)">
+							<div class="cerritos-component-card-as-link__content px-4 py-3">
+								<xsl:apply-templates select="div[@class='content']/node()" />
+							</div>
+						</xsl:if>
+						<xsl:if test="exists($asset)">
+							<div class="cerritos-component-card-as-link__asset px-4 py-3">
+								<xsl:apply-templates select="div[@class='asset']/node()" />
+							</div>
+						</xsl:if>
+					</div>
+				</a>
+			</div>
+		</xsl:for-each>
 	</xsl:template>
 
 </xsl:stylesheet>

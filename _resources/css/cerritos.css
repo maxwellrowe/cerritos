@@ -1,5 +1,24 @@
 /* Custom CSS for Cerritos College */
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+}
+
+:target {
+    scroll-margin-top: 1rem;
+}
+
+@media screen and (max-width: 991px) {
+    html {
+        scroll-padding-top: 6rem;
+    }
+
+    :target {
+        scroll-margin-top: 6rem;
+    }
+}
+
 /* Links & Buttons */
 a[rel="external"],
 a[target="_blank"],
@@ -22,6 +41,21 @@ a[target="_blank"]::after {
     margin-inline-start: 0.5rem;
 }
 
+h1 a[rel="external"]::after,
+h1 a[target="_blank"]::after,
+h2 a[rel="external"]::after,
+h2 a[target="_blank"]::after,
+h3 a[rel="external"]::after,
+h3 a[target="_blank"]::after,
+h4 a[rel="external"]::after,
+h4 a[target="_blank"]::after,
+h5 a[rel="external"]::after,
+h5 a[target="_blank"]::after,
+h6 a[rel="external"]::after,
+h6 a[target="_blank"]::after {
+    font-size: 50%;
+}
+
 a[href$=".pdf" i]::after,
 a[href*=".pdf?" i]::after,
 a[href*=".pdf#" i]::after {
@@ -40,7 +74,7 @@ a.button.full-width:focus {
     text-decoration-line: none !important;
 }
 
-.btn {
+.btn:not(.btn-sm):not(.btn-lg) {
     --bs-btn-font-size: clamp(0.875rem, 0.83rem + 0.22vw, 1rem);
     --bs-btn-padding-x: var(--space-4);
     --bs-btn-padding-y: 0.625rem;
@@ -56,6 +90,20 @@ a.button.full-width:focus {
 }
 .btn.btn-white:hover {
     color: var(--bs-warning);
+}
+.btn.btn-link,
+.btn.btn-link:hover,
+.btn.btn-link:focus,
+.btn.btn-link:focus-visible {
+    box-shadow: none;
+}
+.card:not([class*="bg-"]) {
+    background-color: transparent;
+}
+
+.card .card:not([class*="bg-"]),
+.well .card:not([class*="bg-"]) {
+    border-color: transparent;
 }
 .btn.btn-circle {
     border-radius: 9999px;
@@ -85,6 +133,27 @@ a.button.full-width:focus {
 
 #maincontent img {
     max-width: 100%;
+}
+
+#maincontent img.left,
+#maincontent img.right {
+    display: block;
+    float: none;
+    margin: 0 0 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    #maincontent img.left {
+        display: inline;
+        float: left;
+        margin: 0 10px 10px 0;
+    }
+
+    #maincontent img.right {
+        display: inline;
+        float: right;
+        margin: 0 0 10px 10px;
+    }
 }
 
 #searchDiv form.gsc-search-box {
@@ -545,6 +614,10 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     font-size: 1.25rem;
 }
 
+#deptinfo img {
+    max-width: 100%;
+}
+
 /* Department Home Hero */
 .department.home #top-panel {
     height: auto;
@@ -657,6 +730,15 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     margin-top: 0;
 }
 
+#maincontent .text-white > h1,
+#maincontent .text-white > h2,
+#maincontent .text-white > h3,
+#maincontent .text-white > h4,
+#maincontent .text-white > h5,
+#maincontent .text-white > h6 {
+    color: inherit;
+}
+
 #maincontent h2 + h3,
 #maincontent h2 + h4,
 #maincontent h3 + h4,
@@ -666,24 +748,39 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     margin-top: 0.75rem;
 }
 
-#maincontent p,
-#maincontent ul:not(.nav):not(.nav-tabs):not(.dropdown-menu):not(.pagination),
-#maincontent ol:not(.breadcrumb),
-#maincontent dl,
-#maincontent blockquote,
-#maincontent table,
-#maincontent .table-responsive,
-#maincontent .accordion,
-#maincontent .row,
-#maincontent .well,
-#maincontent .feature-box,
-#maincontent .responsive-video {
+#maincontent :where(
+    p,
+    ul:not(.nav):not(.nav-tabs):not(.dropdown-menu):not(.pagination),
+    ol:not(.breadcrumb),
+    dl,
+    blockquote,
+    table,
+    .table-responsive,
+    .accordion,
+    .row,
+    .well,
+    .feature-box,
+    .responsive-video
+) {
     margin: 0 0 1rem;
 }
 
-#maincontent ul:not(.nav):not(.nav-tabs):not(.dropdown-menu):not(.pagination):not(.list-group),
-#maincontent ol:not(.breadcrumb) {
+#maincontent :where(
+    ul:not(.nav):not(.nav-tabs):not(.dropdown-menu):not(.pagination):not(.list-group),
+    ol:not(.breadcrumb)
+) {
     padding-left: 3rem;
+}
+
+#maincontent .well :where(
+    ul:not(.nav):not(.nav-tabs):not(.dropdown-menu):not(.pagination):not(.list-group),
+    ol:not(.breadcrumb)
+),
+#maincontent .card :where(
+    ul:not(.nav):not(.nav-tabs):not(.dropdown-menu):not(.pagination):not(.list-group),
+    ol:not(.breadcrumb)
+) {
+    padding-left: 2rem;
 }
 
 #maincontent li:not(.nav-item):not(.breadcrumb-item):not(.page-item):not(.list-group-item) {
@@ -744,7 +841,7 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     height: auto;
     display: flex;
     align-items: flex-end;
-    background-position: center center;
+    background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -840,6 +937,7 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
     align-items: center;
     justify-content: center;
     white-space: nowrap;
+    gap: 0.5rem;
 }
 
 /* Landing Bottom Feature */
@@ -977,4 +1075,3 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
         width: 20rem;
     }
 }
-

@@ -31,19 +31,32 @@
 			if ($LeftNav != '') then $LeftNav
 			else if ($props-leftnav-path != '') then $props-leftnav-path
 			else $deptnav-path"/>
+		<xsl:variable name="deptnav-prod-path" select="concat($domain, $deptnav-include-path)"/>
+		<xsl:variable name="deptnav-raw" select="
+			if ($deptnav-include-path != '' and unparsed-text-available($deptnav-prod-path) and not(contains(unparsed-text($deptnav-prod-path), 'Error processing SSI file')) and not(contains(unparsed-text($deptnav-prod-path), 'Page Not Found')))
+			then unparsed-text($deptnav-prod-path)
+			else ''"/>
+		<xsl:variable name="deptnav-text" select="
+			normalize-space(
+				replace(
+					replace(
+						replace($deptnav-raw, '&lt;!--.*?--&gt;', ' ', 's'),
+						'&lt;[^&gt;]+&gt;',
+						' ',
+						's'
+					),
+					'&nbsp;|&#160;',
+					' '
+				)
+			)"/>
 		
-		<xsl:choose>
-			<xsl:when test="$ou:action = 'pub'">
-				<xsl:if test="$deptnav-include-path != ''">
+		<xsl:if test="$deptnav-text != ''">
+			<div class="card shadow-sm">
+				<nav class="sidebar-nav">
 					<xsl:copy-of select="ou:ssi($deptnav-include-path)" />
-				</xsl:if>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:call-template name="unparsed-include-file">
-					<xsl:with-param name="path" select="$deptnav-include-path"/>
-				</xsl:call-template>
-			</xsl:otherwise>
-		</xsl:choose>
+				</nav>
+			</div>
+		</xsl:if>
 	</xsl:template>
 	
 	<!--Sidebar Nav Mobile -->
@@ -56,39 +69,52 @@
 			if ($LeftNav != '') then $LeftNav
 			else if ($props-leftnav-path != '') then $props-leftnav-path
 			else $deptnav-path"/>
+		<xsl:variable name="deptnav-prod-path" select="concat($domain, $deptnav-include-path)"/>
+		<xsl:variable name="deptnav-raw" select="
+			if ($deptnav-include-path != '' and unparsed-text-available($deptnav-prod-path) and not(contains(unparsed-text($deptnav-prod-path), 'Error processing SSI file')) and not(contains(unparsed-text($deptnav-prod-path), 'Page Not Found')))
+			then unparsed-text($deptnav-prod-path)
+			else ''"/>
+		<xsl:variable name="deptnav-text" select="
+			normalize-space(
+				replace(
+					replace(
+						replace($deptnav-raw, '&lt;!--.*?--&gt;', ' ', 's'),
+						'&lt;[^&gt;]+&gt;',
+						' ',
+						's'
+					),
+					'&nbsp;|&#160;',
+					' '
+				)
+			)"/>
 
-		<button 
-			type="button" 
-			class="d-flex align-items-center justify-content-between btn btn-warning w-100 gap-2 shadow-none rounded-0"
-			data-bs-toggle="collapse"
-			data-bs-target="#sidebar-nav-mobile"
-			aria-expanded="false"
-			aria-conrols="sidebar-nav-mobile"
-		>
-			<span class="d-flex align-items-center justify-content-center gap-2">
-				<span class="fa-sharp fa-regular fa-bars-sort"></span>
-				<span>In This Section</span>
-			</span>
-			<span class="fa-sharp fa-regular fa-plus" aria-hidden="true"></span>
-		</button>
-		
-		<div
-			id="sidebar-nav-mobile"
-			class="collapse"
-		>
-			<xsl:choose>
-				<xsl:when test="$ou:action = 'pub'">
-					<xsl:if test="$deptnav-include-path != ''">
+		<xsl:if test="$deptnav-text != ''">
+			<button 
+				type="button" 
+				class="d-flex align-items-center justify-content-between btn btn-warning w-100 gap-2 shadow-none rounded-0"
+				data-bs-toggle="collapse"
+				data-bs-target="#sidebar-nav-mobile"
+				aria-expanded="false"
+				aria-conrols="sidebar-nav-mobile"
+			>
+				<span class="d-flex align-items-center justify-content-center gap-2">
+					<span class="fa-sharp fa-regular fa-bars-sort"></span>
+					<span>In This Section</span>
+				</span>
+				<span class="fa-sharp fa-regular fa-plus" aria-hidden="true"></span>
+			</button>
+			
+			<div
+				id="sidebar-nav-mobile"
+				class="collapse"
+			>
+				<div class="card shadow-sm">
+					<nav class="sidebar-nav">
 						<xsl:copy-of select="ou:ssi($deptnav-include-path)" />
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:call-template name="unparsed-include-file">
-						<xsl:with-param name="path" select="$deptnav-include-path"/>
-					</xsl:call-template>
-				</xsl:otherwise>
-			</xsl:choose>
-		</div>
+					</nav>
+				</div>
+			</div>
+		</xsl:if>
 		
 	</xsl:template>
 	
@@ -102,7 +128,7 @@
 			else $deptinfo-path"/>
 		<xsl:variable name="deptinfo-prod-path" select="concat($domain, $deptinfo-include-path)"/>
 		<xsl:variable name="deptinfo-raw" select="
-			if (unparsed-text-available($deptinfo-prod-path) and not(contains(unparsed-text($deptinfo-prod-path), 'Page Not Found')))
+			if ($deptinfo-include-path != '' and unparsed-text-available($deptinfo-prod-path) and not(contains(unparsed-text($deptinfo-prod-path), 'Error processing SSI file')) and not(contains(unparsed-text($deptinfo-prod-path), 'Page Not Found')))
 			then unparsed-text($deptinfo-prod-path)
 			else ''"/>
 		<xsl:variable name="deptinfo-text" select="
@@ -119,18 +145,11 @@
 				)
 			)"/>
 		 
-		<xsl:choose>
-			<xsl:when test="$ou:action = 'pub'">
-				<xsl:if test="$deptinfo-include-path != ''">
-					<xsl:copy-of select="ou:ssi($deptinfo-include-path)" />
-				</xsl:if>
-			</xsl:when>
-			<xsl:when test="$deptinfo-text != ''">
-				<xsl:call-template name="unparsed-include-file">
-				  <xsl:with-param name="path" select="$deptinfo-include-path"/>
-				</xsl:call-template>
-			</xsl:when>
-		</xsl:choose>
+		<xsl:if test="$deptinfo-text != ''">
+			<div id="deptinfo" class="card shadow-sm mt-4 px-3 py-1">
+				<xsl:copy-of select="ou:ssi($deptinfo-include-path)" />
+			</div>
+		</xsl:if>
 	</xsl:template>
 	
 	<!-- Sidebar Legacy - fallback for old templates -->
