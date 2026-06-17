@@ -29,61 +29,56 @@
 	
 	<!-- Imports -->
 	<xsl:import href="common.xsl"/>
-	<xsl:import href="_shared/sidebar.xsl" />
+	
 	
 	<!-- Set Body Classes-->
 	<xsl:param name="body-classes" select="'department inside'"/>
 	
 	<xsl:template name="page-content">
-	
-		<div class="body-wrap">
-			<div class="clearfix">
+		<xsl:choose>
+			<xsl:when test="ou:pcf-param('page-fullwidth') = 'true'">
+				<main id="maincontent">
+					<xsl:apply-templates select="document/ouc:div[@label='maincontent']" />	
+				</main>
+			</xsl:when>
+			<xsl:otherwise>
+				<div class="container-xxl py-5">
+					<div class="row">
+						<xsl:choose>
+							<xsl:when test="ou:pcf-param('hide-left-nav') = 'true' and ou:pcf-param('hide-dept-info') = 'true'">
+								<!-- Main Content -->
+								<main id="maincontent" class="col-12">
+									<div id="skiptocontent"></div>
+									<xsl:apply-templates select="document/ouc:div[@label='maincontent']" />	
+								</main>
+							</xsl:when>
+							<xsl:otherwise>
+								
 
-			   <!-- Sidebar -->
-			   <xsl:call-template name="sidebar"/>
-
-
-				<!-- Main Content -->
-				<div id="maincontent" class="col-sm-8 col-md-9" role="main">
-					<div id="skiptocontent"></div>
-
-					<!-- Breadcrumbs START - based on imported templates -->
-					<xsl:variable name="legacy-breadcrumbs" select="ou:pcf-param('legacy-breadcrumbs')" />
-					<xsl:choose>
-						<xsl:when test="ou:pcf-param('hide-breadcrumbs') and ou:pcf-param('hide-breadcrumbs') = 'true'">
-							<!-- Do Nothing -->
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:choose>
-								<xsl:when test="$legacy-breadcrumbs = 'enabled'">
-									<xsl:call-template name="legacyBreadcrumbs"/>
-								</xsl:when>
-								<xsl:when test="$legacy-breadcrumbs != 'disabled'">
-									<xsl:call-template name="legacyBreadcrumbs"/>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:call-template name="breadcrumbsList" />
-								</xsl:otherwise>
-							</xsl:choose>
-						</xsl:otherwise>
-					</xsl:choose>
-					<!-- Breadcrumbs END -->
-
-
-
-					<!-- Inside Page Content with Editable Region -->
-					<div id="contentcontainer">
-						<!-- heading -->
-						<h2><xsl:value-of select="$Title" disable-output-escaping="yes" /></h2>
-
-						<!-- other inside content -->
-						<xsl:apply-templates select="document/ouc:div[@label='maincontent']" />								
-
+								<!-- Main Content -->
+								<main id="maincontent" class="col-12 col-lg-8 col-xl-9">
+									<div id="skiptocontent"></div>
+									<xsl:apply-templates select="document/ouc:div[@label='maincontent']" />	
+								</main>
+								
+								<!-- Sidebar -->
+								<div class="col-12 col-lg-4 col-xl-3">
+									<xsl:if test="lower-case(normalize-space(ou:pcf-param('hide-left-nav'))) != 'true'">
+										<div class="d-none d-lg-block">
+											<xsl:call-template name="sidebar-nav"/>
+										</div>
+									</xsl:if>
+									<xsl:if test="lower-case(normalize-space(ou:pcf-param('hide-dept-info'))) != 'true'">
+										<xsl:call-template name="sidebar-info"/>
+									</xsl:if>
+								</div>
+							</xsl:otherwise>
+						</xsl:choose>
 					</div>
 				</div>
-			</div>
-		</div>
-	
+			</xsl:otherwise>
+		</xsl:choose>
+		
 	</xsl:template>
 
 </xsl:stylesheet>

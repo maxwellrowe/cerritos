@@ -176,7 +176,7 @@
 									<xsl:for-each select="$images[@class='image']">
 										<xsl:variable name="image" select="div[@class='image-url']" />
 										<div class="swiper-slide">
-											<div class="chc__image ratio ratio-4x3" style="background-image: url({$image})"></div>
+											<div class="chc__image ratio ratio-16x9" style="background-image: url({$image})"></div>
 										</div>
 									</xsl:for-each>
 								</div>

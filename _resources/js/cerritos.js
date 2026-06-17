@@ -173,6 +173,162 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Scrollspy Component
+document.addEventListener('DOMContentLoaded', function () {
+    var scrollspyComponents = document.querySelectorAll('.scrollspy-component');
+
+    if (!scrollspyComponents.length) {
+        return;
+    }
+
+    function parsePixelValue(value) {
+        var parsedValue = parseFloat(value);
+
+        return Number.isNaN(parsedValue) ? 0 : parsedValue;
+    }
+
+    scrollspyComponents.forEach(function (component) {
+        var nav = component.querySelector('.nav');
+        var scrollContainer = component.querySelector('[data-bs-spy="scroll"]');
+
+        if (!nav) {
+            return;
+        }
+
+        var items = Array.from(nav.querySelectorAll('.nav-link[href^="#"]')).map(function (link) {
+            var targetId = link.getAttribute('href');
+
+            if (!targetId || targetId === '#') {
+                return null;
+            }
+
+            var section = document.querySelector(targetId);
+
+            if (!section) {
+                return null;
+            }
+
+            return {
+                link: link,
+                section: section,
+                targetId: targetId
+            };
+        }).filter(Boolean);
+
+        if (!items.length) {
+            return;
+        }
+
+        if (scrollContainer) {
+            scrollContainer.removeAttribute('data-bs-spy');
+            scrollContainer.removeAttribute('data-bs-target');
+
+            if (window.bootstrap && window.bootstrap.ScrollSpy) {
+                var bootstrapScrollSpy = window.bootstrap.ScrollSpy.getInstance(scrollContainer);
+
+                if (bootstrapScrollSpy) {
+                    bootstrapScrollSpy.dispose();
+                }
+            }
+        }
+
+        var animationFrame = null;
+
+        function isNavVisible() {
+            return nav.getClientRects().length > 0 && window.getComputedStyle(nav).display !== 'none';
+        }
+
+        function getTriggerAdjustment() {
+            return parsePixelValue(window.getComputedStyle(component).getPropertyValue('--scrollspy-trigger-adjust'));
+        }
+
+        function getNavTriggerY() {
+            return nav.getBoundingClientRect().top + getTriggerAdjustment();
+        }
+
+        function getLinkTriggerY(link) {
+            return link.getBoundingClientRect().top + getTriggerAdjustment();
+        }
+
+        function getClickTriggerY(link) {
+            var linkLabel = link.querySelector('span');
+            var triggerElement = linkLabel || link;
+
+            return triggerElement.getBoundingClientRect().top + getTriggerAdjustment();
+        }
+
+        function setActiveItem(activeIndex) {
+            items.forEach(function (item, index) {
+                var isActive = index === activeIndex;
+
+                item.link.classList.toggle('active', isActive);
+
+                if (isActive) {
+                    item.link.setAttribute('aria-current', 'true');
+                } else {
+                    item.link.removeAttribute('aria-current');
+                }
+            });
+        }
+
+        function getActiveIndex() {
+            var activeIndex = 0;
+
+            items.forEach(function (item, index) {
+                if (item.section.getBoundingClientRect().top <= getLinkTriggerY(item.link)) {
+                    activeIndex = index;
+                }
+            });
+
+            return activeIndex;
+        }
+
+        function updateActiveItem() {
+            animationFrame = null;
+
+            if (!isNavVisible()) {
+                return;
+            }
+
+            setActiveItem(getActiveIndex());
+        }
+
+        function requestActiveItemUpdate() {
+            if (animationFrame !== null) {
+                return;
+            }
+
+            animationFrame = window.requestAnimationFrame(updateActiveItem);
+        }
+
+        items.forEach(function (item, index) {
+            item.link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                var targetTop = window.scrollY + item.section.getBoundingClientRect().top - getClickTriggerY(item.link);
+
+                window.scrollTo({
+                    top: Math.max(0, targetTop),
+                    behavior: 'smooth'
+                });
+
+                if (window.history && window.history.pushState) {
+                    window.history.pushState(null, '', item.targetId);
+                } else {
+                    window.location.hash = item.targetId;
+                }
+
+                setActiveItem(index);
+            });
+        });
+
+        window.addEventListener('scroll', requestActiveItemUpdate, { passive: true });
+        window.addEventListener('resize', requestActiveItemUpdate);
+
+        requestActiveItemUpdate();
+    });
+});
+
 // Mobile Sidebar Navigation Guard
 document.addEventListener('DOMContentLoaded', function () {
     var mobileSidebarToggle = document.querySelector('[data-bs-target="#sidebar-nav-mobile"]');

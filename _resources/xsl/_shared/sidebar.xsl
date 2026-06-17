@@ -31,9 +31,13 @@
 			if ($LeftNav != '') then $LeftNav
 			else if ($props-leftnav-path != '') then $props-leftnav-path
 			else $deptnav-path"/>
+		<xsl:variable name="deptnav-stage-path" select="concat($root, $deptnav-include-path)"/>
 		<xsl:variable name="deptnav-prod-path" select="concat($domain, $deptnav-include-path)"/>
 		<xsl:variable name="deptnav-raw" select="
-			if ($deptnav-include-path != '' and unparsed-text-available($deptnav-prod-path) and not(contains(unparsed-text($deptnav-prod-path), 'Error processing SSI file')) and not(contains(unparsed-text($deptnav-prod-path), 'Page Not Found')))
+			if ($deptnav-include-path = '') then ''
+			else if ($ou:action != 'pub' and unparsed-text-available($deptnav-stage-path))
+			then unparsed-text($deptnav-stage-path)
+			else if (unparsed-text-available($deptnav-prod-path) and not(contains(unparsed-text($deptnav-prod-path), 'Error processing SSI file')) and not(contains(unparsed-text($deptnav-prod-path), 'Page Not Found')))
 			then unparsed-text($deptnav-prod-path)
 			else ''"/>
 		<xsl:variable name="deptnav-text" select="
@@ -53,7 +57,14 @@
 		<xsl:if test="$deptnav-text != ''">
 			<div class="card shadow-sm">
 				<nav class="sidebar-nav">
-					<xsl:copy-of select="ou:ssi($deptnav-include-path)" />
+					<xsl:choose>
+						<xsl:when test="$ou:action = 'pub'">
+							<xsl:copy-of select="ou:ssi($deptnav-include-path)" />
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="$deptnav-raw" disable-output-escaping="yes"/>
+						</xsl:otherwise>
+					</xsl:choose>
 				</nav>
 			</div>
 		</xsl:if>
@@ -69,9 +80,13 @@
 			if ($LeftNav != '') then $LeftNav
 			else if ($props-leftnav-path != '') then $props-leftnav-path
 			else $deptnav-path"/>
+		<xsl:variable name="deptnav-stage-path" select="concat($root, $deptnav-include-path)"/>
 		<xsl:variable name="deptnav-prod-path" select="concat($domain, $deptnav-include-path)"/>
 		<xsl:variable name="deptnav-raw" select="
-			if ($deptnav-include-path != '' and unparsed-text-available($deptnav-prod-path) and not(contains(unparsed-text($deptnav-prod-path), 'Error processing SSI file')) and not(contains(unparsed-text($deptnav-prod-path), 'Page Not Found')))
+			if ($deptnav-include-path = '') then ''
+			else if ($ou:action != 'pub' and unparsed-text-available($deptnav-stage-path))
+			then unparsed-text($deptnav-stage-path)
+			else if (unparsed-text-available($deptnav-prod-path) and not(contains(unparsed-text($deptnav-prod-path), 'Error processing SSI file')) and not(contains(unparsed-text($deptnav-prod-path), 'Page Not Found')))
 			then unparsed-text($deptnav-prod-path)
 			else ''"/>
 		<xsl:variable name="deptnav-text" select="
@@ -110,7 +125,14 @@
 			>
 				<div class="card shadow-sm">
 					<nav class="sidebar-nav">
-						<xsl:copy-of select="ou:ssi($deptnav-include-path)" />
+						<xsl:choose>
+							<xsl:when test="$ou:action = 'pub'">
+								<xsl:copy-of select="ou:ssi($deptnav-include-path)" />
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="$deptnav-raw" disable-output-escaping="yes"/>
+							</xsl:otherwise>
+						</xsl:choose>
 					</nav>
 				</div>
 			</div>
@@ -126,9 +148,13 @@
 			if ($DeptInfo != '') then $DeptInfo
 			else if ($props-deptinfo-path != '') then $props-deptinfo-path
 			else $deptinfo-path"/>
+		<xsl:variable name="deptinfo-stage-path" select="concat($root, $deptinfo-include-path)"/>
 		<xsl:variable name="deptinfo-prod-path" select="concat($domain, $deptinfo-include-path)"/>
 		<xsl:variable name="deptinfo-raw" select="
-			if ($deptinfo-include-path != '' and unparsed-text-available($deptinfo-prod-path) and not(contains(unparsed-text($deptinfo-prod-path), 'Error processing SSI file')) and not(contains(unparsed-text($deptinfo-prod-path), 'Page Not Found')))
+			if ($deptinfo-include-path = '') then ''
+			else if ($ou:action != 'pub' and unparsed-text-available($deptinfo-stage-path))
+			then unparsed-text($deptinfo-stage-path)
+			else if (unparsed-text-available($deptinfo-prod-path) and not(contains(unparsed-text($deptinfo-prod-path), 'Error processing SSI file')) and not(contains(unparsed-text($deptinfo-prod-path), 'Page Not Found')))
 			then unparsed-text($deptinfo-prod-path)
 			else ''"/>
 		<xsl:variable name="deptinfo-text" select="
@@ -147,7 +173,14 @@
 		 
 		<xsl:if test="$deptinfo-text != ''">
 			<div id="deptinfo" class="card shadow-sm mt-4 px-3 py-1">
-				<xsl:copy-of select="ou:ssi($deptinfo-include-path)" />
+				<xsl:choose>
+					<xsl:when test="$ou:action = 'pub'">
+						<xsl:copy-of select="ou:ssi($deptinfo-include-path)" />
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="$deptinfo-raw" disable-output-escaping="yes"/>
+					</xsl:otherwise>
+				</xsl:choose>
 			</div>
 		</xsl:if>
 	</xsl:template>

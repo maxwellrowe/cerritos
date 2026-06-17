@@ -1148,9 +1148,18 @@ body.hero-type-full-width .cerritos-page-breadcrumbs #BreadcrumbList {
 }
 
 /* Scrollspy */
+.scrollspy-component {
+	--scrollspy-trigger-adjust: 0px;
+}
+
 .scrollspy-component .nav {
 	top: 2rem;
 }
+
+.scrollspy-component .scrollspy-section {
+	scroll-margin-top: 2rem;
+}
+
 .scrollspy-component.scrollspy-large .nav {
 	gap: 3rem;
 	align-items: flex-start;

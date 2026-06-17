@@ -43,6 +43,10 @@
 	<xsl:variable name="BottomFeatureHide" select="ou:pcf-param('lp-hide-bottom-feature')" />
 	<xsl:variable name="OtherHide" select="ou:pcf-param('lp-hide-other-content')" />
 	
+	<!-- Helper Variables to integrate with new common.xsl -->
+	<xsl:variable name="lp-hide-sidebar" select="'true'" />
+	<xsl:variable name="lp-hide-page-title" select="'true'" />
+	
 	<!-- Additional Page Head Template -->
 	<xsl:template name="page-head">
 		<!-- CSS -->
@@ -61,17 +65,29 @@
 	
 	<!-- Additional Page Header Template-->
 	<xsl:template name="page-header">
-		<div class="heading" role="region">
+		<div class="heading landing-page-legacy-hero" role="region">
 			<!-- Hero -->
 			<xsl:choose>
 				<xsl:when test="not($HeroBgImage = '')">
 					<div id="about-header" style="background-image: url({$HeroBgImage})">
-						<h2><xsl:value-of select="$Title" disable-output-escaping="yes" /></h2>
+						<div class="container-xxl">
+							<div class="row">
+								<div class="col-12">
+									<h1><xsl:value-of select="$Title" disable-output-escaping="yes" /></h1>
+								</div>
+							</div>
+						</div>
 					</div>
 				</xsl:when>
 				<xsl:otherwise>
 					<div id="about-header">
-						<h2><xsl:value-of select="$Title" disable-output-escaping="yes" /></h2>
+						<div class="container-xxl">
+							<div class="row">
+								<div class="col-12">
+									<h1><xsl:value-of select="$Title" disable-output-escaping="yes" /></h1>
+								</div>
+							</div>
+						</div>
 					</div>
 				</xsl:otherwise>
 			</xsl:choose>
@@ -87,35 +103,37 @@
 	
 	<!-- Page Content Template -->
 	<xsl:template name="page-content">
-		<div class="body-wrap">
-			<div id="content" role="main">  
-				<div id="skiptocontent"></div>
-				<xsl:if test="not($IntroductionHide = 'hide')">
-					<p class="lead-in">
+		<div class="container-xxl py-5">
+			<div class="row">
+				<main id="maincontent" class="col-12">
+					<div id="skiptocontent"></div>
 					<!-- Landing Intro -->
-						<xsl:apply-templates select="document/ouc:div[@label='landingintro']" />
-					</p>
-				</xsl:if>
-				<!-- Main Content -->
-				<xsl:apply-templates select="document/ouc:div[@label='maincontent']" />
-				
-				<xsl:if test="not($OtherHide = 'hide')">
-					<div id="contentDiv" class="clearfix">
-						<!-- Other Content -->
-						<xsl:apply-templates select="document/ouc:div[@label='othercontent']" />
-					</div>
-				</xsl:if>
-				<!-- Bottom Feature -->
-				<xsl:if test="not($BottomFeatureHide = 'hide')">
-					<div id="BottomFeature">
-						<div class="feature-content">
-							<xsl:apply-templates select="document/ouc:div[@label='bottomfeature']" />
+					<xsl:if test="not($IntroductionHide = 'hide')">
+						<p class="lead">
+							<xsl:apply-templates select="document/ouc:div[@label='landingintro']" />
+						</p>
+					</xsl:if>
+					<!-- Main Content -->
+					<xsl:apply-templates select="document/ouc:div[@label='maincontent']" />
+					<xsl:if test="not($OtherHide = 'hide')">
+						<div id="contentDiv" class="clearfix">
+							<!-- Other Content -->
+							<xsl:apply-templates select="document/ouc:div[@label='othercontent']" />
 						</div>
-					</div>
-				</xsl:if>
+					</xsl:if>
+					<!-- Bottom Feature -->
+					<xsl:if test="not($BottomFeatureHide = 'hide')">
+						<div id="BottomFeature">
+							<div class="feature-content">
+								<xsl:apply-templates select="document/ouc:div[@label='bottomfeature']" />
+							</div>
+						</div>
+					</xsl:if>
+				</main>
 			</div>
 		</div>
-	
 	</xsl:template>
+	
+	
 
 </xsl:stylesheet>

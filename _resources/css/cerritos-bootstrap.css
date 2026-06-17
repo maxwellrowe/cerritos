@@ -63,7 +63,7 @@
 	/* Fluid type scale: desktop max values match the Cerritos defaults */
 	--text-xl: clamp(1.25rem, 1.08rem + 0.85vw, 1.5rem);     /* 20 -> 24 */
 	--text-lead: clamp(1.125rem, 0.96rem + 0.82vw, 1.25rem); /* 18 -> 20 */
-	--text-body: clamp(0.9375rem, 0.9rem + 0.18vw, 1rem);    /* 15 -> 16 */
+	--text-body: clamp(0.9375rem, 0.82rem + 0.58vw, 1.125rem); /* 15 -> 18 */
 	--text-small: clamp(0.8125rem, 0.775rem + 0.18vw, 0.875rem); /* 13 -> 14 */
 	--text-xs: clamp(0.6875rem, 0.65rem + 0.18vw, 0.75rem);  /* 11 -> 12 */
 	--text-h5: clamp(1rem, 0.92rem + 0.4vw, 1.125rem);       /* 16 -> 18 */
