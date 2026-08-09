@@ -23,6 +23,8 @@
 	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/solid.min.css"><!-- /_resources/fonts/font-awesome-6-pro/css/solid.min.css -->
 	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/sharp-regular.min.css"><!-- /_resources/fonts/font-awesome-6-pro/css/sharp-regular.min.css -->
 	<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/sharp-solid.min.css"><!-- /_resources/fonts/font-awesome-6-pro/css/sharp-solid.min.css -->
+	<link rel="stylesheet" href="/_resources/fonts/fontawesome-free-6.4.2-web/css/v4-font-face.min.css"><!-- /_resources/fonts/fontawesome-free-6.4.2-web/css/v4-font-face.min.css -->
+	<link rel="stylesheet" href="/_resources/fonts/fontawesome-free-6.4.2-web/css/v4-shims.min.css"><!-- /_resources/fonts/fontawesome-free-6.4.2-web/css/v4-shims.min.css -->
 
 	<!-- Load fonts from Google Fonts CDN -- 10/27/2023 - Open Sans and Roboto Condensed -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">

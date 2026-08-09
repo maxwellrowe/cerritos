@@ -27,6 +27,8 @@ exclude-result-prefixes="xsl xs ou ouc">
 			<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/solid.min.css" />
 			<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/sharp-regular.min.css" />
 			<link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/sharp-solid.min.css" />
+			<link rel="stylesheet" href="/_resources/fonts/fontawesome-free-6.4.2-web/css/v4-font-face.min.css" />
+			<link rel="stylesheet" href="/_resources/fonts/fontawesome-free-6.4.2-web/css/v4-shims.min.css" />
 			<link rel="preconnect" href="https://fonts.googleapis.com" />
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
 			<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&amp;family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet" />

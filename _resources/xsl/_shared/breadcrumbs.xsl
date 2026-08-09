@@ -52,34 +52,37 @@
 		<xsl:param name="path" select="$dirname" /> <!-- defined in the vars xsl as $ou:dirname with a trailing '/' -->
 		<xsl:param name="title" select="$page-title" /> <!-- defined in vars as the title of the current page -->
 		<xsl:variable name="custom-breadcrumb-title" select="normalize-space(document/ouc:properties[@label='config']/parameter[@name='BrcPageTitle'])" />
+		<xsl:variable name="show-current-crumb" select="$custom-breadcrumb-title != '' or ou:pcf-param('custom-hero') = 'enabled'" />
 		
-		<div id="BreadcrumbList">
-			<ol vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumbs">
+		<nav aria-label="breadcrumb" id="BreadcrumbList" class="mb-3">
+			<ol vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumbs breadcrumb">
 				<!-- check for valid breadcrumbStart to prevent infinite recursion -->
 				<xsl:if test="contains($dirname,$breadcrumbStart)">
 					<xsl:call-template name="bc-folders">
 						<xsl:with-param name="path" select="$dirname"/>
+						<xsl:with-param name="show-current-crumb" select="$show-current-crumb" />
 					</xsl:call-template>	
 				</xsl:if>
 
 				<!-- if the file is not the index page, display the final crumb -->
-				<xsl:if test="not(contains($ou:filename,concat('default','.')))">
+				<xsl:if test="not(contains($ou:filename,concat('default','.'))) and $show-current-crumb">
 					<xsl:choose>
 						<xsl:when test="$custom-breadcrumb-title != ''">
-						  <li><xsl:value-of select="ou:decode-entities($custom-breadcrumb-title)" /></li>
+						  <li class="breadcrumb-item"><xsl:value-of select="ou:decode-entities($custom-breadcrumb-title)" /></li>
 						</xsl:when>
 						<xsl:otherwise>
-						  <li><xsl:value-of select="ou:decode-entities($page-title)" /></li>
+						  <li class="breadcrumb-item"><xsl:value-of select="ou:decode-entities($page-title)" /></li>
 						</xsl:otherwise>
 					</xsl:choose>
 					
 				</xsl:if>
 			</ol>
-		</div>
+		</nav>
 	</xsl:template>
 	
 	<xsl:template name="bc-folders">
 	  <xsl:param name="path" />
+	  <xsl:param name="show-current-crumb" select="true()" />
 
 	  <xsl:variable name="this-index-path" select="concat($ou:root, $ou:site, $path, 'default.pcf')" />
 
@@ -98,6 +101,7 @@
 	  <xsl:if test="$path != $breadcrumbStart">
 		<xsl:call-template name="bc-folders">
 		  <xsl:with-param name="path" select="ou:findPrevDir($path)" />
+		  <xsl:with-param name="show-current-crumb" select="$show-current-crumb" />
 		</xsl:call-template>
 	  </xsl:if>
 
@@ -105,15 +109,15 @@
 	  <xsl:if test="$path = '/' or ($index-doc and normalize-space($breadcrumb-title) != '')">
 		<xsl:choose>
 		  <xsl:when test="$path = '/'">
-			<li><a href="{{d:9116620}}"><span class="fa fa-home"></span><span class="sr-only">Home Icon</span></a></li>
+			<li class="breadcrumb-item"><a href="/"><span class="fa fa-home"></span><span class="sr-only">Home Icon</span></a></li>
 		  </xsl:when>
 
-		  <xsl:when test="$path = $dirname and contains($ou:filename,'default.')">
-			<li><xsl:value-of select="ou:decode-entities($breadcrumb-title)"/></li>
+		  <xsl:when test="$path = $dirname and contains($ou:filename,'default.') and $show-current-crumb">
+			<li class="breadcrumb-item active" aria-current="page"><xsl:value-of select="ou:decode-entities($breadcrumb-title)"/></li>
 		  </xsl:when>
 
 		  <xsl:otherwise>
-			<li><a href="{concat($link-start,$path)}"><xsl:value-of select="ou:decode-entities($breadcrumb-title)"/></a></li>
+			<li class="breadcrumb-item"><a href="{concat($link-start,$path)}"><xsl:value-of select="ou:decode-entities($breadcrumb-title)"/></a></li>
 		  </xsl:otherwise>
 		</xsl:choose>
 	  </xsl:if>
@@ -133,6 +137,7 @@
         <xsl:param name="firstdirtest" select="substring(concat('/',tokenize($dirname,'/')[2]),2)" />
         <xsl:param name="Title" select="document/ouc:properties[@label='metadata']/title" />
         <xsl:param name="BrcPageTitle" select="document/ouc:properties[@label='config']/parameter[@name='BrcPageTitle']/text()" />
+		<xsl:variable name="show-current-crumb" select="normalize-space($BrcPageTitle) != '' or ou:pcf-param('custom-hero') = 'enabled'" />
         
         
 		<!-- Previous setup. Comment out due to XSLT Processor Upgrade to Saxon 11.3 5/19/22 https://support.moderncampus.com/troubleshooting/saxon-upgrade.html -->
@@ -169,17 +174,17 @@
                     </xsl:choose>
                 </xsl:variable> 
                 
-                <div id="BreadcrumbList">
+                <nav aria-label="breadcrumb" id="BreadcrumbList" class="mb-3">
                     <xsl:choose>
                         <xsl:when test="(normalize-space($division_title)='' and normalize-space($dept_title)='')">
-                            <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumbs">
-                                <li property="itemListElement" typeof="ListItem">
-                                    <a property="item" typeof="WebPage" href="{{d:9116620}}" title="College Home">
+                            <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumbs breadcrumb">
+                                <li property="itemListElement" class="breadcrumb-item" typeof="ListItem">
+                                    <a property="item" typeof="WebPage" href="/" title="College Home">
                                         <span property="name"><span class="fa fa-home"><span class="sr-only">Home</span></span></span>
                                     </a>
                                     <meta property="position" content="1" />
                                 </li>
-                                <li property="itemListElement" typeof="ListItem">
+                                <li property="itemListElement" class="breadcrumb-item" typeof="ListItem">
                                     <a property="item" typeof="WebPage" href="/{$subsite_folder}/default.htm">
                                         <span property="name">
                                             <xsl:value-of select="$subsite_title" disable-output-escaping="yes" />
@@ -187,23 +192,25 @@
                                     </a>
                                     <meta property="position" content="2" />
                                 </li>
-                                <li property="itemListElement" typeof="ListItem">
-                                    <span property="name" class="title">
-                                        <xsl:value-of select="$page_title" disable-output-escaping="yes" />
-                                    </span>
-                                    <meta property="position" content="3" />
-                                </li>
+								<xsl:if test="$show-current-crumb">
+									<li property="itemListElement" class="breadcrumb-item active" aria-current="page" typeof="ListItem">
+										<span property="name" class="title">
+											<xsl:value-of select="$page_title" disable-output-escaping="yes" />
+										</span>
+										<meta property="position" content="3" />
+									</li>
+								</xsl:if>
                             </ol>
                         </xsl:when>
                         <xsl:when test="(normalize-space($division_title)!='' and normalize-space($dept_title)='')">
-                            <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumbs">
-                                <li property="itemListElement" typeof="ListItem">
-                                    <a property="item" typeof="WebPage" href="{{d:9116620}}" title="College Home">
+                            <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumbs breadcrumb">
+                                <li property="itemListElement" class="breadcrumb-item" typeof="ListItem">
+                                    <a property="item" typeof="WebPage" href="/" title="College Home">
                                         <span property="name"><span class="fa fa-home"><span class="sr-only">Home</span></span></span>
                                     </a>
                                     <meta property="position" content="1" />
                                 </li>
-                                <li property="itemListElement" typeof="ListItem">
+                                <li property="itemListElement" class="breadcrumb-item" typeof="ListItem">
                                     <a property="item" typeof="WebPage" href="/{$division_folder}/default.htm">
                                         <span property="name">
                                             <xsl:value-of select="$division_title" disable-output-escaping="yes" />
@@ -211,7 +218,7 @@
                                     </a>
                                     <meta property="position" content="2" />
                                 </li>
-                                <li property="itemListElement" typeof="ListItem">
+                                <li property="itemListElement" class="breadcrumb-item" typeof="ListItem">
                                     <a property="item" typeof="WebPage" href="/{$subsite_folder}/default.htm">
                                         <span property="name" >
                                             <xsl:value-of select="$subsite_title" disable-output-escaping="yes" />
@@ -219,23 +226,25 @@
                                     </a>
                                     <meta property="position" content="3" />
                                 </li>
-                                <li property="itemListElement" typeof="ListItem">
-                                    <span property="name" class="title">
-                                        <xsl:value-of select="$page_title" disable-output-escaping="yes" />
-                                    </span>
-                                    <meta property="position" content="4" />
-                                </li>
+								<xsl:if test="$show-current-crumb">
+									<li property="itemListElement" class="breadcrumb-item active" aria-current="page" typeof="ListItem">
+										<span property="name" class="title">
+											<xsl:value-of select="$page_title" disable-output-escaping="yes" />
+										</span>
+										<meta property="position" content="4" />
+									</li>
+								</xsl:if>
                             </ol>
                         </xsl:when>
                         <xsl:when test="(normalize-space($division_title)='' and normalize-space($dept_title)!='')">
-                            <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumbs">
-                                <li property="itemListElement" typeof="ListItem">
-                                    <a property="item" typeof="WebPage" href="{{d:9116620}}" title="College Home">
+                            <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumbs breadcrumb">
+                                <li property="itemListElement" class="breadcrumb-item" typeof="ListItem">
+                                    <a property="item" typeof="WebPage" href="/" title="College Home">
                                         <span property="name"><span class="fa fa-home"><span class="sr-only">Home</span></span></span>
                                     </a>
                                     <meta property="position" content="1" />
                                 </li>
-                                <li property="itemListElement" typeof="ListItem">
+                                <li property="itemListElement" class="breadcrumb-item" typeof="ListItem">
                                     <a property="item" typeof="WebPage" href="/{$dept_folder}/default.htm">
                                         <span property="name">
                                             <xsl:value-of select="$dept_title" disable-output-escaping="yes" />
@@ -243,7 +252,7 @@
                                     </a>
                                     <meta property="position" content="2" />
                                 </li>
-                                <li property="itemListElement" typeof="ListItem">
+                                <li property="itemListElement" class="breadcrumb-item" typeof="ListItem">
                                     <a property="item" typeof="WebPage" href="/{$subsite_folder}/default.htm">
                                         <span property="name">
                                             <xsl:value-of select="$subsite_title" disable-output-escaping="yes" />
@@ -251,23 +260,25 @@
                                     </a>
                                     <meta property="position" content="3" />
                                 </li>
-                                <li property="itemListElement" typeof="ListItem">
-                                    <span property="name" class="title">
-                                        <xsl:value-of select="$page_title" disable-output-escaping="yes" />
-                                    </span>
-                                    <meta property="position" content="4" />
-                                </li>
+								<xsl:if test="$show-current-crumb">
+									<li property="itemListElement" class="breadcrumb-item active" aria-current="page" typeof="ListItem">
+										<span property="name" class="title">
+											<xsl:value-of select="$page_title" disable-output-escaping="yes" />
+										</span>
+										<meta property="position" content="4" />
+									</li>
+								</xsl:if>
                             </ol>
                         </xsl:when>
                         <xsl:otherwise>
-                            <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumbs">
-                                <li property="itemListElement" typeof="ListItem">
-                                    <a property="item" typeof="WebPage" href="{{d:9116620}}" title="College Home">
+                            <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumbs breadcrumb">
+                                <li property="itemListElement" class="breadcrumb-item" typeof="ListItem">
+                                    <a property="item" typeof="WebPage" href="/" title="College Home">
                                         <span property="name"><span class="fa fa-home"><span class="sr-only">Home</span></span></span>
                                     </a>
                                     <meta property="position" content="1" />
                                 </li>
-                                <li property="itemListElement" typeof="ListItem">
+                                <li property="itemListElement" class="breadcrumb-item" typeof="ListItem">
                                     <a property="item" typeof="WebPage" href="/{$division_folder}/default.htm">
                                         <span property="name">
                                             <xsl:value-of select="$division_title" disable-output-escaping="yes" />
@@ -275,7 +286,7 @@
                                     </a>
                                     <meta property="position" content="2" />
                                 </li>
-                                <li property="itemListElement" typeof="ListItem">
+                                <li property="itemListElement" class="breadcrumb-item" typeof="ListItem">
                                     <a property="item" typeof="WebPage" href="/{$dept_folder}/default.htm">
                                         <span property="name">
                                             <xsl:value-of select="$dept_title" disable-output-escaping="yes" />
@@ -283,7 +294,7 @@
                                     </a>
                                     <meta property="position" content="3" />
                                 </li>
-                                <li property="itemListElement" typeof="ListItem">
+                                <li property="itemListElement" class="breadcrumb-item" typeof="ListItem">
                                     <a property="item" typeof="WebPage" href="/{$subsite_folder}/default.htm">
                                         <span property="name">
                                             <xsl:value-of select="$subsite_title" disable-output-escaping="yes" />
@@ -291,16 +302,18 @@
                                     </a>
                                     <meta property="position" content="4" />
                                 </li>
-                                <li property="itemListElement" typeof="ListItem">
-                                    <span property="name" class="title">
-                                        <xsl:value-of select="$page_title" disable-output-escaping="yes" />
-                                    </span>
-                                    <meta property="position" content="5" />
-                                </li>
+								<xsl:if test="$show-current-crumb">
+									<li property="itemListElement" class="breadcrumb-item active"  aria-current="page" typeof="ListItem">
+										<span property="name" class="title">
+											<xsl:value-of select="$page_title" disable-output-escaping="yes" />
+										</span>
+										<meta property="position" content="5" />
+									</li>
+								</xsl:if>
                             </ol>
                         </xsl:otherwise>
                     </xsl:choose>
-                </div>
+                </nav>
             </xsl:if>
         </xsl:for-each>
         

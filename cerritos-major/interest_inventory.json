@@ -1,0 +1,184 @@
+{
+  "riasec_survey": [
+    {
+      "program_id": 1,
+      "code": "R",
+      "theme": "Realistic",
+      "description": "Build, repair, install, or maintain equipment, vehicles, tools, or facilities."
+    },
+    {
+      "program_id": 2,
+      "code": "R",
+      "theme": "Realistic",
+      "description": "Work outdoors or use physical skill to complete practical tasks."
+    },
+    {
+      "program_id": 3,
+      "code": "R",
+      "theme": "Realistic",
+      "description": "Use machines, tools, instruments, or technical equipment to solve problems."
+    },
+    {
+      "program_id": 4,
+      "code": "R",
+      "theme": "Realistic",
+      "description": "Inspect, test, assemble, or operate mechanical or production systems."
+    },
+    {
+      "program_id": 5,
+      "code": "R",
+      "theme": "Realistic",
+      "description": "Learn by doing hands-on projects rather than mainly reading or discussing."
+    },
+    {
+      "program_id": 6,
+      "code": "I",
+      "theme": "Investigative",
+      "description": "Analyze data, evidence, symptoms, or patterns to find an answer."
+    },
+    {
+      "program_id": 7,
+      "code": "I",
+      "theme": "Investigative",
+      "description": "Conduct experiments, research, or technical investigations."
+    },
+    {
+      "program_id": 8,
+      "code": "I",
+      "theme": "Investigative",
+      "description": "Solve math, science, technology, or logic-based problems."
+    },
+    {
+      "program_id": 9,
+      "code": "I",
+      "theme": "Investigative",
+      "description": "Use computers, lab tools, or technical systems to explore how things work."
+    },
+    {
+      "program_id": 10,
+      "code": "I",
+      "theme": "Investigative",
+      "description": "Ask questions, compare options, and evaluate evidence before deciding."
+    },
+    {
+      "program_id": 11,
+      "code": "A",
+      "theme": "Artistic",
+      "description": "Create visual art, design, music, writing, film, performance, or media."
+    },
+    {
+      "program_id": 12,
+      "code": "A",
+      "theme": "Artistic",
+      "description": "Express ideas in original, imaginative, or unconventional ways."
+    },
+    {
+      "program_id": 13,
+      "code": "A",
+      "theme": "Artistic",
+      "description": "Design presentations, layouts, images, spaces, or digital experiences."
+    },
+    {
+      "program_id": 14,
+      "code": "A",
+      "theme": "Artistic",
+      "description": "Tell stories, perform, edit, produce, or communicate through creative work."
+    },
+    {
+      "program_id": 15,
+      "code": "A",
+      "theme": "Artistic",
+      "description": "Work in flexible settings where originality and self-expression are valued."
+    },
+    {
+      "program_id": 16,
+      "code": "S",
+      "theme": "Social",
+      "description": "Teach, tutor, coach, counsel, mentor, or advise other people."
+    },
+    {
+      "program_id": 17,
+      "code": "S",
+      "theme": "Social",
+      "description": "Help people improve their health, learning, safety, or well-being."
+    },
+    {
+      "program_id": 18,
+      "code": "S",
+      "theme": "Social",
+      "description": "Listen carefully and support people through challenges or decisions."
+    },
+    {
+      "program_id": 19,
+      "code": "S",
+      "theme": "Social",
+      "description": "Work as part of a service team that supports students, clients, patients, or communities."
+    },
+    {
+      "program_id": 20,
+      "code": "S",
+      "theme": "Social",
+      "description": "Explain information clearly so others can understand and use it."
+    },
+    {
+      "program_id": 21,
+      "code": "E",
+      "theme": "Enterprising",
+      "description": "Lead a team, project, business activity, event, or campaign."
+    },
+    {
+      "program_id": 22,
+      "code": "E",
+      "theme": "Enterprising",
+      "description": "Persuade, negotiate, sell, advocate, or influence decisions."
+    },
+    {
+      "program_id": 23,
+      "code": "E",
+      "theme": "Enterprising",
+      "description": "Set goals, organize resources, and motivate people to achieve results."
+    },
+    {
+      "program_id": 24,
+      "code": "E",
+      "theme": "Enterprising",
+      "description": "Take initiative in competitive, business, public-facing, or leadership settings."
+    },
+    {
+      "program_id": 25,
+      "code": "E",
+      "theme": "Enterprising",
+      "description": "Make decisions under pressure and communicate a clear plan of action."
+    },
+    {
+      "program_id": 26,
+      "code": "C",
+      "theme": "Conventional",
+      "description": "Organize records, schedules, budgets, forms, data, or detailed procedures."
+    },
+    {
+      "program_id": 27,
+      "code": "C",
+      "theme": "Conventional",
+      "description": "Use spreadsheets, databases, reports, or information systems accurately."
+    },
+    {
+      "program_id": 28,
+      "code": "C",
+      "theme": "Conventional",
+      "description": "Follow established rules, standards, checklists, or quality-control processes."
+    },
+    {
+      "program_id": 29,
+      "code": "C",
+      "theme": "Conventional",
+      "description": "Keep work orderly, complete, documented, and on time."
+    },
+    {
+      "program_id": 30,
+      "code": "C",
+      "theme": "Conventional",
+      "description": "Review details carefully to prevent errors in transactions, files, or operations."
+    }
+  ]
+}

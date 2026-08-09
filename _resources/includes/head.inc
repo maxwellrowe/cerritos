@@ -16,6 +16,8 @@
 <link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/solid.min.css"><!-- /_resources/fonts/font-awesome-6-pro/css/solid.min.css -->
 <link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/sharp-regular.min.css"><!-- /_resources/fonts/font-awesome-6-pro/css/sharp-regular.min.css -->
 <link rel="stylesheet" href="/_resources/fonts/font-awesome-6-pro/css/sharp-solid.min.css"><!-- /_resources/fonts/font-awesome-6-pro/css/sharp-solid.min.css -->
+<link rel="stylesheet" href="/_resources/fonts/fontawesome-free-6.4.2-web/css/v4-font-face.min.css"><!-- /_resources/fonts/fontawesome-free-6.4.2-web/css/v4-font-face.min.css -->
+<link rel="stylesheet" href="/_resources/fonts/fontawesome-free-6.4.2-web/css/v4-shims.min.css"><!-- /_resources/fonts/fontawesome-free-6.4.2-web/css/v4-shims.min.css -->
 
 <!-- Load fonts from Google Fonts CDN Poppins and Karla -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,16 +26,21 @@
 
 <!-- Legacy -->
 <link rel="stylesheet" href="/_resources/css/flexslider.css" type="text/css"><!-- /_resources/css/flexslider.css -->
-<link rel="stylesheet" href="/_resources/css/legacy.css"/><!-- /_resources/css/legacy -->
+<link rel="stylesheet" href="/_resources/css/legacy.css?v=1.2"/><!-- /_resources/css/legacy -->
 <link rel="stylesheet" href="/_resources/css/owl.carousel.css"><!-- /_resources/css/owl.carousel.css-->
 <link rel="stylesheet" href="/_resources/css/owl.theme.default.min.css"><!-- /_resources/css/owl.theme.default.min.css -->
-<link rel="stylesheet" href="/_resources/css/components.css"/> <!--/_resources/css/components.css  -->
+<link rel="stylesheet" href="/_resources/css/components.css?v=1.1"/> <!--/_resources/css/components.css  -->
 <link rel="stylesheet" href="/_resources/css/modern-campus-forms.css"/> <!--/_resources/css/modern-campus-forms.css  -->
+<link rel="stylesheet" href="/_resources/ldp/galleries/fancybox/bootstrap-thumbnails.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/_resources/ldp/galleries/fancybox/jquery.fancybox.min.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/_resources/ldp/galleries/fancybox/ou.fancybox.accessibility.css" media="screen" />
+<link rel="stylesheet" href="/_resources/ldp/galleries/slick/slick.css" type="text/css" />
+<link rel="stylesheet" href="/_resources/ldp/galleries/slick/slick-theme.css" type="text/css" />
 
 <!-- Custom Override for BS -->
-<link rel="stylesheet" href="/_resources/css/cerritos-bootstrap.css"/><!-- /_resources/css/cerritos-bootstrap.css -->
+<link rel="stylesheet" href="/_resources/css/cerritos-bootstrap.css?v=1.1"/><!-- /_resources/css/cerritos-bootstrap.css -->
 
 <!-- Custom CSS for Cerritos -->
-<link rel="stylesheet" href="/_resources/css/cerritos.css"/><!-- /_resources/css/cerritos.css -->
+<link rel="stylesheet" href="/_resources/css/cerritos.css?v=1.1"/><!-- /_resources/css/cerritos.css -->
 
 <!--#include virtual="/_resources/includes/scripts-head.inc" -->

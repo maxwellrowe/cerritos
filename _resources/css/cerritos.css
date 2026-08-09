@@ -1,5 +1,22 @@
 /* Custom CSS for Cerritos College */
 
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    z-index: 10000000;
+    padding: 0.75rem 1rem;
+    background: var(--bs-warning);
+    color: var(--bs-secondary);
+    text-decoration: none !important;
+    transform: translateY(-150%);
+    transition: transform .2s ease-in-out;
+}
+
+.skip-link:focus-visible {
+    transform: translateY(0);
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 1rem;
@@ -362,6 +379,9 @@ body.main-nav-panel-open #navigation #main-nav-panel-toggle .main-nav-toggle-ico
 #main-nav-panel a.link-arrow {
     color: var(--bs-white);
     text-decoration: none !important;
+}
+#main-nav-panel .accordion-body a:not(.btn) {
+    color: var(--bs-white);
 }
 .ou-justedit-region #main-nav-panel a.link-arrow {
     color: #ccc;

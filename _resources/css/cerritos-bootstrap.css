@@ -179,8 +179,17 @@ a:not(.btn):not(.dropdown-item):not(.nav-link):not(.page-link):active {
 	text-decoration-color: var(--bs-info);
 }
 
-a:not(.btn):not(.dropdown-item):not(.nav-link):not(.page-link):focus {
-	color: var(--bs-info);
+a:not(.btn):not(.dropdown-item):not(.nav-link):not(.page-link):focus-visible {
+	text-decoration-style: solid;
+	text-decoration-color: var(--bs-info);
+	outline: 1px solid var(--bs-info);
+	outline-offset: 4px;
+	border-radius: var(--bs-border-radius);
+}
+
+.btn:focus-visible,
+button:focus-visible,
+select:focus-visible {
 	text-decoration-style: solid;
 	text-decoration-color: var(--bs-info);
 	outline: 1px solid var(--bs-info);
@@ -430,7 +439,6 @@ blockquote p:last-child {
 	font-weight: 600;
 	box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.15);
 	border-radius: 2px;
-	letter-spacing: 0.02em;
 }
 
 .btn:hover,
@@ -452,8 +460,7 @@ a.button,
 	padding: var(--space-3) var(--space-5);
 	font-family: "Poppins", "Segoe UI", sans-serif;
 	font-weight: 600;
-	letter-spacing: 0.02em;
-	text-transform: uppercase;
+	text-transform: none;
 	text-decoration: none;
 	color: var(--bs-secondary) !important;
 	background: var(--bs-warning);

@@ -1,0 +1,415 @@
+<?php
+// Prevent browser caching
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+
+session_start();
+
+// Ensure applicant data exists
+if (!isset($_SESSION['applicant'])) {
+    header('Location: index.php');
+    exit;
+}
+
+$applicant = $_SESSION['applicant'];
+
+// Handle career selection form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'save_careers') {
+    $selected_careers = $_POST['selected_careers'] ?? [];
+    
+    // Validate that exactly 3 careers are chosen
+    if (count($selected_careers) === 3) {
+        $_SESSION['selected_careers'] = $selected_careers;
+        
+        $currentTime = date('Y-m-d H:i:s');
+        
+        // Update persistent session / applicant record files
+        $applicant['selected_careers'] = $selected_careers;
+        $applicant['last_updated'] = $currentTime;
+        $_SESSION['applicant'] = $applicant;
+        
+        $firstName = $applicant['first_name'] ?? '';
+        $lastName = $applicant['last_name'] ?? '';
+        $birthDate = $applicant['birth_date'] ?? '';
+        $email = $applicant['email'] ?? '';
+        
+        $safeFirst = preg_replace('/[^a-zA-Z0-9_-]/', '', strtolower($firstName));
+        $safeLast = preg_replace('/[^a-zA-Z0-9_-]/', '', strtolower($lastName));
+        $safeEmail = preg_replace('/[^a-zA-Z0-9_-]/', '', strtolower($email));
+        $personalizedFilename = "applicant_{$safeFirst}_{$safeLast}_{$safeEmail}.json";
+        $historyFilename = "applicant_history.json";
+        
+        // Save to individual applicant JSON file
+        file_put_contents($personalizedFilename, json_encode($applicant, JSON_PRETTY_PRINT));
+        
+        // Update global applicant_history.json file
+        $historyData = [];
+        if (file_exists($historyFilename)) {
+            $decodedHistory = json_decode(file_get_contents($historyFilename), true);
+            if (is_array($decodedHistory)) {
+                $historyData = $decodedHistory;
+            }
+        }
+        
+        // Match record in history using name, email, and date of birth
+        $foundIndex = -1;
+        foreach ($historyData as $idx => $record) {
+            if (
+                strcasecmp(trim($record['first_name'] ?? ''), $firstName) === 0 &&
+                strcasecmp(trim($record['last_name'] ?? ''), $lastName) === 0 &&
+                trim($record['email'] ?? '') === $email &&
+                trim($record['birth_date'] ?? '') === $birthDate
+            ) {
+                $foundIndex = $idx;
+                break;
+            }
+        }
+        
+        if ($foundIndex !== -1) {
+            $historyData[$foundIndex] = $applicant;
+        } else {
+            $historyData[] = $applicant;
+        }
+        
+        file_put_contents($historyFilename, json_encode($historyData, JSON_PRETTY_PRINT));
+        
+        // Redirect to majors.php upon choosing the 3rd career
+        header('Location: majors.php');
+        exit;
+    } else {
+        $error_message = "Please select exactly 3 careers before continuing to majors.";
+    }
+}
+
+// Load degrees.json
+$jsonFile = 'degrees.json';
+$degrees_data = [];
+if (file_exists($jsonFile)) {
+    $raw_json = file_get_contents($jsonFile);
+    $decoded = json_decode($raw_json, true);
+    if (is_array($decoded)) {
+        $degrees_data = $decoded;
+    }
+}
+
+// Extract applicant filters
+$goal = $applicant['goal'] ?? 'interests';
+$lcp = $applicant['lcp'] ?? 'Undecided';
+$top_codes = $applicant['interest_inventory']['top_codes'] ?? [];
+$primary_code = !empty($top_codes) ? $top_codes[0] : '';
+
+// Fallback logic for undecided LCP
+if (strcasecmp($lcp, 'Undecided') === 0 || empty($lcp)) {
+    $goal = 'interests';
+}
+
+// Filter careers based on user goal and LCP / RIASEC rules
+$matching_careers = [];
+
+foreach ($degrees_data as $item) {
+    $career_list = $item['careers'] ?? [$item];
+    
+    foreach ($career_list as $career) {
+        $item_lcp = $career['lcp'] ?? $item['lcp'] ?? '';
+        $item_code = $career['riasec_code'] ?? $career['code'] ?? $item['riasec_code'] ?? '';
+        $item_salary = $career['median_salary'] ?? $item['median_salary'] ?? '';
+        $item_growth = $career['growth_rate'] ?? $item['growth_rate'] ?? '';
+        $item_type = $career['type'] ?? $item['type'] ?? '';
+        
+        $is_match = false;
+        
+        switch ($goal) {
+            case 'interests':
+                if (!empty($primary_code) && (strcasecmp($item_code, $primary_code) === 0 || (is_array($top_codes) && in_array($item_code, $top_codes)))) {
+                    $is_match = true;
+                }
+                break;
+                
+            case 'high_earning':
+                if (strcasecmp($item_lcp, $lcp) === 0 && strcasecmp($item_salary, 'High') === 0) {
+                    $is_match = true;
+                }
+                break;
+                
+            case 'growth_potential':
+                if (strcasecmp($item_lcp, $lcp) === 0 && strcasecmp($item_growth, 'High') === 0) {
+                    $is_match = true;
+                }
+                break;
+                
+            case 'start_quickly':
+                if (strcasecmp($item_lcp, $lcp) === 0 && (strcasecmp($item_type, 'certificate') === 0 || stripos($item_type, 'cert') !== false)) {
+                    $is_match = true;
+                }
+                break;
+                
+            default:
+                if (!empty($primary_code) && strcasecmp($item_code, $primary_code) === 0) {
+                    $is_match = true;
+                }
+                break;
+        }
+        
+        if ($is_match) {
+            $matching_careers[] = [
+                'title' => $career['title'] ?? $career['name'] ?? 'Career Option',
+                'lcp' => $item_lcp,
+                'median_salary' => $item_salary,
+                'growth_rate' => $item_growth,
+                'description' => $career['description'] ?? 'No description available.',
+                'riasec_code' => $item_code
+            ];
+        }
+    }
+}
+
+if (empty($matching_careers) && !empty($degrees_data)) {
+    foreach ($degrees_data as $item) {
+        $matching_careers[] = [
+            'title' => $item['title'] ?? $item['name'] ?? 'General Career Pathway',
+            'lcp' => $item['lcp'] ?? $lcp,
+            'median_salary' => $item['median_salary'] ?? 'Moderate',
+            'growth_rate' => $item['growth_rate'] ?? 'Stable',
+            'description' => $item['description'] ?? 'Explore rewarding career opportunities in this pathway.',
+            'riasec_code' => $item['riasec_code'] ?? 'A'
+        ];
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerritos College - Career Selection</title>
+    <style>
+        :root {
+            --cerritos-blue: #002b49;
+            --cerritos-gold: #ffc72c;
+            --cerritos-dark: #333333;
+            --cerritos-light: #f4f6f9;
+        }
+        body {
+            font-family: Arial, sans-serif, Helvetica;
+            background-color: var(--cerritos-light);
+            color: var(--cerritos-dark);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--cerritos-blue);
+            color: #ffffff;
+            padding: 1rem 2rem;
+            border-bottom: 5px solid var(--cerritos-gold);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        .step-indicator {
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.15);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 2.5rem auto;
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: var(--cerritos-blue);
+            border-bottom: 2px solid var(--cerritos-gold);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .intro-text {
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.5;
+        }
+        .error-banner {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+        .career-card {
+            background: #fdfdfd;
+            border: 1px solid #e1e8ed;
+            border-radius: 6px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: border-color 0.2s;
+        }
+        .career-card:hover {
+            border-color: var(--cerritos-blue);
+        }
+        .career-card input[type="checkbox"] {
+            margin-top: 0.3rem;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        .career-info h3 {
+            margin: 0 0 0.4rem 0;
+            color: var(--cerritos-blue);
+            font-size: 1.1rem;
+        }
+        .career-meta {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #333;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        .badge-salary { background: #d4edda; color: #155724; }
+        .badge-growth { background: #d1ecf1; color: #0c5460; }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+        }
+        .btn {
+            background-color: var(--cerritos-blue);
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        .btn:hover {
+            background-color: #001d32;
+        }
+        .btn-secondary {
+            background-color: #e1e8ed;
+            color: var(--cerritos-dark);
+        }
+        .btn-secondary:hover {
+            background-color: #cbd5d9;
+        }
+        .counter-display {
+            font-weight: bold;
+            color: var(--cerritos-blue);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Cerritos College Career Exploration</h1>
+    <span class="step-indicator">Career Selection</span>
+</header>
+
+<div class="container">
+    <h2>Matching Careers for Your Goals</h2>
+    <p class="intro-text">
+        Based on your selected pathway (<strong><?php echo htmlspecialchars($lcp); ?></strong>) and goals, we have curated matching career options below. 
+        Please select exactly <strong>3 careers</strong> to persist your choices and proceed to major recommendations.
+    </p>
+
+    <?php if (isset($error_message)): ?>
+        <div class="error-banner">
+            <?php echo htmlspecialchars($error_message); ?>
+        </div>
+    <?php endif; ?>
+
+    <form method="POST" action="career_selection.php" id="careerForm">
+        <input type="hidden" name="action" value="save_careers">
+
+        <div style="margin-bottom: 1rem;">
+            Selected: <span id="selectedCount" class="counter-display">0</span> of 3 required
+        </div>
+
+        <?php if (empty($matching_careers)): ?>
+            <p>No specific careers found matching your criteria. Showing general recommendations.</p>
+        <?php else: ?>
+            <?php foreach ($matching_careers as $index => $career): ?>
+                <div class="career-card">
+                    <input type="checkbox" name="selected_careers[]" value="<?php echo htmlspecialchars($career['title']); ?>" id="career_<?php echo $index; ?>" class="career-checkbox">
+                    <div class="career-info">
+                        <label for="career_<?php echo $index; ?>" style="cursor: pointer;">
+                            <h3><?php echo htmlspecialchars($career['title']); ?></h3>
+                        </label>
+                        <div class="career-meta">
+                            <span class="badge">Pathway: <?php echo htmlspecialchars($career['lcp']); ?></span>
+                            <?php if (!empty($career['median_salary'])): ?>
+                                <span class="badge badge-salary">Salary: <?php echo htmlspecialchars($career['median_salary']); ?></span>
+                            <?php endif; ?>
+                            <?php if (!empty($career['growth_rate'])): ?>
+                                <span class="badge badge-growth">Growth: <?php echo htmlspecialchars($career['growth_rate']); ?></span>
+                            <?php endif; ?>
+                        </div>
+                        <p style="margin: 0; font-size: 0.95rem; color: #444;"><?php echo htmlspecialchars($career['description']); ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+
+        <div class="button-group">
+            <a href="goals.php" class="btn btn-secondary">&larr; Back to Goals</a>
+            <button type="submit" class="btn" id="submitBtn">Proceed to Majors &rarr;</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const checkboxes = document.querySelectorAll('.career-checkbox');
+        const counterDisplay = document.getElementById('selectedCount');
+        const submitBtn = document.getElementById('submitBtn');
+
+        function updateSelectionCount() {
+            const checkedCount = document.querySelectorAll('.career-checkbox:checked').length;
+            counterDisplay.textContent = checkedCount;
+            
+            if (checkedCount === 3) {
+                submitBtn.style.opacity = '1';
+                submitBtn.removeAttribute('disabled');
+            } else {
+                submitBtn.style.opacity = '0.7';
+            }
+        }
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', function() {
+                const checkedCount = document.querySelectorAll('.career-checkbox:checked').length;
+                if (checkedCount > 3) {
+                    this.checked = false;
+                    alert('You can only select exactly 3 careers.');
+                }
+                updateSelectionCount();
+            });
+        });
+
+        updateSelectionCount();
+    });
+</script>
+
+</body>
+</html>

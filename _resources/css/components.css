@@ -204,12 +204,6 @@
 	background-repeat: no-repeat;
 }
 
-.gtranslate_wrapper .gt_selector:focus,
-.gtranslate_wrapper .gt_selector:focus-visible {
-	box-shadow: var(--bs-btn-focus-box-shadow);
-	outline: 0;
-}
-
 .gtranslate_wrapper .gt-current-lang {
 	font-family: "Poppins", "Segoe UI", sans-serif;
 }
@@ -348,12 +342,6 @@ ul.bullet_list_arrow_yellow li::before {
 	background-color: var(--accordion-button-bg-active);
 	color: var(--accordion-button-color);
 	box-shadow: none;
-}
-
-.accordion-header .accordion-button:focus,
-.accordion-header .accordion-button:focus-visible {
-	box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
-	outline: 0;
 }
 
 .accordion-header .accordion-button::after {

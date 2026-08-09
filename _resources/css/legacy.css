@@ -741,7 +741,7 @@ p.lead-in {
     background: #002E66;
     color: #fff;
     text-transform: normal;
-    font-size: 1.75rem; /*font-size: 1.5rem;*/ /*Updated by RRD*/
+    font-size: 1.5rem;
     padding: 1.5rem;
 	border-radius: 0px; /*Updated by RRD*/
 	font-family: "Karla", sans-serif; /*Updated by RRD*/
@@ -773,7 +773,7 @@ p.lead-in {
 	margin-top: -5px; /*Updated by RRD*/
 }
 .block h3 .fa {
-	font-size: 1.875rem;
+	font-size: 1.5rem;
 }
 .block h3 span {
     overflow: hidden;

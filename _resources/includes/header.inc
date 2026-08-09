@@ -1,8 +1,6 @@
 <ouc:editor wysiwyg="no"/>
 
-<nav class="visually-hidden" aria-label="accessibility">
-	<a href="#skiptocontent">Skip to main content</a>
-</nav>
+<a href="#maincontent" class="skip-link">Skip to main content</a>
 <div id="navigation">
 	<div id="search-panel" class="collapse bg-secondary">
 		<div class="container-xl">

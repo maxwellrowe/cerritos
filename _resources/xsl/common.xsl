@@ -44,6 +44,7 @@
 	<xsl:import href="_shared/galleries-fade.xsl" />
 	<!--<xsl:import href="_shared/galleries-custom-buttons.xsl" />-->
     <xsl:import href="_shared/forms.xsl" />
+	<xsl:import href="_shared/snippets.xsl" />
 	<xsl:import href="_shared/components.xsl" />
 	<xsl:import href="_shared/mailto.xsl" />
 	<xsl:import href="_shared/sidebar.xsl" />
@@ -199,12 +200,12 @@
 				</xsl:if>
 
 				<!-- Special tracking code if any for this page -->
-				<xsl:if test="string-length($TrackingInclude) > 0 ">  		  
-					<!--<xsl:copy-of select="ou:includeFile($TrackingInclude)"/>-->
-					<xsl:call-template name="unparsed-include-file">
-						<xsl:with-param name="path" select="ou:includeFile($TrackingInclude)"/>
-					</xsl:call-template>
-				</xsl:if>
+					<xsl:if test="string-length($TrackingInclude) > 0 ">  		  
+						<!--<xsl:copy-of select="ou:includeFile($TrackingInclude)"/>-->
+						<xsl:call-template name="unparsed-include-file">
+							<xsl:with-param name="path" select="$TrackingInclude"/>
+						</xsl:call-template>
+					</xsl:if>
 				
 				<!-- reCAPTCHA version 2 -->
 				<script src='https://www.google.com/recaptcha/api.js'></script>
@@ -298,17 +299,26 @@
 									<xsl:apply-templates select="document/ouc:div[@label='page_hero']" />
 								</xsl:when>
 								<xsl:otherwise>
-									<div class="container-xxl mt-5 mb-3">
-										<!-- Page Title -->
-										<xsl:choose>
-											<xsl:when test="ou:pcf-param('hide-page-title') = 'true'">
-												<!-- Do Nothing -->
-											</xsl:when>
-											<xsl:otherwise>
-												<h1 class="text-light"><xsl:value-of select="$Title" disable-output-escaping="yes" /></h1>
-											</xsl:otherwise>
-										</xsl:choose>
-									</div>
+									<!-- Page Title -->
+									<xsl:choose>
+										<xsl:when test="ou:pcf-param('hide-page-title') = 'true'">
+											<!-- Do Nothing -->
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:choose>
+												<xsl:when test="ou:pcf-param('hide-breadcrumbs') = 'true'">
+													<div class="container-xxl mt-5 mb-3">
+														<h1 class="text-light"><xsl:value-of select="$Title" disable-output-escaping="yes" /></h1>
+													</div>
+												</xsl:when>
+												<xsl:otherwise>
+													<div class="container-xxl mt-0 mb-3">
+														<h1 class="text-light"><xsl:value-of select="$Title" disable-output-escaping="yes" /></h1>
+													</div>
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:otherwise>
+									</xsl:choose>
 								</xsl:otherwise>
 							</xsl:choose>
 						</div>
