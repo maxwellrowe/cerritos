@@ -1,0 +1,4 @@
+# Google service-account credentials (keep outside the web root in production)
+google_credentials.php
+private_config.php
+*.service-account.json

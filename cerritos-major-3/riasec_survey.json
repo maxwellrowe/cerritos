@@ -1,0 +1,38 @@
+[
+  {
+    "code": "R",
+    "name": "Realistic (Doers)",
+    "description": "Hands-on, practical, athletic, mechanical. Enjoys working with tools, machines, plants, animals, or building things.",
+    "aligned_pathway": "Applied Technology & Skilled Trades"
+  },
+  {
+    "code": "I",
+    "name": "Investigative (Thinkers)",
+    "description": "Analytical, intellectual, scientific, exploratory. Enjoys solving abstract problems, math, science, and research.",
+    "aligned_pathway": "Science, Engineering & Math"
+  },
+  {
+    "code": "A",
+    "name": "Artistic (Creators)",
+    "description": "Creative, original, independent, expressive. Enjoys art, drama, crafts, dance, music, and creative writing.",
+    "aligned_pathway": "Arts, Humanities & Communication"
+  },
+  {
+    "code": "S",
+    "name": "Social (Helpers)",
+    "description": "Cooperative, supporting, healing, enlightening. Enjoys teaching, counseling, nursing, or giving service.",
+    "aligned_pathway": "Education & Human Services"
+  },
+  {
+    "code": "E",
+    "name": "Enterprising (Persuaders)",
+    "description": "Competitive, persuasive, leadership-oriented. Enjoys starting up and carrying out projects, leading people, and making decisions.",
+    "aligned_pathway": "Business, Accounting & Law"
+  },
+  {
+    "code": "C",
+    "name": "Conventional (Organizers)",
+    "description": "Detail-oriented, organized, clerical. Enjoys working with numbers, records, or machines in a set, logical order.",
+    "aligned_pathway": "Business, Accounting & Law"
+  }
+]

@@ -1,0 +1,381 @@
+<?php
+session_start();
+
+// 1. Path to JSON configuration
+$jsonFilePath = __DIR__ . '/degrees.json';
+
+// Fetch session variables (with fallbacks)
+$userPathway = $_SESSION['pathway'] ?? 'Exploration & Discovery';
+$userGoals   = $_SESSION['goals']   ?? [];
+$userRiasec  = $_SESSION['riasec']  ?? null; // Fetch RIASEC score from session if available
+
+// Array to hold diagnostic messages
+$debugLogs = [];
+$totalTitleKeysFound = 0;
+$passedPathwayCheck  = 0;
+$passedGoalCheck     = 0;
+
+// Load and validate JSON file
+if (!file_exists($jsonFilePath)) {
+    $debugLogs[] = ['type' => 'error', 'msg' => "CRITICAL FAIL: File 'degrees.json' not found at path: " . $jsonFilePath];
+    $data = [];
+} else {
+    $jsonContent = file_get_contents($jsonFilePath);
+    $data = json_decode($jsonContent, true);
+
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        $debugLogs[] = ['type' => 'error', 'msg' => "CRITICAL FAIL: Invalid JSON structure - " . json_last_error_msg()];
+        $data = [];
+    }
+}
+
+/**
+ * Diagnostic function to trace title exclusions
+ */
+function runTitleExclusionDiagnostics(array $item, $targetPathway, array $targetGoals, $targetRiasec, &$debugLogs, &$totalTitleKeysFound, &$passedPathwayCheck, &$passedGoalCheck, $parentPathway = null, $parentRiasec = null): void {
+    if (!is_array($item)) return;
+
+    // Detect explicit pathway or inherited parent pathway
+    $currentPathway = $item['pathway'] ?? $parentPathway;
+    
+    // Detect explicit RIASEC code or inherited parent RIASEC code
+    $currentRiasec = $item['riasec_code'] ?? $parentRiasec;
+
+    // Check condition: Use RIASEC filtering ONLY when pathway is Exploration & Discovery OR goals contain "interests"
+    $isExplorationPathway = (strcasecmp(trim($targetPathway), 'Exploration and Discovery') === 0 || strcasecmp(trim($targetPathway), 'Exploration & Discovery') === 0);
+    $hasInterestsGoal = in_array('interests', array_map('strtolower', $targetGoals));
+    
+    $useRiasecFilter = ($isExplorationPathway || $hasInterestsGoal);
+
+    foreach ($item as $key => $value) {
+        if ($key === 'title' && is_string($value)) {
+            $totalTitleKeysFound++;
+            $titleName = trim($value);
+            $pathwayMatched = false;
+
+            // Diagnostic Check 1: Pathway Alignment
+            if ($currentPathway === null) {
+                $debugLogs[] = [
+                    'type' => 'exclude',
+                    'msg'  => "EXCLUDED '{$titleName}' &rarr; Reason: No 'pathway' key found on this title or its parent objects."
+                ];
+            } elseif (strcasecmp(trim($currentPathway), trim($targetPathway)) !== 0) {
+                $debugLogs[] = [
+                    'type' => 'exclude',
+                    'msg'  => "EXCLUDED '{$titleName}' &rarr; Reason: Pathway mismatch. (Object has: '{$currentPathway}' | User Session has: '{$targetPathway}')"
+                ];
+            } else {
+                $pathwayMatched = true;
+                $passedPathwayCheck++;
+            }
+
+            // Diagnostic Check 2: Criteria Alignment (RIASEC vs standard Goals)
+            if ($pathwayMatched) {
+                if ($useRiasecFilter) {
+                    // RIASEC validation logic
+                    if ($currentRiasec !== null && $targetRiasec !== null && strcasecmp(trim($currentRiasec), trim($targetRiasec)) === 0) {
+                        $passedGoalCheck++;
+                        $debugLogs[] = [
+                            'type' => 'keep',
+                            'msg'  => "PASSED '{$titleName}' &rarr; Matched pathway and RIASEC code ('{$targetRiasec}')."
+                        ];
+                    } else {
+                        $debugLogs[] = [
+                            'type' => 'exclude',
+                            'msg'  => "EXCLUDED '{$titleName}' &rarr; Reason: RIASEC filter active but code mismatch. (Object has: '{$currentRiasec}' | User Session has: '{$targetRiasec}')"
+                        ];
+                    }
+                } else {
+                    // Standard Goals validation logic
+                    if (isset($item['goals']) && is_array($item['goals'])) {
+                        $hasMatchingGoal = false;
+                        foreach ($targetGoals as $goal) {
+                            if (in_array($goal, $item['goals'])) {
+                                $hasMatchingGoal = true;
+                                break;
+                            }
+                        }
+
+                        if (!$hasMatchingGoal) {
+                            $debugLogs[] = [
+                                'type' => 'exclude',
+                                'msg'  => "EXCLUDED '{$titleName}' &rarr; Reason: Goals array exists on object, but none matched user goals (" . json_encode($targetGoals) . ")."
+                            ];
+                        } else {
+                            $passedGoalCheck++;
+                            $debugLogs[] = [
+                                'type' => 'keep',
+                                'msg'  => "PASSED '{$titleName}' &rarr; Matched both pathway and criteria."
+                            ];
+                        }
+                    } else {
+                        $debugLogs[] = [
+                            'type' => 'exclude',
+                            'msg'  => "EXCLUDED '{$titleName}' &rarr; Reason: Pathway matched, but no 'goals' array attached to this specific title entry."
+                        ];
+                    }
+                }
+            }
+
+        } elseif (is_array($value)) {
+            runTitleExclusionDiagnostics($value, $targetPathway, $targetGoals, $targetRiasec, $debugLogs, $totalTitleKeysFound, $passedPathwayCheck, $passedGoalCheck, $currentPathway, $currentRiasec);
+        }
+    }
+}
+
+// Execute diagnostics
+if (!empty($data)) {
+    runTitleExclusionDiagnostics($data, $userPathway, $userGoals, $userRiasec, $debugLogs, $totalTitleKeysFound, $passedPathwayCheck, $passedGoalCheck);
+}
+
+/**
+ * Fallback Function: Extract ALL 199 unique titles recursively (ignoring rigid filters)
+ */
+function extractAll199Titles(array $array, array &$results): void {
+    foreach ($array as $key => $value) {
+        if ($key === 'title' && is_string($value)) {
+            $trimmed = trim($value);
+            if (!empty($trimmed)) {
+                $results[] = $trimmed;
+            }
+        } elseif (is_array($value)) {
+            extractAll199Titles($value, $results);
+        }
+    }
+}
+
+$rawTitles = [];
+extractAll199Titles($data, $rawTitles);
+$all199UniqueTitles = array_values(array_unique($rawTitles));
+natcasesort($all199UniqueTitles);
+$all199UniqueTitles = array_values($all199UniqueTitles);
+
+// Handle Form Submission
+$errorMsg = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $selectedCareers = $_POST['careers'] ?? [];
+    if (count($selectedCareers) === 3) {
+        $_SESSION['selected_careers'] = $selectedCareers;
+        header('Location: major_recommendations.php');
+        exit;
+    } else {
+        $errorMsg = 'Please select exactly 3 choices before proceeding.';
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Careers for Your Goals 2</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Debug Console Box */
+        .debug-panel {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            background: #0f172a;
+            color: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .debug-panel h2 {
+            margin-top: 0;
+            color: #38bdf8;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+        .debug-stat {
+            margin-bottom: 12px;
+            color: #cbd5e1;
+        }
+        .debug-logs {
+            max-height: 220px;
+            overflow-y: auto;
+            background: #1e293b;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #334155;
+        }
+        .log-line { margin-bottom: 4px; line-height: 1.4; }
+        .log-exclude { color: #f87171; }
+        .log-keep { color: #4ade80; }
+        .log-error { color: #facc15; font-weight: bold; }
+
+        /* Interface Box */
+        .card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-top: 4px solid #004b6e;
+        }
+        h1 { font-size: 1.75rem; color: #003350; margin-top: 0; margin-bottom: 12px; }
+        .divider { height: 2px; background-color: #e2e8f0; margin-bottom: 20px; }
+        p.description { font-size: 1rem; line-height: 1.5; color: #475569; margin-bottom: 20px; }
+        .counter { font-weight: 600; margin-bottom: 16px; font-size: 1rem; }
+        .counter span { color: #004b6e; }
+        .search-box {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        .title-list {
+            max-height: 320px;
+            overflow-y: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin-bottom: 24px;
+            background: #f8fafc;
+        }
+        .title-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 4px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .title-item:last-child { border-bottom: none; }
+        .title-item input[type="checkbox"] { margin-right: 12px; width: 16px; height: 16px; cursor: pointer; }
+        .title-item label { cursor: pointer; font-size: 0.95rem; color: #334155; flex-grow: 1; }
+        .error { color: #dc2626; background-color: #fef2f2; border: 1px solid #fecaca; padding: 10px 14px; border-radius: 6px; margin-bottom: 16px; }
+        .actions { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid #e2e8f0; }
+        .btn-back { background-color: #e2e8f0; color: #334155; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: 600; }
+        .btn-submit { background-color: #476b82; color: #ffffff; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+        .btn-submit:disabled { background-color: #94a3b8; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+
+<!-- IN-BROWSER DIAGNOSTIC CONSOLE -->
+<div class="debug-panel">
+    <h2>🔍 Title Exclusion Diagnostic Console</h2>
+    <div class="debug-stat">
+        <strong>Session State:</strong> Pathway = <u>"<?php echo htmlspecialchars($userPathway); ?>"</u> | Goals = <u><?php echo json_encode($userGoals); ?></u> | RIASEC = <u>"<?php echo htmlspecialchars($userRiasec ?? 'N/A'); ?>"</u><br>
+        <strong>Inspection Results:</strong> Evaluated <strong><?php echo $totalTitleKeysFound; ?></strong> total title occurrences in JSON.<br>
+        &bull; Matched Pathway String: <strong><?php echo $passedPathwayCheck; ?></strong><br>
+        &bull; Matched Both Pathway & Criteria: <strong><?php echo $passedGoalCheck; ?></strong>
+    </div>
+
+    <strong>Exclusion Breakdown Tracing:</strong>
+    <div class="debug-logs">
+        <?php if (empty($debugLogs)): ?>
+            <div class="log-line">No title logs available. Check if degrees.json exists and contains data.</div>
+        <?php else: ?>
+            <?php foreach ($debugLogs as $log): ?>
+                <div class="log-line log-<?php echo $log['type']; ?>">
+                    <?php echo $log['msg']; ?>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+</div>
+
+<!-- USER INTERFACE -->
+<div class="card">
+    <h1>Matching Careers for Your Goals 2</h1>
+    <div class="divider"></div>
+
+    <p class="description">
+        Based on your selected pathway (<strong><?php echo htmlspecialchars($userPathway); ?></strong>) and goals, 
+        we have curated matching career options below. Please select exactly <strong>3 careers</strong> to persist your choices 
+        and proceed to major recommendations.
+    </p>
+
+    <?php if (!empty($errorMsg)): ?>
+        <div class="error"><?php echo htmlspecialchars($errorMsg); ?></div>
+    <?php endif; ?>
+
+    <div class="counter">
+        Selected: <span id="selected-count">0</span> of 3 required
+    </div>
+
+    <form method="POST" action="career_selection.php" id="career-form">
+        <input 
+            type="text" 
+            id="title-filter" 
+            class="search-box" 
+            placeholder="Search through all <?php echo count($all199UniqueTitles); ?> available titles..." 
+            onkeyup="filterList()"
+        >
+
+        <div class="title-list" id="checkbox-container">
+            <?php if (empty($all199UniqueTitles)): ?>
+                <p>No specific careers found matching your criteria.</p>
+            <?php else: ?>
+                <?php foreach ($all199UniqueTitles as $idx => $title): ?>
+                    <div class="title-item">
+                        <input 
+                            type="checkbox" 
+                            name="careers[]" 
+                            id="title_<?php echo $idx; ?>" 
+                            value="<?php echo htmlspecialchars($title); ?>"
+                            onchange="updateCount()"
+                        >
+                        <label for="title_<?php echo $idx; ?>">
+                            <?php echo htmlspecialchars($title); ?>
+                        </label>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+
+        <div class="actions">
+            <a href="goals.php" class="btn-back">&larr; Back to Goals</a>
+            <button type="submit" id="submit-btn" class="btn-submit" disabled>Proceed to Majors &rarr;</button>
+        </div>
+    </form>
+</div>
+
+<script>
+function updateCount() {
+    const checkboxes = document.querySelectorAll('#checkbox-container input[type="checkbox"]:checked');
+    const countDisplay = document.getElementById('selected-count');
+    const submitBtn = document.getElementById('submit-btn');
+    const count = checkboxes.length;
+
+    countDisplay.textContent = count;
+    submitBtn.disabled = (count !== 3);
+
+    const allCheckboxes = document.querySelectorAll('#checkbox-container input[type="checkbox"]');
+    allCheckboxes.forEach(cb => {
+        if (!cb.checked && count >= 3) {
+            cb.disabled = true;
+        } else {
+            cb.disabled = false;
+        }
+    });
+}
+
+function filterList() {
+    const input = document.getElementById('title-filter');
+    const filter = input.value.toLowerCase();
+    const items = document.querySelectorAll('.title-item');
+
+    items.forEach(item => {
+        const text = item.textContent || item.innerText;
+        item.style.display = text.toLowerCase().includes(filter) ? "" : "none";
+    });
+}
+</script>
+
+</body>
+</html>

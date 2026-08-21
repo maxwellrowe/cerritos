@@ -1,0 +1,32 @@
+[
+  {
+    "ID": 1,
+    "Pathway": "Exploration & Discovery",
+    "Description": "For undecided students exploring options."
+  },
+  {
+    "ID": 2,
+    "Pathway": "Applied Technology & Skilled Trades",
+    "Description": "Tech, automotive, welding, and manufacturing fields."
+  },
+  {
+    "ID": 3,
+    "Pathway": "Arts, Humanities & Communication",
+    "Description": "Fine arts, design, media, and language studies."
+  },
+  {
+    "ID": 4,
+    "Pathway": "Business, Accounting & Law",
+    "Description": "Management, marketing, real estate, and office administration."
+  },
+  {
+    "ID": 5,
+    "Pathway": "Education & Human Services",
+    "Description": "Teaching, child development, and community services."
+  },
+  {
+    "ID": 6,
+    "Pathway": "Health & Wellness",
+    "Description": "Healthcare, nursing, and medical support services."
+  }
+]
