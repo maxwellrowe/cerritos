@@ -69,8 +69,7 @@ function getPathwayIcon($pathwayName) {
     if (stripos($pathwayName, 'Social') !== false) return '👥';
     if (stripos($pathwayName, 'Science') !== false) return '🔬';
     return '🎓';
-}
-?>
+}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,10 +78,12 @@ function getPathwayIcon($pathwayName) {
     <title>Cerritos College - Learning & Career Pathways (Page 2)</title>
     <style>
         :root {
+            /* High-contrast WCAG AAA compliant color palette */
             --cerritos-blue: #002b49;
-            --cerritos-gold: #ffc72c;
-            --cerritos-dark: #333333;
+            --cerritos-gold: #8a6200; /* Darkened gold to meet WCAG AA contrast ratio (>4.5:1) against white */
+            --cerritos-dark: #222222; /* Darker tone for enhanced legibility */
             --cerritos-light: #f4f6f9;
+            --focus-outline: #005fcc;
         }
         body {
             font-family: Arial, sans-serif, Helvetica;
@@ -91,11 +92,25 @@ function getPathwayIcon($pathwayName) {
             margin: 0;
             padding: 0;
         }
+        
+        /* Visually Hidden Utility Class for Screen Reader-only Text */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         header {
             background-color: var(--cerritos-blue);
             color: #ffffff;
             padding: 1rem 2rem;
-            border-bottom: 5px solid var(--cerritos-gold);
+            border-bottom: 5px solid #ffc72c;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -105,12 +120,13 @@ function getPathwayIcon($pathwayName) {
             margin: 0;
         }
         .step-indicator {
-            font-size: 0.9rem;
-            background: rgba(255,255,255,0.15);
+            font-size: 0.95rem;
+            background: rgba(255,255,255,0.2);
             padding: 0.4rem 0.8rem;
             border-radius: 4px;
+            color: #ffffff;
         }
-        .container {
+        main {
             max-width: 900px;
             margin: 2.5rem auto;
             background: #ffffff;
@@ -120,13 +136,15 @@ function getPathwayIcon($pathwayName) {
         }
         h2 {
             color: var(--cerritos-blue);
-            border-bottom: 2px solid var(--cerritos-gold);
+            border-bottom: 3px solid var(--cerritos-gold);
             padding-bottom: 0.5rem;
             margin-top: 0;
         }
         .intro-text {
             margin-bottom: 1.5rem;
-            color: #555;
+            color: var(--cerritos-dark);
+            font-size: 1rem;
+            line-height: 1.5;
         }
         .pathways-grid {
             display: grid;
@@ -134,21 +152,34 @@ function getPathwayIcon($pathwayName) {
             gap: 1.2rem;
             margin-bottom: 2rem;
         }
+        
+        /* Native Interactive Button Styles for Pathways */
         .pathway-card {
-            border: 2px solid #e1e8ed;
+            appearance: none;
+            -webkit-appearance: none;
+            font-family: inherit;
+            text-align: left;
+            width: 100%;
+            border: 2px solid #595959; /* Strong, clear visual border for low vision/color blindness */
             border-radius: 8px;
             padding: 1.25rem;
-            background: #fff;
+            background: #ffffff;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             flex-direction: column;
             position: relative;
         }
         .pathway-card:hover {
             border-color: var(--cerritos-blue);
-            box-shadow: 0 4px 10px rgba(0, 43, 73, 0.08);
-            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 43, 73, 0.15);
+        }
+        /* Visible Keyboard Focus Ring */
+        .pathway-card:focus,
+        .unsure-box:focus,
+        .btn:focus {
+            outline: 3px solid var(--focus-outline);
+            outline-offset: 3px;
         }
         .pathway-header {
             display: flex;
@@ -170,11 +201,11 @@ function getPathwayIcon($pathwayName) {
         .pathway-title {
             font-weight: bold;
             color: var(--cerritos-blue);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
         }
         .pathway-desc {
-            font-size: 0.88rem;
-            color: #666;
+            font-size: 0.95rem;
+            color: #333333; /* Contrast adjusted from #666 */
             line-height: 1.4;
             flex-grow: 1;
             margin-bottom: 1rem;
@@ -183,15 +214,20 @@ function getPathwayIcon($pathwayName) {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #767676;
             padding-top: 0.75rem;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
             color: var(--cerritos-blue);
         }
         .unsure-box {
-            background: #fff8e6;
-            border: 2px dashed #ffc72c;
+            appearance: none;
+            -webkit-appearance: none;
+            font-family: inherit;
+            text-align: left;
+            width: 100%;
+            background: #fffdf5;
+            border: 2px solid var(--cerritos-gold);
             padding: 1.25rem;
             border-radius: 8px;
             margin-bottom: 2rem;
@@ -202,33 +238,35 @@ function getPathwayIcon($pathwayName) {
             transition: background 0.2s ease;
         }
         .unsure-box:hover {
-            background: #fff3d1;
+            background: #fff8e6;
         }
         .button-group {
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #767676;
             padding-top: 1.5rem;
         }
         .btn {
             background-color: var(--cerritos-blue);
             color: #ffffff;
-            border: none;
+            border: 2px solid var(--cerritos-blue);
             padding: 0.75rem 1.5rem;
             font-size: 1rem;
             font-weight: bold;
             border-radius: 4px;
             cursor: pointer;
             text-decoration: none;
-            transition: background-color 0.2s ease;
+            display: inline-block;
         }
         .btn-secondary {
-            background-color: #e1e8ed;
-            color: var(--cerritos-dark);
+            background-color: #f0f4f8;
+            color: var(--cerritos-blue);
+            border: 2px solid var(--cerritos-blue);
         }
         .btn-secondary:hover {
-            background-color: #cbd5d9;
+            background-color: var(--cerritos-blue);
+            color: #ffffff;
         }
     </style>
 </head>
@@ -239,7 +277,7 @@ function getPathwayIcon($pathwayName) {
     <span class="step-indicator">Page 2 of 6: Learning & Career Pathways</span>
 </header>
 
-<div class="container">
+<main class="container">
     <form method="POST" action="lcp.php" id="pathwayForm">
         <input type="hidden" name="action" value="step_2">
         <?php echo csrf_field(); ?>
@@ -248,18 +286,16 @@ function getPathwayIcon($pathwayName) {
         <h2>Choose Your Learning & Career Pathway</h2>
         <p class="intro-text">At Cerritos College, programs are grouped into Learning and Career Pathways to keep you on track. Select any pathway below to instantly proceed to your next step.</p>
         
-        <div class="unsure-box" onclick="selectAndSubmit('Exploration & Discovery')">
-            <div style="display: flex; align-items: center;">
-                <span style="font-size: 2rem; margin-right: 1rem;">🤔</span>
-                <div>
+        <button type="button" class="unsure-box" onclick="selectAndSubmit('Exploration & Discovery')">
+            <span style="display: flex; align-items: center;">
+                <span style="font-size: 2rem; margin-right: 1rem;" aria-hidden="true">🤔</span>
+                <span>
                     <strong style="color: var(--cerritos-blue); font-size: 1.05rem; display: block; margin-bottom: 0.2rem;">I'm Not Sure / Undecided</strong>
-                    <span style="font-size: 0.88rem; color: #555;">For undecided students exploring options. (Proceeds to Goals)</span>
-                </div>
-            </div>
-            <div>
-                <span style="font-weight: bold; color: var(--cerritos-blue); font-size: 1.1rem;">&rarr;</span>
-            </div>
-        </div>
+                    <span style="font-size: 0.9rem; color: #333333; display: block;">For undecided students exploring options. (Proceeds to Goals)</span>
+                </span>
+            </span>
+            <span style="font-weight: bold; color: var(--cerritos-blue); font-size: 1.1rem;" aria-hidden="true">&rarr;</span>
+        </button>
 
         <div class="pathways-grid">
             <?php foreach ($pathways as $p): 
@@ -268,17 +304,17 @@ function getPathwayIcon($pathwayName) {
                 if (stripos($pName, 'Exploration') !== false) continue;
                 $icon = getPathwayIcon($pName);
             ?>
-                <div class="pathway-card" onclick="selectAndSubmit('<?php echo htmlspecialchars($pName, ENT_QUOTES); ?>')">
-                    <div class="pathway-header">
-                        <div class="pathway-icon"><?php echo $icon; ?></div>
-                        <div class="pathway-title"><?php echo htmlspecialchars($pName); ?></div>
-                    </div>
-                    <div class="pathway-desc"><?php echo htmlspecialchars($pDesc); ?></div>
-                    <div class="pathway-footer">
-                        <span>Select Pathway</span>
-                        <span>&rarr;</span>
-                    </div>
-                </div>
+                <button type="button" class="pathway-card" onclick="selectAndSubmit('<?php echo htmlspecialchars($pName, ENT_QUOTES); ?>')">
+                    <span class="pathway-header">
+                        <span class="pathway-icon" aria-hidden="true"><?php echo $icon; ?></span>
+                        <span class="pathway-title"><?php echo htmlspecialchars($pName); ?></span>
+                    </span>
+                    <span class="pathway-desc"><?php echo htmlspecialchars($pDesc); ?></span>
+                    <span class="pathway-footer">
+                        <span>Select Pathway <span class="sr-only">: <?php echo htmlspecialchars($pName); ?></span></span>
+                        <span aria-hidden="true">&rarr;</span>
+                    </span>
+                </button>
             <?php endforeach; ?>
         </div>
         
@@ -286,7 +322,7 @@ function getPathwayIcon($pathwayName) {
             <a href="index.php" class="btn btn-secondary">&larr; Back to Page 1</a>
         </div>
     </form>
-</div>
+</main>
 
 <script>
 function selectAndSubmit(pathwayName) {
